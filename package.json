@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/yourusername/add-to-homescreen#readme",
   "dependencies": {
-    "copy-webpack-plugin": "^11.0.0",
+    "copy-webpack-plugin": "^11.0.0"
   },
   "devDependencies": {
     "css-loader": "^6.6.0",
