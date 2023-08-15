@@ -5,22 +5,25 @@ The following is UI Library for adding a web app to a user's home screen on IOS 
 </br>
 Instructions and UI have been user-optimized and should give ~85% home screen install rate on IOS and Android.
 
-[Demo implementation](https://philfung.github.io).
-TODO video here.
+[Demo implementation - Aardvark App](https://philfung.github.io).
+
+
+https://github.com/philfung/add-to-homescreen/assets/1054593/c941a1e1-ee60-498c-9ef2-bc21261ae431
+
+
 
 ## Installation
-Install the package using npm:
-
-```
-npm install add-to-homescreen
-```
-
-Then, test locally:
+Testing locally:
 ```
 npm run build
 npm start
 ```
 
+Install the package using npm:
+
+```
+npm install add-to-homescreen
+```
 
 
 ## Usage
@@ -79,6 +82,20 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 # License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+# Supported Devices
+- IOS (Safari App)
+- Android (Chrome App)
+
+Users on other device apps or desktop will be shown an error message.
+
+Desktop users:
+<img width="384" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
+
+iPhone users:
+
+Android users:
+
 
 # TODOs
 - [ ] Add support for Chrome App on IOS
