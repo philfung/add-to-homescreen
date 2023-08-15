@@ -5,7 +5,7 @@ The following is UI Library for adding a web app to a user's home screen on IOS 
 </br>
 Instructions and UI have been user-optimized and should give ~85% home screen install rate on IOS and Android.
 
-Demo implementation [here](https://philfung.github.io).
+[Demo implementation](https://philfung.github.io).
 TODO video here.
 
 ## Installation
@@ -25,12 +25,12 @@ npm install add-to-homescreen
 ## Usage
 Usage Instructions (with example implementation TODO:here):
 
-1. Copy the entire "dist" folder (TODO: LINK) over to your codebase or CDN. 
+1. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
    This folder includes all js,css, and image assets required.
 
 2. Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
-    1. in your root directory, include a square app icon of at least 40 x 40 px specifically named "apple-touch-icon.png" (TODO: example)
-    2. in your root directory, include a web manifest file "manifest.json". (TODO: example) Reference the manifest in your index HTML file. 
+    1. in your root directory, include a square app icon of at least 40 x 40 px specifically named ["apple-touch-icon.png"](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)    
+    2. in your root directory, include a web manifest file ["manifest.json"](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json). Reference the manifest in your index HTML file. 
         ```
         = index.html =
         <head>
@@ -76,11 +76,15 @@ Usage Instructions (with example implementation TODO:here):
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
 
+# License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # TODOs
 - [ ] Add support for Chrome App on IOS
 - [ ] Update Android Chrome instructions for new Chrome release (include "Install App" messaging)
 - [ ] README: Add video thumbnails
 - [ ] README: Fill in missing url links
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
