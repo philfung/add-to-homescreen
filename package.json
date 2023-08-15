@@ -1,0 +1,37 @@
+{
+  "name": "add-to-homescreen",
+  "version": "1.0.0",
+  "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "http-server -c-1 -p 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/add-to-homescreen.git"
+  },
+  "keywords": [
+    "homescreen",
+    "add",
+    "popup"
+  ],
+  "author": "Your Name <your@email.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/add-to-homescreen/issues"
+  },
+  "homepage": "https://github.com/yourusername/add-to-homescreen#readme",
+  "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "sweetalert2": "^11.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "mini-css-extract-plugin": "^2.4.8",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

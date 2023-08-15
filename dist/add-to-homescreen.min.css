@@ -1,0 +1,266 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.add-to-homescreen-container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.add-to-homescreen-container.visible {
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 1;
+}
+
+.add-to-homescreen-container .modal {
+  background-color: #F5F5F5;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 49px 19px 32px 19px;
+  margin: auto;
+  margin-top: 40px;
+  max-width: 400px;
+  width: 90%;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+
+}
+
+@keyframes bounce-modal {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
+.add-to-homescreen-container.visible .modal,
+.add-to-homescreen-container.visible .logo {
+  transform: translateY(0);
+  opacity: 1;
+  animation: bounce-modal .5s;
+}
+
+
+.add-to-homescreen-container .logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 80px;
+  width: 80px;
+  z-index: 10000;
+}
+
+.add-to-homescreen-container .logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+}
+
+.add-to-homescreen-container .modal .title {
+  font-size: 31px;
+  font-weight: 800;
+  max-width: 330px;
+  margin-bottom: 18px;
+  line-height: 35px;
+  letter-spacing: -.05rem;
+  margin: 0px 0px 18px 3px;
+}
+
+.add-to-homescreen-container .modal .error-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0px 0px 18px 20px;
+  max-width: 300px;
+  line-height: 35px;
+  letter-spacing: -.05rem;
+}
+
+.add-to-homescreen-container .modal .error-body {
+  text-align: left;
+  font-size: 20px;
+  padding: 0px 0px 9px 0px;
+  line-height: 29px;
+  margin: 0px 0px 0px 20px;
+}
+
+.add-to-homescreen-container .modal .error-copy-link-button {
+  font-size: 20px;
+  width: 300px;
+  margin: 8px 0px 0px 20px;
+  border-radius: 4px;
+  border: 1px solid;
+  padding: 5px;
+  background-color: white;
+}
+
+
+.add-to-homescreen-container .modal .list {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-to-homescreen-container .modal .list .android-chrome-more-button {
+  height: 35px;
+  background: white;
+  margin: 0px 5px -6px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+}
+
+.add-to-homescreen-container .modal .list .android-chrome-add-to-homescreen-button {
+  height: 37px;
+  background: white;
+  margin: 0px 5px -10px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  padding: 0px 7px 0px 4px;
+}
+
+.add-to-homescreen-container .modal .list .ios-safari-sharing-api-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.add-to-homescreen-container .modal .list .ios-safari-add-to-home-screen-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.add-to-homescreen-container .modal .list .emphasis {
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -.05rem;
+}
+
+.add-to-homescreen-container .modal .list .your-app-icon {
+  height: 40px;
+  margin: 0px 5px -10px 5px;
+  border-radius: 6px;
+}
+
+.add-to-homescreen-container .modal .list .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  margin: 0px 0px 5px 0px;
+}
+
+.add-to-homescreen-container .modal .list .list-item .number-container {
+  flex-direction: column;
+  display: flex;
+  margin: 0px 5px 0px 0px;
+}
+
+.add-to-homescreen-container .modal .list .list-item .circle {
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  /*background-color: #212121;*/
+  background-color: #979797;
+}
+
+
+.add-to-homescreen-container .modal .list .list-item .number {
+  padding: 9px 0px 0px 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+
+
+.add-to-homescreen-container .modal .list .list-item .instruction {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  padding: 0px 0px 6px 9px;
+  line-height: 29px;
+}
+
+@keyframes add-to-homescreen-ios-safari-bouncing-arrow-animation {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.add-to-homescreen-container .add-to-homescreen-ios-safari-bouncing-arrow-container img {
+  height: 60px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: add-to-homescreen-ios-safari-bouncing-arrow-animation 2s infinite;
+}
+
+@keyframes add-to-homescreen-android-chrome-bouncing-arrow-animation {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(20px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+.add-to-homescreen-container .add-to-homescreen-android-chrome-bouncing-arrow-container img {
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  animation: add-to-homescreen-android-chrome-bouncing-arrow-animation 1.5s infinite;
+}

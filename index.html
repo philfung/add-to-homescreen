@@ -1,0 +1,45 @@
+<!-- Example web app with add to homescreen implemented.  JS in test-page.js -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aardvark: the only app for Aardvarks</title>
+  <link rel="manifest" href="manifest.json">
+  <script type="text/javascript" src="./dist/add-to-homescreen.min.js"></script>
+  <link rel="stylesheet" href="./dist/add-to-homescreen.min.css">
+</head>
+
+<body style="
+margin: 0px;
+padding: 0px;
+background: black;
+">
+  <img src="./dist/assets/img/aardvark-homepage.png" alt="Aardvark homepage" style="
+    width: 100%;
+    height: 100%;
+    max-width: 420px;
+    display: block;
+    text-align: center;
+    margin: auto;
+">
+</body>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+  
+    window.AddToHomeScreenInstance = new window.AddToHomeScreen(
+      {
+        appName: 'Aardvark',
+        appIconUrl: './dist/assets/img/aardvark-logo.png',
+        assetUrl: './dist/assets/img/',
+        showErrorMessageForUnsupportedBrowsers: true,
+        allowUserToCloseModal: true
+      });
+    window.AddToHomeScreenInstance.show();
+  });
+
+</script>
+
+</html>

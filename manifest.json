@@ -1,0 +1,17 @@
+{
+  "short_name": "Aardvark",
+  "name": "Aardvark: the app for aardvarks (add to homescreen test page)",
+  "display": "standalone",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "icons": [
+      {
+          "src": "apple-touch-icon.png",
+          "sizes": "any",
+          "type": "image/png",
+          "purpose": "any"
+      }
+  ]
+}
+
+  
