@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/yourusername/add-to-homescreen#readme",
   "dependencies": {
+    "add-to-homescreen": "^3.2.6",
     "copy-webpack-plugin": "^11.0.0"
   },
   "devDependencies": {

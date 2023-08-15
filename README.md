@@ -9,17 +9,18 @@ Instructions and UI have been user-optimized and should give ~85% home screen in
 TODO video here.
 
 ## Installation
-Testing locally:
-```
-npm run build
-npm start
-```
-
 Install the package using npm:
 
 ```
 npm install add-to-homescreen
 ```
+
+Then, test locally:
+```
+npm run build
+npm start
+```
+
 
 
 ## Usage
