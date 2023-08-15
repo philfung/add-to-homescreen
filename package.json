@@ -24,7 +24,6 @@
   "homepage": "https://github.com/yourusername/add-to-homescreen#readme",
   "dependencies": {
     "copy-webpack-plugin": "^11.0.0",
-    "sweetalert2": "^11.3.1"
   },
   "devDependencies": {
     "css-loader": "^6.6.0",
