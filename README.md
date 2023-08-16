@@ -7,9 +7,7 @@ Instructions have been user-optimized and should yield ~85% home screen install 
 
 [Demo implementation (open on your phone) - Aardvark App](https://philfung.github.io).
 
-
-https://github.com/philfung/add-to-homescreen/assets/1054593/c941a1e1-ee60-498c-9ef2-bc21261ae431
-
+![demo-ios](https://github.com/philfung/add-to-homescreen/assets/1054593/310488ab-735d-434e-b3bb-f89dde993fa7)
 
 
 ## Installation
@@ -26,7 +24,7 @@ npm start
 ```
 
 ## Usage
-Follow above installations instructions to compile js and css.  Then, add to your website by:
+Follow above installation instructions above to compile JS and CSS.  Then, add to your website:
 
 1. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
    This folder includes all js,css, and image assets required.
@@ -75,6 +73,7 @@ Follow above installations instructions to compile js and css.  Then, add to you
     });
     </script>
     ```
+Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 # Dependencies
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
