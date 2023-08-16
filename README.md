@@ -27,7 +27,7 @@ npm install add-to-homescreen
 
 
 ## Usage
-Usage Instructions (with example implementation TODO:here):
+Usage Instructions:
 
 1. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
    This folder includes all js,css, and image assets required.
