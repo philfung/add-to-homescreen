@@ -1,9 +1,9 @@
 # Add to Homescreen 📱
-Adding to Home Screen allows web apps to have nearly full app functionality without registering in the Apple/Google App Stores. 
+Adding to Home Screen allows mobile websites/pwa's to have nearly full app functionality without registering in the Apple/Google App Stores. 
 </br>
-The following is UI Library for adding a web app to a user's home screen on IOS and Android.
+The following is UI Library for optimally guiding a user to add a web app to their home screen on IOS and Android.
 </br>
-Instructions and UI have been user-optimized and should give ~85% home screen install rate on IOS and Android.
+Instructions and UI have been user-optimized and should yield ~85% home screen install rate on IOS and Android.
 
 [Demo implementation - Aardvark App](https://philfung.github.io).
 
@@ -83,7 +83,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 # License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Supported Devices
+# Edge Case Support
 - IOS (Safari App)
 - Android (Chrome App)
 
