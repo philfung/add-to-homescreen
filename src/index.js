@@ -110,8 +110,8 @@ class AddToHomeScreen {
       );
       if (this.showErrorMessageForUnsupportedBrowsers) {
         containerInnerHTML = this._genErrorMessage(
-          `Please open this website with the Safari app.`,
-          `Installing to your home screen is only supported in the Safari app on iPhone.`
+          `Please open this website with the Safari or Chrome app.`,
+          `Adding to home screen is only supported in Safari or Chrome on IOS.`
         );
       }
     } else if (this.isDeviceAndroid()) {
@@ -125,7 +125,7 @@ class AddToHomeScreen {
       if (this.showErrorMessageForUnsupportedBrowsers) {
         containerInnerHTML = this._genErrorMessage(
           `Please open this website with the Chrome app.`,
-          `Installing to your home screen is currently only supported in the Chrome app on Android.`
+          `Adding to home screen is only supported in Chrome on Android.`
         );
       }
     } else {
