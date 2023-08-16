@@ -1,9 +1,9 @@
 # Add to Homescreen 📱
-Adding to Home Screen allows mobile websites/pwa's to have nearly full app functionality without registering in the Apple/Google App Stores. 
+Adding to Home Screen allows mobile websites / PWA's to have nearly full app functionality without registering in the Apple/Google App Stores. 
 </br>
-The following is UI Library for optimally guiding a user to add a web app to their home screen on IOS and Android.
+The UI Library guides a user to add the website to their home screen on IOS and Android.
 </br>
-Instructions and UI have been user-optimized and should yield ~85% home screen install rate on IOS and Android.
+Instructions have been user-optimized and should yield ~85% home screen install rate on IOS and Android.
 
 [Demo implementation (open on your phone) - Aardvark App](https://philfung.github.io).
 
@@ -13,21 +13,20 @@ https://github.com/philfung/add-to-homescreen/assets/1054593/c941a1e1-ee60-498c-
 
 
 ## Installation
-Testing locally:
-```
-npm run build
-npm start
-```
-
 Install the package using npm:
 
 ```
 npm install add-to-homescreen
 ```
 
+Now test locally:
+```
+npm run build
+npm start
+```
 
 ## Usage
-Usage Instructions:
+Follow above installations instructions to compile js and css.  Then, add to your website by:
 
 1. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
    This folder includes all js,css, and image assets required.
@@ -55,7 +54,7 @@ Usage Instructions:
     </head>
     ```
 
-4. Call the library. 
+4. Call the library on your website.
 
     ```
     = index.html =
@@ -84,10 +83,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Edge Case Support
-- IOS (Safari App)
-- Android (Chrome App)
-
-Users on other device apps or desktop will be shown an error message.
+Users not on add to homescreen supported mobile browsers or on desktop will be shown a message to redirect to a supported browser.
 
 Desktop users:
 <img width="384" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
