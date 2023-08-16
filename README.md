@@ -5,7 +5,7 @@ The following is UI Library for optimally guiding a user to add a web app to the
 </br>
 Instructions and UI have been user-optimized and should yield ~85% home screen install rate on IOS and Android.
 
-[Demo implementation - Aardvark App](https://philfung.github.io).
+[Demo implementation (open on your phone) - Aardvark App](https://philfung.github.io).
 
 
 https://github.com/philfung/add-to-homescreen/assets/1054593/c941a1e1-ee60-498c-9ef2-bc21261ae431
