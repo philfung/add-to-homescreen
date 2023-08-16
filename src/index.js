@@ -63,6 +63,10 @@ class AddToHomeScreen {
     return this.isDeviceIOS() && navigator.userAgent.match(/safari/i);
   }
 
+  isBrowserIOSChrome() {
+    return this.isDeviceIOS() && navigator.userAgent.match(/chrome/i);
+  }
+
   show() {
     // the main function 
     // show the message modal to the user to add app to home screen
@@ -74,7 +78,7 @@ class AddToHomeScreen {
     var containerInnerHTML;
     var ret;
 
-    if (this.isStandAlone()) {
+    if (this.isStandAlone()) { // already installed
       ret = new AddToHomeScreen.ReturnObj(
         {
           isStandAlone: true,
@@ -82,53 +86,66 @@ class AddToHomeScreen {
           device: (this.isDeviceIOS() ? 'IOS' : 'ANDROID')
         }
       );
-    } else if (this.isDeviceIOS() && this.isBrowserIOSSafari()) {
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: true,
-          device: 'IOS'
-        }
-      );
-      containerInnerHTML = this._genIOSSafari();
-    } else if (this.isDeviceAndroid() && this.isBrowserAndroidChrome()) {
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: true,
-          device: 'ANDROID'
-        }
-      );
-      containerInnerHTML = this._genAndroidChrome();
-    } else if (this.isDeviceIOS()) {
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: false,
-          device: 'IOS'
-        }
-      );
-      if (this.showErrorMessageForUnsupportedBrowsers) {
-        containerInnerHTML = this._genErrorMessage(
-          `Please open this website with the Safari or Chrome app.`,
-          `Adding to home screen is only supported in Safari or Chrome on IOS.`
+    } else if (this.isDeviceIOS()) { // ios
+      if (this.isBrowserIOSSafari()) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: true,
+            device: 'IOS'
+          }
         );
-      }
-    } else if (this.isDeviceAndroid()) {
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: false,
-          device: 'ANDROID'
-        }
-      );
-      if (this.showErrorMessageForUnsupportedBrowsers) {
-        containerInnerHTML = this._genErrorMessage(
-          `Please open this website with the Chrome app.`,
-          `Adding to home screen is only supported in Chrome on Android.`
+        containerInnerHTML = this._genIOSSafari();
+      } else if (this.isBrowserIOSChrome()) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: true,
+            device: 'IOS'
+          }
         );
+        containerInnerHTML = this._genIOSChrome();
+      } else {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: false,
+            device: 'IOS'
+          }
+        );
+        if (this.showErrorMessageForUnsupportedBrowsers) {
+          containerInnerHTML = this._genErrorMessage(
+            `Please open this website with the Safari or Chrome app.`,
+            `Adding to home screen is only supported in Safari or Chrome on IOS.`
+          );
+        }
       }
-    } else {
+    } else if (this.isDeviceAndroid()) { // android
+      if (this.isBrowserAndroidChrome()) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: true,
+            device: 'ANDROID'
+          }
+        );
+        containerInnerHTML = this._genAndroidChrome();
+      } else {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: false,
+            device: 'ANDROID'
+          }
+        );
+        if (this.showErrorMessageForUnsupportedBrowsers) {
+          containerInnerHTML = this._genErrorMessage(
+            `Please open this website with the Chrome app.`,
+            `Adding to home screen is only supported in Chrome on Android.`
+          );
+        }
+      }
+    } else { // desktop
       ret = new AddToHomeScreen.ReturnObj(
         {
           isStandAlone: false,
@@ -235,6 +252,21 @@ class AddToHomeScreen {
   }
 
   _genIOSSafari() {
+    return this._genLogo() +
+      this._genModalStart() +
+      this._genTitle() +
+      this._genListStart() +
+      this._genListItem(`1`, `Tap the <img class="ios-safari-sharing-api-button" src="` + this._genAssetUrl('ios-safari-sharing-api-button.svg') + `"/> button below.`) +
+      this._genListItem(`2`, `Select <img class="ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span></b>`) +
+      this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
+      this._genListEnd() +
+      this._genModalEnd() +
+      `<div class="add-to-homescreen-ios-safari-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
+    </div>`;
+  }
+
+  _genIOSChrome() {
     return this._genLogo() +
       this._genModalStart() +
       this._genTitle() +
