@@ -1,14 +1,33 @@
-# Add to Homescreen 📱
-Adding to Home Screen allows mobile websites / PWA's to have nearly full app functionality without registering in the Apple/Google App Stores. 
+# add-to-homescreen 📱
+<p align="center">
+<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/310488ab-735d-434e-b3bb-f89dde993fa7" width="175"/>
+</p>
 </br>
-The UI Library guides a user to add the website to their home screen on IOS and Android.
+Adding to home screen functionality allows mobile websites or PWA's to work like native apps without registering in the Apple or Google App Stores. 
 </br>
-Instructions have been user-optimized and should yield ~85% home screen install rate on IOS and Android.
+This drop-in UI Library fully guides a user to add a mobile website to their home screen on IOS and Android.
+</br>
+Instructions in this library have been user-optimized and should yield a ~85% home screen install rate on IOS and Android.
 
-[Demo implementation (open on your phone) - Aardvark App](https://philfung.github.io).
+# Demo
+Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app called Aardvark.
 
-![demo-ios](https://github.com/philfung/add-to-homescreen/assets/1054593/310488ab-735d-434e-b3bb-f89dde993fa7)
 
+
+# Edge Case Support
+All the popular browsers on IOS and Android are supported, but in the edge case of a non-compliant or non-mobile browser, a message is shown to redirect the user to a supported browser.  This can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.
+
+Desktop users:
+</br>
+<img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
+
+iPhone users on non-Safari/non-Chrome:
+</br>
+<img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
+
+Android users on non-Chrome:
+</br>
+<img width="200" alt="android-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/0072304f-4ec5-4cab-b14b-e96a5226ae79">
 
 ## Installation
 Install the package using npm:
@@ -81,22 +100,12 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 # License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Edge Case Support
-Users not on add to homescreen supported mobile browsers or on desktop will be shown a message to redirect to a supported browser.
 
-Desktop users:
-<img width="384" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
-
-iPhone users:
-
-Android users:
 
 
 # TODOs
 - [ ] Add support for Chrome App on IOS
 - [ ] Update Android Chrome instructions for new Chrome release (include "Install App" messaging)
-- [ ] README: Add video thumbnails
-- [ ] README: Fill in missing url links
 
 
 
