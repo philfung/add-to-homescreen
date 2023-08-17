@@ -110,7 +110,8 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
+# Todos
+- [ ] Detect GMail Browser correctly
 
 
 

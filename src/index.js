@@ -48,23 +48,75 @@ class AddToHomeScreen {
   }
 
   isDeviceAndroid() {
-    return navigator.userAgent.match(/android/i);
+    return navigator.userAgent.match(/Android/);
   }
 
   isDeviceIOS() {
-    return navigator.userAgent.match(/iphone|ipad|ipod/i);
+    return navigator.userAgent.match(/iPhone|iPad|iPod/);
   }
 
-  isBrowserAndroidChrome() {
-    return this.isDeviceAndroid() && navigator.userAgent.match(/chrome/i);
-  }
-
+    /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
+     AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
+     Mobile/14E5239e Safari/602.1 */
   isBrowserIOSSafari() {
-    return this.isDeviceIOS() && navigator.userAgent.match(/safari/i);
+    return this.isDeviceIOS() && 
+    navigator.userAgent.match(/Safari/) && 
+    !this.isBrowserIOSChrome() &&
+    !this.isBrowserIOSFacebook() &&
+    !this.isBrowserIOSInstagram() &&
+    !this.isBrowserIOSFirefox();
   }
 
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
+     AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75
+     Mobile/14E5239e Safari/602.1 */
   isBrowserIOSChrome() {
-    return this.isDeviceIOS() && navigator.userAgent.match(/chrome/i);
+    return this.isDeviceIOS() && navigator.userAgent.match(/CriOS/);
+  }
+
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) 
+     Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone10,5;FBMD/iPhone;FBSN/iOS;FBSV/12.3.2;FBSS/3;FBCR/AT&T;
+     FBID/phone;FBLC/en_US;FBOP/5] */
+  isBrowserIOSFacebook() {
+    return this.isDeviceIOS() && navigator.userAgent.match(/FBAN|FBAV/);
+  }
+
+  isBrowserIOSInstagram() {
+    return this.isDeviceIOS() && navigator.userAgent.match(/Instagram/)
+  }
+
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
+  AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
+  isBrowserIOSFirefox() {
+    return this.isDeviceIOS() && navigator.userAgent.match(/FxiOS/);
+  }
+
+  /* Mozilla/5.0 (Linux; Android 10) 
+     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
+  isBrowserAndroidChrome() {
+    return this.isDeviceAndroid() && 
+    navigator.userAgent.match(/Chrome/) &&
+    !this.isBrowserAndroidFacebook() &&
+    !this.isBrowserAndroidSamsung() &&
+    !this.isBrowserAndroidFirefox();
+  }
+
+  /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
+    AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
+    Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
+  isBrowserAndroidFacebook() {
+    return this.isDeviceAndroid() && navigator.userAgent.match(/FBAN|FBAV/);
+  }
+
+  /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
+  (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
+  isBrowserAndroidSamsung() {
+    return this.isDeviceAndroid() && navigator.userAgent.match(/SamsungBrowser/);
+  }
+
+  /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
+  isBrowserAndroidFirefox() {
+    return this.isDeviceAndroid() && navigator.userAgent.match(/Firefox/);
   }
 
   show() {
