@@ -1,7 +1,4 @@
 # add-to-homescreen 📱
-<p align="center">
-<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/310488ab-735d-434e-b3bb-f89dde993fa7" width="175"/>
-</p>
 
 ## Motivation
 Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add to their home screen, limiting the utility of websites compared to native apps.
@@ -12,6 +9,8 @@ This drop-in JS Library for mobile websites effectively guides a user to add the
 Instructions and UI in this library have been "battle-tested" and has yielded an *~85% home screen install rate* on IOS and Android in past implementations.
 
 ## Demo
+https://github.com/philfung/add-to-homescreen/assets/1054593/bec07070-11b8-4dd6-a4de-b549179073e7
+
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app called Aardvark <img width="40" alt="aardvark-icon" src="https://github.com/philfung/add-to-homescreen/assets/1054593/e933af84-9225-4079-8fd7-5af525878693">
 
 
