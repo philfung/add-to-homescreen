@@ -259,7 +259,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       `<div class="error-title">` + title + `</div>` +
       `<div class="error-body">` + body + `</div>` +
-      `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard()">Copy Website Link to Clipboard</button>` +
+      `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard()" ontouchstart="AddToHomeScreen.copyToClipboard()">Copy Website Link to Clipboard</button>` +
       this._genModalEnd();
     container.innerHTML = containerInnerHTML;
   }
