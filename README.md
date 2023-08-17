@@ -8,12 +8,10 @@ This drop-in JS Library for mobile websites effectively guides a user to add the
 </br>
 Instructions and UI in this library have been "battle-tested" and has yielded an *~85% home screen install rate* on IOS and Android in past implementations.
 
-<!-- ## Demo
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app "Aardvark" <img width="40" alt="aardvark-icon" src="https://github.com/philfung/add-to-homescreen/assets/1054593/e933af84-9225-4079-8fd7-5af525878693">
 
 ![demo-iphone](https://github.com/philfung/add-to-homescreen/assets/1054593/855108a0-e0ed-4213-8789-76d59345dd46)
 
--->
 ## Browser Support
 All major browsers on IOS and Android are supported comprising 95% of browser use on each platform.
 Here are the guides shown for each platform/browser:
