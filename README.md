@@ -15,7 +15,7 @@ Here is a [demo (please open on your phone)](https://philfung.github.io) of libr
 
 
 ## Browser Support
-All major browsers on IOS and Android are supported comprising > 95% of browser use on each platform.
+All major browsers on IOS and Android are supported comprising > 90% of browser use on each platform.
 Here the guiding messages shown for each browser:
 #### IOS - Safari browser
 <img src="https://github.com/philfung/add-to-homescreen/assets/1054593/f4f763e6-a3fa-4871-ae4a-699fd57bbcf6" width="175"/>
@@ -27,7 +27,7 @@ Here the guiding messages shown for each browser:
 <img src="https://github.com/philfung/add-to-homescreen/assets/1054593/53f06e82-61f3-4173-890e-0a6a42026dea)" width="175"/>
 
 ## Browser Fallback Support
-All the popular browsers on IOS and Android are supported, but in the edge case of a non-compliant or non-mobile browser, a message is shown to redirect the user to a supported browser.  (This message can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.)
+All major browsers on IOS and Android are supported, but in the edge case of a non-compliant or desktop browser, a message is shown to redirect the user to a supported browser.  (This feature can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.)
 
 #### Desktop users
 <img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
