@@ -15,8 +15,8 @@ Here is a [demo (please open on your phone)](https://philfung.github.io) of libr
 
 
 ## Browser Support
-All major browsers on IOS and Android are supported comprising > 90% of browser use on each platform.
-Here the guiding messages shown for each browser:
+All major browsers on IOS and Android are supported comprising 95% of browser use on each platform.
+Here are the guides shown for each platform/browser:
 #### IOS - Safari browser
 <img src="https://github.com/philfung/add-to-homescreen/assets/1054593/f4f763e6-a3fa-4871-ae4a-699fd57bbcf6" width="175"/>
 
