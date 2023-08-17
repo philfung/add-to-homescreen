@@ -116,6 +116,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Todos
+- [ ] Use a different font other than Material, looks janky, especially the title text.
 - [ ] Guide in-app browsers users to open system browser instead: 
     - [ ] GMail
     - [ ] LinkedIn
