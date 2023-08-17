@@ -116,7 +116,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 - [ ] Guide Instagram browser users to open system browser
 - [ ] Guide Linkedin browser users to open system browser
 - [ ] Detect GMail Browser correctly
-- [ ] Chrome IOS: fix position of arrow and replace icon
+- [ ] IOS Chrome: replace settings icon
 - [ ] fix ontouchstart not being called on copy link button on the error screen
 
 
