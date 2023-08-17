@@ -123,39 +123,6 @@
   flex-direction: column;
 }
 
-.add-to-homescreen-container .modal .list .android-chrome-more-button {
-  height: 35px;
-  background: white;
-  margin: 0px 5px -6px 5px;
-  box-shadow: 1px 1px 2px gray;
-  border-radius: 4px;
-}
-
-.add-to-homescreen-container .modal .list .android-chrome-add-to-homescreen-button {
-  height: 37px;
-  background: white;
-  margin: 0px 5px -10px 5px;
-  box-shadow: 1px 1px 2px gray;
-  border-radius: 4px;
-  padding: 0px 7px 0px 4px;
-}
-
-.add-to-homescreen-container .modal .list .ios-safari-sharing-api-button {
-  height: 35px;
-  margin: 0px 5px -7px 5px;
-  box-shadow: 1px 1px 2px gray;
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-.add-to-homescreen-container .modal .list .ios-safari-add-to-home-screen-button {
-  height: 35px;
-  margin: 0px 5px -7px 5px;
-  box-shadow: 1px 1px 2px gray;
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
 .add-to-homescreen-container .modal .list .emphasis {
   font-weight: 800;
   font-size: 21px;
@@ -209,6 +176,23 @@
   line-height: 29px;
 }
 
+/* IOS Safari */
+.add-to-homescreen-container.ios.safari .modal .list .ios-safari-sharing-api-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.add-to-homescreen-container.ios.safari .modal .list .ios-safari-add-to-home-screen-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
 @keyframes add-to-homescreen-ios-safari-bouncing-arrow-animation {
 
   0%,
@@ -228,7 +212,7 @@
   }
 }
 
-.add-to-homescreen-container .add-to-homescreen-ios-safari-bouncing-arrow-container img {
+.add-to-homescreen-container.ios.safari .add-to-homescreen-ios-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
   bottom: 0px;
@@ -238,6 +222,51 @@
   animation: add-to-homescreen-ios-safari-bouncing-arrow-animation 2s infinite;
 }
 
+/* IOS Chrome */
+@keyframes add-to-homescreen-ios-chrome-bouncing-arrow-animation {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(20px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+.add-to-homescreen-container.ios.chrome .modal .list .ios-chrome-more-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.add-to-homescreen-container.ios.chrome .add-to-homescreen-ios-chrome-bouncing-arrow-container img {
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  animation: add-to-homescreen-android-chrome-bouncing-arrow-animation 1.5s infinite;
+}
+
+.add-to-homescreen-container.ios.chrome .modal .list .ios-chrome-add-to-home-screen-button {
+  height: 35px;
+  margin: 0px 5px -7px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+/* Android Chrome */
 @keyframes add-to-homescreen-android-chrome-bouncing-arrow-animation {
 
   0%,
@@ -257,10 +286,40 @@
   }
 }
 
-.add-to-homescreen-container .add-to-homescreen-android-chrome-bouncing-arrow-container img {
+.add-to-homescreen-container.android.chrome .add-to-homescreen-android-chrome-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 15px;
   animation: add-to-homescreen-android-chrome-bouncing-arrow-animation 1.5s infinite;
+}
+
+.add-to-homescreen-container.android.chrome .modal .list .android-chrome-more-button {
+  height: 35px;
+  background: white;
+  margin: 0px 5px -11px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+}
+
+.add-to-homescreen-container.android.chrome .modal .list .android-chrome-add-to-homescreen-button {
+  height: 37px;
+  background: white;
+  margin: 0px 5px -10px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  padding: 0px 7px 0px 4px;
+}
+
+.add-to-homescreen-container.android.chrome .modal .list .android-chrome-install-app {
+  height: 37px;
+  background: white;
+  margin: 10px 5px -10px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+  padding: 0px;
+}
+
+.add-to-homescreen-container.android.chrome .modal .list .list-item .instruction {
+  line-height: 34px;
 }
