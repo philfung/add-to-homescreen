@@ -52,13 +52,14 @@ npm start
 ```
 
 ## Usage
-Follow above installation instructions above to compile JS and CSS.  Then, add to your website:
+This should be a quick drop-in library to your mobile website codebase. 
 
-1. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
+1. Follow installation instructions above to compile JS and CSS.
+2. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
    This folder includes all js,css, and image assets required.
 
-2. Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
-    1. in your root directory, include a square app icon of at least 40 x 40 px specifically named ["apple-touch-icon.png"](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)    
+3. Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
+    1. in your root directory, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named ["apple-touch-icon.png"](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)    
     2. in your root directory, include a web manifest file ["manifest.json"](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json). Reference the manifest in your index HTML file. 
         ```
         = index.html =
@@ -68,7 +69,7 @@ Follow above installation instructions above to compile JS and CSS.  Then, add t
         ..
         </head>
         ```
-3. Include the library JavaScript and CSS files in your index HTML file:
+4. Include the library JavaScript and CSS files in your index HTML file:
 
     ```
     = index.html =
@@ -80,7 +81,7 @@ Follow above installation instructions above to compile JS and CSS.  Then, add t
     </head>
     ```
 
-4. Call the library on your website.
+5. Call the library on your website.
 
     ```
     = index.html =
