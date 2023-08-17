@@ -37,10 +37,10 @@ Guided to open the link in the system browser.
 </br>
 <img width="200" alt="facebook-browser" src="https://github.com/philfung/add-to-homescreen/assets/1054593/04135f4d-76b1-4797-bd3f-dc402cf9abb4">
 
-#### iPhone users not on Safari or Chrome
+#### iPhone users not on Safari or Chrome or in-app browser
 <img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
 
-#### Android users not on Chrome
+#### Android users not on Chrome or in-app browser
 <img width="200" alt="android-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/0072304f-4ec5-4cab-b14b-e96a5226ae79">
 
 ## Installation
