@@ -81,7 +81,7 @@ This should be a quick drop-in library to your mobile website codebase.
     </head>
     ```
 
-5. Call the library on your website.
+5. Call the library.
 
     ```
     = index.html =
