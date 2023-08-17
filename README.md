@@ -4,12 +4,12 @@
 </p>
 
 ## Motivation
-Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add to their home screen.
+Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add to their home screen, limiting the utility of websites compared to native apps.
 
 ## This Library
 This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on both IOS and Android.
 </br>
-Instructions and UI in this library have been "battle-tested" and should yield a *~85% home screen install rate* on IOS and Android.
+Instructions and UI in this library have been "battle-tested" in real apps and should yield a *~85% home screen install rate* on IOS and Android.
 
 ## Demo
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app called Aardvark.
