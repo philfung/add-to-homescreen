@@ -32,6 +32,11 @@ All major browsers on IOS and Android are supported, but in the edge case of a n
 #### Desktop users
 <img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
 
+#### iPhone and Android users on the Facebook in-app browser
+Guided to open the link in the system browser.
+</br>
+<img width="200" alt="facebook-browser" src="https://github.com/philfung/add-to-homescreen/assets/1054593/04135f4d-76b1-4797-bd3f-dc402cf9abb4">
+
 #### iPhone users not on Safari or Chrome
 <img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
 
