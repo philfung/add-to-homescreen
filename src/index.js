@@ -1,5 +1,5 @@
 import './styles.css';
-console.log("BOO");
+
 class AddToHomeScreen {
 
 /**
@@ -73,12 +73,12 @@ class AddToHomeScreen {
     // returns an object indicating what device/browser was detected, in case user wants
     // to use that info for some other UI purpose
     const container = document.createElement('div');
-    container.className = 'add-to-homescreen-container';
+    container.classList.add('add-to-homescreen-container');
 
-    var containerInnerHTML;
     var ret;
+    var _isStandAlone = this.isStandAlone();
 
-    if (this.isStandAlone()) { // already installed
+    if (_isStandAlone) { // already installed
       ret = new AddToHomeScreen.ReturnObj(
         {
           isStandAlone: true,
@@ -95,7 +95,7 @@ class AddToHomeScreen {
             device: 'IOS'
           }
         );
-        containerInnerHTML = this._genIOSSafari();
+        this._genIOSSafari(container);
       } else if (this.isBrowserIOSChrome()) {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -104,7 +104,7 @@ class AddToHomeScreen {
             device: 'IOS'
           }
         );
-        containerInnerHTML = this._genIOSChrome();
+        this._genIOSChrome(container);
       } else {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -114,7 +114,8 @@ class AddToHomeScreen {
           }
         );
         if (this.showErrorMessageForUnsupportedBrowsers) {
-          containerInnerHTML = this._genErrorMessage(
+          this._genErrorMessage(
+            container,
             `Please open this website with the Safari or Chrome app.`,
             `Adding to home screen is only supported in Safari or Chrome on IOS.`
           );
@@ -129,7 +130,7 @@ class AddToHomeScreen {
             device: 'ANDROID'
           }
         );
-        containerInnerHTML = this._genAndroidChrome();
+        this._genAndroidChrome(container);
       } else {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -139,7 +140,8 @@ class AddToHomeScreen {
           }
         );
         if (this.showErrorMessageForUnsupportedBrowsers) {
-          containerInnerHTML = this._genErrorMessage(
+          this._genErrorMessage(
+            container,
             `Please open this website with the Chrome app.`,
             `Adding to home screen is only supported in Chrome on Android.`
           );
@@ -154,15 +156,15 @@ class AddToHomeScreen {
         }
       );
       if (this.showErrorMessageForUnsupportedBrowsers) {
-        containerInnerHTML += this._genErrorMessage(
+        this._genErrorMessage(
+          container,
           `Please open this website on a mobile device.`,
           `Installing to your home screen is currently only supported on IOS and Android.`
         );
       }
     }
 
-    if (containerInnerHTML) {
-      container.innerHTML = containerInnerHTML;
+    if (!_isStandAlone) {
       document.body.appendChild(container);
       this._registerCloseListener();
 
@@ -199,13 +201,15 @@ class AddToHomeScreen {
       `;
   }
 
-  _genErrorMessage(title, body) {
-    return this._genLogo() +
+  _genErrorMessage(container, title, body) {
+    var containerInnerHTML =
+      this._genLogo() +
       this._genModalStart() +
       `<div class="error-title">` + title + `</div>` +
       `<div class="error-body">` + body + `</div>` +
       `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard()">Copy Website Link to Clipboard</button>` +
       this._genModalEnd();
+    container.innerHTML = containerInnerHTML;
   }
 
 
@@ -251,8 +255,9 @@ class AddToHomeScreen {
     return this.assetUrl + fileName;
   }
 
-  _genIOSSafari() {
-    return this._genLogo() +
+  _genIOSSafari(container) {
+    var containerInnerHTML = 
+      this._genLogo() +
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
@@ -264,36 +269,48 @@ class AddToHomeScreen {
       `<div class="add-to-homescreen-ios-safari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('ios');
+    container.classList.add('safari');
   }
 
-  _genIOSChrome() {
-    return this._genLogo() +
+  _genIOSChrome(container) {
+    var containerInnerHTML = 
+      this._genLogo() +
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="ios-safari-sharing-api-button" src="` + this._genAssetUrl('ios-safari-sharing-api-button.svg') + `"/> button below.`) +
-      this._genListItem(`2`, `Select <img class="ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span></b>`) +
+      this._genListItem(`1`, `Tap the <img class="ios-chrome-more-button" src="` + this._genAssetUrl('ios-chrome-more-button.svg') + `"/> button in the upper right corner.`) +
+      this._genListItem(`2`, `Select <img class="ios-chrome-add-to-home-screen-button" src="` + this._genAssetUrl('ios-chrome-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span></b>`) +
       this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-ios-safari-bouncing-arrow-container">
-      <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
+      `<div class="add-to-homescreen-ios-chrome-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('ios-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('ios');
+    container.classList.add('chrome');
   }
 
-  _genAndroidChrome() {
-    return this._genLogo() +
+  _genAndroidChrome(container) {
+    var containerInnerHTML = 
+      this._genLogo() +
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
       this._genListItem(`1`, `Tap the <img class="android-chrome-more-button" src="` + this._genAssetUrl('android-chrome-more-button.svg') + `"/> button in the browser bar.`) +
-      this._genListItem(`2`, `Tap <img class="android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>.`) +
+      this._genListItem(`2`, `Tap <img class="android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>` +  
+      `or <img class="android-chrome-install-app" src="` + this._genAssetUrl('android-chrome-install-app.svg') + `"/> .`) +
       this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
       `<div class="add-to-homescreen-android-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('android');
+    container.classList.add('chrome');
   }
 
   _registerCloseListener() {

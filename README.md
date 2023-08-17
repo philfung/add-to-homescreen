@@ -103,9 +103,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 
 
-# TODOs
-- [ ] Add support for Chrome App on IOS
-- [ ] Update Android Chrome instructions for new Chrome release (include "Install App" messaging)
+
 
 
 
