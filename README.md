@@ -2,31 +2,40 @@
 <p align="center">
 <img src="https://github.com/philfung/add-to-homescreen/assets/1054593/310488ab-735d-434e-b3bb-f89dde993fa7" width="175"/>
 </p>
-</br>
-Adding to home screen functionality allows mobile websites or PWA's to work like native apps without registering in the Apple or Google App Stores. 
-</br>
-This drop-in UI Library fully guides a user to add a mobile website to their home screen on IOS and Android.
-</br>
-Instructions in this library have been user-optimized and should yield a ~85% home screen install rate on IOS and Android.
 
-# Demo
+## Motivation
+Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add to their home screen.
+
+## This Library
+This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on both IOS and Android.
+</br>
+Instructions and UI in this library have been "battle-tested" and should yield a *~85% home screen install rate* on IOS and Android.
+
+## Demo
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app called Aardvark.
 
+## Browser Support
+All major browsers on IOS and Android are supported comprising > 95% of browser use on each platform.
+Here the guiding messages shown for each browser:
+#### IOS - Safari browser
+<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/f4f763e6-a3fa-4871-ae4a-699fd57bbcf6" width="175"/>
 
+#### IOS - Chrome browser
+<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/122d6a59-4657-421f-8c9f-17e6467b8485)" width="175"/>
 
-# Edge Case Support
-All the popular browsers on IOS and Android are supported, but in the edge case of a non-compliant or non-mobile browser, a message is shown to redirect the user to a supported browser.  This can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.
+#### Android - Chrome browser
+<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/53f06e82-61f3-4173-890e-0a6a42026dea)" width="175"/>
 
-Desktop users:
-</br>
+## Browser Fallback Support
+All the popular browsers on IOS and Android are supported, but in the edge case of a non-compliant or non-mobile browser, a message is shown to redirect the user to a supported browser.  (This message can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.)
+
+#### Desktop users
 <img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
 
-iPhone users on non-Safari/non-Chrome:
-</br>
+#### iPhone users not on Safari or Chrome
 <img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
 
-Android users on non-Chrome:
-</br>
+#### Android users not on Chrome
 <img width="200" alt="android-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/0072304f-4ec5-4cab-b14b-e96a5226ae79">
 
 ## Installation
@@ -93,11 +102,11 @@ Follow above installation instructions above to compile JS and CSS.  Then, add t
     </script>
     ```
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
-# Dependencies
+## Dependencies
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
 
-# License
+## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
