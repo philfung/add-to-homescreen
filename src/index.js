@@ -157,6 +157,15 @@ class AddToHomeScreen {
           }
         );
         this._genIOSChrome(container);
+      } else if (this.isBrowserIOSFacebook()) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: false,
+            device: 'IOS'
+          }
+        );
+        this._genFacebook(container);
       } else {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -183,6 +192,15 @@ class AddToHomeScreen {
           }
         );
         this._genAndroidChrome(container);
+      } else if (this.isBrowserAndroidFacebook()) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: false,
+            device: 'ANDROID'
+          }
+        );
+        this._genFacebook(container);
       } else {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -314,7 +332,7 @@ class AddToHomeScreen {
       this._genTitle() +
       this._genListStart() +
       this._genListItem(`1`, `Tap the <img class="ios-safari-sharing-api-button" src="` + this._genAssetUrl('ios-safari-sharing-api-button.svg') + `"/> button below.`) +
-      this._genListItem(`2`, `Select <img class="ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span></b>`) +
+      this._genListItem(`2`, `Select <img class="ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span>`) +
       this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
@@ -343,6 +361,24 @@ class AddToHomeScreen {
     container.innerHTML = containerInnerHTML;
     container.classList.add('ios');
     container.classList.add('chrome');
+  }
+
+  _genFacebook(container) {
+    var containerInnerHTML = 
+      this._genLogo() +
+      this._genModalStart() +
+      this._genTitle() +
+      this._genListStart() +
+      this._genListItem(`1`, `Tap the <img class="more-button" src="` + this._genAssetUrl('generic-more-button.svg') + `"/> button above.`) +
+      this._genListItem(`2`, `Tap <span class="emphasis">Open in browser</span>  .`) +
+      this._genListEnd() +
+      this._genModalEnd() +
+      `<div class="add-to-homescreen-facebook-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('generic-vertical-bouncing-arrow.svg') + `" alt="arrow" />
+    </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('ios');
+    container.classList.add('facebook');
   }
 
   _genAndroidChrome(container) {
