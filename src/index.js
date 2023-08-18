@@ -59,6 +59,7 @@ class AddToHomeScreen {
      AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
      Mobile/14E5239e Safari/602.1 */
   isBrowserIOSSafari() {
+    return false;
     return this.isDeviceIOS() && 
     navigator.userAgent.match(/Safari/) && 
     !this.isBrowserIOSChrome() &&
@@ -78,6 +79,7 @@ class AddToHomeScreen {
      Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone10,5;FBMD/iPhone;FBSN/iOS;FBSV/12.3.2;FBSS/3;FBCR/AT&T;
      FBID/phone;FBLC/en_US;FBOP/5] */
   isBrowserIOSFacebook() {
+    return true;
     return this.isDeviceIOS() && navigator.userAgent.match(/FBAN|FBAV/);
   }
 

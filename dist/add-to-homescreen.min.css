@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);
 .add-to-homescreen-container {
   display: block;
   position: absolute;
@@ -81,20 +81,18 @@
 }
 
 .add-to-homescreen-container .modal .title {
-  font-size: 31px;
-  font-weight: 800;
+  font-size: 27px;
+  font-weight: 700;
   max-width: 330px;
   margin-bottom: 18px;
-  line-height: 35px;
-  letter-spacing: -.05rem;
   margin: 0px 0px 18px 3px;
 }
 
 .add-to-homescreen-container .modal .error-title {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 25px;
+  font-weight: 700;
   margin: 0px 0px 18px 20px;
-  max-width: 300px;
+  max-width: 320px;
   line-height: 35px;
   letter-spacing: -.05rem;
 }
@@ -124,9 +122,8 @@
 }
 
 .add-to-homescreen-container .modal .list .emphasis {
-  font-weight: 800;
-  font-size: 21px;
-  letter-spacing: -.05rem;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .add-to-homescreen-container .modal .list .your-app-icon {
@@ -173,7 +170,7 @@
   text-align: left;
   font-size: 20px;
   padding: 0px 0px 6px 9px;
-  line-height: 29px;
+  line-height: 27px;
 }
 
 /* IOS Safari */
@@ -336,6 +333,7 @@
   box-shadow: 1px 1px 2px gray;
   background: white;
   width: fit-content;
+  font-weight: 500;
 }
 
 .add-to-homescreen-container.facebook .modal .list .list-item {
@@ -370,7 +368,7 @@
   height: 40px;
   position: absolute;
   top: 0;
-  right: 8px;
+  right: 6px;
   animation: add-to-homescreen-facebook-bouncing-arrow-animation 1.5s infinite;
 }
 
