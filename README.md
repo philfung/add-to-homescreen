@@ -114,6 +114,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Todos
+- [ ] Issue with overlay not covering the website when re-sized
 - [ ] Guide in-app browsers users to open system browser instead: 
     - [ ] GMail
     - [ ] LinkedIn
