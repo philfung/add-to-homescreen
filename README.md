@@ -115,16 +115,21 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 # Todos
 - [ ] Issue with overlay not covering the website when re-sized
-- [ ] Guide in-app browsers users to open system browser: 
+- [ ] Fix in-app browser detection:
     - IOS
         - [x] GMail (no issue, opens in system browser)
+        - [x] Facebook
         - [x] LinkedIn
         - [x] Threads
         - [x] Instagram
+        - [ ] Twitter
         - [ ] Reddit
         - [ ] Google App
+
     - Android
+        - [x] Facebook
         - [x] GMail (no issue, opens in system browser)
+        - [ ] Twitter
         - [ ] LinkedIn
         - [ ] Threads
         - [ ] Instagram
