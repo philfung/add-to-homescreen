@@ -127,8 +127,8 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [x] Facebook
         - [x] GMail (no issue, opens in system browser)
         - [x] LinkedIn
-        - [ ] Threads (only fixed for initially loaded link as solution uses referrers)
-        - [ ] Instagram (only fixed for initially loaded link as solution uses referrers)
+        - [x] Threads
+        - [x] Instagram
         - [ ] Twitter (only fixed for initially loaded link as solution uses referrers)
         - [ ] Reddit
         - [ ] Google App
