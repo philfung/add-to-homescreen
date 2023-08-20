@@ -322,12 +322,12 @@
   line-height: 34px;
 }
 
-/* Facebook Browser */
-.add-to-homescreen-container.facebook .modal .title {
+/* In-App Browser */
+.add-to-homescreen-container.inappbrowser .modal .title {
   margin: 0px 0px 9px 3px;
 }
 
-.add-to-homescreen-container.facebook .modal .list .emphasis {
+.add-to-homescreen-container.inappbrowser .modal .list .emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -337,16 +337,16 @@
   font-weight: 500;
 }
 
-.add-to-homescreen-container.facebook .modal .list .list-item {
+.add-to-homescreen-container.inappbrowser .modal .list .list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.add-to-homescreen-container.facebook .modal .list .list-item .instruction {
+.add-to-homescreen-container.inappbrowser .modal .list .list-item .instruction {
   padding: 0px 0px 2px 9px;
   line-height: 42px;
 }
 
-@keyframes add-to-homescreen-facebook-bouncing-arrow-animation {
+@keyframes add-to-homescreen-inappbrowser-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -365,15 +365,15 @@
   }
 }
 
-.add-to-homescreen-container.facebook .add-to-homescreen-facebook-bouncing-arrow-container img {
+.add-to-homescreen-container.inappbrowser .add-to-homescreen-inappbrowser-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 6px;
-  animation: add-to-homescreen-facebook-bouncing-arrow-animation 1.5s infinite;
+  animation: add-to-homescreen-inappbrowser-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.facebook .modal .list .more-button {
+.add-to-homescreen-container.inappbrowser .modal .list .more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
