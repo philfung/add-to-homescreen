@@ -100,10 +100,10 @@ class AddToHomeScreen {
 
     // referrers for in-app browsers
     // https://t.co/ (Twitter in-app browser)
-    // https://l.instagram.com/ (Instagram & Threads in-app browser)
+    // https://1.instagram.com/ (Instagram & Threads in-app browser)
     // https://www.linkedin.com/ (LinkedIn in-app browser)
     // https://m.facebook.com/ (Facebook in-app browser)
-    if (!window.document.referrer.match('//t.co/|//l.instagram.com/')) {
+    if (!window.document.referrer.match('//t.co/|//1.instagram.com/')) {
       return false;
     }
 
