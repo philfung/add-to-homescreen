@@ -115,6 +115,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 # Todos
 - [ ] Issue with overlay not covering the website when re-sized
+- [ ] Error Screen: fix ontouchstart not being triggered on Android Chrome
 - [ ] Fix in-app browser detection:
     - IOS
         - [x] Facebook
@@ -136,8 +137,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [ ] Reddit
         - [ ] Google App
 - [ ] IOS Chrome: in modal, replace the settings icon with properly colored gray icon
-- [ ]
-- [ ] Error Screen: fix ontouchstart not being triggered on Android Chrome
+
 
 
 
