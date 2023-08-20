@@ -117,12 +117,12 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 - [ ] Issue with overlay not covering the website when re-sized
 - [ ] Fix in-app browser detection:
     - IOS
-        - [x] GMail (no issue, opens in system browser)
         - [x] Facebook
+        - [x] GMail (no issue, opens in system browser)
         - [x] LinkedIn
-        - [x] Threads
-        - [x] Instagram
-        - [ ] Twitter
+        - [x] Threads 
+        - [x] Instagram 
+        - [x] Twitter
         - [ ] Reddit
         - [ ] Google App
 

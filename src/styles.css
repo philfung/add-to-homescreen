@@ -322,12 +322,12 @@
   line-height: 34px;
 }
 
-/* In-App Browser */
-.add-to-homescreen-container.inappbrowser .modal .title {
+/* In-App System Browser */
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .title {
   margin: 0px 0px 9px 3px;
 }
 
-.add-to-homescreen-container.inappbrowser .modal .list .emphasis {
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -337,16 +337,16 @@
   font-weight: 500;
 }
 
-.add-to-homescreen-container.inappbrowser .modal .list .list-item {
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.add-to-homescreen-container.inappbrowser .modal .list .list-item .instruction {
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .list-item .instruction {
   padding: 0px 0px 2px 9px;
   line-height: 42px;
 }
 
-@keyframes add-to-homescreen-inappbrowser-bouncing-arrow-animation {
+@keyframes add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -365,15 +365,75 @@
   }
 }
 
-.add-to-homescreen-container.inappbrowser .add-to-homescreen-inappbrowser-bouncing-arrow-container img {
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 6px;
-  animation: add-to-homescreen-inappbrowser-bouncing-arrow-animation 1.5s infinite;
+  animation: add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.inappbrowser .modal .list .more-button {
+.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .more-button {
+  height: 35px;
+  background: white;
+  margin: 0px 5px -11px 5px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 4px;
+}
+
+/* In-App Safari Browser */
+.add-to-homescreen-container.inappbrowser-openinsafari .modal .title {
+  margin: 0px 0px 9px 3px;
+}
+
+.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .emphasis {
+  padding: 6px 8px;
+  border-radius: 5px;
+  margin: 0px 0px 0px 5px;
+  box-shadow: 1px 1px 2px gray;
+  background: white;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .list-item {
+  margin: 6px 0px 9px 0px;
+}
+
+.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .list-item .instruction {
+  padding: 0px 0px 0px 9px;
+  line-height: 34px;
+  margin: 4px 0px 0px 0px;
+}
+
+@keyframes add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(20px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+.add-to-homescreen-container.inappbrowser-openinsafari .add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container img {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 6px;
+  animation: add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
+}
+
+.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;

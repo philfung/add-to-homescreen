@@ -62,8 +62,12 @@ class AddToHomeScreen {
     return this.isDeviceIOS() && 
     navigator.userAgent.match(/Safari/) && 
     !this.isBrowserIOSChrome() &&
-    !this.isBrowserIOSInAppBrowser() &&
-    !this.isBrowserIOSFirefox();
+    !this.isBrowserIOSFirefox() &&
+    !this.isBrowserIOSInAppFacebook() &&
+    !this.isBrowserIOSInAppLinkedin() &&
+    !this.isBrowserIOSInAppInstagram() &&
+    !this.isBrowserIOSInAppThreads() &&
+    !this.isBrowserIOSInAppTwitter();
   }
 
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
@@ -79,43 +83,40 @@ class AddToHomeScreen {
     return this.isDeviceIOS() && navigator.userAgent.match(/FxiOS/);
   }
 
-  // is internal app browser
-  // e.g. Facebook in-app browser, Instagram, Threads, Twitter, Linkedin etc.
-  // Note these heuristics are specific to IOS IAB, Android is completely different
-  isBrowserIOSInAppBrowser() {
+  isBrowserIOSInAppFacebook() {
     if (!this.isDeviceIOS()) {
       return false;
     }
 
-    // Facebook In-App Browser has user agent string containing "FBAN" or "FBAV"
-    // Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone10,5;FBMD/iPhone;FBSN/iOS;FBSV/12.3.2;FBSS/3;FBCR/AT&T;FBID/phone;FBLC/en_US;FBOP/5] 
-    if (window.navigator.userAgent.match(/FBAN|FBAV/)) {
-      return true;
-    }
+    return window.navigator.userAgent.match(/FBAN|FBAV/);
+  }
 
-    // Linkedin In-App Browser has user agent string containing "LinkedInApp"
-    if (window.navigator.userAgent.match(/LinkedInApp/)) {
-      return true;
-    }
-
-    // referrers for in-app browsers
-    // https://t.co/ (Twitter in-app browser)
-    // https://1.instagram.com/ (Instagram & Threads in-app browser)
-    // https://www.linkedin.com/ (LinkedIn in-app browser)
-    // https://m.facebook.com/ (Facebook in-app browser)
-    if (!window.document.referrer.match('//t.co/|//1.instagram.com/')) {
+  isBrowserIOSInAppLinkedin() {
+    if (!this.isDeviceIOS()) {
       return false;
     }
 
-    if (!window.screen.height || !window.outerHeight) {
-      console.log("isBrowserIOSInternalApp: window.screen.height or window.outerHeight is undefined");
+    return window.navigator.userAgent.match(/LinkedInApp/);
+  }
+
+  isBrowserIOSInAppInstagram() {
+    if (!this.isDeviceIOS()) {
       return false;
     }
 
-    // in ios (NOT true on android)
-    // for in-app browsers, the in-app browser window is specifically shorter than the overall screen
-    // for full browser apps. the window height and overall screen height are the same.
-    return (window.outerHeight < window.screen.height);
+    return window.document.referrer.match('//l.instagram.com/');
+  }
+
+  isBrowserIOSInAppThreads() {
+    return this.isBrowserIOSInAppInstagram();
+  }
+
+  isBrowserIOSInAppTwitter() {
+    if (!this.isDeviceIOS()) {
+      return false;
+    }
+
+    return window.document.referrer.match('//t.co/');
   }
 
   /* Mozilla/5.0 (Linux; Android 10) 
@@ -184,7 +185,10 @@ class AddToHomeScreen {
           }
         );
         this._genIOSChrome(container);
-      } else if (this.isBrowserIOSInAppBrowser()) {
+      } else if (
+        this.isBrowserIOSInAppFacebook() ||
+        this.isBrowserIOSInAppLinkedin()
+        ) {
         ret = new AddToHomeScreen.ReturnObj(
           {
             isStandAlone: false,
@@ -192,8 +196,21 @@ class AddToHomeScreen {
             device: 'IOS'
           }
         );
-        this._genIOSInAppBrowser(container);
-      } else {
+        this._genIOSInAppBrowserOpenInSystemBrowser(container);
+      } else if (
+        this.isBrowserIOSInAppInstagram() ||
+        this.isBrowserIOSInAppThreads() ||
+        this.isBrowserIOSInAppTwitter()
+      ) {
+        ret = new AddToHomeScreen.ReturnObj(
+          {
+            isStandAlone: false,
+            canBeStandAlone: false,
+            device: 'IOS'
+          }
+        );
+        this._genIOSInAppBrowserOpenInSafariBrowser(container);
+      } else  {
         ret = new AddToHomeScreen.ReturnObj(
           {
             isStandAlone: false,
@@ -227,7 +244,7 @@ class AddToHomeScreen {
             device: 'ANDROID'
           }
         );
-        this._genIOSInAppBrowser(container);
+        this._genIOSInAppBrowserOpenInSystemBrowser(container);
       } else {
         ret = new AddToHomeScreen.ReturnObj(
           {
@@ -390,7 +407,7 @@ class AddToHomeScreen {
     container.classList.add('chrome');
   }
 
-  _genIOSInAppBrowser(container) {
+  _genIOSInAppBrowserOpenInSystemBrowser(container) {
     var containerInnerHTML = 
       this._genLogo() +
       this._genModalStart() +
@@ -400,12 +417,29 @@ class AddToHomeScreen {
       this._genListItem(`2`, `Tap <span class="emphasis">Open in browser</span>  .`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-inappbrowser-bouncing-arrow-container">
-      <img src="` + this._genAssetUrl('generic-vertical-bouncing-arrow.svg') + `" alt="arrow" />
+      `<div class="add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('generic-vertical-up-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
     container.classList.add('ios');
-    container.classList.add('inappbrowser');
+    container.classList.add('inappbrowser-openinsystembrowser');
+  }
+
+  _genIOSInAppBrowserOpenInSafariBrowser(container) {
+    var containerInnerHTML = 
+      this._genLogo() +
+      this._genModalStart() +
+      this._genTitle() +
+      this._genListStart() +
+      this._genListItem(`1`, `Tap the <img class="more-button" src="` + this._genAssetUrl('openinsafari-button.png') + `"/> button below to open your system browser.`) +
+      this._genListEnd() +
+      this._genModalEnd() +
+      `<div class="add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('generic-vertical-down-bouncing-arrow.svg') + `" alt="arrow" />
+    </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('ios');
+    container.classList.add('inappbrowser-openinsafari');
   }
 
   _genAndroidChrome(container) {
