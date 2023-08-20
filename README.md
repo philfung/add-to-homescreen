@@ -115,13 +115,23 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 # Todos
 - [ ] Issue with overlay not covering the website when re-sized
-- [ ] Guide in-app browsers users to open system browser instead: 
-    - [ ] GMail
-    - [ ] LinkedIn
-    - [ ] Threads
-    - [ ] Instagram
-    - [ ] Reddit
+- [ ] Guide in-app browsers users to open system browser: 
+    - IOS
+        - [x] GMail (no issue, opens in system browser)
+        - [x] LinkedIn
+        - [x] Threads
+        - [x] Instagram
+        - [ ] Reddit
+        - [ ] Google App
+    - Android
+        - [x] GMail (no issue, opens in system browser)
+        - [ ] LinkedIn
+        - [ ] Threads
+        - [ ] Instagram
+        - [ ] Reddit
+        - [ ] Google App
 - [ ] IOS Chrome: in modal, replace the settings icon with properly colored gray icon
+- [ ]
 - [ ] Error Screen: fix ontouchstart not being triggered on Android Chrome
 
 
