@@ -30,10 +30,16 @@ All major browsers on IOS and Android are supported, but in the edge case of a n
 #### Desktop users
 <img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
 
-#### iPhone and Android users on the Facebook in-app browser
-Guided to open the link in the system browser.
+#### In-App Browsers 
+
+##### Facebook and Linkedin in-app browsers on IOS and Android
+User is guided to open the link in the system browser.
 </br>
 <img width="200" alt="facebook-browser" src="https://github.com/philfung/add-to-homescreen/assets/1054593/04135f4d-76b1-4797-bd3f-dc402cf9abb4">
+
+##### Twitter, Instagram and Threads in-app browsers on IOS
+These apps all use SFSafariViewController and can be handled similarly.
+<img width="200" alt="Screenshot 2023-08-20 at 4 06 45 PM" src="https://github.com/philfung/add-to-homescreen/assets/1054593/8adba8bd-2ded-4d95-8f67-0188995a7b4c">
 
 #### iPhone users not on Safari or Chrome or in-app browser
 <img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
