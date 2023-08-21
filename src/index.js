@@ -104,6 +104,9 @@ class AddToHomeScreen {
       return false;
     }
 
+
+        // TODO: this is incompatabile with Insta/Threads mobile website links.
+        // TODO: this solution only works with first-level links
     if (window.document.referrer.match('//l.instagram.com/')) {
       return true;
     }
@@ -128,6 +131,8 @@ class AddToHomeScreen {
       return false;
     }
 
+    // TODO: this solution is incompatabile with Twitter mobile website links
+    // TODO: this solution only works with first-level links
     return window.document.referrer.match('//t.co/');
   }
 
