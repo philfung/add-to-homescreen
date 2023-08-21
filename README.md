@@ -129,7 +129,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [x] LinkedIn
         - [x] Threads
         - [x] Instagram
-        - [ ] Twitter (only fixed for initially loaded link as solution uses referrers)
+        - [ ] Twitter (fixed for first-level links only on twitter app only, doesn't work for twitter mobile website)
         - [ ] Reddit
         - [ ] Google App
 
