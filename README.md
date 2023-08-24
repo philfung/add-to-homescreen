@@ -39,6 +39,7 @@ User is guided to open the link in the system browser.
 
 ##### Twitter, Instagram and Threads in-app browsers on IOS
 These apps all use SFSafariViewController and can be handled similarly.
+</br>
 <img width="200" alt="Screenshot 2023-08-20 at 4 06 45 PM" src="https://github.com/philfung/add-to-homescreen/assets/1054593/8adba8bd-2ded-4d95-8f67-0188995a7b4c">
 
 #### iPhone users not on Safari or Chrome or in-app browser
