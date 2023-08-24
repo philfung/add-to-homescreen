@@ -121,7 +121,6 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Todos
-- [ ] Bug: Error Screen: fix ontouchstart not being triggered on Android Chrome
 - [ ] Bug: Fix in-app browser detection:
     - IOS
         - [x] Facebook
@@ -142,7 +141,8 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [ ] Instagram
         - [ ] Reddit
         - [ ] Google App
-- [ ] F&F: IOS Chrome: in modal, replace the settings icon with properly colored gray icon
+- [x] Bug: Error Screen: fix ontouchstart not being triggered on Android Chrome
+
 
 
 
