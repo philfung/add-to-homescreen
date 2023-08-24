@@ -342,7 +342,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       `<div class="error-title">` + title + `</div>` +
       `<div class="error-body">` + body + `</div>` +
-      `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard()" ontouchstart="AddToHomeScreen.copyToClipboard()">Copy Website Link to Clipboard</button>` +
+      `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard();" ontouchstart="AddToHomeScreen.copyToClipboard();">Copy Website Link to Clipboard</button>` +
       this._genModalEnd();
     container.innerHTML = containerInnerHTML;
   }
@@ -499,9 +499,14 @@ class AddToHomeScreen {
 
   static copyToClipboard() {
     const currentUrl = window.location.href;
-    navigator.clipboard.writeText(currentUrl).then(function () {
+    try {
+      window.navigator.clipboard.writeText(currentUrl);
       document.getElementsByClassName('error-copy-link-button')[0].innerHTML = 'Link Copied to Clipboard!';
-    });
+    } catch (err) {
+      // android browser doesn't support clipboard API if not an https link
+      document.getElementsByClassName('error-copy-link-button')[0].innerHTML = 'Failed to Copy to Clipboard! (Try Again from "https://" Link)';
+    }
+
   }
 
 }
