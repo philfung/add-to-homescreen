@@ -212,7 +212,7 @@
 .add-to-homescreen-container.ios.safari .add-to-homescreen-ios-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
-  bottom: 0px;
+  top: calc(100vh - 60px);
   left: 0;
   right: 0;
   margin: auto;
@@ -416,18 +416,18 @@
   }
 
   40% {
-    transform: translateY(20px);
+    transform: translateY(-20px);
   }
 
   60% {
-    transform: translateY(5px);
+    transform: translateY(-5px);
   }
 }
 
 .add-to-homescreen-container.inappbrowser-openinsafari .add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
-  bottom: 0;
+  top: calc(100vh - 40px);
   right: 15px;
   animation: add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
 }
