@@ -172,6 +172,10 @@ class AddToHomeScreen {
     const container = document.createElement('div');
     container.classList.add('add-to-homescreen-container');
 
+    // dark overlay covers entire body
+    container.style.height = document.body.clientHeight + 'px';
+    container.style.width = document.body.clientWidth + 'px';
+
     var ret;
     var _isStandAlone = this.isStandAlone();
 
