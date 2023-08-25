@@ -212,7 +212,7 @@
 .add-to-homescreen-container.ios.safari .add-to-homescreen-ios-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
-  top: calc(100vh - 60px);
+  top: calc(100dvh - 60px);
   left: 0;
   right: 0;
   margin: auto;
@@ -427,7 +427,7 @@
 .add-to-homescreen-container.inappbrowser-openinsafari .add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
-  top: calc(100vh - 40px);
+  top: calc(100dvh - 40px);
   right: 15px;
   animation: add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
 }
