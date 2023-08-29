@@ -10,7 +10,7 @@ Instructions and UI in this library have been "battle-tested" and has yielded an
 
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app "Aardvark" <img width="40" alt="aardvark-icon" src="https://github.com/philfung/add-to-homescreen/assets/1054593/e933af84-9225-4079-8fd7-5af525878693">
 
-![demo-iphone](https://github.com/philfung/add-to-homescreen/assets/1054593/855108a0-e0ed-4213-8789-76d59345dd46)
+![261203234-855108a0-e0ed-4213-8789-76d59345dd46 (1)](https://github.com/philfung/add-to-homescreen/assets/1054593/6cbfe5e0-c25e-484b-8c34-6da14969c162)
 
 ## Browser Support
 All major browsers on IOS and Android are supported comprising 95% of browser use on each platform.
