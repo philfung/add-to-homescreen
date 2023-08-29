@@ -34,7 +34,7 @@
   transition: opacity 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-
+  line-height: normal;
 }
 
 @keyframes bounce-modal {
