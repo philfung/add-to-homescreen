@@ -174,7 +174,8 @@ class AddToHomeScreen {
 
     // dark overlay covers entire body
     container.style.height = document.body.clientHeight + 'px';
-    container.style.width = document.body.clientWidth + 'px';
+    //container.style.width = document.body.clientWidth + 'px';
+    container.style.width = window.outerWidth + 'px';
 
     var ret;
     var _isStandAlone = this.isStandAlone();
