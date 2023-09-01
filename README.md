@@ -128,7 +128,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [x] LinkedIn
         - [x] Threads
         - [x] Instagram
-        - [ ] Twitter (fixed for first-level links only on twitter app only, doesn't work for twitter mobile website)
+        - [x] Twitter (fixed for first-level links, doesn't work for twitter mobile website)
         - [ ] Reddit
         - [ ] Google App
 
@@ -141,7 +141,6 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [ ] Instagram
         - [ ] Reddit
         - [ ] Google App
-- [x] Bug: Error Screen: fix ontouchstart not being triggered on Android Chrome
 
 
 
