@@ -1,7 +1,7 @@
 # add-to-homescreen 📱
 
 ## Motivation
-Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of mobile websites compared to native apps.
+Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of mobile websites compared to native apps.  See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
 
 ## This Library
 This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on both IOS and Android.
