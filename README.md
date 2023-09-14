@@ -51,19 +51,19 @@ These apps all use SFSafariViewController and can be handled similarly.
 
 ## Installation
 
-### Prerequisites
+### Prerequisites - Minimum requirements to install a web app
 Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
 1. At `https://your-website.com/apple-touch-icon.png`, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named `apple-touch-icon.png`([example](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)).    
 2. At `https://your-website.com/manifest.json`, include a web manifest file `manifest.json` ([example](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json)). Reference the manifest in your index HTML file. 
-```html
-= index.html =
-<head>
-...
-<link rel="manifest" href="manifest.json">
-..
-</head>
-```
-### Usage
+   ```html
+   = index.html =
+   <head>
+   ...
+   <link rel="manifest" href="manifest.json">
+   ..
+   </head>
+   ```
+### Usage - If you're not making changes
 This should be a quick drop-in library into your mobile website. 
 
 1. Include the library JavaScript and CSS files in your header (You can use [JSDelivr CDN](https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/) if you're just using the library directly and not making any changes):
@@ -90,8 +90,7 @@ window.AddToHomeScreenInstance = new window.AddToHomeScreen(
   appName: 'Aardvark',                                   // Name of the app
   appIcon: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/assets/img/',  // Link to directory of library image assets 
-  showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch for 'Add to Homescreen' (like IOS 
-Safari)? Default: true.
+  showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch to compliant one (like Safari) Default: true.
   allowUserToCloseModal: false                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
 }
 );
@@ -103,15 +102,16 @@ ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescr
 ```
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 
-### Making Changes to the Library and Testing Locally
-Build the library and output to the [dist]((https://github.com/philfung/add-to-homescreen/tree/main/dist) directory:
+### Usage - If you're making changes
+Build the library:
 ```
 npm run build
 ```
-Run an example website locally:
+Test locally:
 ```
 npm start
 ```
+Now save the [dist]((https://github.com/philfung/add-to-homescreen/tree/main/dist) directory to a CDN and see follow the steps in the previous section.
 
 ## Dependencies
 
