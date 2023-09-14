@@ -48,71 +48,71 @@ These apps all use SFSafariViewController and can be handled similarly.
 #### Android users not on Chrome or in-app browser
 <img width="200" alt="android-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/0072304f-4ec5-4cab-b14b-e96a5226ae79">
 
+
 ## Installation
-Install the package using npm:
 
+### Prerequisites
+Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
+1. At `https://your-website.com/apple-touch-icon.png`, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named `apple-touch-icon.png`([example](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)).    
+2. At `https://your-website.com/manifest.json`, include a web manifest file `manifest.json` ([example](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json)). Reference the manifest in your index HTML file. 
+```html
+= index.html =
+<head>
+...
+<link rel="manifest" href="manifest.json">
+..
+</head>
 ```
-npm install add-to-homescreen
+### Usage
+This should be a quick drop-in library into your mobile website. 
+
+1. Include the library JavaScript and CSS files in your header (You can use [JSDelivr CDN](https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/) if you're just using the library directly and not making any changes):
+
+```html
+= index.html =
+<head>
+...
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/add-to-homescreen.min.css">
+<script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/add-to-homescreen.min.js"></script>
+...
+</head>
 ```
 
-Now test locally:
+2. Call the library onload.
+
+```javascript
+= index.html =
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+window.AddToHomeScreenInstance = new window.AddToHomeScreen(
+{
+  appName: 'Aardvark',                                   // Name of the app
+  appIcon: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
+  assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/assets/img/',  // Link to directory of library image assets 
+  showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch for 'Add to Homescreen' (like IOS 
+Safari)? Default: true.
+  allowUserToCloseModal: false                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
+}
+);
+            
+ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
+});
+</script>
+</body>
+```
+Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
+
+## Making Changes to the Library and Testing Locally
+Build the library and output to the [dist]((https://github.com/philfung/add-to-homescreen/tree/main/dist) directory:
 ```
 npm run build
+```
+Run an example website locally:
+```
 npm start
 ```
 
-## Usage
-This should be a quick drop-in library to your mobile website codebase. 
-
-1. Follow installation instructions above to compile JS and CSS.
-2. Copy the entire ["dist" folder](https://github.com/philfung/add-to-homescreen/tree/main/dist) over to your codebase or CDN. 
-   This folder includes all js,css, and image assets required.
-
-3. Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
-    1. in your root directory, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named ["apple-touch-icon.png"](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)    
-    2. in your root directory, include a web manifest file ["manifest.json"](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json). Reference the manifest in your index HTML file. 
-        ```
-        = index.html =
-        <head>
-        ...
-        <link rel="manifest" href="manifest.json">
-        ..
-        </head>
-        ```
-4. Include the library JavaScript and CSS files in your index HTML file:
-
-    ```
-    = index.html =
-    <head>
-    ...
-    <link rel="stylesheet" href="https://your-cdn.com/../dist/add-to-homescreen.min.css">
-    <script src="https://your-cdn.com/../dist/add-to-homescreen.min.js"></script>
-    ...
-    </head>
-    ```
-
-5. Call the library.
-
-    ```
-    = index.html =
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-        window.AddToHomeScreenInstance = new window.AddToHomeScreen(
-            {
-                appName: 'Aardvark',                                   // Name of the app
-                appIcon: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
-                assetUrl: 'https://your-cdn.com/../dist/assets/img/',  // Link to directory of library image assets 
-                showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Opera) to switch for 'Add to Homescreen' (like IOS Safari)? Default: true.
-                allowUserToCloseModal: false                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
-            }
-        );
-            
-        ret = window.AddToHomeScreenInstance.show();                   // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
-    });
-    </script>
-    ```
-Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 ## Dependencies
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
