@@ -103,7 +103,7 @@ ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescr
 ```
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 
-## Making Changes to the Library and Testing Locally
+### Making Changes to the Library and Testing Locally
 Build the library and output to the [dist]((https://github.com/philfung/add-to-homescreen/tree/main/dist) directory:
 ```
 npm run build
