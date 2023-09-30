@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-.add-to-homescreen-container {
+.adhs-container {
   display: block;
   position: absolute;
   top: 0;
@@ -17,12 +17,12 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-.add-to-homescreen-container.visible {
+.adhs-container.visible {
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 1;
 }
 
-.add-to-homescreen-container .modal {
+.adhs-container .adhs-modal {
   background-color: #F5F5F5;
   border-radius: 14px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
   line-height: normal;
 }
 
-@keyframes bounce-modal {
+@keyframes adhs-bounce-modal {
 
   0%,
   20%,
@@ -57,15 +57,15 @@
 }
 
 
-.add-to-homescreen-container.visible .modal,
-.add-to-homescreen-container.visible .logo {
+.adhs-container.visible .adhs-modal,
+.adhs-container.visible .adhs-logo {
   transform: translateY(0);
   opacity: 1;
-  animation: bounce-modal .5s;
+  animation: adhs-bounce-modal .5s;
 }
 
 
-.add-to-homescreen-container .logo {
+.adhs-container .adhs-logo {
   position: absolute;
   left: 0;
   right: 0;
@@ -75,13 +75,13 @@
   z-index: 10000;
 }
 
-.add-to-homescreen-container .logo img {
+.adhs-container .adhs-logo img {
   width: 80px;
   height: 80px;
   border-radius: 12px;
 }
 
-.add-to-homescreen-container .modal .title {
+.adhs-container .adhs-modal .adhs-title {
   font-size: 27px;
   font-weight: 700;
   max-width: 330px;
@@ -89,7 +89,7 @@
   margin: 0px 0px 18px 3px;
 }
 
-.add-to-homescreen-container .modal .error-title {
+.adhs-container .adhs-modal .adhs-error-title {
   font-size: 25px;
   font-weight: 700;
   margin: 0px 0px 18px 20px;
@@ -98,7 +98,7 @@
   letter-spacing: -.05rem;
 }
 
-.add-to-homescreen-container .modal .error-body {
+.adhs-container .adhs-modal .adhs-error-body {
   text-align: left;
   font-size: 20px;
   padding: 0px 0px 9px 0px;
@@ -106,7 +106,7 @@
   margin: 0px 0px 0px 20px;
 }
 
-.add-to-homescreen-container .modal .error-copy-link-button {
+.adhs-container .adhs-modal .adhs-error-copy-link-button {
   font-size: 20px;
   width: 300px;
   margin: 8px 0px 0px 20px;
@@ -117,23 +117,23 @@
 }
 
 
-.add-to-homescreen-container .modal .list {
+.adhs-container .adhs-modal .adhs-list {
   display: flex;
   flex-direction: column;
 }
 
-.add-to-homescreen-container .modal .list .emphasis {
+.adhs-container .adhs-modal .adhs-list .adhs-emphasis {
   font-weight: 700;
   font-size: 20px;
 }
 
-.add-to-homescreen-container .modal .list .your-app-icon {
+.adhs-container .adhs-modal .adhs-list .adhs-your-app-icon {
   height: 40px;
   margin: 0px 5px -10px 5px;
   border-radius: 6px;
 }
 
-.add-to-homescreen-container .modal .list .list-item {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item {
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -141,23 +141,22 @@
   margin: 0px 0px 5px 0px;
 }
 
-.add-to-homescreen-container .modal .list .list-item .number-container {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   flex-direction: column;
   display: flex;
   margin: 0px 5px 0px 0px;
 }
 
-.add-to-homescreen-container .modal .list .list-item .circle {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-circle {
   font-size: 30px;
   height: 40px;
   width: 40px;
   border-radius: 100px;
-  /*background-color: #212121;*/
   background-color: #979797;
 }
 
 
-.add-to-homescreen-container .modal .list .list-item .number {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number {
   padding: 9px 0px 0px 15px;
   color: white;
   font-size: 20px;
@@ -166,7 +165,7 @@
 
 
 
-.add-to-homescreen-container .modal .list .list-item .instruction {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   width: 100%;
   text-align: left;
   font-size: 20px;
@@ -175,7 +174,7 @@
 }
 
 /* IOS Safari */
-.add-to-homescreen-container.ios.safari .modal .list .ios-safari-sharing-api-button {
+.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-sharing-api-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -183,7 +182,7 @@
   background-color: #ffffff;
 }
 
-.add-to-homescreen-container.ios.safari .modal .list .ios-safari-add-to-home-screen-button {
+.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-add-to-home-screen-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -191,7 +190,7 @@
   background-color: #ffffff;
 }
 
-@keyframes add-to-homescreen-ios-safari-bouncing-arrow-animation {
+@keyframes adhs-ios-safari-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -210,18 +209,18 @@
   }
 }
 
-.add-to-homescreen-container.ios.safari .add-to-homescreen-ios-safari-bouncing-arrow-container img {
+.adhs-container.adhs-ios.adhs-safari .adhs-ios-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
   top: calc(100dvh - 60px);
   left: 0;
   right: 0;
   margin: auto;
-  animation: add-to-homescreen-ios-safari-bouncing-arrow-animation 2s infinite;
+  animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
 }
 
 /* IOS Chrome */
-@keyframes add-to-homescreen-ios-chrome-bouncing-arrow-animation {
+@keyframes adhs-ios-chrome-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -240,7 +239,7 @@
   }
 }
 
-.add-to-homescreen-container.ios.chrome .modal .list .ios-chrome-more-button {
+.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-more-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -248,15 +247,15 @@
   background-color: #ffffff;
 }
 
-.add-to-homescreen-container.ios.chrome .add-to-homescreen-ios-chrome-bouncing-arrow-container img {
+.adhs-container.adhs-ios.adhs-chrome .adhs-ios-chrome-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 18px;
-  animation: add-to-homescreen-android-chrome-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.ios.chrome .modal .list .ios-chrome-add-to-home-screen-button {
+.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-add-to-home-screen-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -265,7 +264,7 @@
 }
 
 /* Android Chrome */
-@keyframes add-to-homescreen-android-chrome-bouncing-arrow-animation {
+@keyframes adhs-android-chrome-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -284,15 +283,15 @@
   }
 }
 
-.add-to-homescreen-container.android.chrome .add-to-homescreen-android-chrome-bouncing-arrow-container img {
+.adhs-container.adhs-android.adhs-chrome .adhs-android-chrome-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 15px;
-  animation: add-to-homescreen-android-chrome-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-android-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.android.chrome .modal .list .android-chrome-more-button {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
@@ -300,7 +299,7 @@
   border-radius: 4px;
 }
 
-.add-to-homescreen-container.android.chrome .modal .list .android-chrome-add-to-homescreen-button {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-add-to-homescreen-button {
   height: 37px;
   background: white;
   margin: 0px 5px -10px 5px;
@@ -309,7 +308,7 @@
   padding: 0px 7px 0px 4px;
 }
 
-.add-to-homescreen-container.android.chrome .modal .list .android-chrome-install-app {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-install-app {
   height: 37px;
   background: white;
   margin: 10px 5px -10px 5px;
@@ -318,16 +317,16 @@
   padding: 0px;
 }
 
-.add-to-homescreen-container.android.chrome .modal .list .list-item .instruction {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   line-height: 34px;
 }
 
 /* In-App System Browser */
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .title {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-title {
   margin: 0px 0px 9px 3px;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .emphasis {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -337,16 +336,16 @@
   font-weight: 500;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .list-item {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .list-item .instruction {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   padding: 0px 0px 2px 9px;
   line-height: 42px;
 }
 
-@keyframes add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-animation {
+@keyframes adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -365,15 +364,15 @@
   }
 }
 
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-container img {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 6px;
-  animation: add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsystembrowser .modal .list .more-button {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
@@ -382,11 +381,11 @@
 }
 
 /* In-App Safari Browser */
-.add-to-homescreen-container.inappbrowser-openinsafari .modal .title {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-title {
   margin: 0px 0px 9px 3px;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .emphasis {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -396,17 +395,17 @@
   font-weight: 500;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .list-item {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .list-item .instruction {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   padding: 0px 0px 0px 9px;
   line-height: 34px;
   margin: 4px 0px 0px 0px;
 }
 
-@keyframes add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation {
+@keyframes adhs-inappbrowser-openinsafari-bouncing-arrow-animation {
 
   0%,
   20%,
@@ -425,15 +424,15 @@
   }
 }
 
-.add-to-homescreen-container.inappbrowser-openinsafari .add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container img {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-inappbrowser-openinsafari-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: calc(100dvh - 40px);
   right: 15px;
-  animation: add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
 }
 
-.add-to-homescreen-container.inappbrowser-openinsafari .modal .list .more-button {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
