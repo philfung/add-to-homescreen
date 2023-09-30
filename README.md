@@ -90,7 +90,7 @@ This should be a quick drop-in library into your mobile website.
    {
    appName: 'Aardvark',                                   // Name of the app
    appIcon: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
-   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/assets/img/',  // Link to directory of library image assets 
+   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.1/dist/assets/img/',  // Link to directory of library image assets 
    showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch to compliant one (like Safari) Default: true.
    allowUserToCloseModal: false                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
    }
