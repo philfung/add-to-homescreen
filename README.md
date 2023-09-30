@@ -73,8 +73,8 @@ This should be a quick drop-in library into your mobile website.
    ```html
    <head>
    ...
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/add-to-homescreen.min.css">
-   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/add-to-homescreen.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.1/dist/add-to-homescreen.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.1/dist/add-to-homescreen.min.js"></script>
    ...
    </head>
    ```
