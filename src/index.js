@@ -60,7 +60,7 @@ class AddToHomeScreen {
      Mobile/14E5239e Safari/602.1 */
   isBrowserIOSSafari() {
     return this.isDeviceIOS() && 
-    navigator.userAgent.match(/Safari/) && 
+    window.navigator.userAgent.match(/Safari/) && 
     !this.isBrowserIOSChrome() &&
     !this.isBrowserIOSFirefox() &&
     !this.isBrowserIOSInAppFacebook() &&
@@ -80,7 +80,7 @@ class AddToHomeScreen {
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
   AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
   isBrowserIOSFirefox() {
-    return this.isDeviceIOS() && navigator.userAgent.match(/FxiOS/);
+    return this.isDeviceIOS() && window.navigator.userAgent.match(/FxiOS/);
   }
 
   isBrowserIOSInAppFacebook() {
@@ -113,7 +113,7 @@ class AddToHomeScreen {
 
     // Instagram and Threads in-app browsers only 
     // take up ~90% of the height of the screen
-    if (navigator.userAgent.match(/iPhone/) &&
+    if (window.navigator.userAgent.match(/iPhone/) &&
       window.screen.height && window.outerHeight &&
       window.outerHeight < window.screen.height) {
       return true;
@@ -140,7 +140,7 @@ class AddToHomeScreen {
      AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
   isBrowserAndroidChrome() {
     return this.isDeviceAndroid() && 
-    navigator.userAgent.match(/Chrome/) &&
+    window.navigator.userAgent.match(/Chrome/) &&
     !this.isBrowserAndroidFacebook() &&
     !this.isBrowserAndroidSamsung() &&
     !this.isBrowserAndroidFirefox();
@@ -150,18 +150,18 @@ class AddToHomeScreen {
     AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
     Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
   isBrowserAndroidFacebook() {
-    return this.isDeviceAndroid() && navigator.userAgent.match(/FBAN|FBAV/);
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/FBAN|FBAV/);
   }
 
   /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
   (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
   isBrowserAndroidSamsung() {
-    return this.isDeviceAndroid() && navigator.userAgent.match(/SamsungBrowser/);
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/SamsungBrowser/);
   }
 
   /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
   isBrowserAndroidFirefox() {
-    return this.isDeviceAndroid() && navigator.userAgent.match(/Firefox/);
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
   }
 
   show() {
@@ -170,7 +170,7 @@ class AddToHomeScreen {
     // returns an object indicating what device/browser was detected, in case user wants
     // to use that info for some other UI purpose
     const container = document.createElement('div');
-    container.classList.add('add-to-homescreen-container');
+    container.classList.add('adhs-container');
 
     // dark overlay covers entire body
     container.style.height = document.body.clientHeight + 'px';
@@ -315,7 +315,7 @@ class AddToHomeScreen {
 
   close() {
     // close the modal if the user clicks outside of the modal contents
-    const container = document.querySelector('.add-to-homescreen-container');
+    const container = document.querySelector('.adhs-container');
     if (container) {
       container.classList.remove('visible');
       setTimeout(() => {
@@ -331,7 +331,7 @@ class AddToHomeScreen {
   // below are all internal functions
   _genLogo() {
     return `
-      <div class="logo">
+      <div class="adhs-logo">
         <img src="` + this.appIconUrl + `" alt="logo" />
       </div>
       `;
@@ -341,9 +341,9 @@ class AddToHomeScreen {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
-      `<div class="error-title">` + title + `</div>` +
-      `<div class="error-body">` + body + `</div>` +
-      `<button class="error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard();" ontouchstart="AddToHomeScreen.copyToClipboard();">Copy Website Link to Clipboard</button>` +
+      `<div class="adhs-error-title">` + title + `</div>` +
+      `<div class="adhs-error-body">` + body + `</div>` +
+      `<button class="adhs-error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard();" ontouchstart="AddToHomeScreen.copyToClipboard();">Copy Website Link to Clipboard</button>` +
       this._genModalEnd();
     container.innerHTML = containerInnerHTML;
   }
@@ -351,7 +351,7 @@ class AddToHomeScreen {
 
   _genTitleWithMessage(message) {
     return `
-      <div class="title">` + message + `</div>
+      <div class="adhs-title">` + message + `</div>
       `;
   }
 
@@ -360,7 +360,7 @@ class AddToHomeScreen {
   }
 
   _genModalStart() {
-    return `<div class="modal">`;
+    return `<div class="adhs-modal">`;
   }
 
   _genModalEnd() {
@@ -368,7 +368,7 @@ class AddToHomeScreen {
   }
 
   _genListStart() {
-    return `<div class="list">`;
+    return `<div class="adhs-list">`;
   }
 
   _genListEnd() {
@@ -377,13 +377,13 @@ class AddToHomeScreen {
 
   _genListItem(numberString, instructionHTML) {
     return `
-    <div class="list-item">
-      <div class="number-container">
-        <div class="circle">
-          <div class="number">` + numberString + `</div>
+    <div class="adhs-list-item">
+      <div class="adhs-number-container">
+        <div class="adhs-circle">
+          <div class="adhs-number">` + numberString + `</div>
         </div>
       </div>
-      <div class="instruction">` + instructionHTML + `</div>
+      <div class="adhs-instruction">` + instructionHTML + `</div>
     </div>`;
   }
 
@@ -397,17 +397,17 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="ios-safari-sharing-api-button" src="` + this._genAssetUrl('ios-safari-sharing-api-button.svg') + `"/> button below.`) +
-      this._genListItem(`2`, `Select <img class="ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span>`) +
-      this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
+      this._genListItem(`1`, `Tap the <img class="adhs-ios-safari-sharing-api-button" src="` + this._genAssetUrl('ios-safari-sharing-api-button.svg') + `"/> button below.`) +
+      this._genListItem(`2`, `Select <img class="adhs-ios-safari-add-to-home-screen-button" src="` + this._genAssetUrl('ios-safari-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="adhs-emphasis">You may need to scroll down to find this menu item.</span>`) +
+      this._genListItem(`3`, `Open the <img class="adhs-your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-ios-safari-bouncing-arrow-container">
+      `<div class="adhs-ios-safari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('ios');
-    container.classList.add('safari');
+    container.classList.add('adhs-ios');
+    container.classList.add('adhs-safari');
   }
 
   _genIOSChrome(container) {
@@ -416,17 +416,17 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="ios-chrome-more-button" src="` + this._genAssetUrl('ios-chrome-more-button.svg') + `"/> button in the upper right corner.`) +
-      this._genListItem(`2`, `Select <img class="ios-chrome-add-to-home-screen-button" src="` + this._genAssetUrl('ios-chrome-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="emphasis">You may need to scroll down to find this menu item.</span></b>`) +
-      this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
+      this._genListItem(`1`, `Tap the <img class="adhs-ios-chrome-more-button" src="` + this._genAssetUrl('ios-chrome-more-button.svg') + `"/> button in the upper right corner.`) +
+      this._genListItem(`2`, `Select <img class="adhs-ios-chrome-add-to-home-screen-button" src="` + this._genAssetUrl('ios-chrome-add-to-home-screen-button.svg') + `"/> from the menu that pops up. <span class="adhs-emphasis">You may need to scroll down to find this menu item.</span></b>`) +
+      this._genListItem(`3`, `Open the <img class="adhs-your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-ios-chrome-bouncing-arrow-container">
+      `<div class="adhs-ios-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('ios');
-    container.classList.add('chrome');
+    container.classList.add('adhs-ios');
+    container.classList.add('adhs-chrome');
   }
 
   _genIOSInAppBrowserOpenInSystemBrowser(container) {
@@ -435,16 +435,16 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="more-button" src="` + this._genAssetUrl('generic-more-button.svg') + `"/> button above.`) +
-      this._genListItem(`2`, `Tap <span class="emphasis">Open in browser</span>  .`) +
+      this._genListItem(`1`, `Tap the <img class="adhs-more-button" src="` + this._genAssetUrl('generic-more-button.svg') + `"/> button above.`) +
+      this._genListItem(`2`, `Tap <span class="adhs-emphasis">Open in browser</span>  .`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-inappbrowser-openinsystembrowser-bouncing-arrow-container">
+      `<div class="adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('generic-vertical-up-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('ios');
-    container.classList.add('inappbrowser-openinsystembrowser');
+    container.classList.add('adhs-ios');
+    container.classList.add('adhs-inappbrowser-openinsystembrowser');
   }
 
   _genIOSInAppBrowserOpenInSafariBrowser(container) {
@@ -453,15 +453,15 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="more-button" src="` + this._genAssetUrl('openinsafari-button.png') + `"/> button below to open your system browser.`) +
+      this._genListItem(`1`, `Tap the <img class="adhs-more-button" src="` + this._genAssetUrl('openinsafari-button.png') + `"/> button below to open your system browser.`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-inappbrowser-openinsafari-bouncing-arrow-container">
+      `<div class="adhs-inappbrowser-openinsafari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('generic-vertical-down-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('ios');
-    container.classList.add('inappbrowser-openinsafari');
+    container.classList.add('adhs-ios');
+    container.classList.add('adhs-inappbrowser-openinsafari');
   }
 
   _genAndroidChrome(container) {
@@ -470,18 +470,18 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genTitle() +
       this._genListStart() +
-      this._genListItem(`1`, `Tap the <img class="android-chrome-more-button" src="` + this._genAssetUrl('android-chrome-more-button.svg') + `"/> button in the browser bar.`) +
-      this._genListItem(`2`, `Tap <img class="android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>` +  
-      `or <img class="android-chrome-install-app" src="` + this._genAssetUrl('android-chrome-install-app.svg') + `"/> .`) +
-      this._genListItem(`3`, `Open the <img class="your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
+      this._genListItem(`1`, `Tap the <img class="adhs-android-chrome-more-button" src="` + this._genAssetUrl('android-chrome-more-button.svg') + `"/> button in the browser bar.`) +
+      this._genListItem(`2`, `Tap <img class="adhs-android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>` +  
+      `or <img class="adhs-android-chrome-install-app" src="` + this._genAssetUrl('android-chrome-install-app.svg') + `"/> .`) +
+      this._genListItem(`3`, `Open the <img class="adhs-your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
-      `<div class="add-to-homescreen-android-chrome-bouncing-arrow-container">
+      `<div class="adhs-android-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('android');
-    container.classList.add('chrome');
+    container.classList.add('adhs-android');
+    container.classList.add('adhs-chrome');
   }
 
   _registerCloseListener() {
@@ -489,7 +489,7 @@ class AddToHomeScreen {
     if (this.allowUserToCloseModal) {
       var self = this;
       this.closeEventListener = function (e) {
-        var modal = document.getElementsByClassName('add-to-homescreen-container')[0].getElementsByClassName('modal')[0];
+        var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
         if (!modal.contains(e.target)) {
           self.close();
         };
@@ -502,10 +502,10 @@ class AddToHomeScreen {
     const currentUrl = window.location.href;
     try {
       window.navigator.clipboard.writeText(currentUrl);
-      document.getElementsByClassName('error-copy-link-button')[0].innerHTML = 'Link Copied to Clipboard!';
+      document.getElementsByClassName('adhs-error-copy-link-button')[0].innerHTML = 'Link Copied to Clipboard!';
     } catch (err) {
       // android browser doesn't support clipboard API if not an https link
-      document.getElementsByClassName('error-copy-link-button')[0].innerHTML = 'Failed to Copy to Clipboard! (Try Again from "https://" Link)';
+      document.getElementsByClassName('adhs-error-copy-link-button')[0].innerHTML = 'Failed to Copy to Clipboard! (Try Again from "https://" Link)';
     }
 
   }
