@@ -73,8 +73,8 @@ This should be a quick drop-in library into your mobile website.
    ```html
    <head>
    ...
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.3/dist/add-to-homescreen.min.css">
-   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.3/dist/add-to-homescreen.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.4/dist/add-to-homescreen.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.4/dist/add-to-homescreen.min.js"></script>
    ...
    </head>
    ```
@@ -90,7 +90,7 @@ This should be a quick drop-in library into your mobile website.
    {
    appName: 'Aardvark',                                   // Name of the app
    appIcon: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
-   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.3/dist/assets/img/',  // Link to directory of library image assets 
+   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.4/dist/assets/img/',  // Link to directory of library image assets 
    showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch to compliant one (like Safari) Default: true.
    allowUserToCloseModal: false,                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
    maxModalDisplayCount: -1                                // If set, the modal will only show this many times.
