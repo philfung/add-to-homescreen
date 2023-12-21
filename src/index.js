@@ -332,6 +332,7 @@ class AddToHomeScreen {
         container.remove();
         if (this.closeEventListener) {
           window.removeEventListener('touchstart', this.closeEventListener);
+          window.removeEventListener('click', this.closeEventListener);
           this.closeEventListener = null;
         }
       }, 300);
@@ -506,6 +507,7 @@ class AddToHomeScreen {
         };
       };
       window.addEventListener('touchstart', this.closeEventListener);
+      window.addEventListener('click', this.closeEventListener);
     }
   }
 
