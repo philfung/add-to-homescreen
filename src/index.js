@@ -171,8 +171,9 @@ class AddToHomeScreen {
   show() {
 
     var ret;
-
+    var shouldShowModal = false;
     if (this.isStandAlone()) {
+      shouldShowModal = false;
       ret = new AddToHomeScreen.ReturnObj(
         {
           isStandAlone: true,
@@ -182,6 +183,7 @@ class AddToHomeScreen {
       );
       return ret;
     } else if (this._hasReachedMaxModalDisplayCount()) {
+      shouldShowModal = false;
       ret = new AddToHomeScreen.ReturnObj(
         {
           isStandAlone: null,
@@ -190,7 +192,8 @@ class AddToHomeScreen {
         }
       );
       return ret;
-    } else {
+    } else {      
+      shouldShowModal = true;
       this._incrModalDisplayCount();
       const container = document.createElement('div');
       container.classList.add('adhs-container');
@@ -258,6 +261,8 @@ class AddToHomeScreen {
               `Please open this website with the Safari or Chrome app.`,
               `Adding to home screen is only supported in Safari or Chrome on IOS.`
             );
+          } else {
+            shouldShowModal = false;
           }
         }
       } else if (this.isDeviceAndroid()) { // android
@@ -293,6 +298,8 @@ class AddToHomeScreen {
               `Please open this website with the Chrome app.`,
               `Adding to home screen is only supported in Chrome on Android.`
             );
+          } else {
+            shouldShowModal = false;
           }
         }
       } else { // desktop
@@ -309,14 +316,18 @@ class AddToHomeScreen {
             `Please open this website on a mobile device.`,
             `Installing to your home screen is currently only supported on IOS and Android.`
           );
+        } else {
+          shouldShowModal = false;
         }
       }
 
-      document.body.appendChild(container);
-      this._registerCloseListener();
-      setTimeout(() => {
-        container.classList.add('visible');
-      }, 50);
+      if (shouldShowModal) {
+        document.body.appendChild(container);
+        this._registerCloseListener();
+        setTimeout(() => {
+          container.classList.add('visible');
+        }, 50);
+      }
     }
 
     return ret;
