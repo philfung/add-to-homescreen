@@ -86,19 +86,23 @@ This should be a quick drop-in library into your mobile website.
    <script>
    document.addEventListener('DOMContentLoaded', function () {
 
-   window.AddToHomeScreenInstance = new window.AddToHomeScreen(
-   {
-   appName: 'Aardvark',                                   // Name of the app
-   appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels)
-   assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/assets/img/',  // Link to directory of library image assets 
-   showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add to home screen is not supported (e.g.  "adding to home screen is not supported in IOS Firefox, please open this website in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this on your mobile browser instead") Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL
-   allowUserToCloseModal: false,                           // Allow user to close the 'Add to Homescreen' message by clicking outside the modal? Not allowing will increase installs. Default: false.
-   maxModalDisplayCount: -1                                // If set, the modal will only show this many times.
-                                                           // Default is -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
-   }
-   );
-            
-   ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
+    window.AddToHomeScreenInstance = new window.AddToHomeScreen({
+     appName: 'Aardvark',                                   // Name of the app.
+                                                            // Required.
+     appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
+                                                            // Required.
+     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/assets/img/',  // Link to directory of library image assets.
+                                                                                               // Required. 
+     showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add-to-home-screen is not supported for this browser
+                                                                                                 // (e.g.  "adding to home screen is not supported in IOS Firefox, please open this [website] in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this [website] in your mobile browser instead".  You can also set more granular permissions to show error messages only on mobile browsers and not on desktop browsers, etc)
+                                                                                                 // Optional. Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL 
+     allowUserToCloseModal: false,                          // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs.
+                                                            // Optional. Default: false.
+     maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
+                                                            // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
+   });
+         
+    ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
    });
    </script>
    </body>
@@ -125,20 +129,14 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Todos
+- [ ] Bug: Fix browser instructions:
+    - Android
+        - [ ] Edge
 - [ ] Bug: Fix in-app browser detection:
     - IOS
-        - [x] Facebook
-        - [x] GMail (no issue, opens in system browser)
-        - [x] LinkedIn
-        - [x] Threads
-        - [x] Instagram
-        - [x] Twitter (fixed for first-level links, doesn't work for twitter mobile website)
         - [ ] Reddit
         - [ ] Google App
-
     - Android
-        - [x] Facebook
-        - [x] GMail (no issue, opens in system browser)
         - [ ] Twitter
         - [ ] LinkedIn
         - [ ] Threads
