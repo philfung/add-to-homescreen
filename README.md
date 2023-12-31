@@ -89,9 +89,9 @@ This should be a quick drop-in library into your mobile website.
    window.AddToHomeScreenInstance = new window.AddToHomeScreen(
    {
    appName: 'Aardvark',                                   // Name of the app
-   appIconUrl: 'apple-touch-icon.png',                       // App icon link (square, at least 40 x 40 pixels)
+   appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels)
    assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/assets/img/',  // Link to directory of library image assets 
-   showErrorMessageForUnsupportedBrowsers: true,          // Should we prompt users on non-compliant browsers (like IOS Firefox) to switch to compliant one (like Safari) Default: true.
+   showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add to home screen is not supported (e.g.  "adding to home screen is not supported in IOS Firefox, please open this website in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this on your mobile browser instead") Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL (e.g. show error message on both unsupported mobile and unsupported desktop browsers).
    allowUserToCloseModal: false,                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs. Default: false.
    maxModalDisplayCount: -1                                // If set, the modal will only show this many times.
                                                            // Default is -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
