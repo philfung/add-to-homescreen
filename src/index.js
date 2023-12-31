@@ -1,5 +1,17 @@
 import './styles.css';
 
+const PHONE_TYPE = {
+  ANDROID: 'ANDROID',
+  IOS: 'IOS'
+};
+
+const SHOW_ERRMSG_UNSUPPORTED = {
+  NONE: 0x0000,
+  MOBILE: 0x0001,
+  DESKTOP: 0x0010,
+  ALL: 0x0011
+};
+
 class AddToHomeScreen {
 
   /**
@@ -16,11 +28,16 @@ class AddToHomeScreen {
    *
    * 
    * @param (URL) assetUrl                                   
-   * @param {boolean} showErrorMessageForUnsupportedBrowsers If true, show an error message if the user is on an unsupported browser/device on IOS or Android
-   *                                                         e.g 
+   * @param {number} showErrorMessageForUnsupportedBrowsers  Show an error message if the user is on an unsupported browser/device on IOS or Android
+   *                                                         Example error message: 
    *                                                         "On IOS, adding to homescreen is only supported on Safari.  
    *                                                         Please open this website on Safari [Copy link to clipboard]"
-   *                                                         Default is true.
+   *                                                         Possible values: 
+   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL (default) - show error message on all unsupported desktop and mobile browsers
+   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE - show error message on unsupported mobile browsers only 
+   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.DESKTOP - show error message on unsupported desktop browsers only
+   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.NONE - never show unsupported error message
+   * 
    * @param {boolean} allowUserToCloseModal                  If true, user can close the modal if they click outside the modal window.  
    *                                                         (I've found that user is way more likely to install if user has no other option.) 
    *                                                         Default is false.
@@ -36,14 +53,38 @@ class AddToHomeScreen {
     maxModalDisplayCount
   }) {
     this.appName = appName;
+    this._assertArg(
+      "appName",
+      typeof this.appName === "string" && this.appName.length > 0
+    );
     this.appIconUrl = appIconUrl;
+    this._assertArg(
+      "appIconUrl",
+      typeof this.appIconUrl === "string" && this.appIconUrl.length > 0
+    );
     this.assetUrl = assetUrl;
-    this.showErrorMessageForUnsupportedBrowsers = (typeof showErrorMessageForUnsupportedBrowsers === "undefined") ? true : showErrorMessageForUnsupportedBrowsers;
-    this.allowUserToCloseModal = (typeof allowUserToCloseModal === "undefined") ? false : allowUserToCloseModal;
-    this.maxModalDisplayCount = (typeof maxModalDisplayCount === "undefined") ? -1 : maxModalDisplayCount;
-
+    this._assertArg(
+      "assetUrl",
+      typeof this.assetUrl === "string" && this.assetUrl.length > 0
+    );
+    this.showErrorMessageForUnsupportedBrowsers = (showErrorMessageForUnsupportedBrowsers === undefined) ? AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL : showErrorMessageForUnsupportedBrowsers;
+    this._assertArg(
+      "showErrorMessageForUnsupportedBrowsers",
+      Object.values(AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED).includes(this.showErrorMessageForUnsupportedBrowsers)
+    );
+    this.allowUserToCloseModal = (allowUserToCloseModal === undefined) ? false : allowUserToCloseModal;
+    this._assertArg(
+      "allowUserToCloseModal",
+      typeof this.allowUserToCloseModal === "boolean"
+    );
+    this.maxModalDisplayCount = (maxModalDisplayCount === undefined) ? -1 : maxModalDisplayCount;
+    this._assertArg(
+      "maxModalDisplayCount",
+      Number.isInteger(this.maxModalDisplayCount)
+    );
     this.closeEventListener = null;
   }
+
 
   isStandAlone() {
     // test if web app is already installed to home screen
@@ -178,7 +219,7 @@ class AddToHomeScreen {
         {
           isStandAlone: true,
           canBeStandAlone: true,
-          device: (this.isDeviceIOS() ? 'IOS' : 'ANDROID')
+          device: (this.isDeviceIOS() ? AddToHomeScreen.PHONE_TYPE.IOS : AddToHomeScreen.PHONE_TYPE.ANDROID)
         }
       );
       return ret;
@@ -188,7 +229,7 @@ class AddToHomeScreen {
         {
           isStandAlone: null,
           canBeStandAlone: null,
-          device: (this.isDeviceIOS() ? 'IOS' : 'ANDROID')
+          device: (this.isDeviceIOS() ? AddToHomeScreen.PHONE_TYPE.IOS : AddToHomeScreen.PHONE_TYPE.ANDROID)
         }
       );
       return ret;
@@ -209,7 +250,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: true,
-              device: 'IOS'
+              device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
           this._genIOSSafari(container);
@@ -218,7 +259,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: true,
-              device: 'IOS'
+              device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
           this._genIOSChrome(container);
@@ -230,7 +271,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: false,
-              device: 'IOS'
+              device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
           this._genIOSInAppBrowserOpenInSystemBrowser(container);
@@ -243,7 +284,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: false,
-              device: 'IOS'
+              device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
           this._genIOSInAppBrowserOpenInSafariBrowser(container);
@@ -252,10 +293,10 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: false,
-              device: 'IOS'
+              device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
-          if (this.showErrorMessageForUnsupportedBrowsers) {
+          if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE) {
             this._genErrorMessage(
               container,
               `Please open this website with the Safari or Chrome app.`,
@@ -271,7 +312,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: true,
-              device: 'ANDROID'
+              device: AddToHomeScreen.PHONE_TYPE.ANDROID
             }
           );
           this._genAndroidChrome(container);
@@ -280,7 +321,7 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: false,
-              device: 'ANDROID'
+              device: AddToHomeScreen.PHONE_TYPE.ANDROID
             }
           );
           this._genIOSInAppBrowserOpenInSystemBrowser(container);
@@ -289,10 +330,10 @@ class AddToHomeScreen {
             {
               isStandAlone: false,
               canBeStandAlone: false,
-              device: 'ANDROID'
+              device: AddToHomeScreen.PHONE_TYPE.ANDROID
             }
           );
-          if (this.showErrorMessageForUnsupportedBrowsers) {
+          if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE) {
             this._genErrorMessage(
               container,
               `Please open this website with the Chrome app.`,
@@ -310,7 +351,7 @@ class AddToHomeScreen {
             device: ''
           }
         );
-        if (this.showErrorMessageForUnsupportedBrowsers) {
+        if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.DESKTOP) {
           this._genErrorMessage(
             container,
             `Please open this website on a mobile device.`,
@@ -351,6 +392,12 @@ class AddToHomeScreen {
   }
 
   // below are all internal functions
+
+  _assertArg(variableName, booleanExp) {  
+    if (!booleanExp) {
+      throw new Error("AddToHomeScreen: variable '" + variableName + "' has an invalid value.");
+    }
+  }
 
   _genLogo() {
     return `
@@ -574,6 +621,9 @@ class AddToHomeScreen {
   }
 
 }
+
+AddToHomeScreen.PHONE_TYPE = PHONE_TYPE;
+AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED = SHOW_ERRMSG_UNSUPPORTED;
 
 AddToHomeScreen.ReturnObj = class R {
   constructor({ isStandAlone, canBeStandAlone, device }) {
