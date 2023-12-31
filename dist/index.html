@@ -253,7 +253,7 @@
           appName: 'Aardvark',
           appIconUrl: './dist/assets/sample/img/aardvark-logo.png', // url of your web app icon
           assetUrl: './dist/assets/img/', // make sure library assets in ./dist/assets/img are web-available
-          showErrorMessageForUnsupportedBrowsers: true,
+          showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL,
           allowUserToCloseModal: true,
           maxModalDisplayCount: -1
         });
