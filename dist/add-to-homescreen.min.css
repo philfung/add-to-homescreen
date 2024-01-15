@@ -23,7 +23,7 @@
 
 .adhs-container .adhs-modal {
   background-color: #F5F5F5;
-  border-radius: 14px;
+  border-radius: 7px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 49px 19px 32px 19px;
   margin: auto;
@@ -83,36 +83,30 @@
 .adhs-container .adhs-modal .adhs-title {
   font-size: 27px;
   font-weight: 700;
-  max-width: 330px;
-  margin-bottom: 18px;
-  margin: 0px 0px 18px 3px;
+  padding: 0px 0px 18px 0px;
+  text-align: justify;
+  word-spacing: -0.1em;
 }
 
 .adhs-container .adhs-modal .adhs-error-title {
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 0px 0px 18px 20px;
-  max-width: 320px;
-  line-height: 35px;
-  letter-spacing: -.05rem;
+  margin: 5px 10px 15px 10px;
+  text-align: justify;
 }
 
 .adhs-container .adhs-modal .adhs-error-body {
-  text-align: left;
-  font-size: 19px;
-  padding: 0px 0px 9px 0px;
-  line-height: 29px;
-  margin: 0px 0px 0px 20px;
+    font-size: 20px;
+    margin: 0px 10px 20px 10px;
+    text-align: justify;
 }
 
 .adhs-container .adhs-modal .adhs-error-copy-link-button {
-  font-size: 18px;
-  width: 279px;
-  margin: 8px 0px 0px 20px;
-  border-radius: 4px;
-  border: 1px solid;
-  padding: 5px;
   background-color: white;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 19px;
+  padding: 5px;
 }
 
 
@@ -128,7 +122,7 @@
 
 .adhs-container .adhs-modal .adhs-list .adhs-your-app-icon {
   height: 40px;
-  margin: 0px 5px -10px 5px;
+  margin: 0px 5px -13px 5px;
   border-radius: 6px;
 }
 
@@ -137,7 +131,7 @@
   flex-direction: row;
   align-items: start;
   justify-content: flex-start;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 10px 0px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
@@ -165,11 +159,10 @@
 
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
-  width: 100%;
-  text-align: left;
-  font-size: 20px;
-  padding: 0px 0px 6px 9px;
+  font-size: 19px;
   line-height: 27px;
+  padding: 0px 5px 0px 5px;
+  text-align: justify;
 }
 
 /* IOS Safari */
@@ -182,7 +175,7 @@
 }
 
 .adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-add-to-home-screen-button {
-  height: 35px;
+  height: 33px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
   border-radius: 4px;
