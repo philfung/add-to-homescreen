@@ -73,8 +73,8 @@ This should be a quick drop-in library into your mobile website.
    ```html
    <head>
    ...
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/add-to-homescreen.min.css">
-   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/add-to-homescreen.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
    ...
    </head>
    ```
@@ -91,7 +91,7 @@ This should be a quick drop-in library into your mobile website.
                                                             // Required.
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
-     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.7/dist/assets/img/',  // Link to directory of library image assets.
+     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/',  // Link to directory of library image assets.
                                                                                                // Required. 
      showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add-to-home-screen is not supported for this browser
                                                                                                  // (e.g.  "adding to home screen is not supported in IOS Firefox, please open this [website] in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this [website] in your mobile browser instead".  You can also set more granular permissions to show error messages only on mobile browsers and not on desktop browsers, etc)
