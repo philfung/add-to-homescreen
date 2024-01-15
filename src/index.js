@@ -541,8 +541,8 @@ class AddToHomeScreen {
       this._genTitle() +
       this._genListStart() +
       this._genListItem(`1`, `Tap the <img class="adhs-android-chrome-more-button" src="` + this._genAssetUrl('android-chrome-more-button.svg') + `"/> button in the browser bar.`) +
-      this._genListItem(`2`, `Tap <img class="adhs-android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>` +
-        `or <img class="adhs-android-chrome-install-app" src="` + this._genAssetUrl('android-chrome-install-app.svg') + `"/> .`) +
+      this._genListItem(`2`, `Tap the <img class="adhs-android-chrome-add-to-homescreen-button" src="` + this._genAssetUrl('android-chrome-add-to-home-screen-button.svg') + `"/>` +
+        `or <img class="adhs-android-chrome-install-app" src="` + this._genAssetUrl('android-chrome-install-app.svg') + `"/> button.`) +
       this._genListItem(`3`, `Open the <img class="adhs-your-app-icon" src="` + this.appIconUrl + `"/> app.`) +
       this._genListEnd() +
       this._genModalEnd() +
