@@ -136,6 +136,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
     - IOS
         - [ ] Reddit
         - [ ] Google App
+        - [ ] Medium App
     - Android
         - [ ] Twitter
         - [ ] LinkedIn
@@ -143,6 +144,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
         - [ ] Instagram
         - [ ] Reddit
         - [ ] Google App
+        - [ ] Medium App
 
 
 
