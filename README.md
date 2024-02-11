@@ -84,7 +84,7 @@ This should be a quick drop-in library into your mobile website.
    `index.html`
    ```javascript
    <script>
-   document.addEventListener('DOMContentLoaded', function () {
+   document.addEventListener('DOMContentLoaded', function () { // document.getElementById('addToHomeScreen').addEventListener('click', function () and add <button id="addToHomeScreen">Add to Home Screen</button> somewhere on your page to get a button instead.
 
     window.AddToHomeScreenInstance = new window.AddToHomeScreen({
      appName: 'Aardvark',                                   // Name of the app.
