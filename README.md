@@ -102,7 +102,8 @@ This should be a quick drop-in library into your mobile website.
                                                             // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
    });
          
-    ret = window.AddToHomeScreenInstance.show();             // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
+    ret = window.AddToHomeScreenInstance.show('en');        // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
+                                                            // The only argument is the language to show the messages in (currently only 'en' and 'pt' are available).
    });
    </script>
    </body>
