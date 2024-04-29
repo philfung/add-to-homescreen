@@ -1,0 +1,23 @@
+{
+  "Please open this website with the Safari or Chrome app.": "Por favor, abra esta página com o app do Safari ou Chrome.",
+  "Adding to home screen is only supported in Safari or Chrome on iOS.": "Adicionar à tela inicial só é suportado no Safari ou no Chrome no iOS.",
+  "Please open this website with the Chrome app.": "Por favor, abra esta página com o app Chrome.",
+  "Adding to home screen is only supported in Chrome on Android.": "Adicionar à tela inicial só é suportado no Chrome no Android.",
+  "Please open this website on a mobile device.": "Por favor, abra esta página em um celular ou tablet.",
+  "Installing to your home screen is currently only supported on iOS and Android.": "A instalação na tela inicial só é suportada no iOS e no Android.",
+  "Copy Website Link to Clipboard": "Copiar link da página",
+  "Install the %s app to continue": "Instale o app %s para continuar",
+  "Tap the %s button bellow.": "Toque no botão %s abaixo.",
+  "Select %s from the menu that pops up.": "Selecione %s no menu que aparece.",
+  "You may need to scroll down to find this menu item.": "Você pode ter que rolar para baixo para encontrar este item de menu.",
+  "Open the %s app.": "Abra o app %s.",
+  "Tap the %s button in the upper right corner.": "Toque no botão %s no canto superior direito.",
+  "Tap the %s button above.": "Toque no botão %s acima.",
+  "Tap": "Toque em",
+  "Open in browser": "Abrir no navegador",
+  "Tap the %s button below to open your system browser.": "Toque no botão %s abaixo para abrir no navegador padrão.",
+  "Tap the %s button in the browser bar.": "Toque no botão %s na barra do navegador.",
+  "Tap the %s or %s button.": "Toque no botão %s ou %s.",
+  "Link Copied to Clipboard!": "Link copiado!",
+  "Failed to Copy to Clipboard! (Try Again from \"https://\" Link)": "Falha ao copiar o link! (Tente novamente pelo link com \"https://\")"
+}
