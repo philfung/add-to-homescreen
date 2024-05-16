@@ -8,6 +8,7 @@ i18n.configure({
   staticCatalog: {
     en: require('./locales/en.json'),
     pt: require('./locales/pt.json'),
+    fr: require('./locales/fr.json'),
   },
   directory: '.'
 });
