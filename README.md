@@ -111,15 +111,22 @@ This should be a quick drop-in library into your mobile website.
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 
 ### Usage (If you're making changes to library)
-Build the library:
+1. Make changes
+2. Test locally:
+
+Start local server
+```
+npm install
+npm start
+```
+Load an example page http://127.0.0.1:8081
+
+3. Build the library into the ```dist``` directory
 ```
 npm run build
 ```
-Test locally:
-```
-npm start
-```
-Next, save the [dist](https://github.com/philfung/add-to-homescreen/tree/main/dist) directory to a CDN of your choice. 
+
+4. Save the [dist](https://github.com/philfung/add-to-homescreen/tree/main/dist) directory to a CDN of your choice. 
 Follow the steps in the previous section.
 
 ## Dependencies
