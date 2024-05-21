@@ -223,7 +223,7 @@ class AddToHomeScreen {
     return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
   }
 
-  show(locale) {
+  show(locale='en') {
     i18n.setLocale(locale);
     var ret;
     var shouldShowModal = false;
