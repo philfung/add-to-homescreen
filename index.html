@@ -502,22 +502,18 @@
 
       window.AddToHomeScreenInstance = new window.AddToHomeScreen(
         {
-          appName: 'Aardvark',                                   // Name of the app.
-                                                       // Required.
-          appIconUrl: './dist/assets/sample/img/aardvark-logo.png',                    // App icon link (square, at least 40 x 40 pixels).
-                                                       // Required.
-          assetUrl: './dist/assets/img/',  // Link to directory of library image assets.
-                                                                                          // Required. 
-          showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add-to-home-screen is not supported for this browser
-                                                                                            // (e.g.  "adding to home screen is not supported in IOS Firefox, please open this [website] in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this [website] in your mobile browser instead".  You can also set more granular permissions to show error messages only on mobile browsers and not on desktop browsers, etc)
-                                                                                            // Optional. Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL 
-          allowUserToCloseModal: true,                           // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs.
-                                                        // Optional. Default: false.
-          maxModalDisplayCount: -1                                // If set, the modal will only show this many times.
-                                                        // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
+          appName: 'Aardvark',                                                                        // Name of the app. [Required]
+          appIconUrl: './dist/assets/sample/img/aardvark-logo.png',                                   // App icon link (square, at least 40 x 40 pixels) [Required]
+          assetUrl: './dist/assets/img/',                                                             // Link to directory of library image assets [Required]
+          showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add-to-home-screen is not supported for this browser [Optional. Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL]
+                                                                                                      // (e.g.  "adding to home screen is not supported in IOS Firefox, please open this [website] in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this [website] in your mobile browser instead".  You can also set more granular permissions to show error messages only on mobile browsers and not on desktop browsers, etc)
+
+          allowUserToCloseModal: true,                                                                // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs [Optional. Default: false]
+          maxModalDisplayCount: -1                                                                    // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+                                                                                                      // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         }
       );
-      window.AddToHomeScreenInstance.show('en'); // only shown if web app is not already added to homescreen
+      window.AddToHomeScreenInstance.show('en');                                                      // popup is only shown if web app is not already added to homescreen
     });
 
   </script>
