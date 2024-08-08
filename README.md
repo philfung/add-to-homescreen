@@ -92,12 +92,7 @@ This should be a quick drop-in library into your mobile website.
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
      assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/',  // Link to directory of library image assets.
-                                                                                               // Required. 
-     showErrorMessageForUnsupportedBrowsers: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL, // Show an error message if add-to-home-screen is not supported for this browser
-                                                                                                 // (e.g.  "adding to home screen is not supported in IOS Firefox, please open this [website] in IOS Safari instead." or "adding to home screen is not supported on desktop, please open this [website] in your mobile browser instead".  You can also set more granular permissions to show error messages only on mobile browsers and not on desktop browsers, etc)
-                                                                                                 // Optional. Default: window.AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL 
-     allowUserToCloseModal: false,                          // Allow user to close the 'Add to Homescreen' message? Not allowing will increase installs.
-                                                            // Optional. Default: false.
+
      maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
                                                             // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
    });
