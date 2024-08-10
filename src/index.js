@@ -19,13 +19,6 @@ const PHONE_TYPE = {
   IOS: 'IOS'
 };
 
-const SHOW_ERRMSG_UNSUPPORTED = {
-  NONE: 0x0000,
-  MOBILE: 0x0001,
-  DESKTOP: 0x0010,
-  ALL: 0x0011
-};
-
 class AddToHomeScreen {
 
   /**
@@ -41,20 +34,9 @@ class AddToHomeScreen {
    *                                                         Should have rounded corners, square, and larger than 40 x 40 pixels.
    *
    * 
-   * @param (URL) assetUrl                                   
-   * @param {number} showErrorMessageForUnsupportedBrowsers  Show an error message if the user is on an unsupported browser/device on iOS or Android
-   *                                                         Example error message: 
-   *                                                         "On iOS, adding to homescreen is only supported on Safari.  
-   *                                                         Please open this website on Safari [Copy link to clipboard]"
-   *                                                         Possible values: 
-   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL (default) - show error message on all unsupported desktop and mobile browsers
-   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE - show error message on unsupported mobile browsers only 
-   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.DESKTOP - show error message on unsupported desktop browsers only
-   *                                                           AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.NONE - never show unsupported error message
+   * @param {URL} assetUrl                                   directory of static image assets needed by the AddToHomeScreen framework e.g. "https://aardvark.app/dist/assets/img/"
    * 
-   * @param {boolean} allowUserToCloseModal                  If true, user can close the modal if they click outside the modal window.  
-   *                                                         (I've found that user is way more likely to install if user has no other option.) 
-   *                                                         Default is false.
+   *
    * @param {int} maxModalDisplayCount                       If set, the modal will only show this many times.
    *                                                         Default is -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
    */
@@ -62,8 +44,6 @@ class AddToHomeScreen {
     appName,
     appIconUrl,
     assetUrl,
-    showErrorMessageForUnsupportedBrowsers,
-    allowUserToCloseModal,
     maxModalDisplayCount
   }) {
     this.appName = appName;
@@ -80,16 +60,6 @@ class AddToHomeScreen {
     this._assertArg(
       "assetUrl",
       typeof this.assetUrl === "string" && this.assetUrl.length > 0
-    );
-    this.showErrorMessageForUnsupportedBrowsers = (showErrorMessageForUnsupportedBrowsers === undefined) ? AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.ALL : showErrorMessageForUnsupportedBrowsers;
-    this._assertArg(
-      "showErrorMessageForUnsupportedBrowsers",
-      Object.values(AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED).includes(this.showErrorMessageForUnsupportedBrowsers)
-    );
-    this.allowUserToCloseModal = (allowUserToCloseModal === undefined) ? false : allowUserToCloseModal;
-    this._assertArg(
-      "allowUserToCloseModal",
-      typeof this.allowUserToCloseModal === "boolean"
     );
     this.maxModalDisplayCount = (maxModalDisplayCount === undefined) ? -1 : maxModalDisplayCount;
     this._assertArg(
@@ -164,7 +134,7 @@ class AddToHomeScreen {
     }
 
 
-    // TODO: this is incompatabile with Insta/Threads mobile website links.
+    // TODO: this is incompatible with Instagram/Threads mobile website links.
     // TODO: this solution only works with first-level links
     if (window.document.referrer.match('//l.instagram.com/')) {
       return true;
@@ -190,7 +160,7 @@ class AddToHomeScreen {
       return false;
     }
 
-    // TODO: this solution is incompatabile with Twitter mobile website links
+    // TODO: this solution is incompatible with Twitter mobile website links
     // TODO: this solution only works with first-level links
     return window.document.referrer.match('//t.co/');
   }
@@ -310,15 +280,7 @@ class AddToHomeScreen {
               device: AddToHomeScreen.PHONE_TYPE.IOS
             }
           );
-          if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE) {
-            this._genErrorMessage(
-              container,
-              i18n.__('Please open this website with the Safari or Chrome app.'),
-              i18n.__('Adding to home screen is only supported in Safari or Chrome on iOS.')
-            );
-          } else {
-            shouldShowModal = false;
-          }
+          shouldShowModal = false;
         }
       } else if (this.isDeviceAndroid()) { // android
         if (this.isBrowserAndroidChrome()) {
@@ -347,15 +309,7 @@ class AddToHomeScreen {
               device: AddToHomeScreen.PHONE_TYPE.ANDROID
             }
           );
-          if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.MOBILE) {
-            this._genErrorMessage(
-              container,
-              i18n.__('Please open this website with the Chrome app.'),
-              i18n.__('Adding to home screen is only supported in Chrome on Android.')
-            );
-          } else {
-            shouldShowModal = false;
-          }
+          shouldShowModal = false;
         }
       } else { // desktop
         ret = new AddToHomeScreen.ReturnObj(
@@ -365,15 +319,7 @@ class AddToHomeScreen {
             device: ''
           }
         );
-        if (this.showErrorMessageForUnsupportedBrowsers & AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED.DESKTOP) {
-          this._genErrorMessage(
-            container,
-            i18n.__('Please open this website on a mobile device.'),
-            i18n.__('Installing to your home screen is currently only supported on iOS and Android.')
-          );
-        } else {
-          shouldShowModal = false;
-        }
+        shouldShowModal = false;
       }
 
       if (shouldShowModal) {
@@ -569,17 +515,16 @@ class AddToHomeScreen {
 
   _registerCloseListener() {
 
-    if (this.allowUserToCloseModal) {
-      var self = this;
-      this.closeEventListener = function (e) {
-        var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
-        if (!modal.contains(e.target)) {
-          self.close();
-        };
+    var self = this;
+    this.closeEventListener = function (e) {
+      var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
+      if (!modal.contains(e.target)) {
+        self.close();
       };
-      window.addEventListener('touchstart', this.closeEventListener);
-      window.addEventListener('click', this.closeEventListener);
-    }
+    };
+    window.addEventListener('touchstart', this.closeEventListener);
+    window.addEventListener('click', this.closeEventListener);
+
   }
 
   clearModalDisplayCount() {
@@ -634,7 +579,6 @@ class AddToHomeScreen {
 }
 
 AddToHomeScreen.PHONE_TYPE = PHONE_TYPE;
-AddToHomeScreen.SHOW_ERRMSG_UNSUPPORTED = SHOW_ERRMSG_UNSUPPORTED;
 
 AddToHomeScreen.ReturnObj = class R {
   constructor({ isStandAlone, canBeStandAlone, device }) {
