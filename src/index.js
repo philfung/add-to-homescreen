@@ -76,122 +76,6 @@ class AddToHomeScreen {
       window.matchMedia('(display-mode: standalone)').matches; // Android
   }
 
-  isDeviceAndroid() {
-    return navigator.userAgent.match(/Android/);
-  }
-
-  isDeviceIOS() {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/);
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
-   AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
-   Mobile/14E5239e Safari/602.1 */
-  isBrowserIOSSafari() {
-    return this.isDeviceIOS() &&
-      window.navigator.userAgent.match(/Safari/) &&
-      !this.isBrowserIOSChrome() &&
-      !this.isBrowserIOSFirefox() &&
-      !this.isBrowserIOSInAppFacebook() &&
-      !this.isBrowserIOSInAppLinkedin() &&
-      !this.isBrowserIOSInAppInstagram() &&
-      !this.isBrowserIOSInAppThreads() &&
-      !this.isBrowserIOSInAppTwitter();
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
-     AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75
-     Mobile/14E5239e Safari/602.1 */
-  isBrowserIOSChrome() {
-    return this.isDeviceIOS() && navigator.userAgent.match(/CriOS/);
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
-  AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
-  isBrowserIOSFirefox() {
-    return this.isDeviceIOS() && window.navigator.userAgent.match(/FxiOS/);
-  }
-
-  isBrowserIOSInAppFacebook() {
-    if (!this.isDeviceIOS()) {
-      return false;
-    }
-
-    return window.navigator.userAgent.match(/FBAN|FBAV/);
-  }
-
-  isBrowserIOSInAppLinkedin() {
-    if (!this.isDeviceIOS()) {
-      return false;
-    }
-
-    return window.navigator.userAgent.match(/LinkedInApp/);
-  }
-
-  isBrowserIOSInAppInstagram() {
-    if (!this.isDeviceIOS()) {
-      return false;
-    }
-
-
-    // TODO: this is incompatible with Instagram/Threads mobile website links.
-    // TODO: this solution only works with first-level links
-    if (window.document.referrer.match('//l.instagram.com/')) {
-      return true;
-    }
-
-    // Instagram and Threads in-app browsers only 
-    // take up ~90% of the height of the screen
-    if (window.navigator.userAgent.match(/iPhone/) &&
-      window.screen.height && window.outerHeight &&
-      window.outerHeight < window.screen.height) {
-      return true;
-    }
-
-    return false;
-  }
-
-  isBrowserIOSInAppThreads() {
-    return this.isBrowserIOSInAppInstagram();
-  }
-
-  isBrowserIOSInAppTwitter() {
-    if (!this.isDeviceIOS()) {
-      return false;
-    }
-
-    // TODO: this solution is incompatible with Twitter mobile website links
-    // TODO: this solution only works with first-level links
-    return window.document.referrer.match('//t.co/');
-  }
-
-  /* Mozilla/5.0 (Linux; Android 10) 
-     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
-  isBrowserAndroidChrome() {
-    return this.isDeviceAndroid() &&
-      window.navigator.userAgent.match(/Chrome/) &&
-      !this.isBrowserAndroidFacebook() &&
-      !this.isBrowserAndroidSamsung() &&
-      !this.isBrowserAndroidFirefox();
-  }
-
-  /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
-    AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
-    Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
-  isBrowserAndroidFacebook() {
-    return this.isDeviceAndroid() && window.navigator.userAgent.match(/FBAN|FBAV/);
-  }
-
-  /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
-  (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
-  isBrowserAndroidSamsung() {
-    return this.isDeviceAndroid() && window.navigator.userAgent.match(/SamsungBrowser/);
-  }
-
-  /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
-  isBrowserAndroidFirefox() {
-    return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
-  }
 
   show(locale='en') {
     i18n.setLocale(locale);
@@ -351,7 +235,131 @@ class AddToHomeScreen {
     }
   }
 
-  // below are all internal functions
+  /**** Device Detection Functions ****/
+
+  isDeviceAndroid() {
+    return navigator.userAgent.match(/Android/);
+  }
+
+  isDeviceIOS() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/);
+  }
+
+  // isBrowserIOSIPadSafari() {
+  //   return navigator.userAgent.match(/Macintosh/) && 
+  //   navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+  // }
+
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
+   AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
+   Mobile/14E5239e Safari/602.1 */
+  isBrowserIOSSafari() {
+    return this.isDeviceIOS() &&
+      window.navigator.userAgent.match(/Safari/) &&
+      !this.isBrowserIOSChrome() &&
+      !this.isBrowserIOSFirefox() &&
+      !this.isBrowserIOSInAppFacebook() &&
+      !this.isBrowserIOSInAppLinkedin() &&
+      !this.isBrowserIOSInAppInstagram() &&
+      !this.isBrowserIOSInAppThreads() &&
+      !this.isBrowserIOSInAppTwitter();
+  }
+
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
+     AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75
+     Mobile/14E5239e Safari/602.1 */
+  isBrowserIOSChrome() {
+    return this.isDeviceIOS() && navigator.userAgent.match(/CriOS/);
+  }
+
+  /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
+  AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
+  isBrowserIOSFirefox() {
+    return this.isDeviceIOS() && window.navigator.userAgent.match(/FxiOS/);
+  }
+
+  isBrowserIOSInAppFacebook() {
+    if (!this.isDeviceIOS()) {
+      return false;
+    }
+
+    return window.navigator.userAgent.match(/FBAN|FBAV/);
+  }
+
+  isBrowserIOSInAppLinkedin() {
+    if (!this.isDeviceIOS()) {
+      return false;
+    }
+
+    return window.navigator.userAgent.match(/LinkedInApp/);
+  }
+
+  isBrowserIOSInAppInstagram() {
+    if (!this.isDeviceIOS()) {
+      return false;
+    }
+
+
+    // TODO: this is incompatible with Instagram/Threads mobile website links.
+    // TODO: this solution only works with first-level links
+    if (window.document.referrer.match('//l.instagram.com/')) {
+      return true;
+    }
+
+    // Instagram and Threads in-app browsers only 
+    // take up ~90% of the height of the screen
+    if (window.navigator.userAgent.match(/iPhone/) &&
+      window.screen.height && window.outerHeight &&
+      window.outerHeight < window.screen.height) {
+      return true;
+    }
+
+    return false;
+  }
+
+  isBrowserIOSInAppThreads() {
+    return this.isBrowserIOSInAppInstagram();
+  }
+
+  isBrowserIOSInAppTwitter() {
+    if (!this.isDeviceIOS()) {
+      return false;
+    }
+
+    // TODO: this solution is incompatible with Twitter mobile website links
+    // TODO: this solution only works with first-level links
+    return window.document.referrer.match('//t.co/');
+  }
+
+  /* Mozilla/5.0 (Linux; Android 10) 
+     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
+  isBrowserAndroidChrome() {
+    return this.isDeviceAndroid() &&
+      window.navigator.userAgent.match(/Chrome/) &&
+      !this.isBrowserAndroidFacebook() &&
+      !this.isBrowserAndroidSamsung() &&
+      !this.isBrowserAndroidFirefox();
+  }
+
+  /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
+    AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
+    Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
+  isBrowserAndroidFacebook() {
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/FBAN|FBAV/);
+  }
+
+  /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
+  (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
+  isBrowserAndroidSamsung() {
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/SamsungBrowser/);
+  }
+
+  /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
+  isBrowserAndroidFirefox() {
+    return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
+  }
+
+  /**** Internal Functions ****/
 
   _assertArg(variableName, booleanExp) {  
     if (!booleanExp) {
