@@ -131,12 +131,14 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Todos
-- [ ] Feature (high-pri) Enable desktop functionality to add to homescreen on Mac/Windows
-- [ ] Bug (low-pri): Fix browser instructions:
+# TODOs
+## Features
+- [ ] allow add-to-homescreen on Desktop websites (Mac/Windows)
+## Bugs
+- [ ] Fix browser instructions:
     - Android
         - [ ] Edge
-- [ ] Bug (low-pri): Fix in-app browser detection:
+- [ ] Fix in-app browser detection:
     - IOS
         - [ ] Reddit
         - [ ] Google App
