@@ -1,7 +1,7 @@
 # add-to-homescreen 📱
 
 ## Motivation
-Adding to home screen allows mobile websites and PWA's to open like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of mobile websites compared to native apps.  See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
+Add to home screen allows websites and PWA's to work like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of such websites compared to native apps.  See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
 
 ## This Library
 This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on both IOS and Android.
@@ -89,7 +89,7 @@ This should be a quick drop-in library into your mobile website.
     window.AddToHomeScreenInstance = new window.AddToHomeScreen({
      appName: 'Aardvark',                                   // Name of the app.
                                                             // Required.
-     appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
+     appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).  
                                                             // Required.
      assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/assets/img/',  // Link to directory of library image assets.
 
@@ -132,10 +132,11 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Todos
-- [ ] Bug: Fix browser instructions:
+- [ ] Feature (high-pri) Enable desktop functionality to add to homescreen on Mac/Windows
+- [ ] Bug (low-pri): Fix browser instructions:
     - Android
         - [ ] Edge
-- [ ] Bug: Fix in-app browser detection:
+- [ ] Bug (low-pri): Fix in-app browser detection:
     - IOS
         - [ ] Reddit
         - [ ] Google App
