@@ -11,6 +11,7 @@ module.exports = {
     libraryExport: 'default',
     libraryTarget: 'window',
   },
+  mode: 'production',
   module: {
     rules: [
       {
