@@ -69,7 +69,6 @@ class AddToHomeScreen {
     );
     this.closeEventListener = null;
 
-    this._desktopListener = this._desktopListener.bind(this);
     this._genDesktopChrome = this._genDesktopChrome.bind(this);
 
   }
@@ -119,7 +118,9 @@ class AddToHomeScreen {
       this.debugMessage("NOT STANDALONE - IOS OR ANDROID");
       var shouldShowModal = true;
       this._incrModalDisplayCount();
-      var container = this._createContainer();
+      var container = this._createContainer(
+        false // include_modal
+      );
 
       if (this.isDeviceIOS()) { // ios
         if (this.isBrowserIOSSafari()) {
@@ -219,8 +220,12 @@ class AddToHomeScreen {
           device: device
         }
       );
-      this._registerDesktopPrompt();
-      // this._genDesktopChrome(container);
+
+      if (this.isDesktopChrome()) {
+        this._showDesktopChromePrompt();
+      } else if (this.isDesktopSafari()) {
+        this._showDesktopSafariPrompt();
+      }
     
     } 
 
@@ -360,12 +365,20 @@ class AddToHomeScreen {
     return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
   }
 
-  isBrowserDesktopChrome() {
-
+  isDesktopChrome() {
+    const userAgent = navigator.userAgent;
+    const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
+    const isDesktop = userAgent.includes("Windows") || userAgent.includes("Macintosh") || userAgent.includes("Linux");
+  
+    return isChrome && isDesktop;
   }
 
-  isBrowserDesktopSafari() {
-
+  isDesktopSafari() {
+    const userAgent = navigator.userAgent;
+    const isSafari = userAgent.includes("Safari") && !userAgent.includes("Chrome") && !userAgent.includes("Edg");
+    const isDesktop = userAgent.includes("Macintosh") || userAgent.includes("Windows");
+  
+    return isSafari && isDesktop;
   }
 
   /**** Internal Functions ****/
@@ -377,7 +390,7 @@ class AddToHomeScreen {
     }
   }
 
-  _createContainer() {
+  _createContainer(include_modal=false) {
     const container = document.createElement('div');
     container.classList.add('adhs-container');
 
@@ -385,6 +398,15 @@ class AddToHomeScreen {
     container.style.height = document.body.clientHeight + 'px';
     //container.style.width = document.body.clientWidth + 'px';
     container.style.width = window.innerWidth + 'px';
+
+    if (include_modal) {
+      var containerInnerHTML =
+      this._genLogo() +
+      this._genModalStart() +
+      this._genModalEnd();
+      container.innerHTML = containerInnerHTML;
+    }
+
     return container;
   }
 
@@ -434,9 +456,13 @@ class AddToHomeScreen {
     return `</div>`;
   }
 
+  
+
   _modalClassName() {
     return 'adhs-modal';
   }
+
+
 
   _genListStart() {
     return `<div class="adhs-list">`;
@@ -554,51 +580,44 @@ class AddToHomeScreen {
     container.classList.add('adhs-chrome');
   }
 
-  _genDesktopChrome(container) {
+  _genDesktopChrome = (container) =>  {
 
-    const containerInstallApp = document.createElement('hi');
-    containerInstallApp.textContent = 'Install App';
+    const containerInstallApp = document.createElement('h1');
+    containerInstallApp.textContent = 'Install App'; // todo: i18n
 
     const containerAppName = document.createElement('div');
-    containerAppName.textContent = 'Aardvark: the social network for Aardvarks';
+    containerAppName.textContent = 'Aardvark: the social network for Aardvarks'; // todo: use appName
 
     const containerUrl = document.createElement('div');
-    containerUrl.textContent = 'https://aardvark.app';
+    containerUrl.textContent = 'https://aardvark.app'; // TODO: use actual URL
 
     const containerBlurb = document.createElement('div');
-    containerBlurb.textContent = 'An icon will be added to your Dock/Taskbar so you can quickly access this website.';
+    containerBlurb.textContent = 'An icon will be added to your Dock/Taskbar so you can quickly access this website.'; // TODO: i18n
 
     const cancelButton = document.createElement('button');
-    cancelButton.textContent = 'Cancel';
+    cancelButton.textContent = 'Cancel'; // TODO: i18n
     cancelButton.onclick = () => {
       this.closeModal();
     };
   
     const installButton = document.createElement('button');
-    installButton.textContent = 'Install';
+    installButton.textContent = 'Install'; // TODO: i18n
     installButton.onclick = () => {
-      if (!this._desktopPromptEvent) {
+      if (!this._desktopChromePromptEvent) {
         return;
       }
-      this._desktopPromptEvent.prompt();
+      this._desktopChromePromptEvent.prompt();
       this.closeModal();
 
-      this._desktopPromptEvent.userChoice.then((choiceResult) => {
+      this._desktopChromePromptEvent.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
           this.debugMessage('User accepted the install prompt');
         } else {
           this.debugMessage('User dismissed the install prompt');
         }
-        this._desktopPromptEvent = null;
+        this._desktopChromePromptEvent = null;
       });
     };
-
-    var containerInnerHTML =
-      this._genLogo() +
-      this._genModalStart() +
-      this._genModalEnd();
-
-    container.innerHTML = containerInnerHTML;
 
     var modal = container.getElementsByClassName(this._modalClassName())[0];
 
@@ -612,7 +631,9 @@ class AddToHomeScreen {
     container.classList.add('adhs-desktop-chrome');
   }
 
-  _genDesktopSafari(container) {
+  _showDesktopSafariPrompt() {
+    this.debugMessage("SHOW SAFARI DESKTOP PROMPT");
+
   }
 
   _registerCloseListener() {
@@ -669,8 +690,8 @@ class AddToHomeScreen {
   }
 
   debugMessage(str) {
-    //alert(str);
-    console.log(str);
+    alert(str);
+    // console.log(str);
   }
 
   static copyToClipboard() {
@@ -684,28 +705,31 @@ class AddToHomeScreen {
     }
   }
 
-  _desktopPromptEvent = null;
-  _desktopPromptWasShown = false;
+  _desktopChromePromptEvent = null;
+  _desktopChromePromptWasShown = false;
 
-  _registerDesktopPrompt() {
-    window.addEventListener('beforeinstallprompt', this._desktopListener);
+  _showDesktopChromePrompt() {
+    window.addEventListener('beforeinstallprompt', this._desktopChromeListener);
   }
 
-  _desktopListener(e) {
-    if (this._desktopPromptWasShown) {
+  _desktopChromeListener = (e) => {
+    alert("DESKTOP CHROME LISTENER");
+    if (this._desktopChromePromptWasShown) {
       return;
     }
     this.debugMessage("BEFORE INSTALL PROMPT");
     e.preventDefault();
-    this._desktopPromptEvent = e;
-    this.showDesktopPromotion();
+    this._desktopChromePromptEvent = e;
+    this.showDesktopChromePromotion();
   }
 
-  showDesktopPromotion() {
+  showDesktopChromePromotion() {
 
-    this._desktopPromptWasShown = true;
+    this._desktopChromePromptWasShown = true;
 
-    var container = this._createContainer();
+    var container = this._createContainer(
+      true // include_modal
+    );
 
     this._genDesktopChrome(container);
     this._addContainerToBody(container);

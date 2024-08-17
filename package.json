@@ -4,6 +4,7 @@
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen.",
   "main": "src/index.js",
   "scripts": {
+    "build-dev":"NODE_ENV=development webpack",
     "build": "webpack",
     "start": "http-server -c-1 -p 8081"
   },
