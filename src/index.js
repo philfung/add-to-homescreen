@@ -221,7 +221,7 @@ class AddToHomeScreen {
         }
       );
 
-      if (this.isDesktopChrome()) {
+      if (this.isDesktopChrome() || this.isDesktopEdge()) {
         this._showDesktopChromePrompt();
       } else if (this.isDesktopSafari()) {
         this._showDesktopSafariPrompt();
@@ -379,6 +379,11 @@ class AddToHomeScreen {
     const isDesktop = userAgent.includes("Macintosh") || userAgent.includes("Windows");
   
     return isSafari && isDesktop;
+  }
+
+  isDesktopEdge() {
+    const userAgent = window.navigator.userAgent;
+    return userAgent.includes('Edg/');
   }
 
   /**** Internal Functions ****/
@@ -595,7 +600,7 @@ class AddToHomeScreen {
     containerBlurb.textContent = 'An icon will be added to your Dock/Taskbar so you can quickly access this website.'; // TODO: i18n
 
     const cancelButton = document.createElement('button');
-    cancelButton.textContent = 'Cancel'; // TODO: i18n
+    cancelButton.textContent = 'Not Now'; // TODO: i18n
     cancelButton.onclick = () => {
       this.closeModal();
     };
@@ -631,10 +636,25 @@ class AddToHomeScreen {
     container.classList.add('adhs-desktop-chrome');
   }
 
-  _showDesktopSafariPrompt() {
-    this.debugMessage("SHOW SAFARI DESKTOP PROMPT");
-
+  _genDesktopSafari(container) {
+    var containerInnerHTML =
+      this._genLogo() +
+      this._genModalStart() +
+      this._genTitle() +
+      this._genListStart() +
+      this._genListItem(`1`, i18n.__('Tap the %s button in the browser bar.', `<img class="adhs-android-chrome-more-button" src="${this._genAssetUrl('android-chrome-more-button.svg')}"/>`)) +
+      this._genListItem(`2`, i18n.__('Tap the %s or %s button.', `<img class="adhs-android-chrome-add-to-homescreen-button" src="${this._genAssetUrl('android-chrome-add-to-home-screen-button.svg')}"/>`, `<img class="adhs-android-chrome-install-app" src="${this._genAssetUrl('android-chrome-install-app.svg')}"/>`)) +
+      this._genListEnd() +
+      this._genModalEnd() +
+      `<div class="adhs-android-chrome-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
+    </div>`;
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('adhs-android');
+    container.classList.add('adhs-chrome');
   }
+
+
 
   _registerCloseListener() {
 
@@ -734,6 +754,15 @@ class AddToHomeScreen {
     this._genDesktopChrome(container);
     this._addContainerToBody(container);
 
+  }
+
+  _showDesktopSafariPrompt() {
+    this.debugMessage("SHOW SAFARI DESKTOP PROMPT");
+    var container = this._createContainer(
+      false // include_modal
+    );
+    this._genDesktopSafari(container);
+    this._addContainerToBody(container);
   }
 }
 
