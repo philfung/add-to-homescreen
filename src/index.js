@@ -306,14 +306,6 @@ class AddToHomeScreen {
       return true;
     }
 
-    // Instagram and Threads in-app browsers only 
-    // take up ~90% of the height of the screen
-    if (window.navigator.userAgent.match(/iPhone/) &&
-      window.screen.height && window.outerHeight &&
-      window.outerHeight < window.screen.height) {
-      return true;
-    }
-
     return false;
   }
 
