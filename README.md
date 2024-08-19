@@ -24,12 +24,6 @@ Here are the guides shown for each platform/browser:
 #### Android - Chrome browser
 <img src="https://github.com/philfung/add-to-homescreen/assets/1054593/53f06e82-61f3-4173-890e-0a6a42026dea)" width="175"/>
 
-## Browser Fallback Support
-All major browsers on IOS and Android are supported, but in the edge case of a non-compliant or desktop browser, a message is shown to redirect the user to a supported browser.  (This feature can be toggled on/off using the `showErrorMessageForUnsupportedBrowsers` flag.)
-
-#### Desktop users
-<img width="200" alt="error-modal-desktop" src="https://github.com/philfung/add-to-homescreen/assets/1054593/83c07702-15b6-4bd3-a362-1b846ab381a7">
-
 #### In-App Browsers 
 
 ##### Facebook and Linkedin in-app browsers on IOS and Android
@@ -74,7 +68,7 @@ This should be a quick drop-in library into your mobile website.
    <head>
    ...
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.css">
-   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.8/dist/add-to-homescreen.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.9/dist/add-to-homescreen.min.js"></script>
    ...
    </head>
    ```
