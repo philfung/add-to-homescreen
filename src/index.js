@@ -453,6 +453,18 @@ class AddToHomeScreen {
     return this._genTitleWithMessage(i18n.__('Install the %s app to continue', this.appName));
   }
 
+
+  _genModalHeader() {
+    var appTitle = this.appName;
+    var appUrl = window.location.href; // TODO: shorten/clean 
+    return `<div class="adhs-modal-header">` +
+      `<div class="adhs-install-app">` + i18n.__('Install App') + `</div>` +
+      `<div class="adhs-app-title">` + appTitle + `</div>` +
+      `<div class="adhs-app-url">` + appUrl + `</div>` +
+      `</div>`;
+  }
+  
+
   _genModalStart() {
     return `<div class="` + this._modalClassName() + `">`;
   }
@@ -640,7 +652,7 @@ class AddToHomeScreen {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
-      this._genTitle() +
+      this._genModalHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button in the browser bar.', `<img class="adhs-android-chrome-more-button" src="${this._genAssetUrl('android-chrome-more-button.svg')}"/>`)) +
       this._genListItem(`2`, i18n.__('Tap the %s or %s button.', `<img class="adhs-android-chrome-add-to-homescreen-button" src="${this._genAssetUrl('android-chrome-add-to-home-screen-button.svg')}"/>`, `<img class="adhs-android-chrome-install-app" src="${this._genAssetUrl('android-chrome-install-app.svg')}"/>`)) +
@@ -757,7 +769,7 @@ class AddToHomeScreen {
   }
 
   _showDesktopSafariPrompt() {
-    this.debugMessage("SHOW SAFARI DESKTOP PROMPT");
+    this.debugMessage("SHOW SAFARI DESKTOP PROMPT1");
     var container = this._createContainer(
       false // include_modal
     );
