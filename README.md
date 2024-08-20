@@ -127,7 +127,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 # TODOs
 ## Features
-- [ ] allow add-to-homescreen on Desktop websites (Mac/Windows)
+- [ ] add to Dock/Taskbar for Desktop (coming soon!!) 
 ## Bugs
 - [ ] Fix browser instructions:
     - Android
