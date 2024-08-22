@@ -2,15 +2,16 @@
   "name": "add-to-homescreen",
   "version": "1.0.0",
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build-dev":"NODE_ENV=development webpack",
     "build": "webpack",
-    "start": "http-server -c-1 -p 8081"
+    "start": "http-server -c-1 -p 8081",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/add-to-homescreen.git"
+    "url": "git+https://github.com/philfung/add-to-homescreen.git"
   },
   "keywords": [
     "homescreen",
@@ -20,9 +21,9 @@
   "author": "Your Name <your@email.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/add-to-homescreen/issues"
+    "url": "https://github.com/philfung/add-to-homescreen/issues"
   },
-  "homepage": "https://github.com/yourusername/add-to-homescreen#readme",
+  "homepage": "https://github.com/philfung/add-to-homescreen#readme",
   "dependencies": {
     "add-to-homescreen": "^3.2.6",
     "copy-webpack-plugin": "^11.0.0",
@@ -33,6 +34,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.4.8",
+    "typescript": "^5.0.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^4.10.0"
   }

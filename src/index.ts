@@ -14,13 +14,46 @@ i18n.configure({
   directory: '.'
 });
 
-const PHONE_TYPE = {
-  ANDROID: 'ANDROID',
-  DESKTOP: 'DESKTOP',
-  IOS: 'IOS'
-};
+enum DeviceType {
+  IOS = 'IOS',
+  ANDROID = 'ANDROID',
+  DESKTOP = 'DESKTOP'
+}
+
+class ReturnObj {
+  isStandAlone: boolean;
+  canBeStandAlone: boolean;
+  device: DeviceType;
+  constructor(isStandAlone: boolean, canBeStandAlone: boolean, device: DeviceType) {
+    this.isStandAlone = isStandAlone;
+    this.canBeStandAlone = canBeStandAlone;
+    this.device = device;
+  }
+}
+
+interface ADHSBeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  readonly userChoice: Promise<{
+    outcome: "accepted" | "dismissed";
+    platform: string;
+  }>;
+  prompt(): Promise<void>;
+}
+
+declare global {
+  interface WindowEventMap {
+    beforeinstallprompt: ADHSBeforeInstallPromptEvent;
+  }
+}
 
 class AddToHomeScreen {
+  appName: string;
+  appIconUrl: string;
+  assetUrl: string;
+  maxModalDisplayCount: number;
+  closeEventListener: EventListener | null;
+
+
 
   /**
    * Summary. (use period)
@@ -46,6 +79,11 @@ class AddToHomeScreen {
     appIconUrl,
     assetUrl,
     maxModalDisplayCount
+  }: {
+    appName: string,
+    appIconUrl: string,
+    assetUrl: string,
+    maxModalDisplayCount: number
   }) {
     this.appName = appName;
     this._assertArg(
@@ -76,42 +114,40 @@ class AddToHomeScreen {
 
   isStandAlone() {
     // test if web app is already installed to home screen
-    return window.navigator.standalone || // IOS (TODO: detect iPad 13)
+    return ('standalone' in window.navigator && window.navigator.standalone) || // IOS (TODO: detect iPad 13)
       window.matchMedia('(display-mode: standalone)').matches; // Android and Desktop Chrome/Safari/Edge
   }
 
 
-  show(locale='en') {
+  show(locale='en'): ReturnObj {
     i18n.setLocale(locale);
-    var ret;
+    var ret: ReturnObj;
 
-    var device;
+    var device: DeviceType;
+    var isStandAlone: boolean;
+    var canBeStandAlone: boolean;
     if (this.isDeviceIOS()) {
-      device = AddToHomeScreen.PHONE_TYPE.IOS;
+      device = DeviceType.IOS;
     } else if (this.isDeviceAndroid()) {
-      device = AddToHomeScreen.PHONE_TYPE.ANDROID;
+      device = DeviceType.ANDROID;
     } else {
-      device = AddToHomeScreen.PHONE_TYPE.DESKTOP;
+      device = DeviceType.DESKTOP;
     }
 
     if (this.isStandAlone()) {
       this.debugMessage("ALREADY STANDALONE");
 
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: true,
-          canBeStandAlone: true,
-          device: device
-        }
+      ret = new ReturnObj(
+          isStandAlone = true,
+          canBeStandAlone = true,
+          device = device
       );
 
     } else if (this._hasReachedMaxModalDisplayCount()) {
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: false,
-          device: device
-        }
+      ret = new ReturnObj(
+        isStandAlone = false,
+        canBeStandAlone = false,
+        device = device
       );
 
     } else if (this.isDeviceIOS() || this.isDeviceAndroid()) {
@@ -124,85 +160,74 @@ class AddToHomeScreen {
 
       if (this.isDeviceIOS()) { // ios
         if (this.isBrowserIOSSafari()) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: true,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = true,
+            device = device
           );
+
           this._genIOSSafari(container);
         } else if (this.isBrowserIOSChrome()) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: true,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = true,
+            device = device
           );
+
           this._genIOSChrome(container);
         } else if (
           this.isBrowserIOSInAppFacebook() ||
           this.isBrowserIOSInAppLinkedin()
         ) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: false,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = false,
+            device = device
           );
+
           this._genIOSInAppBrowserOpenInSystemBrowser(container);
         } else if (
           this.isBrowserIOSInAppInstagram() ||
           this.isBrowserIOSInAppThreads() ||
           this.isBrowserIOSInAppTwitter()
         ) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: false,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = false,
+            device = device
           );
+
           this._genIOSInAppBrowserOpenInSafariBrowser(container);
         } else {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: false,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = false,
+            device = device
           );
           shouldShowModal = false;
         }
-      } else if (this.isDeviceAndroid()) { // android
+      } else { // android
         if (this.isBrowserAndroidChrome()) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: true,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = true,
+            device = device
           );
           this._genAndroidChrome(container);
         } else if (this.isBrowserAndroidFacebook()) {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: false,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = false,
+            device = device
           );
           this._genIOSInAppBrowserOpenInSystemBrowser(container);
         } else {
-          ret = new AddToHomeScreen.ReturnObj(
-            {
-              isStandAlone: false,
-              canBeStandAlone: false,
-              device: device
-            }
+          ret = new ReturnObj(
+            isStandAlone = false,
+            canBeStandAlone = false,
+            device = device
           );
+
           shouldShowModal = false;
         }
       }
@@ -212,13 +237,11 @@ class AddToHomeScreen {
       }
 
     } else {
-      this.debugMessage("NOT STANDALONE - DESKTOP");
-      ret = new AddToHomeScreen.ReturnObj(
-        {
-          isStandAlone: false,
-          canBeStandAlone: false,
-          device: device
-        }
+      this.debugMessage("DESKTOP");
+      ret = new ReturnObj(
+        isStandAlone = false,
+        canBeStandAlone = false,
+        device = device
       );
 
       if (this.isDesktopChrome() || this.isDesktopEdge()) {
@@ -389,7 +412,7 @@ class AddToHomeScreen {
   /**** Internal Functions ****/
 
 
-  _assertArg(variableName, booleanExp) {  
+  _assertArg(variableName: string, booleanExp: boolean) {  
     if (!booleanExp) {
       throw new Error("AddToHomeScreen: variable '" + variableName + "' has an invalid value.");
     }
@@ -415,7 +438,7 @@ class AddToHomeScreen {
     return container;
   }
 
-  _addContainerToBody(container) {
+  _addContainerToBody(container: HTMLElement) {
     document.body.appendChild(container);
     this._registerCloseListener();
     setTimeout(() => {
@@ -431,7 +454,7 @@ class AddToHomeScreen {
       `;
   }
 
-  _genErrorMessage(container, title, body) {
+  _genErrorMessage(container: HTMLElement, title: string, body: string) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -443,7 +466,7 @@ class AddToHomeScreen {
   }
 
 
-  _genTitleWithMessage(message) {
+  _genTitleWithMessage(message: string) {
     return `
       <div class="adhs-title">` + message + `</div>
       `;
@@ -489,7 +512,7 @@ class AddToHomeScreen {
     return `</div>`;
   }
 
-  _genListItem(numberString, instructionHTML) {
+  _genListItem(numberString: string, instructionHTML: string) {
     return `
     <div class="adhs-list-item">
       <div class="adhs-number-container">
@@ -501,11 +524,11 @@ class AddToHomeScreen {
     </div>`;
   }
 
-  _genAssetUrl(fileName) {
+  _genAssetUrl(fileName: string) {
     return this.assetUrl + fileName;
   }
 
-  _genIOSSafari(container) {
+  _genIOSSafari(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -524,7 +547,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-safari');
   }
 
-  _genIOSChrome(container) {
+  _genIOSChrome(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -543,7 +566,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-chrome');
   }
 
-  _genIOSInAppBrowserOpenInSystemBrowser(container) {
+  _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -561,7 +584,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-inappbrowser-openinsystembrowser');
   }
 
-  _genIOSInAppBrowserOpenInSafariBrowser(container) {
+  _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -578,7 +601,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-inappbrowser-openinsafari');
   }
 
-  _genAndroidChrome(container) {
+  _genAndroidChrome(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -597,7 +620,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-chrome');
   }
 
-  _genDesktopChrome = (container) =>  {
+  _genDesktopChrome = (container: HTMLElement) =>  {
 
     const containerInstallApp = document.createElement('h1');
     containerInstallApp.textContent = 'Install App'; // todo: i18n
@@ -626,7 +649,7 @@ class AddToHomeScreen {
       this._desktopChromePromptEvent.prompt();
       this.closeModal();
 
-      this._desktopChromePromptEvent.userChoice.then((choiceResult) => {
+      this._desktopChromePromptEvent.userChoice.then((choiceResult: { outcome: string; }) => {
         if (choiceResult.outcome === 'accepted') {
           this.debugMessage('User accepted the install prompt');
         } else {
@@ -648,7 +671,7 @@ class AddToHomeScreen {
     container.classList.add('adhs-desktop-chrome');
   }
 
-  _genDesktopSafari(container) {
+  _genDesktopSafari(container: HTMLElement) {
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -671,9 +694,9 @@ class AddToHomeScreen {
   _registerCloseListener() {
 
     var self = this;
-    this.closeEventListener = function (e) {
+    this.closeEventListener = function (e: Event) {
       var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
-      if (!modal.contains(e.target)) {
+      if (!modal.contains(e.target as Node)) {
         self.closeModal();
       };
     };
@@ -704,26 +727,27 @@ class AddToHomeScreen {
       return false;
     }
 
-    var count = this._getModalDisplayCount();
+    var count: number = this._getModalDisplayCount();
     count++;
-    window.localStorage.setItem('adhs-modal-display-count', count);
+    window.localStorage.setItem('adhs-modal-display-count', count.toString());
     return true;
   }
 
-  _getModalDisplayCount() {
-    var count = window.localStorage.getItem('adhs-modal-display-count');
-    if (count === null) {
+  _getModalDisplayCount(): number {
+    var countStr: string | null = window.localStorage.getItem('adhs-modal-display-count');
+    var count: number;
+    if (countStr === null) {
       count = 0;
-      window.localStorage.setItem('adhs-modal-display-count', count);
+      window.localStorage.setItem('adhs-modal-display-count', count.toString());
     } else {
-      count = parseInt(count);
+      count = parseInt(countStr);
     }
     return count;
   }
 
-  debugMessage(str) {
-    alert(str);
-    // console.log(str);
+  debugMessage(message: string) {
+    alert(message);
+    // console.log(message);
   }
 
   static copyToClipboard() {
@@ -737,14 +761,14 @@ class AddToHomeScreen {
     }
   }
 
-  _desktopChromePromptEvent = null;
-  _desktopChromePromptWasShown = false;
+  _desktopChromePromptEvent: ADHSBeforeInstallPromptEvent | null = null;
+  _desktopChromePromptWasShown: boolean = false;
 
   _showDesktopChromePrompt() {
     window.addEventListener('beforeinstallprompt', this._desktopChromeListener);
   }
 
-  _desktopChromeListener = (e) => {
+  _desktopChromeListener = (e: ADHSBeforeInstallPromptEvent) => {
     alert("DESKTOP CHROME LISTENER");
     if (this._desktopChromePromptWasShown) {
       return;
@@ -775,16 +799,6 @@ class AddToHomeScreen {
     );
     this._genDesktopSafari(container);
     this._addContainerToBody(container);
-  }
-}
-
-AddToHomeScreen.PHONE_TYPE = PHONE_TYPE;
-
-AddToHomeScreen.ReturnObj = class R {
-  constructor({ isStandAlone, canBeStandAlone, device }) {
-    this.isStandAlone = isStandAlone;
-    this.canBeStandAlone = canBeStandAlone;
-    this.device = device;
   }
 }
 
