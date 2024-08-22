@@ -802,4 +802,4 @@ class AddToHomeScreen {
   }
 }
 
-export default AddToHomeScreen;
+(window as any).AddToHomeScreen = AddToHomeScreen;
