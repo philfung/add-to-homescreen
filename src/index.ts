@@ -454,18 +454,6 @@ class AddToHomeScreen {
       `;
   }
 
-  _genErrorMessage(container: HTMLElement, title: string, body: string) {
-    var containerInnerHTML =
-      this._genLogo() +
-      this._genModalStart() +
-      `<div class="adhs-error-title">` + title + `</div>` +
-      `<div class="adhs-error-body">` + body + `</div>` +
-      `<button class="adhs-error-copy-link-button" onclick="AddToHomeScreen.copyToClipboard();" ontouchstart="AddToHomeScreen.copyToClipboard();">${i18n.__('Copy Website Link to Clipboard')}</button>` +
-      this._genModalEnd();
-    container.innerHTML = containerInnerHTML;
-  }
-
-
   _genTitleWithMessage(message: string) {
     return `
       <div class="adhs-title">` + message + `</div>
@@ -689,8 +677,6 @@ class AddToHomeScreen {
     container.classList.add('adhs-chrome');
   }
 
-
-
   _registerCloseListener() {
 
     var self = this;
@@ -711,18 +697,18 @@ class AddToHomeScreen {
     }
   }
 
-  _isEnabledModalDisplayCount() {
-    return (typeof (this.maxModalDisplayCount) === 'number') && (this.maxModalDisplayCount >= 0) && window.localStorage;
+  _isEnabledModalDisplayCount(): boolean {
+    return (typeof (this.maxModalDisplayCount) === 'number') && (this.maxModalDisplayCount >= 0) && window.localStorage !== undefined;
   }
 
-  _hasReachedMaxModalDisplayCount() {
+  _hasReachedMaxModalDisplayCount(): boolean {
     if (!this._isEnabledModalDisplayCount()) {
       return false;
     }
     return (this._getModalDisplayCount() >= this.maxModalDisplayCount);
   }
 
-  _incrModalDisplayCount() {
+  _incrModalDisplayCount(): boolean {
     if (!this._isEnabledModalDisplayCount()) {
       return false;
     }
@@ -748,17 +734,6 @@ class AddToHomeScreen {
   debugMessage(message: string) {
     alert(message);
     // console.log(message);
-  }
-
-  static copyToClipboard() {
-    const currentUrl = window.location.href;
-    try {
-      window.navigator.clipboard.writeText(currentUrl);
-      document.getElementsByClassName('adhs-error-copy-link-button')[0].innerHTML = i18n.__('Link Copied to Clipboard!');
-    } catch (err) {
-      // android browser doesn't support clipboard API if not an https link
-      document.getElementsByClassName('adhs-error-copy-link-button')[0].innerHTML = i18n.__('Failed to Copy to Clipboard! (Try Again from "https://" Link)');
-    }
   }
 
   _desktopChromePromptEvent: ADHSBeforeInstallPromptEvent | null = null;
