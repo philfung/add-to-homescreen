@@ -6,7 +6,7 @@ const path = require('path');
 
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/main.ts',
   output: {
     filename: 'add-to-homescreen.min.js',
     library: 'AddToHomescreen',
