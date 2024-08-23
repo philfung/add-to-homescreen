@@ -408,6 +408,11 @@ class AddToHomeScreen {
   /**** Internal Functions ****/
 
 
+  _getAppDisplayUrl():string {
+    const currentUrl = new URL(window.location.href);
+    return currentUrl.href;
+  }
+
   _assertArg(variableName: string, booleanExp: boolean) {  
     if (!booleanExp) {
       throw new Error("AddToHomeScreen: variable '" + variableName + "' has an invalid value.");
@@ -479,6 +484,8 @@ class AddToHomeScreen {
   _genModalEnd() {
     return `</div>`;
   }
+
+
 
   _modalClassName() {
     return 'adhs-modal';
@@ -604,23 +611,29 @@ class AddToHomeScreen {
 
     const containerInstallApp = document.createElement('h1');
     containerInstallApp.textContent = 'Install App'; // todo: i18n
+    containerInstallApp.classList.add('adhs-install-app');
 
     const containerAppName = document.createElement('div');
-    containerAppName.textContent = 'Aardvark: the social network for Aardvarks'; // todo: use appName
+    containerAppName.textContent = this.appName;
+    containerAppName.classList.add('adhs-app-name');
 
     const containerUrl = document.createElement('div');
-    containerUrl.textContent = 'https://aardvark.app'; // TODO: use actual URL
+    containerUrl.textContent = this._getAppDisplayUrl();
+    containerUrl.classList.add('adhs-app-url');
 
     const containerBlurb = document.createElement('div');
     containerBlurb.textContent = 'An icon will be added to your Dock/Taskbar so you can quickly access this website.'; // TODO: i18n
+    containerBlurb.classList.add('adhs-blurb');
 
     const cancelButton = document.createElement('button');
-    cancelButton.textContent = 'Not Now'; // TODO: i18n
+    cancelButton.classList.add('adhs-button');
+    cancelButton.textContent = 'Later'; // TODO: i18n
     cancelButton.onclick = () => {
       this.closeModal();
     };
   
     const installButton = document.createElement('button');
+    installButton.classList.add('adhs-button');
     installButton.textContent = 'Install'; // TODO: i18n
     installButton.onclick = () => {
       if (!this._desktopChromePromptEvent) {
@@ -639,15 +652,20 @@ class AddToHomeScreen {
       });
     };
 
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('adhs-button-container');
+    buttonContainer.appendChild(cancelButton);
+    buttonContainer.appendChild(installButton);
+
     var modal = container.getElementsByClassName(this._modalClassName())[0];
 
     modal.appendChild(containerInstallApp);
     modal.appendChild(containerAppName);
     modal.appendChild(containerUrl);
     modal.appendChild(containerBlurb);
-    modal.appendChild(cancelButton);
-    modal.appendChild(installButton);
+    modal.appendChild(buttonContainer);
     
+    container.classList.add('adhs-desktop');
     container.classList.add('adhs-desktop-chrome');
   }
 
@@ -665,8 +683,9 @@ class AddToHomeScreen {
       <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add('adhs-android');
-    container.classList.add('adhs-chrome');
+
+    container.classList.add('adhs-desktop');
+    container.classList.add('adhs-desktop-safari');
   }
 
   _registerCloseListener() {
