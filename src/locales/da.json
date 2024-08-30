@@ -1,0 +1,23 @@
+{
+  "Please open this website with the Safari or Chrome app.": "Åbn denne hjemmeside med Safari eller Chrome appen.",
+  "Adding to home screen is only supported in Safari or Chrome on iOS.": "Det er kun understøttet at tilføje til hjemmeskærm fra Safari eller Chrome på iOS.",
+  "Please open this website with the Chrome app.": "Åbn denne hjemmeside med Chrome appen.",
+  "Adding to home screen is only supported in Chrome on Android.": "Det er kun understøttet at tilføje til hjemmeskærm fra Chrome på Android.",
+  "Please open this website on a mobile device.": "Åbn denne hjemmeside på en mobil enhed.",
+  "Installing to your home screen is currently only supported on iOS and Android.": "Det er pt. kun understøttet at installere til hjemmeskærmen på iOS og Android.",
+  "Copy Website Link to Clipboard": "Kopier website link til udklipsholder",
+  "Install the %s app to continue": "Installer %s appen for at fortsætte",
+  "Tap the %s button bellow.": "Tryk på %s knappen nedenfor.",
+  "Select %s from the menu that pops up.": "Vælg %s fra menuen der kommer frem.",
+  "You may need to scroll down to find this menu item.": "Du skal måske scrolle ned for at finde denne menu.",
+  "Open the %s app.": "Åbn %s appen.",
+  "Tap the %s button in the upper right corner.": "Tryk på %s knappen i øverste højre hjørne.",
+  "Tap the %s button above.": "Tryk på %s knappen ovenfor.",
+  "Tap": "Tryk",
+  "Open in browser": "Åbn i browseren",
+  "Tap the %s button below to open your system browser.": "Tryk på %s knappen nedenfor for at åbne din system browser.",
+  "Tap the %s button in the browser bar.": "Tryk på %s knappen i browser baren.",
+  "Tap the %s or %s button.": "Tryk på %s eller %s knappen.",
+  "Link Copied to Clipboard!": "Link kopieret til udklipsholderen!",
+  "Failed to Copy to Clipboard! (Try Again from \"https://\" Link)": "Det fejlede at kopiere til udklipsholderen! (Prøv igen fra \"https://\" Link)"
+}
