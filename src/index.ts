@@ -465,18 +465,6 @@ class AddToHomeScreen {
     return this._genTitleWithMessage(i18n.__('Install the %s app to continue', this.appName));
   }
 
-
-  _genModalHeader() {
-    var appTitle = this.appName;
-    var appUrl = window.location.href; // TODO: shorten/clean 
-    return `<div class="adhs-modal-header">` +
-      `<div class="adhs-install-app">` + i18n.__('Install App') + `</div>` +
-      `<div class="adhs-app-title">` + appTitle + `</div>` +
-      `<div class="adhs-app-url">` + appUrl + `</div>` +
-      `</div>`;
-  }
-  
-
   _genModalStart() {
     return `<div class="` + this._modalClassName() + `">`;
   }
@@ -484,8 +472,6 @@ class AddToHomeScreen {
   _genModalEnd() {
     return `</div>`;
   }
-
-
 
   _modalClassName() {
     return 'adhs-modal';
@@ -607,35 +593,51 @@ class AddToHomeScreen {
     container.classList.add('adhs-chrome');
   }
 
+  _genInstallAppHeader() {
+    return `<h1 class="adhs-install-app">` + i18n.__('Install app') + `</h1>`;
+  }
+
+  _genAppNameHeader() {
+    return `<div class="adhs-app-name">` + this.appName + `</div>`;
+  }
+
+  _genAppUrlHeader() {
+    return `<div class="adhs-app-url">` + this._getAppDisplayUrl() + `</div>`;
+  }
+
+  _genBlurb() {
+    return `<div class="adhs-blurb">` + i18n.__('An icon will be added to your home screen so you can quickly access this website.') + `</div>`;
+  }
+
   _genDesktopChrome = (container: HTMLElement) =>  {
 
-    const containerInstallApp = document.createElement('h1');
-    containerInstallApp.textContent = 'Install App'; // todo: i18n
-    containerInstallApp.classList.add('adhs-install-app');
+    var containerInnerHTML = this._genLogo() +
+    this._genModalStart() +
+    this._genInstallAppHeader() +
+    this._genAppNameHeader() +
+    this._genAppUrlHeader() +
+    this._genBlurb() +
+    `<div class="adhs-button-container">
+      <button class="adhs-button adhs-button-cancel">
+        ` + i18n.__('Later') + `
+      </button>
+      <button class="adhs-button adhs-button-install">
+        ` + i18n.__('Install') + `
+      </button>
+    </div>` +
+    this._genModalEnd();
 
-    const containerAppName = document.createElement('div');
-    containerAppName.textContent = this.appName;
-    containerAppName.classList.add('adhs-app-name');
+    container.innerHTML = containerInnerHTML;
+    container.classList.add('adhs-desktop');
+    container.classList.add('adhs-desktop-chrome');
 
-    const containerUrl = document.createElement('div');
-    containerUrl.textContent = this._getAppDisplayUrl();
-    containerUrl.classList.add('adhs-app-url');
-
-    const containerBlurb = document.createElement('div');
-    containerBlurb.textContent = 'An icon will be added to your Dock/Taskbar so you can quickly access this website.'; // TODO: i18n
-    containerBlurb.classList.add('adhs-blurb');
-
-    const cancelButton = document.createElement('button');
-    cancelButton.classList.add('adhs-button');
-    cancelButton.textContent = 'Later'; // TODO: i18n
-    cancelButton.onclick = () => {
+    var cancelButton = container.getElementsByClassName('adhs-button-cancel')[0];
+    cancelButton.addEventListener('click', () => {
       this.closeModal();
-    };
-  
-    const installButton = document.createElement('button');
-    installButton.classList.add('adhs-button');
-    installButton.textContent = 'Install'; // TODO: i18n
-    installButton.onclick = () => {
+    });
+
+    var installButton = container.getElementsByClassName('adhs-button-install')[0];
+    installButton.addEventListener('click', () => {
       if (!this._desktopChromePromptEvent) {
         return;
       }
@@ -650,37 +652,26 @@ class AddToHomeScreen {
         }
         this._desktopChromePromptEvent = null;
       });
-    };
+    });
 
-    const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('adhs-button-container');
-    buttonContainer.appendChild(cancelButton);
-    buttonContainer.appendChild(installButton);
-
-    var modal = container.getElementsByClassName(this._modalClassName())[0];
-
-    modal.appendChild(containerInstallApp);
-    modal.appendChild(containerAppName);
-    modal.appendChild(containerUrl);
-    modal.appendChild(containerBlurb);
-    modal.appendChild(buttonContainer);
-    
-    container.classList.add('adhs-desktop');
-    container.classList.add('adhs-desktop-chrome');
   }
 
   _genDesktopSafari(container: HTMLElement) {
+
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
-      this._genModalHeader() +
+      this._genInstallAppHeader() +
+      this._genAppNameHeader() +
+      this._genAppUrlHeader() +
       this._genListStart() +
-      this._genListItem(`1`, i18n.__('Tap the %s button in the browser bar.', `<img class="adhs-android-chrome-more-button" src="${this._genAssetUrl('android-chrome-more-button.svg')}"/>`)) +
-      this._genListItem(`2`, i18n.__('Tap the %s or %s button.', `<img class="adhs-android-chrome-add-to-homescreen-button" src="${this._genAssetUrl('android-chrome-add-to-home-screen-button.svg')}"/>`, `<img class="adhs-android-chrome-install-app" src="${this._genAssetUrl('android-chrome-install-app.svg')}"/>`)) +
+      this._genListItem(`1`, i18n.__('Tap %s in the toolbar.', `<img class="adhs-desktop-safari-menu" src="${this._genAssetUrl('desktop-safari-menu.svg')}"/>`)) +
+      this._genListItem(`2`, i18n.__('Tap %s Add to Dock.', `<img class="adhs-desktop-safari-dock" src="${this._genAssetUrl('desktop-safari-dock.svg')}"/>`)) +
       this._genListEnd() +
+      this._genBlurb() +
       this._genModalEnd() +
-      `<div class="adhs-android-chrome-bouncing-arrow-container">
-      <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
+      `<div class="adhs-desktop-safari-bouncing-arrow-container">
+      <img src="` + this._genAssetUrl('desktop-safari-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
 
@@ -781,7 +772,7 @@ class AddToHomeScreen {
   _showDesktopSafariPrompt() {
     this.debugMessage("SHOW SAFARI DESKTOP PROMPT1");
     var container = this._createContainer(
-      false // include_modal
+      true // include_modal
     );
     this._genDesktopSafari(container);
     this._addContainerToBody(container);

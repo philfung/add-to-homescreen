@@ -128,6 +128,8 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 # TODOs
 ## Features
 - [ ] allow add-to-homescreen on Desktop websites (Mac/Windows)
+    - [ ] resizing desktop browser should adjust modal
+
 ## Bugs
 - [ ] Fix browser instructions:
     - Android
