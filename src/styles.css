@@ -135,10 +135,20 @@
   margin: 0px 0px 10px 0px;
 }
 
+
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   flex-direction: column;
   display: flex;
+  /* margin: 0px 5px 0px 0px; */
+}
+
+.adhs-container.adhs-desktop .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   margin: 0px 5px 0px 0px;
+
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
+  margin: 5px 5px 0px 0px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-circle {
@@ -448,15 +458,26 @@
 }
 
 .adhs-container .adhs-modal .adhs-install-app {
-  font-size: 22px;
+  /* font-size: 22px; */
   font-weight: 500;
+  letter-spacing: -0.4px;
   text-align: center;
-  margin: 0px 0px 0px 0px;
+  /* margin: 0px 0px 0px 0px; */
   padding: 0px;
 }
 
-.adhs-container .adhs-modal .adhs-app-name {
+.adhs-container.adhs-desktop .adhs-modal .adhs-install-app {
   font-size: 22px;
+  margin: 0px 0px 0px 0px;
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-install-app {
+  font-size: 23px;
+  margin: -2px 0px 0px 0px;
+}
+
+.adhs-container .adhs-modal .adhs-app-name {
+  /* font-size: 22px; */
   font-weight: 600;
   margin: 3px auto 1px auto;
   max-width: 100%;
@@ -464,20 +485,52 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.adhs-container.adhs-desktop .adhs-modal .adhs-app-name {
+  font-size: 22px;
+  margin: 3px auto 1px auto;
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-app-name {
+  font-size: 25px;
+  margin: 0px auto 1px auto;
+}
+
 .adhs-container .adhs-modal .adhs-app-url {
   font-size: 13px;
   font-weight: 300;
-  margin: 0 auto 6px auto;
+  margin: 0 auto 24px auto;
   max-width: intrinsic;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.adhs-container.adhs-desktop-chrome .adhs-modal .adhs-app-url {
+  margin-bottom: 18px;
+}
+
+.adhs-container.adhs-desktop-safari .adhs-modal .adhs-app-url {
+  margin-bottom: 24px;
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-app-url {
+  margin: 0 auto 24px auto;
+}
 .adhs-container .adhs-modal .adhs-blurb {
   font-size: 13px;
   font-weight: 400;
-  margin: 11px 0px 14px 0px;
+  margin: 0px 0px 14px 0px;
 }
+
+.adhs-container.adhs-desktop-chrome .adhs-modal .adhs-blurb {
+  margin-top: 0px;
+}
+
+.adhs-container.adhs-desktop-safari .adhs-modal .adhs-blurb {
+  margin-top: 12px;
+}
+
 .adhs-container .adhs-modal .adhs-button-container {
   display: flex;
   flex-direction: row;
