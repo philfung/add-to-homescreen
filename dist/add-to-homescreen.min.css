@@ -175,6 +175,34 @@
   text-align: justify;
 }
 
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
+  display:inline;
+  border: 0.5px solid lightgrey;
+  border-radius: 4px;
+  margin-right: 3px;
+  padding: 3px 8px;
+}
+
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
+  display:inline;
+}
+
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
+  position: relative;
+  top: 3px;
+  left: 2px;
+}
+
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
+  position: relative;
+  margin: 0 9px 0px 0px;
+  top: 2px;
+}
+
+
+
+
+
 /* IOS Safari */
 .adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-sharing-api-button {
   height: 35px;
@@ -458,8 +486,7 @@
 
 .adhs-container .adhs-modal .adhs-install-app {
   /* font-size: 22px; */
-  font-weight: 500;
-  letter-spacing: -0.4px;
+  font-weight: 600;
   text-align: center;
   /* margin: 0px 0px 0px 0px; */
   padding: 0px;
@@ -477,8 +504,8 @@
 
 .adhs-container .adhs-modal .adhs-app-name {
   /* font-size: 22px; */
-  font-weight: 600;
-  margin: 3px auto 1px auto;
+  font-weight: 400;
+  margin: 5px auto 1px auto;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -499,7 +526,7 @@
   font-size: 13px;
   font-weight: 300;
   margin: 0 auto 24px auto;
-  max-width: intrinsic;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

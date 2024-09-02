@@ -410,7 +410,7 @@ class AddToHomeScreen {
 
   _getAppDisplayUrl():string {
     const currentUrl = new URL(window.location.href);
-    return currentUrl.href;
+    return currentUrl.href.replace(/\/$/, "");
   }
 
   _assertArg(variableName: string, booleanExp: boolean) {  
@@ -497,6 +497,29 @@ class AddToHomeScreen {
     </div>`;
   }
 
+  _genListButtonWithImage(imageUrl: string, text: string = '', image_side: string = 'none') {
+    if (!text) {
+      return `
+      <div class="adhs-list-button">
+          <img class="adhs-list-button-image-only" src="` + imageUrl + `" />
+      </div>`;
+    } else if (image_side === 'right') {
+      return `
+      <div class="adhs-list-button">
+        <div class="adhs-list-button-text">` + text + `</div>
+        <img class="adhs-list-button-image-right" src="` + imageUrl + `" />
+      </div>`;
+    } else if (image_side === 'left') {
+      return `
+      <div class="adhs-list-button">
+        <img class="adhs-list-button-image-left" src="` + imageUrl + `" />
+        <div class="adhs-list-button-text">` + text + `</div>
+      </div>`;
+    } else {
+      throw new Error("_genListButtonWithImage: invalid arguments");
+    }
+  }
+
   _genAssetUrl(fileName: string) {
     return this.assetUrl + fileName;
   }
@@ -525,10 +548,13 @@ class AddToHomeScreen {
   }
 
   _genIOSChrome(container: HTMLElement) {
+    // todo: convert to use _genListButtonWithImage
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
-      this._genTitle() +
+      this._genInstallAppHeader() +
+      this._genAppNameHeader() +
+      this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button in the upper right corner.', `<img class="adhs-ios-chrome-more-button" src="${this._genAssetUrl('ios-chrome-more-button.svg')}"/>`)) +
       this._genListItem(`2`, i18n.__('Select %s from the menu that pops up.', `<img class="adhs-ios-chrome-add-to-home-screen-button" src="${this._genAssetUrl('ios-chrome-add-to-home-screen-button.svg')}"/>`) + ` <span class="adhs-emphasis">${i18n.__('You may need to scroll down to find this menu item.')}</span>`) +
@@ -539,11 +565,13 @@ class AddToHomeScreen {
       <img src="` + this._genAssetUrl('ios-chrome-bouncing-arrow.svg') + `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
+    container.classList.add('adhs-mobile');
     container.classList.add('adhs-ios');
     container.classList.add('adhs-chrome');
   }
 
   _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
+    // todo: convert to use _genListButtonWithImage
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -562,6 +590,8 @@ class AddToHomeScreen {
   }
 
   _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
+        // todo: convert to use _genListButtonWithImage
+
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -579,6 +609,7 @@ class AddToHomeScreen {
   }
 
   _genAndroidChrome(container: HTMLElement) {
+    // todo: convert to use _genListButtonWithImage
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -672,8 +703,8 @@ class AddToHomeScreen {
       this._genAppNameHeader() +
       this._genAppUrlHeader() +
       this._genListStart() +
-      this._genListItem(`1`, i18n.__('Tap %s in the toolbar.', `<img class="adhs-desktop-safari-menu" src="${this._genAssetUrl('desktop-safari-menu.svg')}"/>`)) +
-      this._genListItem(`2`, i18n.__('Tap %s Add to Dock.', `<img class="adhs-desktop-safari-dock" src="${this._genAssetUrl('desktop-safari-dock.svg')}"/>`)) +
+      this._genListItem(`1`, i18n.__('Tap %s in the toolbar.', this._genListButtonWithImage(this._genAssetUrl('desktop-safari-menu.svg')))) +
+      this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('desktop-safari-dock.svg'), i18n.__('Add To Dock'), 'left'))) +
       this._genListEnd() +
       this._genBlurb() +
       this._genModalEnd() +
