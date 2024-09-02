@@ -176,27 +176,43 @@
   text-align: justify;
 }
 
+.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-instruction:has(.adhs-list-button) {
+  padding-top: 5px;
+}
+
+
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
   display:inline;
   border: 0.5px solid lightgrey;
   border-radius: 4px;
   margin-right: 3px;
-  padding: 3px 8px;
+  padding: 2px 8px;
+}
+
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button:has(.adhs-list-button-image-only) {
+  display: inline-block;
+  padding: 1px 8px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
   display:inline;
+  font-size: 18px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
   position: relative;
   top: 3px;
-  left: 2px;
+  left: 0px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
   position: relative;
-  margin: 0 9px 0px 0px;
+  margin: 0 5px 0px 0px;
+  top: 2px;
+}
+
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-right {
+  position: relative;
   top: 2px;
 }
 
