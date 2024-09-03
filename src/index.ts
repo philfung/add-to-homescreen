@@ -534,8 +534,9 @@ class AddToHomeScreen {
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button in the toolbar.', this._genListButtonWithImage(this._genAssetUrl('ios-safari-sharing-api-button-2.svg')))) +
       this._genListItem(`2`, i18n.__('Select %s from the menu that pops up.', this._genListButtonWithImage(this._genAssetUrl('ios-safari-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'right')) + ` <span class="adhs-emphasis">${i18n.__('You may need to scroll down to find this menu item.')}</span>`) +
-      this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
+      // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
+      this._genBlurb() +
       this._genModalEnd() +
       `<div class="adhs-ios-safari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
@@ -559,8 +560,9 @@ class AddToHomeScreen {
         this._genListButtonWithImage(this._genAssetUrl('ios-safari-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'right')) + ` ` +
         `<span class="adhs-emphasis">${i18n.__('You may need to scroll down to find this menu item.')}</span>`
       ) +
-      this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
+      // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
+      this._genBlurb() +
       this._genModalEnd() +
       `<div class="adhs-ios-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-chrome-bouncing-arrow.svg') + `" alt="arrow" />
@@ -622,8 +624,9 @@ class AddToHomeScreen {
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap %s in the browser bar.', this._genListButtonWithImage(this._genAssetUrl('android-chrome-more-button-2.svg')))) +
       this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('android-chrome-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'left'))) + 
-      this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
+      // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
+      this._genBlurb() +
       this._genModalEnd() +
       `<div class="adhs-android-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />

@@ -522,7 +522,7 @@
 
 .adhs-container .adhs-modal .adhs-app-name {
   /* font-size: 22px; */
-  font-weight: 400;
+  font-weight: 500;
   margin: 5px auto 1px auto;
   max-width: 100%;
   overflow: hidden;
@@ -536,7 +536,7 @@
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-app-name {
-  font-size: 25px;
+  font-size: 20px;
   margin: 0px auto 1px auto;
 }
 
@@ -559,12 +559,18 @@
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-app-url {
-  margin: 0 auto 24px auto;
+  margin: 0 auto 20px auto;
 }
 .adhs-container .adhs-modal .adhs-blurb {
   font-size: 13px;
   font-weight: 400;
   margin: 0px 0px 14px 0px;
+  text-align: justify;
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-blurb {
+  font-size: 15px;
+  margin: 13px 0px 5px 0px;
 }
 
 .adhs-container.adhs-desktop-chrome .adhs-modal .adhs-blurb {
