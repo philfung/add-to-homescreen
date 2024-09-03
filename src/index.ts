@@ -384,6 +384,14 @@ class AddToHomeScreen {
     return this.isDeviceAndroid() && window.navigator.userAgent.match(/Firefox/);
   }
 
+  isDesktopWindows() {
+    return navigator.userAgent.includes("Windows");
+  }
+
+  isDesktopMac() {
+    return navigator.userAgent.includes("Macintosh");
+  }
+
   isDesktopChrome() {
     const userAgent = navigator.userAgent;
     const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
@@ -536,7 +544,7 @@ class AddToHomeScreen {
       this._genListItem(`2`, i18n.__('Select %s from the menu that pops up.', this._genListButtonWithImage(this._genAssetUrl('ios-safari-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'right')) + ` <span class="adhs-emphasis">${i18n.__('You may need to scroll down to find this menu item.')}</span>`) +
       // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
-      this._genBlurb() +
+      this._genBlurbMobile() +
       this._genModalEnd() +
       `<div class="adhs-ios-safari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-safari-bouncing-arrow.svg') + `" alt="arrow" />
@@ -562,7 +570,7 @@ class AddToHomeScreen {
       ) +
       // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
-      this._genBlurb() +
+      this._genBlurbMobile() +
       this._genModalEnd() +
       `<div class="adhs-ios-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('ios-chrome-bouncing-arrow.svg') + `" alt="arrow" />
@@ -626,7 +634,7 @@ class AddToHomeScreen {
       this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('android-chrome-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'left'))) + 
       // this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
-      this._genBlurb() +
+      this._genBlurbMobile() +
       this._genModalEnd() +
       `<div class="adhs-android-chrome-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('android-chrome-bouncing-arrow.svg') + `" alt="arrow" />
@@ -649,18 +657,32 @@ class AddToHomeScreen {
     return `<div class="adhs-app-url">` + this._getAppDisplayUrl() + `</div>`;
   }
 
-  _genBlurb() {
-    return `<div class="adhs-blurb">` + i18n.__('An icon will be added to your home screen so you can quickly access this website.') + `</div>`;
+  _genBlurbWithMessage(message: string) {
+    return `<div class="adhs-blurb">` + message + `</div>`;
+  }
+
+  _genBlurbMobile() {
+    return this._genBlurbWithMessage(i18n.__('An icon will be added to your home screen so you can quickly access this website.'));
+  }
+
+  _genBlurbDesktopWindows() {
+    return this._genBlurbWithMessage(i18n.__('An icon will be added to your Taskbar so you can quickly access this website.'));
+  }
+
+  _genBlurbDesktopMac() {
+    return this._genBlurbWithMessage(i18n.__('An icon will be added to your Dock so you can quickly access this website.'));
   }
 
   _genDesktopChrome = (container: HTMLElement) =>  {
+
+    var blurb: string = this.isDesktopMac() ? this._genBlurbDesktopMac() : this._genBlurbDesktopWindows();
 
     var containerInnerHTML = this._genLogo() +
     this._genModalStart() +
     this._genInstallAppHeader() +
     this._genAppNameHeader() +
     this._genAppUrlHeader() +
-    this._genBlurb() +
+    blurb +
     `<div class="adhs-button-container">
       <button class="adhs-button adhs-button-cancel">
         ` + i18n.__('Later') + `
@@ -702,6 +724,8 @@ class AddToHomeScreen {
 
   _genDesktopSafari(container: HTMLElement) {
 
+    var blurb: string = this.isDesktopMac() ? this._genBlurbDesktopMac() : this._genBlurbDesktopWindows();
+
     var containerInnerHTML =
       this._genLogo() +
       this._genModalStart() +
@@ -712,7 +736,7 @@ class AddToHomeScreen {
       this._genListItem(`1`, i18n.__('Tap %s in the toolbar.', this._genListButtonWithImage(this._genAssetUrl('desktop-safari-menu.svg')))) +
       this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('desktop-safari-dock.svg'), i18n.__('Add To Dock'), 'left'))) +
       this._genListEnd() +
-      this._genBlurb() +
+      blurb +
       this._genModalEnd() +
       `<div class="adhs-desktop-safari-bouncing-arrow-container">
       <img src="` + this._genAssetUrl('desktop-safari-bouncing-arrow.svg') + `" alt="arrow" />

@@ -532,7 +532,7 @@
 
 .adhs-container.adhs-desktop .adhs-modal .adhs-app-name {
   font-size: 22px;
-  margin: 3px auto 1px auto;
+  margin: 0px auto 1px auto;
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-app-name {
@@ -565,7 +565,6 @@
   font-size: 13px;
   font-weight: 400;
   margin: 0px 0px 14px 0px;
-  text-align: justify;
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-blurb {

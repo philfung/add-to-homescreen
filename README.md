@@ -131,10 +131,10 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 
 ## Bugs
 - [ ] resizing desktop browser should adjust modal
-- [ ] fix messages on windows chrome/safari
-- [ ] new rendering on iphone/android
-- [ ] test in IOS Chrome
-- [ ] fix buttons that don't completely internationalize
+- [x] fix messages on windows chrome/safari
+- [x] new rendering on iphone/android
+- [x] test in IOS Chrome
+- [x] fix buttons that don't completely internationalize
 - [ ] fix intl
 - [ ] Fix browser instructions:
     - Android
