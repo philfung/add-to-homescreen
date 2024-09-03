@@ -173,7 +173,7 @@
   font-size: 19px;
   line-height: 27px;
   padding: 0px 5px 0px 5px;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-instruction:has(.adhs-list-button) {
@@ -188,6 +188,7 @@
   box-shadow: 1px 1px 2px gray;
   margin-right: 3px;
   padding: 2px 8px;
+  white-space: nowrap;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button:has(.adhs-list-button-image-only) {
@@ -197,7 +198,7 @@
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
   display:inline;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
