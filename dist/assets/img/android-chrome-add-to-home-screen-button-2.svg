@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="22px" viewBox="0 0 17 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>add_to_home_screen</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rounded" transform="translate(-783.000000, -1705.000000)">
+            <g id="Device" transform="translate(100.000000, 1650.000000)">
+                <g id="-Round-/-Device-/-add_to_home_screen" transform="translate(680.000000, 54.000000)">
+                    <g transform="translate(0.000000, 0.000000)">
+                        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path d="M18,1.01 L8,1 C6.9,1 6,1.9 6,3 L6,6 C6,6.55 6.45,7 7,7 C7.55,7 8,6.55 8,6 L8,5 L18,5 L18,19 L8,19 L8,18 C8,17.45 7.55,17 7,17 C6.45,17 6,17.45 6,18 L6,21 C6,22.1 6.9,23 8,23 L18,23 C19.1,23 20,22.1 20,21 L20,3 C20,1.9 19.1,1.01 18,1.01 Z M11,15 C11.55,15 12,14.55 12,14 L12,9 C12,8.45 11.55,8 11,8 L6,8 C5.45,8 5,8.45 5,9 C5,9.55 5.45,10 6,10 L8.59,10 L3.7,14.89 C3.31,15.28 3.31,15.91 3.7,16.3 C4.09,16.69 4.72,16.69 5.11,16.3 L10,11.41 L10,14 C10,14.55 10.45,15 11,15 Z" id="🔹Icon-Color" fill="#1D1D1D"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

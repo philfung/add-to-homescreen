@@ -621,7 +621,7 @@ class AddToHomeScreen {
       this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap %s in the browser bar.', this._genListButtonWithImage(this._genAssetUrl('android-chrome-more-button-2.svg')))) +
-      this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('ios-safari-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'right'))) + 
+      this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('android-chrome-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'left'))) + 
       this._genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${this.appIconUrl}"/>`)) +
       this._genListEnd() +
       this._genModalEnd() +
