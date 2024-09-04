@@ -535,7 +535,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genInstallAppHeader() +
       this._genAppNameHeader() +
-      this._genAppUrlHeader() +
+      // this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button in the toolbar.', this._genListButtonWithImage(this._genAssetUrl('ios-safari-sharing-api-button-2.svg')))) +
       this._genListItem(`2`, i18n.__('Select %s from the menu that pops up.', this._genListButtonWithImage(this._genAssetUrl('ios-safari-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'right')) + ` <span class="adhs-emphasis">${i18n.__('You may need to scroll down to find this menu item.')}</span>`) +
@@ -558,7 +558,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genInstallAppHeader() +
       this._genAppNameHeader() +
-      this._genAppUrlHeader() +
+      // this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button in the upper right corner.', this._genListButtonWithImage(this._genAssetUrl('ios-chrome-more-button-2.svg')))) +
       this._genListItem(`2`, i18n.__('Select %s from the menu that pops up.', 
@@ -584,7 +584,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genInstallAppHeader() +
       this._genAppNameHeader() +
-      this._genAppUrlHeader() +
+      // this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button above.', `<img class="adhs-more-button" src="${this._genAssetUrl('generic-more-button.svg')}"/>`)) +
       this._genListItem(`2`, `${i18n.__('Tap')} <span class="adhs-emphasis">${i18n.__('Open in browser')}</span>`) +
@@ -605,7 +605,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genInstallAppHeader() +
       this._genAppNameHeader() +
-      this._genAppUrlHeader() +
+      // this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap the %s button below to open your system browser.', `<img class="adhs-more-button" src="${this._genAssetUrl('openinsafari-button.png')}"/>`)) +
       this._genListEnd() +
@@ -625,7 +625,7 @@ class AddToHomeScreen {
       this._genModalStart() +
       this._genInstallAppHeader() +
       this._genAppNameHeader() +
-      this._genAppUrlHeader() +
+      // this._genAppUrlHeader() +
       this._genListStart() +
       this._genListItem(`1`, i18n.__('Tap %s in the browser bar.', this._genListButtonWithImage(this._genAssetUrl('android-chrome-more-button-2.svg')))) +
       this._genListItem(`2`, i18n.__('Tap %s', this._genListButtonWithImage(this._genAssetUrl('android-chrome-add-to-home-screen-button-2.svg'), i18n.__('Add to Home Screen'), 'left'))) + 

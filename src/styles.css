@@ -199,6 +199,8 @@
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
   display:inline;
   font-size: 16px;
+  position: relative;
+  top: -1px;
 }
 
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
@@ -523,7 +525,7 @@
 
 .adhs-container .adhs-modal .adhs-app-name {
   /* font-size: 22px; */
-  font-weight: 500;
+  font-weight: 600;
   margin: 5px auto 1px auto;
   max-width: 100%;
   overflow: hidden;
@@ -537,8 +539,8 @@
 }
 
 .adhs-container.adhs-mobile .adhs-modal .adhs-app-name {
-  font-size: 20px;
-  margin: 0px auto 1px auto;
+  font-size: 23px;
+  margin: 0px auto 18px auto;
 }
 
 .adhs-container .adhs-modal .adhs-app-url {

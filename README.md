@@ -135,23 +135,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 - [x] new rendering on iphone/android
 - [x] test in IOS Chrome
 - [x] fix buttons that don't completely internationalize
-- [ ] fix intl
-- [ ] Fix browser instructions:
-    - Android
-        - [ ] Edge
-- [ ] Fix in-app browser detection:
-    - IOS
-        - [ ] Reddit
-        - [ ] Google App
-        - [ ] Medium App
-    - Android
-        - [ ] Twitter
-        - [ ] LinkedIn
-        - [ ] Threads
-        - [ ] Instagram
-        - [ ] Reddit
-        - [ ] Google App
-        - [ ] Medium App
+- [x] fix intl
 
 
 
