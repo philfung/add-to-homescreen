@@ -125,17 +125,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# TODOs
-## Features
-- [ ] allow add-to-homescreen on Desktop websites (Mac/Windows)
 
-## Bugs
-- [ ] resizing desktop browser should adjust modal
-- [x] fix messages on windows chrome/safari
-- [x] new rendering on iphone/android
-- [x] test in IOS Chrome
-- [x] fix buttons that don't completely internationalize
-- [x] fix intl
 
 
 

@@ -432,11 +432,6 @@ class AddToHomeScreen {
     const container = document.createElement('div');
     container.classList.add('adhs-container');
 
-    // dark overlay covers entire body
-    container.style.height = document.body.clientHeight + 'px';
-    //container.style.width = document.body.clientWidth + 'px';
-    container.style.width = window.innerWidth + 'px';
-
     if (include_modal) {
       var containerInnerHTML =
       this._genLogo() +
