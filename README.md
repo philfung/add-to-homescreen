@@ -4,44 +4,35 @@
 Add to home screen allows websites and PWA's to work like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of such websites compared to native apps.  See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
 
 ## This Library
-This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on both IOS and Android.
+This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on IOS, Android, & Desktop.
 </br>
 Instructions and UI in this library have been "battle-tested" and has yielded an *~85% home screen install rate* on IOS and Android across all ages in past implementations.
 
 Here is a [demo (please open on your phone)](https://philfung.github.io) of library use within a hypothetical app "Aardvark" <img width="40" alt="aardvark-icon" src="https://github.com/philfung/add-to-homescreen/assets/1054593/e933af84-9225-4079-8fd7-5af525878693">
-
-![261203234-855108a0-e0ed-4213-8789-76d59345dd46 (1)](https://github.com/philfung/add-to-homescreen/assets/1054593/6cbfe5e0-c25e-484b-8c34-6da14969c162)
+</br>
+</br>
+<img src="https://github.com/user-attachments/assets/3e751e86-f438-4a33-b9bb-fc81495fa67c" width="300"/>
 
 ## Browser Support
-All major browsers on IOS and Android are supported.
+All major browsers on IOS/Android/Desktop are supported.
 Here are the guides shown for each platform/browser:
 #### IOS - Safari browser
-<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/f4f763e6-a3fa-4871-ae4a-699fd57bbcf6" width="175"/>
+<img width="175" alt="sc-ios-safari" src="https://github.com/user-attachments/assets/a7457b49-b9f7-4748-8571-73672dcfd7f2">
 
 #### IOS - Chrome browser
-<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/122d6a59-4657-421f-8c9f-17e6467b8485)" width="175"/>
+<img width="175" alt="sc-ios-chrome" src="https://github.com/user-attachments/assets/bdfa90eb-f23a-4f81-9d65-3c473d3f181f">
 
 #### Android - Chrome browser
-<img src="https://github.com/philfung/add-to-homescreen/assets/1054593/53f06e82-61f3-4173-890e-0a6a42026dea)" width="175"/>
+<img width="175" alt="sc-android-chrome" src="https://github.com/user-attachments/assets/edbbf840-b33b-4cb9-98da-22db8764cbc2">
+
+#### Desktop - Chrome/Edge browsers
+<img width="475" alt="sc-desktop-chromeedge" src="https://github.com/user-attachments/assets/86727d6f-ade9-4e7a-b1bf-b0e2b2dcd1ed">
+
+#### Desktop - Safari browser
+<img width="475" alt="sc-desktop-safari" src="https://github.com/user-attachments/assets/384b7ed8-7acf-4bee-805c-36ca820c19ee">
 
 #### In-App Browsers 
-
-##### Facebook and Linkedin in-app browsers on IOS and Android
-User is guided to open the link in the system browser.
-</br>
-<img width="200" alt="facebook-browser" src="https://github.com/philfung/add-to-homescreen/assets/1054593/04135f4d-76b1-4797-bd3f-dc402cf9abb4">
-
-##### Twitter, Instagram and Threads in-app browsers on IOS
-These apps all use SFSafariViewController and can be handled similarly.
-</br>
-<img width="200" alt="Screenshot 2023-08-20 at 4 06 45 PM" src="https://github.com/philfung/add-to-homescreen/assets/1054593/8adba8bd-2ded-4d95-8f67-0188995a7b4c">
-
-#### iPhone users not on Safari or Chrome or in-app browser
-<img width="200" alt="ios-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/054f7a08-4576-4452-93e9-5810969c0653">
-
-#### Android users not on Chrome or in-app browser
-<img width="200" alt="android-non-compliant" src="https://github.com/philfung/add-to-homescreen/assets/1054593/0072304f-4ec5-4cab-b14b-e96a5226ae79">
-
+Users are guided to open the oink in the system browser.
 
 ## Installation
 
@@ -105,8 +96,9 @@ Here's an [example implementation](https://github.com/philfung/add-to-homescreen
 
 Start local server
 ```
-npm install
-npm start
+npm run install
+npm run build
+npm run start
 ```
 Load an example page http://127.0.0.1:8081
 
