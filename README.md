@@ -125,26 +125,7 @@ No dependencies. This is written in raw ES6 javascript and all css is namespaced
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# TODOs
-## Features
-- [ ] add to Dock/Taskbar for Desktop (coming soon!!) 
-## Bugs
-- [ ] Fix browser instructions:
-    - Android
-        - [ ] Edge
-- [ ] Fix in-app browser detection:
-    - IOS
-        - [ ] Reddit
-        - [ ] Google App
-        - [ ] Medium App
-    - Android
-        - [ ] Twitter
-        - [ ] LinkedIn
-        - [ ] Threads
-        - [ ] Instagram
-        - [ ] Reddit
-        - [ ] Google App
-        - [ ] Medium App
+
 
 
 
