@@ -242,8 +242,10 @@ class AddToHomeScreen {
       );
 
       if (this.isDesktopChrome() || this.isDesktopEdge()) {
+        this.debugMessage("DESKTOP CHROME");
         this._showDesktopChromePrompt();
       } else if (this.isDesktopSafari()) {
+        this.debugMessage("DESKTOP SAFARI");
         this._showDesktopSafariPrompt();
       }
     
@@ -418,6 +420,7 @@ class AddToHomeScreen {
 
 
   _getAppDisplayUrl():string {
+    // return 'https://aardvark.app';
     const currentUrl = new URL(window.location.href);
     return currentUrl.href.replace(/\/$/, "");
   }
@@ -740,18 +743,22 @@ class AddToHomeScreen {
   }
 
   _registerCloseListener() {
-
-    var self = this;
-    this.closeEventListener = function (e: Event) {
-      var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
-      if (!modal.contains(e.target as Node)) {
-        self.closeModal();
+  
+      var self = this;
+      this.closeEventListener = (e: Event) => {
+        var modal = document.getElementsByClassName('adhs-container')[0].getElementsByClassName('adhs-modal')[0];
+        if (!modal.contains(e.target as Node)) {
+          self.closeModal();
+        };
       };
-    };
-    window.addEventListener('touchstart', this.closeEventListener);
-    window.addEventListener('click', this.closeEventListener);
-
-  }
+  
+      // enclose in setTimeout to prevent firing when this class used with an onclick
+      setTimeout(() => {
+        window.addEventListener('touchstart', this.closeEventListener!);
+        window.addEventListener('click', this.closeEventListener!);
+      }, 50);
+  
+    }
 
   clearModalDisplayCount() {
     if (this._isEnabledModalDisplayCount()) {
@@ -794,7 +801,7 @@ class AddToHomeScreen {
   }
 
   debugMessage(message: string) {
-    //alert(message);
+    // alert(message);
     console.log(message);
   }
 
