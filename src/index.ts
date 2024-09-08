@@ -108,6 +108,12 @@ class AddToHomeScreen {
 
     this._genDesktopChrome = this._genDesktopChrome.bind(this);
 
+    // handles the case where the chrome prompt is not immediately shown on page load, 
+    // such as an onclick handler
+    if (this.shouldShowDesktopInstallPromptBasedOnDevice()) {
+        this._registerDesktopInstallPromptEvent = this._registerDesktopInstallPromptEvent.bind(this);
+        this._registerDesktopInstallPromptEvent();
+    }
   }
 
   isStandAlone() {
@@ -243,7 +249,7 @@ class AddToHomeScreen {
 
       if (this.isDesktopChrome() || this.isDesktopEdge()) {
         this.debugMessage("DESKTOP CHROME");
-        this._showDesktopChromePrompt();
+        this.showDesktopInstallPrompt();
       } else if (this.isDesktopSafari()) {
         this.debugMessage("DESKTOP SAFARI");
         this._showDesktopSafariPrompt();
@@ -699,19 +705,19 @@ class AddToHomeScreen {
 
     var installButton = container.getElementsByClassName('adhs-button-install')[0];
     installButton.addEventListener('click', () => {
-      if (!this._desktopChromePromptEvent) {
+      if (!this._desktopInstallPromptEvent) {
         return;
       }
-      this._desktopChromePromptEvent.prompt();
+      this._desktopInstallPromptEvent.prompt();
       this.closeModal();
 
-      this._desktopChromePromptEvent.userChoice.then((choiceResult: { outcome: string; }) => {
+      this._desktopInstallPromptEvent.userChoice.then((choiceResult: { outcome: string; }) => {
         if (choiceResult.outcome === 'accepted') {
           this.debugMessage('User accepted the install prompt');
         } else {
           this.debugMessage('User dismissed the install prompt');
         }
-        this._desktopChromePromptEvent = null;
+        this._desktopInstallPromptEvent = null;
       });
     });
 
@@ -802,30 +808,52 @@ class AddToHomeScreen {
 
   debugMessage(message: string) {
     // alert(message);
-    console.log(message);
+    // console.log(message);
   }
 
-  _desktopChromePromptEvent: ADHSBeforeInstallPromptEvent | null = null;
-  _desktopChromePromptWasShown: boolean = false;
+  _desktopInstallPromptEvent: ADHSBeforeInstallPromptEvent | null = null;
+  _desktopInstallPromptWasShown: boolean = false;
 
-  _showDesktopChromePrompt() {
-    window.addEventListener('beforeinstallprompt', this._desktopChromeListener);
+  _registerDesktopInstallPromptEvent() {
+    window.addEventListener('beforeinstallprompt', this._desktopInstallPromptEventListener);
   }
 
-  _desktopChromeListener = (e: ADHSBeforeInstallPromptEvent) => {
+  _desktopInstallPromptEventListener = (e: ADHSBeforeInstallPromptEvent) => {
     this.debugMessage("DESKTOP CHROME LISTENER");
-    if (this._desktopChromePromptWasShown) {
+    e.preventDefault();
+    this._desktopInstallPromptEvent = e;
+  }
+
+  _desktopInstallPromptEventHasFired(): boolean {
+    return this._desktopInstallPromptEvent !== null;
+  }
+
+  shouldShowDesktopInstallPromptBasedOnDevice(): boolean {
+    return !this.isStandAlone() && !this._hasReachedMaxModalDisplayCount()
+    && !this.isDeviceIOS() && !this.isDeviceAndroid() && (this.isDesktopChrome() || this.isDesktopEdge());
+  }
+
+  // show the desktop chrome promotion
+  showDesktopInstallPrompt() {
+
+    this.debugMessage("SHOW DESKTOP CHROME / EDGE PROMOTION");
+
+    if (this._desktopInstallPromptWasShown) {
       return;
     }
-    this.debugMessage("BEFORE INSTALL PROMPT");
-    e.preventDefault();
-    this._desktopChromePromptEvent = e;
-    this.showDesktopChromePromotion();
-  }
 
-  showDesktopChromePromotion() {
+    // if the prompt has not fired, wait for it the be fired, then show the promotion
+    if (!this._desktopInstallPromptEventHasFired()) {
+      // this.debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT NOT FIRED");
+      setTimeout(() => {
+        this.showDesktopInstallPrompt();
+      }, 500);
+      return;
+    }
 
-    this._desktopChromePromptWasShown = true;
+    // this.debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT FIRED");
+
+    this._desktopInstallPromptWasShown = true;
 
     var container = this._createContainer(
       true // include_modal
@@ -837,7 +865,7 @@ class AddToHomeScreen {
   }
 
   _showDesktopSafariPrompt() {
-    this.debugMessage("SHOW SAFARI DESKTOP PROMPT1");
+    this.debugMessage("SHOW SAFARI DESKTOP PROMPT");
     var container = this._createContainer(
       true // include_modal
     );
