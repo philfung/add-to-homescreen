@@ -90,7 +90,8 @@ This should be a quick drop-in library into your website.
    
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
 
-Special Case: if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
+#### Special Case: calling the UI later
+ 2-alternate. if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
 you should still create your the instance onload, but call your UI later on the instance variable with .show()):
 
   `index.html`
