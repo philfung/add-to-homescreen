@@ -45,12 +45,12 @@ Make sure your site has the minimum requirements for installing a web app on hom
    ```html
    <head>
    ...
-   <link rel="manifest" href="manifest.json">
+   <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
    ..
    </head>
    ```
 ### Usage (If you're not making changes to library)
-This should be a quick drop-in library into your mobile website. 
+This should be a quick drop-in library into your mobile/desktop website. 
 
 1. Include the library JavaScript and CSS files in your header (You can use [JSDelivr CDN](https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/) if you're just using the library directly and not making any changes):
 
@@ -58,8 +58,8 @@ This should be a quick drop-in library into your mobile website.
    ```html
    <head>
    ...
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.9/dist/add-to-homescreen.min.css">
-   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.9/dist/add-to-homescreen.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/add-to-homescreen.min.css">
+   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/add-to-homescreen.min.js"></script>
    ...
    </head>
    ```
@@ -69,8 +69,7 @@ This should be a quick drop-in library into your mobile website.
    `index.html`
    ```javascript
    <script>
-   document.addEventListener('DOMContentLoaded', function () { // document.getElementById('addToHomeScreen').addEventListener('click', function () and add <button id="addToHomeScreen">Add to Home Screen</button> somewhere on your page to get a button instead.
-
+   document.addEventListener('DOMContentLoaded', function () { 
     window.AddToHomeScreenInstance = new window.AddToHomeScreen({
      appName: 'Aardvark',                                   // Name of the app.
                                                             // Required.
@@ -88,7 +87,28 @@ This should be a quick drop-in library into your mobile website.
    </script>
    </body>
    ```
+   
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html). 
+
+Special Case: if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
+you should still create your the instance onload, but call your UI later on the instance variable with .show()):
+
+  `index.html`
+   ```javascript
+   <script>
+   document.addEventListener('DOMContentLoaded', function () { 
+
+      window.AddToHomeScreenInstance = new window.AddToHomeScreen({...
+   }));
+
+   document.getElementById('my_install_app_button').addEventListener('click', function () {
+      window.AddToHomeScreenInstance.show('en');
+   });
+ </script>
+   </body>
+   ```
+
+This is because some handlers must be created onload.
 
 ### Usage (If you're making changes to library)
 1. Make changes
