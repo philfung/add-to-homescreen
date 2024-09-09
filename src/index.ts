@@ -770,7 +770,7 @@ class AddToHomeScreen {
 
   clearModalDisplayCount() {
     if (this._isEnabledModalDisplayCount()) {
-      window.localStorage.removeItem('adhs-modal-display-count');
+      window.localStorage.removeItem(this._getModalDisplayCountKey());
     }
   }
 
@@ -792,16 +792,20 @@ class AddToHomeScreen {
 
     var count: number = this._getModalDisplayCount();
     count++;
-    window.localStorage.setItem('adhs-modal-display-count', count.toString());
+    window.localStorage.setItem(this._getModalDisplayCountKey(), count.toString());
     return true;
   }
 
+  _getModalDisplayCountKey(): string {
+    return 'adhs-modal-display-count';
+  }
+
   _getModalDisplayCount(): number {
-    var countStr: string | null = window.localStorage.getItem('adhs-modal-display-count');
+    var countStr: string | null = window.localStorage.getItem(this._getModalDisplayCountKey());
     var count: number;
     if (countStr === null) {
       count = 0;
-      window.localStorage.setItem('adhs-modal-display-count', count.toString());
+      window.localStorage.setItem(this._getModalDisplayCountKey(), count.toString());
     } else {
       count = parseInt(countStr);
     }
