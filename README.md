@@ -4,7 +4,7 @@
 Add to home screen allows websites and PWA's to work like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of such websites compared to native apps.  See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
 
 ## This Library
-This drop-in JS Library for mobile websites effectively guides a user to add the website to their home screen on IOS, Android, & Desktop.
+This drop-in JS Library for websites effectively guides a user to add the website to their home screen on IOS, Android and Desktop.
 </br>
 Instructions and UI in this library have been "battle-tested" and has yielded an *~85% home screen install rate* on IOS and Android across all ages in past implementations.
 
@@ -31,13 +31,13 @@ Here are the guides shown for each platform/browser:
 #### Desktop - Safari browser
 <img width="475" alt="sc-desktop-safari" src="https://github.com/user-attachments/assets/384b7ed8-7acf-4bee-805c-36ca820c19ee">
 
-#### In-App Browsers 
-Users are guided to open the oink in the system browser.
+#### In-App Mobile Browsers 
+Users are guided to open the link in the system browser.
 
 ## Installation
 
 ### Prerequisite
-Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android.
+Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android and Desktop.
 1. At `https://your-website.com/apple-touch-icon.png`, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named `apple-touch-icon.png`([example](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)).    
 2. At `https://your-website.com/manifest.json`, include a web manifest file `manifest.json` ([example](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json)). Reference the manifest in your index HTML file.
    
@@ -50,7 +50,7 @@ Make sure your site has the minimum requirements for installing a web app on hom
    </head>
    ```
 ### Usage (If you're not making changes to library)
-This should be a quick drop-in library into your mobile/desktop website. 
+This should be a quick drop-in library into your website. 
 
 1. Include the library JavaScript and CSS files in your header (You can use [JSDelivr CDN](https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/) if you're just using the library directly and not making any changes):
 
@@ -75,7 +75,7 @@ This should be a quick drop-in library into your mobile/desktop website.
                                                             // Required.
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).  
                                                             // Required.
-     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@1.9/dist/assets/img/',  // Link to directory of library image assets.
+     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/assets/img/',  // Link to directory of library image assets.
 
      maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
                                                             // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
