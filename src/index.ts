@@ -6,6 +6,7 @@ const i18n = require('i18n');
 i18n.configure({
   locales: ['de','en','es','fr','pt'],
   staticCatalog: {
+    da: require('./locales/da.json'),
     de: require('./locales/de.json'),
     en: require('./locales/en.json'),
     es: require('./locales/es.json'),
