@@ -4,7 +4,7 @@ import './styles.css';
 const i18n = require('i18n');
 
 i18n.configure({
-  locales: ['da','de','en','es','fr','it','pt','ru'],
+  locales: ['da','de','en','es','fr','it','pt','ru', "he"],
   staticCatalog: {
     da: require('./locales/da.json'),
     de: require('./locales/de.json'),
@@ -13,7 +13,8 @@ i18n.configure({
     fr: require('./locales/fr.json'),
     it: require('./locales/it.json'),
     pt: require('./locales/pt.json'),
-    ru: require('./locales/ru.json')
+    ru: require('./locales/ru.json'),
+    he: require('./locales/he.json')
   },
   directory: '.'
 });
