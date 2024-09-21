@@ -1,257 +1,261 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover"/><meta name="apple-mobile-web-app-capable" content="yes"/><title>Aardvark</title><link rel="manifest" crossorigin="use-credentials" href="manifest.json"/><script src="./dist/add-to-homescreen.min.js"></script><link rel="stylesheet" href="./dist/add-to-homescreen.min.css"/><script defer="defer" src="add-to-homescreen.min.js"></script><link href="add-to-homescreen.min.css" rel="stylesheet"></head><style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><title>Aardvark</title><link rel="manifest" crossorigin="use-credentials" href="manifest.json"><script src="./dist/add-to-homescreen.min.js"></script><link rel="stylesheet" href="./dist/add-to-homescreen.min.css"><script defer="defer" src="add-to-homescreen.min.js"></script><link href="add-to-homescreen.min.css" rel="stylesheet"></head><style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-		*,
-		*:after,
-		*:before {
-			box-sizing: border-box;
-		}
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
 
-		body {
-			font-family: "Inter", sans-serif;
-			line-height: 1.5;
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: #eee;
-		}
+  body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+  }
 
-		.menu {
-			padding: 2rem;
-			background-color: #fff;
-			/*position: relative;*/
-			width: calc(80px + 4 * 70px + 4rem);
-			display: flex;
-			justify-content: center;
-			border-radius: 20px 20px;
-			box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
-			position: fixed;
-			bottom: 0px;
-			z-index: 9999;
-		}
+  .menu {
+    padding: 2rem;
+    background-color: #fff;
+    /*position: relative;*/
+    width: calc(80px + 4 * 70px + 4rem);
+    display: flex;
+    justify-content: center;
+    border-radius: 20px 20px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.075);
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
 
-		.link {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			width: 70px;
-			height: 50px;
-			border-radius: 99em;
-			position: relative;
-			z-index: 1;
-			overflow: hidden;
-			transform-origin: center left;
-			transition: width 0.2s ease-in;
-			text-decoration: none;
-			color: inherit;
-		}
+  }
 
-		.link:before {
-			position: absolute;
-			z-index: -1;
-			content: "";
-			display: block;
-			border-radius: 99em;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			transform: translateX(100%);
-			transition: transform 0.2s ease-in;
-			transform-origin: center right;
-			background-color: #eee;
-		}
+  .link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    border-radius: 99em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: center left;
+    transition: width 0.2s ease-in;
+    text-decoration: none;
+    color: inherit;
+  }
 
-		.link:hover,
-		.link:focus {
-			outline: 0;
-			width: 130px;
-		}
+  .link:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    border-radius: 99em;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+    background-color: #eee;
+  }
 
-		.link:hover:before,
-		.link:focus:before,
-		.link:hover .link-title,
-		.link:focus .link-title {
-			transform: translateX(0);
-			opacity: 1;
-		}
+  .link:hover,
+  .link:focus {
+    outline: 0;
+    width: 130px;
+  }
 
-		.link-icon {
-			width: 28px;
-			height: 28px;
-			display: block;
-			flex-shrink: 0;
-			left: 18px;
-			position: absolute;
-		}
+  .link:hover:before,
+  .link:focus:before,
+  .link:hover .link-title,
+  .link:focus .link-title {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-		.link-icon svg {
-			width: 28px;
-			height: 28px;
-		}
+  .link-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+    flex-shrink: 0;
+    left: 18px;
+    position: absolute;
+  }
 
-		.link-title {
-			transform: translateX(100%);
-			transition: transform 0.2s ease-in;
-			transform-origin: center right;
-			display: block;
-			text-align: center;
-			text-indent: 28px;
-			width: 100%;
-		}</style><style>@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap");
+  .link-icon svg {
+    width: 28px;
+    height: 28px;
+  }
 
-		/*
+  .link-title {
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+    display: block;
+    text-align: center;
+    text-indent: 28px;
+    width: 100%;
+  }</style><style>@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap');
+
+  /*
   *,
   *:after,
   *:before {
     box-sizing: border-box;
   }*/
 
-		.card-feed {
-			font-family: "Lexend", sans-serif;
-			line-height: 1.5;
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: #393232;
-			flex-direction: column;
+  .card-feed {
+    font-family: "Lexend", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #393232;
+    flex-direction: column;
 
-			gap: 15px;
-		}
+    gap: 15px;
+  }
 
-		.card-list figure {
-			margin: 0px 0px;
-		}
+  .card-list figure {
+    margin: 0px 0px;
+  }
 
-		.card-list img {
-			max-width: 100%;
-			display: block;
-		}
+  .card-list img {
+    max-width: 100%;
+    display: block;
+  }
 
-		.card-list {
-			width: 90%;
-			max-width: 400px;
-		}
+  .card-list {
+    width: 90%;
+    max-width: 400px;
+  }
 
-		.card-list .card {
-			background-color: #fff;
-			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
-				0 20px 50px 0 rgba(0, 0, 0, 0.1);
-			border-radius: 15px;
-			overflow: hidden;
-			padding: 1.25rem;
-			position: relative;
-			transition: 0.15s ease-in;
-		}
+  .card-list .card {
+    background-color: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1.25rem;
+    position: relative;
+    transition: 0.15s ease-in;
+  }
 
-		.card-list .card:hover,
-		.card-list .card:focus-within {
-			box-shadow: 0 0 0 2px #16c79a, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
-			transform: translatey(-5px);
-		}
+  .card-list .card:hover,
+  .card-list .card:focus-within {
+    box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+    transform: translatey(-5px);
+  }
 
-		.card-list .card-image {
-			border-radius: 10px;
-			overflow: hidden;
-		}
+  .card-list .card-image {
+    border-radius: 10px;
+    overflow: hidden;
+  }
 
-		.card-list .card-header {
-			margin-top: 1.5rem;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
+  .card-list .card-header {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-		.card-list .card-header a {
-			font-weight: 600;
-			font-size: 1.375rem;
-			line-height: 1.25;
-			padding-right: 1rem;
-			text-decoration: none;
-			color: inherit;
-			will-change: transform;
-		}
+  .card-list .card-header a {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+    will-change: transform;
+  }
 
-		.card-list .card-header a:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-		}
+  .card-list .card-header a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
 
-		.card-list .icon-button {
-			border: 0;
-			background-color: #fff;
-			border-radius: 50%;
-			width: 2.5rem;
-			height: 2.5rem;
-			display: flex;
-			padding: 0px;
-			justify-content: center;
-			align-items: center;
-			flex-shrink: 0;
-			font-size: 1.25rem;
-			transition: 0.25s ease;
-			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
-				0 3px 8px 0 rgba(0, 0, 0, 0.15);
-			z-index: 1;
-			cursor: pointer;
-			color: #565656;
-		}
+  .card-list .icon-button {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: 0.25s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    cursor: pointer;
+    color: #565656;
+  }
 
-		.card-list .icon-button svg {
-			width: 1em;
-			height: 1em;
-		}
+  .card-list .icon-button svg {
+    width: 1em;
+    height: 1em;
+  }
 
-		.card-list .icon-button:hover,
-		.card-list .icon-button:focus {
-			background-color: #ec4646;
-			color: #fff;
-		}
+  .card-list .icon-button:hover,
+  .card-list .icon-button:focus {
+    background-color: #EC4646;
+    color: #FFF;
+  }
 
-		.card-list .card-footer {
-			margin-top: 1.25rem;
-			border-top: 1px solid #ddd;
-			padding-top: 1.25rem;
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-		}
 
-		.card-list .card-meta {
-			display: flex;
-			align-items: center;
-			color: #787878;
-		}
 
-		.card-list .card-meta:first-child:after {
-			display: block;
-			content: "";
-			width: 4px;
-			height: 4px;
-			border-radius: 50%;
-			background-color: currentcolor;
-			margin-left: 0.75rem;
-			margin-right: 0.75rem;
-		}
+  .card-list .card-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-		.card-list .card-meta svg {
-			flex-shrink: 0;
-			width: 1em;
-			height: 1em;
-			margin-right: 0.25em;
-		}</style><body><div class="card-feed"><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1643553675395-e5f356ec2551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt=""/></figure><div class="card-header"><a href="#">Spotted nice anthill!</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#393232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 10,288</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Mar 02, 2023</div></div></article></div><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1673903302972-7fe8e0f948a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2338&q=80" alt=""/></figure><div class="card-header"><a href="#">selfie</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 3,422</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Fed 16, 2023</div></div></article></div><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1491723203629-ac87f78dc19b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt=""/></figure><div class="card-header"><a href="#">Are these edible? Asking for a friend..</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 2,465</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Jul 15, 2023</div></div></article></div></div><div class="menu"><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M213.3815,109.61945,133.376,36.88436a8,8,0,0,0-10.76339.00036l-79.9945,72.73477A8,8,0,0,0,40,115.53855V208a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V115.53887A8,8,0,0,0,213.3815,109.61945Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg> </span><span class="link-title">Home</span> </a><a href="#" class="link"><span class="link-icon"><svg version="1.1" id="svg4619" inkscape:version="0.91 r13725" sodipodi:docname="mountain-15.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" style="enable-background: new 0 0 15 15" xml:space="preserve"><path id="path5571" inkscape:connector-curvature="0" sodipodi:nodetypes="sccssssccsccccccccc" d="M7.5,2C7.2,2,7.1,2.2,6.9,2.4
+  .card-list .card-meta {
+    display: flex;
+    align-items: center;
+    color: #787878;
+  }
+
+  .card-list .card-meta:first-child:after {
+    display: block;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentcolor;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .card-list .card-meta svg {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+  }</style><body><div class="card-feed"><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1643553675395-e5f356ec2551?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt=""/></figure><div class="card-header"><a href="#">Spotted nice anthill!</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#393232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 10,288</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Mar 02, 2023</div></div></article></div><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1673903302972-7fe8e0f948a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2338&q=80" alt=""/></figure><div class="card-header"><a href="#">selfie</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 3,422</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Fed 16, 2023</div></div></article></div><div class="card-list"><article class="card"><figure class="card-image"><img src="https://images.unsplash.com/photo-1491723203629-ac87f78dc19b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt=""/></figure><div class="card-header"><a href="#">Are these edible? Asking for a friend..</a> <button class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"><path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z"/></svg></button></div><div class="card-footer"><div class="card-meta card-meta--views"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"><path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z"/><circle cx="12" cy="12" r="3"/></svg> 2,465</div><div class="card-meta card-meta--date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"><rect x="2" y="4" width="20" height="18" rx="4"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M2 10h20"/></svg> Jul 15, 2023</div></div></article></div></div><div class="menu"><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M213.3815,109.61945,133.376,36.88436a8,8,0,0,0-10.76339.00036l-79.9945,72.73477A8,8,0,0,0,40,115.53855V208a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V115.53887A8,8,0,0,0,213.3815,109.61945Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg> </span><span class="link-title">Home</span> </a><a href="#" class="link"><span class="link-icon"><svg version="1.1" id="svg4619" inkscape:version="0.91 r13725" sodipodi:docname="mountain-15.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve"><path id="path5571" inkscape:connector-curvature="0" sodipodi:nodetypes="sccssssccsccccccccc" d="M7.5,2C7.2,2,7.1,2.2,6.9,2.4
 	l-5.8,9.5C1,12,1,12.2,1,12.3C1,12.8,1.4,13,1.7,13h11.6c0.4,0,0.7-0.2,0.7-0.7c0-0.2,0-0.2-0.1-0.4L8.2,2.4C8,2.2,7.8,2,7.5,2z
-	 M7.5,3.5L10.8,9H10L8.5,7.5L7.5,9l-1-1.5L5,9H4.1L7.5,3.5z"/></svg> </span><span class="link-title">Anthills</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M45.42853,176.99811A95.95978,95.95978,0,1,1,79.00228,210.5717l.00023-.001L45.84594,220.044a8,8,0,0,1-9.89-9.89l9.47331-33.15657Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><line x1="96" y1="112" x2="160" y2="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg> </span><span class="link-title">Chat</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.39356" y1="175.40039" x2="223.99414" y2="224.00098" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg> </span><span class="link-title">Search</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="96" r="64" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"></circle><path d="M30.989,215.99064a112.03731,112.03731,0,0,1,194.02311.002" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg> </span><span class="link-title">Profile</span></a></div><script>window.addEventListener("load", function () {
-				window.AddToHomeScreenInstance = new window.AddToHomeScreen({
-					appName: "Aardvark", // Name of the app. [Required]
-					appIconUrl: "./dist/assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
-					assetUrl: "./dist/assets/img/", // Link to directory of library image assets [Required]
-					maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
-					// (Debugging: Use this.clearModalDisplayCount() to reset the count)
-				});
-				window.AddToHomeScreenInstance.show("en"); // popup is only shown if web app is not already added to homescreen
-			});</script></body></html>
+	 M7.5,3.5L10.8,9H10L8.5,7.5L7.5,9l-1-1.5L5,9H4.1L7.5,3.5z"/></svg> </span><span class="link-title">Anthills</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><path d="M45.42853,176.99811A95.95978,95.95978,0,1,1,79.00228,210.5717l.00023-.001L45.84594,220.044a8,8,0,0,1-9.89-9.89l9.47331-33.15657Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><line x1="96" y1="112" x2="160" y2="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg> </span><span class="link-title">Chat</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><line x1="175.39356" y1="175.40039" x2="223.99414" y2="224.00098" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg> </span><span class="link-title">Search</span> </a><a href="#" class="link"><span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="96" r="64" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"></circle><path d="M30.989,215.99064a112.03731,112.03731,0,0,1,194.02311.002" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg> </span><span class="link-title">Profile</span></a></div><script>window.addEventListener('load', function () {
+
+      window.AddToHomeScreenInstance = new window.AddToHomeScreen(
+        {
+          appName: 'Aardvark',                                                                        // Name of the app. [Required]
+          appIconUrl: './dist/assets/sample/img/aardvark-logo.png',                                   // App icon link (square, at least 40 x 40 pixels) [Required]
+          assetUrl: './dist/assets/img/',                                                             // Link to directory of library image assets [Required]
+          maxModalDisplayCount: -1                                                                    // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+                                                                                                      // (Debugging: Use this.clearModalDisplayCount() to reset the count)
+        }
+      );
+      window.AddToHomeScreenInstance.show('en');                                                      // popup is only shown if web app is not already added to homescreen
+    });</script></body></html>
