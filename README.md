@@ -93,6 +93,10 @@ This should be a quick drop-in library into your website.
     window.AddToHomeScreenInstance = window.AddToHomeScreen({
      appName: 'Aardvark',                                   // Name of the app.
                                                             // Required.
+     appNameDisplay: 'standalone',                          // If set to 'standalone' (the default), the app name will be diplayed
+                                                            // on it's own, beneath the "Install App" header. If set to 'inline', the
+                                                            // app name will be displayed on a single line like "Install MyApp"
+                                                            // Optional. Default 'standalone'
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
      assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/assets/img/',  // Link to directory of library image assets.

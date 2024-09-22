@@ -33,6 +33,7 @@ export interface AddToHomeScreenOptions {
   appIconUrl: string;
   assetUrl: string;
   maxModalDisplayCount: number;
+  appNameDisplay?: "standalone" | "inline";
 }
 
 export interface AddToHomeScreenType {

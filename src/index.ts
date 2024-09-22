@@ -28,7 +28,8 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
-  let { appIconUrl, appName, assetUrl, maxModalDisplayCount } = options;
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } =
+    options;
   let closeEventListener: EventListener | null = null;
 
   const userAgent = window.navigator.userAgent;
@@ -697,10 +698,17 @@ export function AddToHomeScreen(
   }
 
   function _genInstallAppHeader() {
-    return `<h1 class="adhs-install-app">` + i18n.__("Install app") + `</h1>`;
+    const text =
+      appNameDisplay === "inline"
+        ? i18n.__("Install %s", appName)
+        : i18n.__("Install app");
+    return `<h1 class="adhs-install-app">` + text + `</h1>`;
   }
 
   function _genAppNameHeader() {
+    if (appNameDisplay === "inline") {
+      return "";
+    }
     return div("app-name") + appName + `</div>`;
   }
 
