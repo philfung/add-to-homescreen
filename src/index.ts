@@ -11,7 +11,7 @@ const config = require("./config");
 const LOCALES = config.LOCALES as Array<string>;
 
 // Configure I18n
-const i18n = require("./simpleI18n");
+import i18n from "./simpleI18n";
 
 const localeCatalog: { [locale: string]: any } = {};
 LOCALES.forEach((locale) => {
@@ -24,7 +24,9 @@ i18n.configure({
   directory: ".",
 });
 
-function AddToHomeScreen(options: AddToHomeScreenOptions): AddToHomeScreenType {
+export function AddToHomeScreen(
+  options: AddToHomeScreenOptions
+): AddToHomeScreenType {
   let { appIconUrl, appName, assetUrl, maxModalDisplayCount } = options;
   let closeEventListener: EventListener | null = null;
 
@@ -211,7 +213,7 @@ function AddToHomeScreen(options: AddToHomeScreenOptions): AddToHomeScreenType {
   /**** Device Detection Functions ****/
 
   function _matchesUserAgent(regex: RegExp): boolean {
-    return !!_matchesUserAgent(regex);
+    return !!window.navigator.userAgent.match(regex);
   }
 
   function isDeviceAndroid() {
@@ -1020,5 +1022,3 @@ function AddToHomeScreen(options: AddToHomeScreenOptions): AddToHomeScreenType {
     isDesktopWindows,
   };
 }
-
-export default AddToHomeScreen;

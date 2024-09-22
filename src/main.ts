@@ -1,5 +1,5 @@
-import AddToHomeScreen from "./index";
-import { AddToHomeScreenOptions, AddToHomeScreenType } from "./types";
+const { AddToHomeScreen } = require("./index");
+import type { AddToHomeScreenOptions, AddToHomeScreenType } from "./types";
 
 declare global {
   interface Window {

@@ -14,9 +14,6 @@ function createWebpackLocaleConfig(locale) {
     entry,
     output: {
       filename: `add-to-homescreen${locale ? `_${locale}` : ""}.min.js`,
-      library: "AddToHomescreen",
-      libraryExport: "default",
-      libraryTarget: "window",
       path: path.resolve(__dirname, "dist"),
     },
     mode: "production",

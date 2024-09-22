@@ -6,6 +6,7 @@
   "scripts": {
     "build-dev": "NODE_ENV=development npm run build",
     "build": "bun ./scripts/build.ts && webpack",
+    "pack": "webpack",
     "start": "http-server -c-1 -p 8081",
     "tsc": "tsc"
   },

@@ -25,20 +25,8 @@ LOCALES.forEach((locale) => {
 
   const lines = mainContent
     .replace(`"./types"`, `"../types"`)
-    .split("\n")
-    .filter((line) => {
-      return (
-        line.indexOf(`import AddToHomeScreen`) < 0 &&
-        line.indexOf("window.AddToHomeScreen =") < 0
-      );
-    });
-
-  const importName = `AddToHomeScreen${locale.toUpperCase()}`;
-
-  lines.unshift(`import type AddToHomeScreen from '../index';`);
-  lines.unshift(`import ${importName} from "./index_${locale}";`);
-
-  lines.push(`window.AddToHomeScreen = ${importName};`);
+    .replace(`"./index"`, `"./index_${locale}"`)
+    .split("\n");
 
   fs.writeFileSync(path.join(buildDir, `main_${locale}.ts`), lines.join("\n"));
 });
