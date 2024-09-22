@@ -42,6 +42,7 @@ export interface AddToHomeScreenType {
   assetUrl: string;
   maxModalDisplayCount: number;
 
+  clearModalDisplayCount: () => void;
   isStandAlone: () => boolean;
   show: (locale: string) => DeviceInfo;
   closeModal: () => void;

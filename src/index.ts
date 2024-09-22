@@ -198,9 +198,11 @@ export function AddToHomeScreen(
 
       if (isDesktopChrome() || isDesktopEdge()) {
         debugMessage("DESKTOP CHROME");
+        _incrModalDisplayCount();
         showDesktopInstallPrompt();
       } else if (isDesktopSafari()) {
         debugMessage("DESKTOP SAFARI");
+        _incrModalDisplayCount();
         _showDesktopSafariPrompt();
       }
     }
@@ -1002,6 +1004,7 @@ export function AddToHomeScreen(
     appIconUrl,
     assetUrl,
     maxModalDisplayCount,
+    clearModalDisplayCount,
     isStandAlone,
     show,
     closeModal,
