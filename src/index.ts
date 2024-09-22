@@ -505,8 +505,8 @@ export function AddToHomeScreen(
 
   function _genIOSSafari(container: HTMLElement) {
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
+      _genLogo() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
       // _genAppUrlHeader() +
