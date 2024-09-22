@@ -30,6 +30,8 @@ export function AddToHomeScreen(
   let { appIconUrl, appName, assetUrl, maxModalDisplayCount } = options;
   let closeEventListener: EventListener | null = null;
 
+  const userAgent = window.navigator.userAgent;
+
   _assertArg("appName", typeof appName === "string" && appName.length > 0);
 
   appIconUrl = appIconUrl;
@@ -213,7 +215,7 @@ export function AddToHomeScreen(
   /**** Device Detection Functions ****/
 
   function _matchesUserAgent(regex: RegExp): boolean {
-    return !!window.navigator.userAgent.match(regex);
+    return !!userAgent.match(regex);
   }
 
   function isDeviceAndroid() {
@@ -225,7 +227,7 @@ export function AddToHomeScreen(
   }
 
   // isBrowserIOSIPadSafari() {
-  //   return navigator.userAgent.match(/Macintosh/) &&
+  //   return userAgent.match(/Macintosh/) &&
   //   navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
   // }
 
@@ -334,15 +336,14 @@ export function AddToHomeScreen(
   }
 
   function isDesktopWindows() {
-    return navigator.userAgent.includes("Windows");
+    return userAgent.includes("Windows");
   }
 
   function isDesktopMac() {
-    return navigator.userAgent.includes("Macintosh");
+    return userAgent.includes("Macintosh");
   }
 
   function isDesktopChrome() {
-    const userAgent = navigator.userAgent;
     const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
     const isDesktop =
       userAgent.includes("Windows") ||
@@ -353,7 +354,6 @@ export function AddToHomeScreen(
   }
 
   function isDesktopSafari() {
-    const userAgent = navigator.userAgent;
     const isSafari =
       userAgent.includes("Safari") &&
       !userAgent.includes("Chrome") &&
@@ -365,7 +365,6 @@ export function AddToHomeScreen(
   }
 
   function isDesktopEdge() {
-    const userAgent = window.navigator.userAgent;
     return userAgent.includes("Edg/");
   }
 
@@ -408,7 +407,7 @@ export function AddToHomeScreen(
   function _genLogo() {
     return (
       `
-      <div class="adhs-logo">
+      ${div("logo")}
         <img src="` +
       appIconUrl +
       `" alt="logo" />
@@ -418,29 +417,22 @@ export function AddToHomeScreen(
   }
 
   function _genTitleWithMessage(message: string) {
-    return (
-      `
-      <div class="adhs-title">` +
-      message +
-      `</div>
-      `
-    );
+    return `
+      ${div("title")}
+      ${message}
+      </div>`;
   }
 
   function _genModalStart() {
-    return `<div class="` + _modalClassName() + `">`;
+    return div("modal");
   }
 
   function _genModalEnd() {
     return `</div>`;
   }
 
-  function _modalClassName() {
-    return "adhs-modal";
-  }
-
   function _genListStart() {
-    return `<div class="adhs-list">`;
+    return div("list");
   }
 
   function _genListEnd() {
@@ -448,21 +440,19 @@ export function AddToHomeScreen(
   }
 
   function _genListItem(numberString: string, instructionHTML: string) {
-    return (
-      `
-    <div class="adhs-list-item">
-      <div class="adhs-number-container">
-        <div class="adhs-circle">
-          <div class="adhs-number">` +
-      numberString +
-      `</div>
+    return `
+      ${div("list-item")}
+      ${div("number-container")}
+      ${div("circle")}
+       ${div("number")}
+       ${numberString}
+       </div>
         </div>
       </div>
-      <div class="adhs-instruction">` +
-      instructionHTML +
-      `</div>
-    </div>`
-    );
+      ${div("instruction")}
+      ${instructionHTML}
+      </div>
+    </div>`;
   }
 
   function _genListButtonWithImage(
@@ -473,7 +463,7 @@ export function AddToHomeScreen(
     if (!text) {
       return (
         `
-      <div class="adhs-list-button">
+        ${div("list-button")}
           <img class="adhs-list-button-image-only" src="` +
         imageUrl +
         `" />
@@ -482,10 +472,10 @@ export function AddToHomeScreen(
     } else if (image_side === "right") {
       return (
         `
-      <div class="adhs-list-button">
-        <div class="adhs-list-button-text">` +
-        text +
-        `</div>
+        ${div("list-button")}
+        ${div("list-button-text")}
+        ${text}
+        </div>
         <img class="adhs-list-button-image-right" src="` +
         imageUrl +
         `" />
@@ -494,13 +484,13 @@ export function AddToHomeScreen(
     } else if (image_side === "left") {
       return (
         `
-      <div class="adhs-list-button">
+        ${div("list-button")}
         <img class="adhs-list-button-image-left" src="` +
         imageUrl +
         `" />
-        <div class="adhs-list-button-text">` +
-        text +
-        `</div>
+        ${div("list-button-text")}
+        ${text}
+        </div>
       </div>`
       );
     } else {
@@ -547,15 +537,13 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      `<div class="adhs-ios-safari-bouncing-arrow-container">
-      <img src="` +
+      div("ios-safari-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("ios-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile");
-    container.classList.add("adhs-ios");
-    container.classList.add("adhs-safari");
+    container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari");
   }
 
   function _genIOSChrome(container: HTMLElement) {
@@ -592,15 +580,13 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      `<div class="adhs-ios-chrome-bouncing-arrow-container">
-      <img src="` +
+      div("ios-chrome-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile");
-    container.classList.add("adhs-ios");
-    container.classList.add("adhs-chrome");
+    container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
   }
 
   function _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
@@ -628,15 +614,17 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      `<div class="adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container">
-      <img src="` +
+      div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile");
-    container.classList.add("adhs-ios");
-    container.classList.add("adhs-inappbrowser-openinsystembrowser");
+    container.classList.add(
+      "adhs-mobile",
+      "adhs-ios",
+      "adhs-inappbrowser-openinsystembrowser"
+    );
   }
 
   function _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
@@ -658,15 +646,17 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      `<div class="adhs-inappbrowser-openinsafari-bouncing-arrow-container">
-      <img src="` +
+      div("inappbrowser-openinsafari-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile");
-    container.classList.add("adhs-ios");
-    container.classList.add("adhs-inappbrowser-openinsafari");
+    container.classList.add(
+      "adhs-mobile",
+      "adhs-ios",
+      "adhs-inappbrowser-openinsafari"
+    );
   }
 
   function _genAndroidChrome(container: HTMLElement) {
@@ -701,15 +691,13 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      `<div class="adhs-android-chrome-bouncing-arrow-container">
-      <img src="` +
+      div("android-chrome-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("android-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile");
-    container.classList.add("adhs-android");
-    container.classList.add("adhs-chrome");
+    container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
   }
 
   function _genInstallAppHeader() {
@@ -717,15 +705,15 @@ export function AddToHomeScreen(
   }
 
   function _genAppNameHeader() {
-    return `<div class="adhs-app-name">` + appName + `</div>`;
+    return div("app-name") + appName + `</div>`;
   }
 
   function _genAppUrlHeader() {
-    return `<div class="adhs-app-url">` + _getAppDisplayUrl() + `</div>`;
+    return div("app-url") + _getAppDisplayUrl() + `</div>`;
   }
 
   function _genBlurbWithMessage(message: string) {
-    return `<div class="adhs-blurb">` + message + `</div>`;
+    return div("blurb") + message + `</div>`;
   }
 
   function _genBlurbMobile() {
@@ -764,8 +752,8 @@ export function AddToHomeScreen(
       _genAppNameHeader() +
       _genAppUrlHeader() +
       blurb +
-      `<div class="adhs-button-container">
-      <button class="adhs-button adhs-button-cancel">
+      div("button-container") +
+      `<button class="adhs-button adhs-button-cancel">
         ` +
       i18n.__("Later") +
       `
@@ -779,8 +767,7 @@ export function AddToHomeScreen(
       _genModalEnd();
 
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-desktop");
-    container.classList.add("adhs-desktop-chrome");
+    container.classList.add("adhs-desktop", "adhs-desktop-chrome");
 
     var cancelButton =
       container.getElementsByClassName("adhs-button-cancel")[0];
@@ -844,15 +831,14 @@ export function AddToHomeScreen(
       _genListEnd() +
       blurb +
       _genModalEnd() +
-      `<div class="adhs-desktop-safari-bouncing-arrow-container">
-      <img src="` +
+      div("desktop-safari-bouncing-arrow-container") +
+      `<img src="` +
       _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
     </div>`;
     container.innerHTML = containerInnerHTML;
 
-    container.classList.add("adhs-desktop");
-    container.classList.add("adhs-desktop-safari");
+    container.classList.add("adhs-desktop", "adhs-desktop-safari");
   }
 
   function _registerCloseListener() {
@@ -993,6 +979,10 @@ export function AddToHomeScreen(
     );
     _genDesktopSafari(container);
     _addContainerToBody(container);
+  }
+
+  function div(className: string) {
+    return `<div class="adhs-${className}">`;
   }
 
   return {

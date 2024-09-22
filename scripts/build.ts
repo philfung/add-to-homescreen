@@ -107,8 +107,18 @@ function createLocaleIndexFile(locale: string) {
 
   localeIndexContent = lines.join("\n");
 
+  localeIndexContent = removeNewlineSpaceLessThan(localeIndexContent);
+
   const indexFilePath = path.join(buildDir, `index_${locale}.ts`);
   fs.writeFileSync(indexFilePath, localeIndexContent);
+}
+
+function removeNewlineSpaceLessThan(input: string): string {
+  // Regular expression to match newline, followed by any number of spaces, followed by "<"
+  const regex = /\n[\s\t]*</g;
+
+  // Replace all matches with just "<"
+  return input.replace(regex, "<");
 }
 
 function replaceFunctionCalls(input: string): string {

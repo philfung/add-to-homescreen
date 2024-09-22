@@ -50,3 +50,21 @@ LOCALES.forEach((locale) => {
 
   fs.writeFileSync(localeIndexPath, localeIndexContent);
 });
+
+function removeNewlineSpaceLessThan(input: string): string {
+  // Regular expression to match newline, followed by any number of spaces, followed by "<"
+  const regex = /(["'`])(?:(?=(\\?))\2.)*?\1/g;
+
+  return input.replace(regex, (match) => {
+    // Replace "\n" followed by whitespace and "<" within the string literal
+    return match.replace(/\\n\s*</g, "<");
+  });
+}
+
+// Replace the many instances of repetitive text that looks like "\n       <div"
+// in the add-to-homescreen.min.js file
+const indexJsPath = `${__dirname}/../dist/add-to-homescreen.min.js`;
+const sourceIndexJsContent = fs.readFileSync(indexJsPath).toString();
+
+let indexJsContent = removeNewlineSpaceLessThan(sourceIndexJsContent);
+fs.writeFileSync(indexJsPath, indexJsContent);
