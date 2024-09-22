@@ -390,7 +390,7 @@ export function AddToHomeScreen(
     container.classList.add("adhs-container");
 
     if (include_modal) {
-      var containerInnerHTML = _genLogo() + _genModalStart() + _genModalEnd();
+      var containerInnerHTML = _genModalStart() + _genModalEnd();
       container.innerHTML = containerInnerHTML;
     }
 
@@ -425,7 +425,7 @@ export function AddToHomeScreen(
   }
 
   function _genModalStart() {
-    return div("modal");
+    return div("modal") + _genLogo();
   }
 
   function _genModalEnd() {
@@ -506,7 +506,6 @@ export function AddToHomeScreen(
   function _genIOSSafari(container: HTMLElement) {
     var containerInnerHTML =
       _genModalStart() +
-      _genLogo() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
       // _genAppUrlHeader() +
@@ -549,7 +548,6 @@ export function AddToHomeScreen(
 
   function _genIOSChrome(container: HTMLElement) {
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
@@ -592,7 +590,6 @@ export function AddToHomeScreen(
 
   function _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
@@ -630,7 +627,6 @@ export function AddToHomeScreen(
 
   function _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
@@ -662,7 +658,6 @@ export function AddToHomeScreen(
 
   function _genAndroidChrome(container: HTMLElement) {
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
@@ -747,7 +742,6 @@ export function AddToHomeScreen(
       : _genBlurbDesktopWindows();
 
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
@@ -805,7 +799,6 @@ export function AddToHomeScreen(
       : _genBlurbDesktopWindows();
 
     var containerInnerHTML =
-      _genLogo() +
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +

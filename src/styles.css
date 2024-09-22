@@ -26,15 +26,18 @@
   background-color: #f5f5f5;
   border-radius: 7px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  padding: 49px 19px 32px 19px;
+  left: 50%;
   margin: auto;
-  margin-top: 40px;
   max-width: 400px;
-  width: 90%;
+  padding: 49px 19px 32px 19px;
+  position: absolute;
   transition: opacity 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   line-height: normal;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 90%;
 }
 
 @keyframes adhs-bounce-modal {
@@ -56,16 +59,8 @@
 }
 
 .adhs-container.visible .adhs-modal {
-  transform: translateY(0);
   opacity: 1;
   animation: adhs-bounce-modal 0.5s;
-}
-
-.adhs-container.visible .adhs-modal {
-  position: absolute;
-  transform: translateY(-50%) translateX(-50%);
-  left: 50%;
-  top: 50%;
 }
 
 .adhs-container .adhs-logo {
@@ -587,17 +582,12 @@
   border-radius: 4px;
 }
 
-.adhs-container.adhs-desktop .adhs-logo {
-  top: 20px;
-}
-
 .adhs-container.adhs-desktop .adhs-modal {
   background-color: #f5f5f5;
   border-radius: 7px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 45px 45px 28px 40px;
   margin: auto;
-  margin-top: 60px;
   max-width: 400px;
 }
 
