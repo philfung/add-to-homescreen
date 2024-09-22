@@ -28,8 +28,7 @@
   "dependencies": {
     "add-to-homescreen": "^3.2.6",
     "bun": "^1.1.29",
-    "copy-webpack-plugin": "^11.0.0",
-    "i18n": "^0.15.1"
+    "copy-webpack-plugin": "^11.0.0"
   },
   "devDependencies": {
     "css-loader": "^6.6.0",
