@@ -14,6 +14,7 @@ const LOCALES = config.LOCALES as Array<string>;
 import i18n from "./simpleI18n";
 
 const localeCatalog: { [locale: string]: any } = {};
+
 LOCALES.forEach((locale) => {
   localeCatalog[locale] = require("./locales/" + locale + ".json");
 });
