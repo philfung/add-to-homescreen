@@ -6,10 +6,12 @@ const path = require("path");
 const { LOCALES } = require(path.resolve(__dirname, "src/config"));
 
 function createWebpackLocaleConfig(locale) {
+  const entry = `./src/${locale ? "build/" : ""}main${
+    locale ? `_${locale}` : ""
+  }.ts`;
+
   return {
-    entry: `./src/${locale ? "build/" : ""}main${
-      locale ? `_${locale}` : ""
-    }.ts`,
+    entry,
     output: {
       filename: `add-to-homescreen${locale ? `_${locale}` : ""}.min.js`,
       library: "AddToHomescreen",

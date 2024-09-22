@@ -22,12 +22,15 @@ const indexContent = fs.readFileSync(sourceIndexFilePath).toString();
 LOCALES.forEach((locale) => {
   // Create a new main file
 
-  const lines = mainContent.split("\n").filter((line) => {
-    return (
-      line.indexOf(`import AddToHomeScreen`) < 0 &&
-      line.indexOf("window.AddToHomeScreen =") < 0
-    );
-  });
+  const lines = mainContent
+    .replace(`"./types"`, `"../types"`)
+    .split("\n")
+    .filter((line) => {
+      return (
+        line.indexOf(`import AddToHomeScreen`) < 0 &&
+        line.indexOf("window.AddToHomeScreen =") < 0
+      );
+    });
 
   const importName = `AddToHomeScreen${locale.toUpperCase()}`;
 
@@ -57,18 +60,27 @@ function createLocaleIndexFile(locale: string) {
 
   lines.splice(1, 0, `const LOCALES = ["${locale}"]`);
 
-  const requireIdx = lines.findIndex((line) => {
-    return line.indexOf(`require("i18n")`) > -1;
-  });
-
-  lines.splice(requireIdx, 1, `const i18n = require("../simpleI18n");`);
+  const relativeRequires = [
+    "./styles.css",
+    "./locales/",
+    "./simpleI18n",
+    "./types",
+  ];
 
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
-    if (line.indexOf("./styles.css") > -1) {
-      lines[i] = line.replace("./style", "../style");
-    } else if (line.indexOf("./locales/") > -1) {
-      lines[i] = line.replace("./locales/", "../locales/");
+
+    for (let j = 0; j < relativeRequires.length; j++) {
+      const requirePath = relativeRequires[j];
+      if (line.indexOf(`"${requirePath}`) > -1) {
+        lines[i] = line.replace(requirePath, "." + requirePath);
+        relativeRequires.splice(j, 1);
+
+        break;
+      }
+    }
+    if (relativeRequires.length == 0) {
+      break;
     }
   }
 

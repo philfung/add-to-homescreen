@@ -1,9 +1,10 @@
-import AddToHomeScreen from './index';
+import AddToHomeScreen from "./index";
+import { AddToHomeScreenOptions, AddToHomeScreenType } from "./types";
 
 declare global {
   interface Window {
-	AddToHomeScreen: typeof AddToHomeScreen;
+    AddToHomeScreen: (options: AddToHomeScreenOptions) => AddToHomeScreenType;
   }
 }
 
-window.AddToHomeScreen = AddToHomeScreen;   
+window.AddToHomeScreen = AddToHomeScreen;
