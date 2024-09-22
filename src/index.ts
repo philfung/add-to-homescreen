@@ -65,7 +65,17 @@ export function AddToHomeScreen(
     ); // Android and Desktop Chrome/Safari/Edge
   }
 
-  function show(locale = "en"): DeviceInfo {
+  function show(locale: string): DeviceInfo {
+    if (!locale) {
+      // If we have 'en', then use it. If just a single non 'en' locale
+      // is included in the localeCatalog, default to that one.
+      if (localeCatalog["en"]) {
+        locale = "en";
+      } else {
+        locale = Object.keys(localeCatalog)[0];
+      }
+    }
+
     i18n.setLocale(locale);
     var ret: DeviceInfo;
 

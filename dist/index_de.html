@@ -734,13 +734,13 @@
       window.addEventListener("load", function () {
         window.AddToHomeScreenInstance = window.AddToHomeScreen({
           appName: "Aardvark", // Name of the app. [Required]
-          appNameDisplay: "inline",
+          appNameDisplay: "inline", // Display position of the app name [Optional]
           appIconUrl: "./assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
           assetUrl: "./assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         });
-        window.AddToHomeScreenInstance.show("de"); // popup is only shown if web app is not already added to homescreen
+        window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen
       });
     </script>
     <!-- ====================  END: initialize add-to-homescreen library  ==================== -->

@@ -24,6 +24,10 @@ indexContent =
   indexContent.substring(0, idx + search.length) +
   links.join("\n") +
   indexContent.substring(idx + search.length);
+
+// Use the default locale for this built file
+indexContent = indexContent.replace(`show("en")`, `show()`);
+
 fs.writeFileSync(sourceIndexPath, indexContent);
 
 // Copy over these files to /dist as the index.html needs them
