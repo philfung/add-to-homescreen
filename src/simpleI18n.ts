@@ -21,10 +21,12 @@ const SimpleI18n = {
   },
 
   setLocale: (locale: string) => {
-    if (!config) {
-      throw new Error(
-        "SimpleI18n error: The configure function must be called before the setLocale funciton"
-      );
+    if (process.env.NODE_ENV === "development") {
+      if (!config) {
+        throw new Error(
+          "SimpleI18n error: The configure function must be called before the setLocale funciton"
+        );
+      }
     }
     directory = config.staticCatalog[locale];
   },
@@ -35,15 +37,19 @@ const SimpleI18n = {
     }
 
     // Need to do a string replacement
-    if (!input) {
-      throw new Error(
-        "SimpleI18n error: if " +
-          PLACEHOLDER +
-          " exists in a string, a replacement string must be provided for " +
-          key
-      );
+    if (process.env.NODE_ENV === "development") {
+      if (!input) {
+        throw new Error(
+          "SimpleI18n error: if " +
+            PLACEHOLDER +
+            " exists in a string, a replacement string must be provided for " +
+            key
+        );
+      }
     }
     const parts = key.split(PLACEHOLDER);
     return parts[0] + input + parts[1];
   },
 };
+
+export default SimpleI18n;

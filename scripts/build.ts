@@ -5,6 +5,7 @@ import { LOCALES } from "../src/config";
 const buildDir = `${__dirname}/../src/build/`;
 const sourceMainFilePath = `${__dirname}/../src/main.ts`;
 const sourceIndexFilePath = `${__dirname}/../src/index.ts`;
+const localesFilePath = `${__dirname}/../src/locales`;
 
 function ensureDirectoryExistence(dirName) {
   if (fs.existsSync(dirName)) {
@@ -46,13 +47,39 @@ LOCALES.forEach((locale) => {
 function createLocaleIndexFile(locale: string) {
   let localeIndexContent = indexContent;
 
+  const localeConfig = { ...require(`${localesFilePath}/${locale}.json`) };
+
+  // Normalize how the i18n.__() calls are formatted so it makes it easier to
+  // in-place replace the config values with the localized language
+  localeIndexContent = replaceFunctionCalls(localeIndexContent);
+
+  Object.keys(localeConfig).forEach((localeKey) => {
+    const search = `i18n.__("${localeKey}"`;
+    const idx = localeIndexContent.indexOf(search);
+    if (idx > -1) {
+      localeIndexContent = localeIndexContent.replace(
+        search,
+        `i18n.__("${localeConfig[localeKey]}"`
+      );
+      delete localeConfig[localeKey];
+    } else {
+      throw new Error(
+        "Missing translation in locale [" +
+          locale +
+          "] for key [" +
+          localeKey +
+          "]"
+      );
+    }
+  });
+
   const linesToRemove = [
     `import { LOCALES } from "./config";`,
     `const config = require`,
     `const LOCALES =`,
   ];
 
-  const lines = localeIndexContent.split("\n").filter((line) => {
+  let lines = localeIndexContent.split("\n").filter((line) => {
     return !linesToRemove.some((lineToRemove) => {
       return line.indexOf(lineToRemove) > -1;
     });
@@ -60,13 +87,9 @@ function createLocaleIndexFile(locale: string) {
 
   lines.splice(1, 0, `const LOCALES = ["${locale}"]`);
 
-  const relativeRequires = [
-    "./styles.css",
-    "./locales/",
-    "./simpleI18n",
-    "./types",
-  ];
+  const relativeRequires = ["./styles.css", "./simpleI18n", "./types"];
 
+  let localeConfigFound = false;
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
 
@@ -79,13 +102,33 @@ function createLocaleIndexFile(locale: string) {
         break;
       }
     }
-    if (relativeRequires.length == 0) {
+
+    const localeRequireIdx = line.indexOf('require("./locales/"');
+    if (localeRequireIdx > -1) {
+      lines[i] =
+        lines[i].substring(0, localeRequireIdx) +
+        JSON.stringify(localeConfig, null, 2) +
+        ";";
+      localeConfigFound = true;
+    }
+
+    if (localeConfigFound && relativeRequires.length == 0) {
       break;
     }
   }
 
+  localeIndexContent = lines.join("\n");
+
   const indexFilePath = path.join(buildDir, `index_${locale}.ts`);
-  fs.writeFileSync(indexFilePath, lines.join("\n"));
+  fs.writeFileSync(indexFilePath, localeIndexContent);
+}
+
+function replaceFunctionCalls(input: string): string {
+  // Regular expression to match '.__(' followed by any number of spaces or new lines
+  const regex = /\.__\(\s*/g;
+
+  // Replace with '.__('
+  return input.replace(regex, ".__(");
 }
 
 LOCALES.forEach(createLocaleIndexFile);
