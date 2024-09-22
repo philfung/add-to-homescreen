@@ -33,7 +33,8 @@ function createWebpackLocaleConfig(locale) {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
-        inject: "head",
+        inject: false,
+        minify: false,
       }),
       new MiniCssExtractPlugin({
         filename: "add-to-homescreen.min.css",
@@ -56,48 +57,3 @@ function createWebpackLocaleConfig(locale) {
 module.exports = [createWebpackLocaleConfig(null)].concat(
   LOCALES.map(createWebpackLocaleConfig)
 );
-
-// module.exports = {
-//   entry: "./src/main.ts",
-//   output: {
-//     filename: "add-to-homescreen.min.js",
-//     library: "AddToHomescreen",
-//     libraryExport: "default",
-//     libraryTarget: "window",
-//     path: path.resolve(__dirname, "dist"),
-//   },
-//   mode: "production",
-//   module: {
-//     rules: [
-//       {
-//         test: /\.ts$/,
-//         use: "ts-loader",
-//         exclude: /node_modules/,
-//       },
-//       {
-//         test: /\.css$/i,
-//         use: [MiniCssExtractPlugin.loader, "css-loader"],
-//       },
-//     ],
-//   },
-//   plugins: [
-//     new HtmlWebpackPlugin({
-//       template: "./index.html",
-//       inject: "head",
-//     }),
-//     new MiniCssExtractPlugin({
-//       filename: "add-to-homescreen.min.css",
-//     }),
-//     new CopyWebpackPlugin({
-//       patterns: [{ from: "./src/assets", to: "assets" }],
-//     }),
-//   ],
-//   resolve: {
-//     extensions: [".ts", ".js"],
-//     fallback: {
-//       fs: false,
-//       url: false,
-//       path: false,
-//     },
-//   },
-// };

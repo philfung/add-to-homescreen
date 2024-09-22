@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build-dev": "NODE_ENV=development npm run build",
-    "build": "bun ./scripts/build.ts && webpack",
+    "build": "bun ./scripts/build.ts && webpack && bun ./scripts/buildIndexHtml.ts",
     "pack": "webpack",
-    "start": "http-server -c-1 -p 8081",
+    "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
   },
   "repository": {
