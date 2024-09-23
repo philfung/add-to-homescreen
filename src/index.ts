@@ -237,13 +237,16 @@ export function AddToHomeScreen(
   }
 
   function isDeviceIOS() {
-    return _matchesUserAgent(/iPhone|iPad|iPod/);
+    return _matchesUserAgent(/iPhone|iPad|iPod/) || isBrowserIOSIPadSafari();
   }
 
-  // isBrowserIOSIPadSafari() {
-  //   return userAgent.match(/Macintosh/) &&
-  //   navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
-  // }
+  function isBrowserIOSIPadSafari() {
+    return !!(
+      userAgent.match(/Macintosh/) &&
+      navigator.maxTouchPoints &&
+      navigator.maxTouchPoints > 1
+    );
+  }
 
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
    AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
@@ -550,7 +553,11 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      div("ios-safari-bouncing-arrow-container") +
+      div(
+        isBrowserIOSIPadSafari()
+          ? "ios-ipad-safari-bouncing-arrow-container"
+          : "ios-safari-bouncing-arrow-container"
+      ) +
       `<img src="` +
       _genAssetUrl("ios-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
