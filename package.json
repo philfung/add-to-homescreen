@@ -4,9 +4,10 @@
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen.",
   "main": "dist/index.js",
   "scripts": {
-    "build-dev": "NODE_ENV=development webpack",
-    "build": "webpack",
-    "start": "http-server -c-1 -p 8081",
+    "build-dev": "NODE_ENV=development npm run build",
+    "build": "bun ./scripts/build.ts && webpack && bun ./scripts/postBuild.ts",
+    "pack": "webpack",
+    "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
   },
   "repository": {
@@ -26,8 +27,8 @@
   "homepage": "https://github.com/philfung/add-to-homescreen#readme",
   "dependencies": {
     "add-to-homescreen": "^3.2.6",
-    "copy-webpack-plugin": "^11.0.0",
-    "i18n": "^0.15.1"
+    "bun": "^1.1.29",
+    "copy-webpack-plugin": "^11.0.0"
   },
   "devDependencies": {
     "css-loader": "^6.6.0",

@@ -18,8 +18,8 @@
 
     <!-- ====================  BEGIN: Include add-to-homescreen resources  ==================== -->
 
-    <link rel="stylesheet" href="./dist/add-to-homescreen.min.css" />
-  </head>
+    <link rel="stylesheet" href="./add-to-homescreen.min.css" />
+  <script defer src="add-to-homescreen_pl.min.js"></script><link href="add-to-homescreen.min.css" rel="stylesheet"></head>
   <!-- ====================  END: Include add-to-homescreen resources  ==================== -->
 
   <!-- ====================  BEGIN: EXAMPLE WEBSITE CONTENT ==================== -->
@@ -525,7 +525,19 @@
       </div>
       <div class="locales">
         <div>Locales</div>
-        <ul id="locales"></ul>
+        <ul id="locales"><li><a href="index_da.html">DA</a></li>
+<li><a href="index_de.html">DE</a></li>
+<li><a href="index_en.html">EN</a></li>
+<li><a href="index_es.html">ES</a></li>
+<li><a href="index_fr.html">FR</a></li>
+<li><a href="index_he.html">HE</a></li>
+<li><a href="index_it.html">IT</a></li>
+<li><a href="index_pt.html">PT</a></li>
+<li><a href="index_ru.html">RU</a></li>
+<li><a href="index_cs.html">CS</a></li>
+<li><a href="index_ko.html">KO</a></li>
+<li><a href="index_lv.html">LV</a></li>
+<li><a href="index_pl.html">PL</a></li></ul>
       </div>
     </div>
 
@@ -719,12 +731,12 @@
         window.AddToHomeScreenInstance = window.AddToHomeScreen({
           appName: "Aardvark", // Name of the app. [Required]
           appNameDisplay: "standalone", // Display position of the app name [Optional]
-          appIconUrl: "./dist/assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
-          assetUrl: "./dist/assets/img/", // Link to directory of library image assets [Required]
+          appIconUrl: "./assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
+          assetUrl: "./assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         });
-        window.AddToHomeScreenInstance.show("en"); // popup is only shown if web app is not already added to homescreen
+        window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen
       });
     </script>
     <!-- ====================  END: initialize add-to-homescreen library  ==================== -->

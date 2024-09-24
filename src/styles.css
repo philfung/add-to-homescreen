@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 .adhs-container {
   display: block;
@@ -11,7 +11,7 @@
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #212121;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -23,47 +23,45 @@
 }
 
 .adhs-container .adhs-modal {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 7px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  padding: 49px 19px 32px 19px;
+  left: 50%;
   margin: auto;
-  margin-top: 40px;
   max-width: 400px;
-  width: 90%;
+  padding: 49px 19px 32px 19px;
+  position: absolute;
   transition: opacity 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   line-height: normal;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 90%;
 }
 
 @keyframes adhs-bounce-modal {
-
   0%,
   20%,
   50%,
   80%,
   100% {
-    transform: translateY(0);
+    transform: translateY(-50%) translateX(-50%);
   }
 
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-40%) translateX(-50%);
   }
 
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-55%) translateX(-50%);
   }
 }
 
-
-.adhs-container.visible .adhs-modal,
-.adhs-container.visible .adhs-logo {
-  transform: translateY(0);
+.adhs-container.visible .adhs-modal {
   opacity: 1;
-  animation: adhs-bounce-modal .5s;
+  animation: adhs-bounce-modal 0.5s;
 }
-
 
 .adhs-container .adhs-logo {
   position: absolute;
@@ -72,6 +70,7 @@
   margin: auto;
   height: 80px;
   width: 80px;
+  top: -45px;
   z-index: 10000;
 }
 
@@ -97,9 +96,9 @@
 }
 
 .adhs-container .adhs-modal .adhs-error-body {
-    font-size: 20px;
-    margin: 0px 10px 20px 10px;
-    text-align: justify;
+  font-size: 20px;
+  margin: 0px 10px 20px 10px;
+  text-align: justify;
 }
 
 .adhs-container .adhs-modal .adhs-error-copy-link-button {
@@ -109,7 +108,6 @@
   font-size: 19px;
   padding: 5px;
 }
-
 
 .adhs-container .adhs-modal .adhs-list {
   display: flex;
@@ -135,19 +133,25 @@
   margin: 0px 0px 10px 0px;
 }
 
-
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   flex-direction: column;
   display: flex;
   /* margin: 0px 5px 0px 0px; */
 }
 
-.adhs-container.adhs-desktop .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
+.adhs-container.adhs-desktop
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-number-container {
   margin: 0px 5px 0px 0px;
-
 }
 
-.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
+.adhs-container.adhs-mobile
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-number-container {
   margin: 5px 5px 0px 0px;
 }
 
@@ -159,7 +163,6 @@
   background-color: #000000;
 }
 
-
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number {
   padding: 6px 0px 0px 11px;
   color: white;
@@ -167,7 +170,12 @@
   font-weight: 100;
 }
 
-[dir="rtl"] .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number {
+[dir="rtl"]
+  .adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-number {
   padding: 6px 11px 0px 11px;
 }
 
@@ -178,13 +186,16 @@
   /* text-align: justify; */
 }
 
-.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-instruction:has(.adhs-list-button) {
+.adhs-container.adhs-mobile
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-instruction:has(.adhs-list-button) {
   padding-top: 5px;
 }
 
-
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
-  display:inline;
+  display: inline;
   /* border: 0.5px solid lightgrey; */
   border-radius: 4px;
   box-shadow: 1px 1px 2px gray;
@@ -193,41 +204,64 @@
   white-space: nowrap;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button:has(.adhs-list-button-image-only) {
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button:has(.adhs-list-button-image-only) {
   display: inline-block;
   padding: 1px 8px;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
-  display:inline;
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-text {
+  display: inline;
   font-size: 16px;
   position: relative;
   top: -1px;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-only {
   position: relative;
   top: 3px;
   left: 0px;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-left {
   position: relative;
   margin: 0 5px 0px 0px;
   top: 2px;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-right {
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-right {
   position: relative;
   top: 2px;
 }
 
-
-
-
-
 /* IOS Safari */
-.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-sharing-api-button {
+.adhs-container.adhs-ios.adhs-safari
+  .adhs-modal
+  .adhs-list
+  .adhs-ios-safari-sharing-api-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -235,7 +269,10 @@
   background-color: #ffffff;
 }
 
-.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-add-to-home-screen-button {
+.adhs-container.adhs-ios.adhs-safari
+  .adhs-modal
+  .adhs-list
+  .adhs-ios-safari-add-to-home-screen-button {
   height: 33px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -244,7 +281,6 @@
 }
 
 @keyframes adhs-ios-safari-bouncing-arrow-animation {
-
   0%,
   20%,
   50%,
@@ -262,7 +298,27 @@
   }
 }
 
-.adhs-container.adhs-ios.adhs-safari .adhs-ios-safari-bouncing-arrow-container img {
+@keyframes adhs-ios-ipad-safari-bouncing-arrow-animation {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) rotate(180deg);
+  }
+
+  40% {
+    transform: translateY(30px) rotate(180deg);
+  }
+
+  60% {
+    transform: translateY(15px) rotate(180deg);
+  }
+}
+
+.adhs-container.adhs-ios.adhs-safari
+  .adhs-ios-safari-bouncing-arrow-container
+  img {
   height: 60px;
   position: absolute;
   top: calc(100dvh - 60px);
@@ -272,9 +328,18 @@
   animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
 }
 
+.adhs-container.adhs-ios.adhs-safari
+  .adhs-ios-ipad-safari-bouncing-arrow-container
+  img {
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 120px;
+  animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
+}
+
 /* IOS Chrome */
 @keyframes adhs-ios-chrome-bouncing-arrow-animation {
-
   0%,
   20%,
   50%,
@@ -292,7 +357,10 @@
   }
 }
 
-.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-more-button {
+.adhs-container.adhs-ios.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-ios-chrome-more-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -300,7 +368,9 @@
   background-color: #ffffff;
 }
 
-.adhs-container.adhs-ios.adhs-chrome .adhs-ios-chrome-bouncing-arrow-container img {
+.adhs-container.adhs-ios.adhs-chrome
+  .adhs-ios-chrome-bouncing-arrow-container
+  img {
   height: 40px;
   position: absolute;
   top: 0;
@@ -308,7 +378,10 @@
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-add-to-home-screen-button {
+.adhs-container.adhs-ios.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-ios-chrome-add-to-home-screen-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -318,7 +391,6 @@
 
 /* Android Chrome */
 @keyframes adhs-android-chrome-bouncing-arrow-animation {
-
   0%,
   20%,
   50%,
@@ -336,7 +408,9 @@
   }
 }
 
-.adhs-container.adhs-android.adhs-chrome .adhs-android-chrome-bouncing-arrow-container img {
+.adhs-container.adhs-android.adhs-chrome
+  .adhs-android-chrome-bouncing-arrow-container
+  img {
   height: 40px;
   position: absolute;
   top: 0;
@@ -344,7 +418,10 @@
   animation: adhs-android-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-more-button {
+.adhs-container.adhs-android.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-android-chrome-more-button {
   height: 30px;
   background: white;
   margin: 0px 5px -7px 5px;
@@ -352,7 +429,10 @@
   border-radius: 4px;
 }
 
-.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-add-to-homescreen-button {
+.adhs-container.adhs-android.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-android-chrome-add-to-homescreen-button {
   height: 30px;
   background: white;
   margin: 0px 5px -9px 5px;
@@ -361,7 +441,10 @@
   padding: 0px 7px 0px 4px;
 }
 
-.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-install-app {
+.adhs-container.adhs-android.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-android-chrome-install-app {
   height: 30px;
   background: white;
   margin: 10px 5px -10px 5px;
@@ -370,7 +453,11 @@
   padding: 0px;
 }
 
-.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+.adhs-container.adhs-android.adhs-chrome
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-instruction {
   line-height: 34px;
 }
 
@@ -379,7 +466,10 @@
   padding: 0px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-emphasis {
+.adhs-container.adhs-inappbrowser-openinsystembrowser
+  .adhs-modal
+  .adhs-list
+  .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -389,17 +479,23 @@
   font-weight: 500;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item {
+.adhs-container.adhs-inappbrowser-openinsystembrowser
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+.adhs-container.adhs-inappbrowser-openinsystembrowser
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-instruction {
   padding: 0px 0px 2px 9px;
   line-height: 42px;
 }
 
 @keyframes adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation {
-
   0%,
   20%,
   50%,
@@ -417,15 +513,21 @@
   }
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container img {
+.adhs-container.adhs-inappbrowser-openinsystembrowser
+  .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container
+  img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 6px;
-  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s
+    infinite;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-more-button {
+.adhs-container.adhs-inappbrowser-openinsystembrowser
+  .adhs-modal
+  .adhs-list
+  .adhs-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
@@ -438,7 +540,10 @@
   padding: 0px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-emphasis {
+.adhs-container.adhs-inappbrowser-openinsafari
+  .adhs-modal
+  .adhs-list
+  .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -448,18 +553,24 @@
   font-weight: 500;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item {
+.adhs-container.adhs-inappbrowser-openinsafari
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+.adhs-container.adhs-inappbrowser-openinsafari
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-instruction {
   padding: 0px 0px 0px 9px;
   line-height: 34px;
   margin: 4px 0px 0px 0px;
 }
 
 @keyframes adhs-inappbrowser-openinsafari-bouncing-arrow-animation {
-
   0%,
   20%,
   50%,
@@ -477,15 +588,21 @@
   }
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari .adhs-inappbrowser-openinsafari-bouncing-arrow-container img {
+.adhs-container.adhs-inappbrowser-openinsafari
+  .adhs-inappbrowser-openinsafari-bouncing-arrow-container
+  img {
   height: 40px;
   position: absolute;
   top: calc(100dvh - 40px);
   right: 15px;
-  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
+  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s
+    infinite;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-more-button {
+.adhs-container.adhs-inappbrowser-openinsafari
+  .adhs-modal
+  .adhs-list
+  .adhs-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
@@ -493,17 +610,12 @@
   border-radius: 4px;
 }
 
-.adhs-container.adhs-desktop .adhs-logo {
-  top: 20px;
-}
-
 .adhs-container.adhs-desktop .adhs-modal {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 7px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 45px 45px 28px 40px;
   margin: auto;
-  margin-top: 60px;
   max-width: 400px;
 }
 
@@ -592,8 +704,9 @@
   margin-top: 11px;
 }
 .adhs-container .adhs-modal .adhs-button {
-  background-color: #1D64F0;
+  background-color: #1d64f0;
   color: white;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 400;
   border: none;
@@ -601,11 +714,12 @@
   border-radius: 9px;
 }
 
-.adhs-container.adhs-desktop-safari .adhs-desktop-safari-bouncing-arrow-container img {
+.adhs-container.adhs-desktop-safari
+  .adhs-desktop-safari-bouncing-arrow-container
+  img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 88px;
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
-
