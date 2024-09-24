@@ -83,6 +83,23 @@ This should be a quick drop-in library into your website.
    </head>
    ```
 
+   The code above will include a JavaScript file containing all the available translations for the locales this library supports. It is highly optimized to be small and quick to deliver over mobile networks. If however you want to
+   be even more highly optimized, the library also has JavaScript files built with just a single locale of translations, which is about 60% smaller.
+
+   For example, the Spanish file `add-to-homescreen_es.min.js` can be included as below. If you have a dynamic server environment and know the user's preferred locale, this can be a good option. To see all the supported locales, look in the `dist` folder.
+
+   ```html
+   <head>
+     ...
+     <link
+       rel="stylesheet"
+       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/add-to-homescreen.min.css"
+     />
+     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.0/dist/add-to-homescreen_es.min.js"></script>
+     ...
+   </head>
+   ```
+
 2. Call the library onload.
 
    `index.html`
@@ -139,24 +156,36 @@ This is because some handlers must be created onload.
 
 ### Usage (If you're making changes to library)
 
+AddToHomescreen builds multiple copies of the library, all to the `dist` folder, each with their own intended usage.
+
+The most likely JavaScript file that you'll use is `add-to-homescreen.min.js`. This is the minified production read code.
+
+If you are debugging a change you made to the library, the `add-to-homescreen.js` file is an unminified version of the code, which you can use by loading the `/debug` path in the server below.
+
+The library also builds multiple other copies of the JavaScript code that are specific to an individual locale, for
+example `add-to-homescreen_es.min.js` only contains the Spanish translations. These are intended to be used by
+applications that are highly concerned with the amount of JavaScript code that is downloaded on a mobile device, and they
+are generally less than half the size of the default file. If your server is aware of the desired locale and you have the
+ability to change what file is loaded at page load time, these files can be a good choice.
+
 1. Make changes
-2. Test locally:
+2. Build the library into the `dist` directory
 
-Start local server
+   ```
+   npm install
+   npm run build
+   ```
 
-```
-npm run install
-npm run build
-npm run start
-```
+   This will build all variations of the JavaScript file and start a server for your testing. 3. Test locally:
 
-Load an example page http://127.0.0.1:8081
+3. Start local server
 
-3. Build the library into the `dist` directory
+   ```
+   npm run build
+   npm run start
+   ```
 
-```
-npm run build
-```
+   Load an example page http://127.0.0.1:8081, or load an example page with unminified code at http://127.0.0.1:8081/debug
 
 4. Save the [dist](https://github.com/philfung/add-to-homescreen/tree/main/dist) directory to a CDN of your choice.
    Follow the steps in the previous section.
