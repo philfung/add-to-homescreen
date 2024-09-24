@@ -41,20 +41,33 @@ rootFilesToCopy.forEach((fileName) => {
   fs.cpSync(`${__dirname}/../${fileName}`, `${__dirname}/../dist/${fileName}`);
 });
 
-function removeNewlineSpaceLessThan(input: string): string {
-  // Regular expression to match newline, followed by any number of spaces, followed by "<"
+function removeNewlineSpaces(input: string): string {
+  // Regular expression to match string literals
   const regex = /(["'`])(?:(?=(\\?))\2.)*?\1/g;
 
   return input.replace(regex, (match) => {
     // Replace "\n" followed by whitespace and "<" within the string literal
-    return match.replace(/\\n\s*</g, "<");
+    match = match.replace(/\\n\s*</g, "<");
+
+    // Replace "\n" followed by whitespace and "'" within the string literal
+    match = match.replace(/\\n\s*'/g, " '");
+
+    // Replace "\n" followed by whitespace and "$" within the string literal
+    match = match.replace(/\\n\s*\$/g, " $");
+
+    return match;
   });
 }
 
 // Replace the many instances of repetitive text that looks like "\n       <div"
 // in the add-to-homescreen.min.js file
-const indexJsPath = path.join(distDir, "add-to-homescreen.min.js");
-const sourceIndexJsContent = fs.readFileSync(indexJsPath).toString();
+const indexFilePaths = ["add-to-homescreen.min.js"]
+  .concat(LOCALES.map((locale) => `add-to-homescreen_${locale}.min.js`))
+  .map((fileName) => path.join(distDir, fileName));
 
-let indexJsContent = removeNewlineSpaceLessThan(sourceIndexJsContent);
-fs.writeFileSync(indexJsPath, indexJsContent);
+indexFilePaths.forEach((filePath) => {
+  const sourceIndexJsContent = fs.readFileSync(filePath).toString();
+
+  let indexJsContent = removeNewlineSpaces(sourceIndexJsContent);
+  fs.writeFileSync(filePath, indexJsContent);
+});
