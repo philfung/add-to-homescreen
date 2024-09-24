@@ -937,17 +937,17 @@ export function AddToHomeScreen(
   let _desktopInstallPromptEvent: ADHSBeforeInstallPromptEvent | null = null;
   let _desktopInstallPromptWasShown: boolean = false;
 
+  function _desktopInstallPromptEventListener(e: ADHSBeforeInstallPromptEvent) {
+    debugMessage("DESKTOP CHROME LISTENER");
+    e.preventDefault();
+    _desktopInstallPromptEvent = e;
+  }
+
   function _registerDesktopInstallPromptEvent() {
     window.addEventListener(
       "beforeinstallprompt",
       _desktopInstallPromptEventListener
     );
-  }
-
-  function _desktopInstallPromptEventListener(e: ADHSBeforeInstallPromptEvent) {
-    debugMessage("DESKTOP CHROME LISTENER");
-    e.preventDefault();
-    _desktopInstallPromptEvent = e;
   }
 
   function _desktopInstallPromptEventHasFired(): boolean {
