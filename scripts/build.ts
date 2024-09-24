@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import { LOCALES } from "../src/config";
 
+// This script creates the src/build folder which contains
+// locale specific main.ts and index.ts files
+
 const buildDir = `${__dirname}/../src/build/`;
 const sourceMainFilePath = `${__dirname}/../src/main.ts`;
 const sourceIndexFilePath = `${__dirname}/../src/index.ts`;
@@ -13,6 +16,17 @@ function ensureDirectoryExistence(dirName) {
   }
   fs.mkdirSync(dirName);
 }
+
+function deleteFolder(folderPath) {
+  try {
+    fs.rmSync(folderPath, { recursive: true, force: true });
+  } catch (error) {
+    console.error(`Error deleting folder ${folderPath}: ${error.message}`);
+  }
+}
+
+// Clean out the build dir
+deleteFolder(buildDir);
 
 ensureDirectoryExistence(buildDir);
 
@@ -129,4 +143,6 @@ function replaceFunctionCalls(input: string): string {
   return input.replace(regex, ".__(");
 }
 
+// Create the "src/build/index_{locale}.ts" file for each locale
+// This is targeted by webpack for the build
 LOCALES.forEach(createLocaleIndexFile);
