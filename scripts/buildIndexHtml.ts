@@ -3,56 +3,42 @@
 // file so it includes the right files for the locale.
 import { LOCALES } from "../src/config";
 import fs from "fs";
+import path from "path";
 
-const disDir = `${__dirname}/../dist/`;
-const sourceIndexPath = `${disDir}index.html`;
+const distDir = `${__dirname}/../dist/`;
 
-let indexContent = fs.readFileSync(sourceIndexPath).toString();
+const fileNamesToFix = ["index.html", "debug.html"]
+  .concat(LOCALES.map((locale) => `index_${locale}.html`))
+  .map((fileName) => path.join(distDir, fileName));
 
-indexContent = indexContent.split(`"./dist/`).join(`"./`);
+fileNamesToFix.forEach((filePath) => {
+  let fileContent = fs.readFileSync(filePath).toString();
+  fileContent = fileContent.split(`"./dist/`).join(`"./`);
 
-const search = `<ul id="locales">`;
+  const search = `<ul id="locales">`;
 
-const idx = indexContent.indexOf(search);
+  const idx = fileContent.indexOf(search);
 
-// Create links to all the different localized index.html files
-const links = LOCALES.map((locale) => {
-  return `<li><a href="index_${locale}.html">${locale.toUpperCase()}</a></li>`;
+  // Create links to all the different localized index.html files
+  const links = LOCALES.map((locale) => {
+    return `<li><a href="index_${locale}.html">${locale.toUpperCase()}</a></li>`;
+  });
+
+  fileContent =
+    fileContent.substring(0, idx + search.length) +
+    links.join("\n") +
+    fileContent.substring(idx + search.length);
+
+  // Use the default locale for this built file
+  fileContent = fileContent.replace(`show("en")`, `show()`);
+  fs.writeFileSync(filePath, fileContent);
 });
-
-indexContent =
-  indexContent.substring(0, idx + search.length) +
-  links.join("\n") +
-  indexContent.substring(idx + search.length);
-
-// Use the default locale for this built file
-indexContent = indexContent.replace(`show("en")`, `show()`);
-
-fs.writeFileSync(sourceIndexPath, indexContent);
 
 // Copy over these files to /dist as the index.html needs them
 const rootFilesToCopy = ["manifest.json", "apple-touch-icon.png"];
 
 rootFilesToCopy.forEach((fileName) => {
   fs.cpSync(`${__dirname}/../${fileName}`, `${__dirname}/../dist/${fileName}`);
-});
-
-// Make the new index.html files, one per locale
-LOCALES.forEach((locale) => {
-  const localeIndexPath = `${disDir}index_${locale}.html`;
-
-  let localeIndexContent = indexContent;
-
-  const replacements = [
-    ["./add-to-homescreen.min.js", `./add-to-homescreen_${locale}.min.js`],
-    [`show("en")`, `show("${locale}")`],
-  ];
-
-  replacements.forEach(([from, to]) => {
-    localeIndexContent = localeIndexContent.replace(from, to);
-  });
-
-  fs.writeFileSync(localeIndexPath, localeIndexContent);
 });
 
 function removeNewlineSpaceLessThan(input: string): string {
@@ -67,7 +53,7 @@ function removeNewlineSpaceLessThan(input: string): string {
 
 // Replace the many instances of repetitive text that looks like "\n       <div"
 // in the add-to-homescreen.min.js file
-const indexJsPath = `${__dirname}/../dist/add-to-homescreen.min.js`;
+const indexJsPath = path.join(distDir, "add-to-homescreen.min.js");
 const sourceIndexJsContent = fs.readFileSync(indexJsPath).toString();
 
 let indexJsContent = removeNewlineSpaceLessThan(sourceIndexJsContent);
