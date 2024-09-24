@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
+const { optimize } = require("webpack");
 const { LOCALES } = require(path.resolve(__dirname, "src/config"));
 
-function createWebpackLocaleConfig(locale) {
+function createWebpackLocaleConfig(locale, preventMinification) {
   const entry = `./src/${locale ? "build/" : ""}main${
     locale ? `_${locale}` : ""
   }.ts`;
@@ -13,10 +14,18 @@ function createWebpackLocaleConfig(locale) {
   return {
     entry,
     output: {
-      filename: `add-to-homescreen${locale ? `_${locale}` : ""}.min.js`,
+      filename: `add-to-homescreen${locale ? `_${locale}` : ""}${
+        !!preventMinification ? "" : ".min"
+      }.js`,
       path: path.resolve(__dirname, "dist"),
     },
     mode: "production",
+    optimization: !!preventMinification
+      ? {
+          minimize: false,
+          minimizer: [], // This removes all minimizers
+        }
+      : undefined,
     module: {
       rules: [
         {
@@ -33,8 +42,11 @@ function createWebpackLocaleConfig(locale) {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
-        inject: false,
+        inject: true,
         minify: false,
+        filename: `${!!preventMinification ? "debug" : "index"}${
+          locale ? `_${locale}` : ""
+        }.html`,
       }),
       new MiniCssExtractPlugin({
         filename: "add-to-homescreen.min.css",
@@ -54,6 +66,7 @@ function createWebpackLocaleConfig(locale) {
   };
 }
 
-module.exports = [createWebpackLocaleConfig(null)].concat(
-  LOCALES.map(createWebpackLocaleConfig)
-);
+module.exports = [
+  createWebpackLocaleConfig(null, false),
+  createWebpackLocaleConfig(null, true),
+].concat(LOCALES.map((locale) => createWebpackLocaleConfig(locale, false)));
