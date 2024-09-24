@@ -656,13 +656,13 @@ function AddToHomeScreen(options) {
     }
     let _desktopInstallPromptEvent = null;
     let _desktopInstallPromptWasShown = false;
-    function _registerDesktopInstallPromptEvent() {
-        window.addEventListener("beforeinstallprompt", _desktopInstallPromptEventListener);
-    }
     function _desktopInstallPromptEventListener(e) {
         debugMessage("DESKTOP CHROME LISTENER");
         e.preventDefault();
         _desktopInstallPromptEvent = e;
+    }
+    function _registerDesktopInstallPromptEvent() {
+        window.addEventListener("beforeinstallprompt", _desktopInstallPromptEventListener);
     }
     function _desktopInstallPromptEventHasFired() {
         return _desktopInstallPromptEvent !== null;
