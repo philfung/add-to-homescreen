@@ -812,6 +812,7 @@ module.exports = {
     "ko",
     "lv",
     "pl",
+    "vn"
   ],
   DEFAULT_LOCALE: "en",
 };
@@ -835,7 +836,8 @@ var map = {
 	"./lv.json": 71,
 	"./pl.json": 143,
 	"./pt.json": 898,
-	"./ru.json": 672
+	"./ru.json": 672,
+	"./vn.json": 827
 };
 
 
@@ -961,6 +963,14 @@ module.exports = JSON.parse('{"k1":"Adicionar à Tela de Inicio","k2":"Adicionar
 
 "use strict";
 module.exports = JSON.parse('{"k1":"Добавить на главный экран","k2":"Добавить в док","k3":"Значок будет добавлен в ваш док для быстрого доступа к этому веб-сайту.","k4":"Значок будет добавлен на ваш главный экран для быстрого доступа к этому веб-сайту.","k5":"Значок будет добавлен на вашу панель задач для быстрого доступа к этому веб-сайту.","k6":"Установить","k7":"Установить %s","k8":"Установить приложение","k9":"Позже","k10":"Открыть в браузере","k11":"Выберите %s из появившегося меню.","k12":"Нажмите %s","k13":"Нажмите %s в строке браузера.","k14":"Нажмите %s на панели инструментов.","k15":"Нажмите кнопку %s выше.","k16":"Нажмите кнопку %s ниже, чтобы открыть системный браузер.","k17":"Нажмите кнопку %s на панели инструментов.","k18":"Нажмите кнопку %s в правом верхнем углу.","k19":"Возможно, вам потребуется прокрутить вниз, чтобы найти этот пункт меню."}');
+
+/***/ }),
+
+/***/ 827:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"k1":"Thêm vào màn hình chính","k2":"Thêm vào Dock","k3":"Một biểu tượng sẽ được thêm vào Dock của bạn để nhanh chóng truy cập website này.","k4":"Một biểu tượng sẽ được thêm vào màn hình chính của bạn để nhanh chóng truy cập website này.","k5":"Một biểu tượng sẽ được thêm thanh tác vụ của bạn để nhanh chóng truy cập website này.","k6":"Cài đặt","k8":"Cài đặt ứng dụng","k9":"Để sau","k10":"Mở trong trình duyệt","k11":"Chọn %s từ menu đã hiển thị.","k12":"Bấm %s","k13":"Bấm %s tại thanh trình duyệt.","k14":"Bấm %s tại thanh công cụ.","k15":"Bấm nút %s phía trên.","k16":"Bấm nút %s phía dưới để mở trình duyệt từ hệ thống.","k17":"Bấm nút %s tại thanh công cụ.","k18":"Bấm nút %s tại góc phía trên bên phải.","k19":"Bạn có thể cần phải cuộn xuống để tìm mục này."}');
 
 /***/ })
 
