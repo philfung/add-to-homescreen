@@ -242,7 +242,7 @@
   .adhs-list-button
   .adhs-list-button-image-left {
   position: relative;
-  margin: 0 5px 0px 0px;
+  margin: 0 5px 0 0;
   top: 2px;
 }
 
@@ -253,6 +253,7 @@
   .adhs-list-button
   .adhs-list-button-image-right {
   position: relative;
+  margin: 0 0 0 5px;
   top: 2px;
 }
 
