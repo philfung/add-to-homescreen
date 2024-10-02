@@ -169,7 +169,11 @@ function AddToHomeScreen(options) {
                     window.removeEventListener("click", closeEventListener);
                     closeEventListener = null;
                 }
-            }, 300);
+            }, 
+            // If the dialog is hidden in 300ms in Safari, the browser reports a second
+            // click event on an underlying DOM node. If you wait a bit longer this
+            // does not happen
+            isDeviceIOS() ? 500 : 300);
         }
     }
     /**** Device Detection Functions ****/

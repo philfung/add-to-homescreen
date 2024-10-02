@@ -215,14 +215,20 @@ export function AddToHomeScreen(
     const container = document.querySelector(".adhs-container");
     if (container) {
       container.classList.remove("visible");
-      setTimeout(() => {
-        container.remove();
-        if (closeEventListener) {
-          window.removeEventListener("touchstart", closeEventListener);
-          window.removeEventListener("click", closeEventListener);
-          closeEventListener = null;
-        }
-      }, 300);
+      setTimeout(
+        () => {
+          container.remove();
+          if (closeEventListener) {
+            window.removeEventListener("touchstart", closeEventListener);
+            window.removeEventListener("click", closeEventListener);
+            closeEventListener = null;
+          }
+        },
+        // If the dialog is hidden in 300ms in Safari, the browser reports a second
+        // click event on an underlying DOM node. If you wait a bit longer this
+        // does not happen
+        isDeviceIOS() ? 500 : 300
+      );
     }
   }
 
