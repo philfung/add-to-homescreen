@@ -816,7 +816,8 @@ module.exports = {
     "ko",
     "lv",
     "pl",
-    "vn"
+    "vn",
+    "zh_CN"
   ],
   DEFAULT_LOCALE: "en",
 };
@@ -841,7 +842,8 @@ var map = {
 	"./pl.json": 143,
 	"./pt.json": 898,
 	"./ru.json": 672,
-	"./vn.json": 827
+	"./vn.json": 827,
+	"./zh_CN.json": 662
 };
 
 
@@ -975,6 +977,14 @@ module.exports = JSON.parse('{"k1":"Добавить на главный экр�
 
 "use strict";
 module.exports = JSON.parse('{"k1":"Thêm vào màn hình chính","k2":"Thêm vào Dock","k3":"Một biểu tượng sẽ được thêm vào Dock của bạn để nhanh chóng truy cập website này.","k4":"Một biểu tượng sẽ được thêm vào màn hình chính của bạn để nhanh chóng truy cập website này.","k5":"Một biểu tượng sẽ được thêm thanh tác vụ của bạn để nhanh chóng truy cập website này.","k6":"Cài đặt","k8":"Cài đặt ứng dụng","k9":"Để sau","k10":"Mở trong trình duyệt","k11":"Chọn %s từ menu đã hiển thị.","k12":"Bấm %s","k13":"Bấm %s tại thanh trình duyệt.","k14":"Bấm %s tại thanh công cụ.","k15":"Bấm nút %s phía trên.","k16":"Bấm nút %s phía dưới để mở trình duyệt từ hệ thống.","k17":"Bấm nút %s tại thanh công cụ.","k18":"Bấm nút %s tại góc phía trên bên phải.","k19":"Bạn có thể cần phải cuộn xuống để tìm mục này."}');
+
+/***/ }),
+
+/***/ 662:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"k1":"添加到主屏幕","k2":"添加到程序坞","k3":"一个图标将被添加到你的程序坞，以便你可以快速访问这个网站。","k4":"一个图标将被添加到你的主屏幕，以便你可以快速访问这个网站。","k5":"一个图标将被添加到你的任务栏，以便你可以快速访问这个网站。","k6":"安装","k7":"安装 %s","k8":"安装应用","k9":"稍后","k10":"在浏览器中打开","k11":"从弹出的菜单中选择 %s。","k12":"点击 %s","k13":"在浏览器栏中点击 %s。","k14":"在工具栏中点击 %s。","k15":"点击上面的 %s 按钮。","k16":"点击下面的 %s 按钮以打开你的系统浏览器。","k17":"点击工具栏中的 %s 按钮。","k18":"点击右上角的 %s 按钮。","k19":"你可能需要向下滚动才能找到这个菜单项。"}');
 
 /***/ })
 
