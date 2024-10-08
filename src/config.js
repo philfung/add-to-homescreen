@@ -15,7 +15,8 @@ module.exports = {
     "pl",
     "vn",
     "zh_CN",
-    "zh_HK"
+    "zh_HK",
+    "zh_TW"
   ],
   DEFAULT_LOCALE: "en",
 };
