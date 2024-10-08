@@ -123,7 +123,7 @@ This should be a quick drop-in library into your website.
    });
 
     ret = window.AddToHomeScreenInstance.show('en');        // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
-                                                            // The only argument is the language to show the messages in (currently only 'da', 'de', 'en', 'es', 'fr', 'he', 'it', 'pt' and 'ru' are available).
+                                                            // The only argument is the language to show the messages in (currently only 'da', 'de', 'en', 'es', 'fr', 'he', 'it', 'pt', 'ru', 'cs', 'ko', 'lv', 'pl', 'vn' and 'zh_CN' are available).
    });
    </script>
    </body>
