@@ -810,6 +810,7 @@ module.exports = {
     "fr",
     "he",
     "it",
+    "ja",
     "pt",
     "ru",
     "cs",
@@ -839,6 +840,7 @@ var map = {
 	"./fr.json": 844,
 	"./he.json": 818,
 	"./it.json": 504,
+	"./ja.json": 566,
 	"./ko.json": 697,
 	"./lv.json": 71,
 	"./pl.json": 143,
@@ -933,6 +935,14 @@ module.exports = JSON.parse('{"k1":"הוסף למסך הבית","k2":"הוסף �
 
 "use strict";
 module.exports = JSON.parse('{"k1":"Aggiungi alla schermata Home","k2":"Aggiungi al Dock","k3":"Un\'icona verrà aggiunta al tuo Dock per accedere rapidamente a questo sito web.","k4":"Un\'icona verrà aggiunta alla tua schermata Home per accedere rapidamente a questo sito web.","k5":"Un\'icona verrà aggiunta alla tua barra delle applicazioni per accedere rapidamente a questo sito web.","k6":"Installa","k7":"Installa %s","k8":"Installa app","k9":"Più tardi","k10":"Apri nel browser","k11":"Seleziona %s dal menu che appare.","k12":"Tocca %s","k13":"Tocca %s nella barra del browser.","k14":"Tocca %s nella barra degli strumenti.","k15":"Tocca il pulsante %s sopra.","k16":"Tocca il pulsante %s sotto per aprire il browser di sistema.","k17":"Tocca il pulsante %s nella barra degli strumenti.","k18":"Tocca il pulsante %s nell\'angolo in alto a destra.","k19":"Potrebbe essere necessario scorrere verso il basso per trovare questa voce di menu."}');
+
+/***/ }),
+
+/***/ 566:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"k1":"ホーム画面に追加","k2":"Dockに追加","k3":"アイコンがDockに追加され、このウェブサイトをすばやくアクセスできます。","k4":"アイコンがホーム画面に追加され、このウェブサイトをすばやくアクセスできます。","k5":"アイコンがタスクバーに追加され、このウェブサイトをすばやくアクセスできます。","k6":"インストール","k7":"%sをインストール","k8":"アプリをインストール","k9":"後で","k10":"ブラウザで開く","k11":"表示されるメニューから%sを選択してください。","k12":"%sをタップ","k13":"ブラウザバーで表示される%sをタップ","k14":"ツールバーで表示される%sをタップ","k15":"上の%sボタンをタップ","k16":"下の%sボタンをタップしてシステムのブラウザを開きます。","k17":"ツールバーの%sボタンをタップ","k18":"右上の%sボタンをタップ","k19":"このメニュー項目を見つけるには、下にスクロールする必要があります。"}');
 
 /***/ }),
 
