@@ -8,7 +8,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 9999;
+  z-index: 999999;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
   font-family: "Roboto", sans-serif;
@@ -71,7 +71,7 @@
   height: 80px;
   width: 80px;
   top: -45px;
-  z-index: 10000;
+  z-index: 1000000;
 }
 
 .adhs-container .adhs-logo img {
