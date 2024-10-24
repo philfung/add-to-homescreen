@@ -194,6 +194,10 @@ ability to change what file is loaded at page load time, these files can be a go
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
 
+## Contributors
+
+- Thanks to [Shane O'Sullivan](https://github.com/shaneosullivan) for a a massive refactor to improve performance and i18n.
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
