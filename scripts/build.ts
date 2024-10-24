@@ -56,8 +56,8 @@ function createLocaleIndexFile(locale: string) {
   localeIndexContent = replaceFunctionCalls(localeIndexContent);
 
   Object.keys(localeConfig).forEach((localeKey) => {
-    const search = `i18n.__("${localeKey}"`;
-    const idx = localeIndexContent.indexOf(search);
+    const search = new RegExp(`i18n.__\\("${localeKey}"`, 'g');
+    const idx = localeIndexContent.search(search);
     if (idx > -1) {
       localeIndexContent = localeIndexContent.replace(
         search,
@@ -66,11 +66,7 @@ function createLocaleIndexFile(locale: string) {
       delete localeConfig[localeKey];
     } else {
       throw new Error(
-        "Missing translation in locale [" +
-          locale +
-          "] for key [" +
-          localeKey +
-          "]"
+        "Missing translation in locale [" + locale + "] for key [" + localeKey + "]"
       );
     }
   });
