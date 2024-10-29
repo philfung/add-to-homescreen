@@ -1,0 +1,21 @@
+{
+    "Add to Home Screen": "เพิ่มลงในหน้าจอโฮม",
+    "Add To Dock": "เพิ่มลงใน Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "ไอคอนจะถูกเพิ่มลงใน Dock เพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว",
+    "An icon will be added to your home screen so you can quickly access this website.": "ไอคอนจะถูกเพิ่มลงในหน้าจอโฮมเพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "ไอคอนจะถูกเพิ่มลงในทาสก์บาร์เพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว",
+    "Install": "ติดตั้ง",
+    "Install %s": "ติดตั้ง %s",
+    "Install app": "ติดตั้งแอป",
+    "Later": "ภายหลัง",
+    "Open in browser": "เปิดในเบราว์เซอร์",
+    "Select %s from the menu that pops up.": "เลือก %s จากเมนูที่แสดงขึ้น",
+    "Tap %s": "แตะ %s",
+    "Tap %s in the browser bar.": "แตะ %s ในแถบเบราว์เซอร์",
+    "Tap %s in the toolbar.": "แตะ %s ในแถบเครื่องมือ",
+    "Tap the %s button above.": "แตะปุ่ม %s ด้านบน",
+    "Tap the %s button below to open your system browser.": "แตะปุ่ม %s ด้านล่างเพื่อเปิดเบราว์เซอร์ของระบบ",
+    "Tap the %s button in the toolbar.": "แตะปุ่ม %s ในแถบเครื่องมือ",
+    "Tap the %s button in the upper right corner.": "แตะปุ่ม %s ที่มุมบนขวา",
+    "You may need to scroll down to find this menu item.": "คุณอาจจะต้องเลื่อนลงเพื่อค้นหารายการเมนูนี้"
+  }
