@@ -15,6 +15,10 @@ Here is a [demo (please open on your phone)](https://philfung.github.io) of libr
 </br>
 <img src="https://github.com/user-attachments/assets/3e751e86-f438-4a33-b9bb-fc81495fa67c" width="300"/>
 
+## Language Support
+
+Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree/main/src/locales).
+
 ## Browser Support
 
 All major browsers on IOS/Android/Desktop are supported.
