@@ -368,28 +368,31 @@ function AddToHomeScreen(options) {
     }
     function _genListButtonWithImage(imageUrl, text = "", image_side = "none") {
         if (!text) {
+            // -translate-y-1 for tailwindcss compensation
             return (`
         ${div("list-button")}
-          <img class="adhs-list-button-image-only" src="` +
+          <img class="adhs-list-button-image-only -translate-y-1" src="` +
                 imageUrl +
                 `" />
       </div>`);
         }
         else if (image_side === "right") {
+            // -translate-y-1 for tailwindcss compensation
             return (`
         ${div("list-button")}
         ${div("list-button-text")}
         ${text}
         </div>
-        <img class="adhs-list-button-image-right" src="` +
+        <img class="adhs-list-button-image-right -translate-y-1" src="` +
                 imageUrl +
                 `" />
       </div>`);
         }
         else if (image_side === "left") {
+            // -translate-y-1 for tailwindcss compensation
             return (`
         ${div("list-button")}
-        <img class="adhs-list-button-image-left" src="` +
+        <img class="adhs-list-button-image-left -translate-y-1" src="` +
                 imageUrl +
                 `" />
         ${div("list-button-text")}

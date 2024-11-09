@@ -234,7 +234,7 @@
   display: inline;
   position: relative;
   left: 0px;
-  bottom: 2px;
+  top: 2px;
 }
 
 .adhs-container
@@ -246,7 +246,7 @@
   display: inline;
   position: relative;
   margin: 0 5px 0 0;
-  bottom: 2px;
+  top: 2px;
 }
 
 .adhs-container
@@ -258,7 +258,7 @@
   display: inline;
   position: relative;
   margin: 0 0 0 5px;
-  bottom: 2px;
+  top: 2px;
 }
 
 /* IOS Safari */
