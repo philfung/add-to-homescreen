@@ -66,15 +66,27 @@ export function AddToHomeScreen(
   }
 
   function show(locale: string): DeviceInfo {
+
+    if (locale && !localeCatalog[locale]) {
+      console.log("add-to-homescreen: WARNING: locale selected not available:", locale);
+      locale = "";
+    }
+
     if (!locale) {
-      // If we have 'en', then use it. If just a single non 'en' locale
-      // is included in the localeCatalog, default to that one.
-      if (localeCatalog["en"]) {
+      const language_from_browser_settings = i18n._getLanguageFromBrowserSettings();
+      // if no locale indicated
+      // check url param "locale" and browser settings
+      if (language_from_browser_settings && localeCatalog[language_from_browser_settings]) {
+        locale = language_from_browser_settings;
+      // if "en" intl file is available, default to "en"
+      } else if (localeCatalog["en"]) {
         locale = "en";
+      // else default to first language available
       } else {
         locale = Object.keys(localeCatalog)[0];
       }
     }
+    debugMessage("LOCALE: " + locale);
 
     i18n.setLocale(locale);
     var ret: DeviceInfo;

@@ -60,16 +60,27 @@ function AddToHomeScreen(options) {
             !!window.matchMedia("(display-mode: standalone)").matches); // Android and Desktop Chrome/Safari/Edge
     }
     function show(locale) {
+        if (locale && !localeCatalog[locale]) {
+            console.log("add-to-homescreen: WARNING: locale selected not available:", locale);
+            locale = "";
+        }
         if (!locale) {
-            // If we have 'en', then use it. If just a single non 'en' locale
-            // is included in the localeCatalog, default to that one.
-            if (localeCatalog["en"]) {
+            const language_from_browser_settings = simpleI18n_1.default._getLanguageFromBrowserSettings();
+            // if no locale indicated
+            // check url param "locale" and browser settings
+            if (language_from_browser_settings && localeCatalog[language_from_browser_settings]) {
+                locale = language_from_browser_settings;
+                // if "en" intl file is available, default to "en"
+            }
+            else if (localeCatalog["en"]) {
                 locale = "en";
+                // else default to first language available
             }
             else {
                 locale = Object.keys(localeCatalog)[0];
             }
         }
+        debugMessage("LOCALE: " + locale);
         simpleI18n_1.default.setLocale(locale);
         var ret;
         var _device;
@@ -757,6 +768,31 @@ const SimpleI18n = {
     configure: (configInput) => {
         config = configInput;
     },
+    _getLanguageFromLocale: (locale) => {
+        if (!locale) {
+            return "";
+        }
+        if (locale.indexOf("-") >= 0) {
+            return locale.split("-")[0];
+        }
+        if (locale.indexOf("_") >= 0) {
+            return locale.split("_")[0];
+        }
+        return locale;
+    },
+    _getLanguageFromBrowserSettings: () => {
+        // check url for a 'locale' param
+        const url_params = new URLSearchParams(window.location.search);
+        const url_locale = url_params.get('locale');
+        if (url_locale) {
+            return SimpleI18n._getLanguageFromLocale(url_locale);
+        }
+        // check browser setting
+        if (navigator.languages && navigator.languages.length) {
+            return SimpleI18n._getLanguageFromLocale(navigator.languages[0]);
+        }
+        return "";
+    },
     setLocale: (locale) => {
         if (false) {}
         directory = config.staticCatalog[locale];
@@ -829,6 +865,7 @@ module.exports = {
     "pl",
     "th",
     "vn",
+    "zh",
     "zh_CN",
     "zh_HK",
     "zh_TW"
@@ -859,6 +896,7 @@ var map = {
 	"./ru.json": 672,
 	"./th.json": 9,
 	"./vn.json": 827,
+	"./zh.json": 538,
 	"./zh_CN.json": 662,
 	"./zh_HK.json": 295,
 	"./zh_TW.json": 511
@@ -1011,6 +1049,14 @@ module.exports = JSON.parse('{"Add to Home Screen":"เพิ่มลงใน�
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"Thêm vào màn hình chính","Add To Dock":"Thêm vào Dock","An icon will be added to your Dock so you can quickly access this website.":"Một biểu tượng sẽ được thêm vào Dock của bạn để nhanh chóng truy cập website này.","An icon will be added to your home screen so you can quickly access this website.":"Một biểu tượng sẽ được thêm vào màn hình chính của bạn để nhanh chóng truy cập website này.","An icon will be added to your Taskbar so you can quickly access this website.":"Một biểu tượng sẽ được thêm thanh tác vụ của bạn để nhanh chóng truy cập website này.","Install":"Cài đặt","Install app":"Cài đặt ứng dụng","Later":"Để sau","Open in browser":"Mở trong trình duyệt","Select %s from the menu that pops up.":"Chọn %s từ menu đã hiển thị.","Tap %s":"Bấm %s","Tap %s in the browser bar.":"Bấm %s tại thanh trình duyệt.","Tap %s in the toolbar.":"Bấm %s tại thanh công cụ.","Tap the %s button above.":"Bấm nút %s phía trên.","Tap the %s button below to open your system browser.":"Bấm nút %s phía dưới để mở trình duyệt từ hệ thống.","Tap the %s button in the toolbar.":"Bấm nút %s tại thanh công cụ.","Tap the %s button in the upper right corner.":"Bấm nút %s tại góc phía trên bên phải.","You may need to scroll down to find this menu item.":"Bạn có thể cần phải cuộn xuống để tìm mục này."}');
+
+/***/ }),
+
+/***/ 538:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"添加到主屏幕","Add To Dock":"添加到程序坞","An icon will be added to your Dock so you can quickly access this website.":"一个图标将被添加到你的程序坞，以便你可以快速访问这个网站。","An icon will be added to your home screen so you can quickly access this website.":"一个图标将被添加到你的主屏幕，以便你可以快速访问这个网站。","An icon will be added to your Taskbar so you can quickly access this website.":"一个图标将被添加到你的任务栏，以便你可以快速访问这个网站。","Install":"安装","Install %s":"安装 %s","Install app":"安装应用","Later":"稍后","Open in browser":"在浏览器中打开","Select %s from the menu that pops up.":"从弹出的菜单中选择 %s。","Tap %s":"点击 %s","Tap %s in the browser bar.":"在浏览器栏中点击 %s。","Tap %s in the toolbar.":"在工具栏中点击 %s。","Tap the %s button above.":"点击上面的 %s 按钮。","Tap the %s button below to open your system browser.":"点击下面的 %s 按钮以打开你的系统浏览器。","Tap the %s button in the toolbar.":"点击工具栏中的 %s 按钮。","Tap the %s button in the upper right corner.":"点击右上角的 %s 按钮。","You may need to scroll down to find this menu item.":"你可能需要向下滚动才能找到这个菜单项。"}');
 
 /***/ }),
 
