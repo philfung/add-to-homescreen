@@ -81,29 +81,29 @@ function removeEmptySpace() {
   });
 }
 
-function replaceRepetitiveI18nKeys() {
-  const filePaths = ["add-to-homescreen.min.js", "add-to-homescreen.js"].map(
-    (filePath) => path.join(distDir, filePath)
-  );
+// function replaceRepetitiveI18nKeys() {
+//   const filePaths = ["add-to-homescreen.min.js", "add-to-homescreen.js"].map(
+//     (filePath) => path.join(distDir, filePath)
+//   );
 
-  filePaths.forEach((filePath) => {
-    let mainFileContent = fs.readFileSync(filePath).toString();
-    const localeJSON = JSON.parse(
-      fs.readFileSync(`${__dirname}/../src/locales/en.json`).toString()
-    );
+//   filePaths.forEach((filePath) => {
+//     let mainFileContent = fs.readFileSync(filePath).toString();
+//     const localeJSON = JSON.parse(
+//       fs.readFileSync(`${__dirname}/../src/locales/en.json`).toString()
+//     );
 
-    Object.keys(localeJSON).forEach((key, idx) => {
-      const len = mainFileContent.length;
-      mainFileContent = mainFileContent
-        .split(`"${key}":`)
-        .join(`"k${idx + 1}":`);
-    });
+//     Object.keys(localeJSON).forEach((key, idx) => {
+//       const len = mainFileContent.length;
+//       mainFileContent = mainFileContent
+//         .split(`"${key}":`)
+//         .join(`"k${idx + 1}":`);
+//     });
 
-    fs.writeFileSync(filePath, mainFileContent);
-  });
-}
+//     fs.writeFileSync(filePath, mainFileContent);
+//   });
+// }
 
 updateHtmlFiles();
 removeEmptySpace();
-replaceRepetitiveI18nKeys();
+// replaceRepetitiveI18nKeys();
 copyRootFiles();
