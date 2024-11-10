@@ -20,6 +20,39 @@ const SimpleI18n = {
     config = configInput;
   },
 
+  _getLanguageFromLocale:(locale:string):string => {
+    if (!locale) {
+      return "";
+    }
+
+    if (locale.indexOf("-") >= 0) {
+      return locale.split("-")[0];
+    }
+
+    if (locale.indexOf("_") >= 0) {
+      return locale.split("_")[0];
+    }
+
+    return locale;
+
+  },
+  _getLanguageFromBrowserSettings:():string => {
+
+    // check url for a 'locale' param
+    const url_params = new URLSearchParams(window.location.search);
+    const url_locale = url_params.get('locale');
+    if (url_locale) {
+      return SimpleI18n._getLanguageFromLocale(url_locale);
+    }
+
+    // check browser setting
+    if (navigator.languages && navigator.languages.length) {
+      return SimpleI18n._getLanguageFromLocale(navigator.languages[0]);
+    }
+
+    return "";
+  },
+
   setLocale: (locale: string) => {
     if (process.env.NODE_ENV === "development") {
       if (!config) {

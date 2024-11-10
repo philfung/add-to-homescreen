@@ -16,6 +16,7 @@ module.exports = {
     "pl",
     "th",
     "vn",
+    "zh",
     "zh_CN",
     "zh_HK",
     "zh_TW"
