@@ -31,9 +31,17 @@ const SimpleI18n = {
     directory = config.staticCatalog[locale];
   },
 
+  _translateKey(key: string) {
+    if (directory == null || directory[key] == null) {
+      return key;
+    }
+
+    return directory[key];
+  },
+
   __: (key: string, input?: string): string => {
     if (key.indexOf(PLACEHOLDER) < 0) {
-      return directory[key] || key;
+      return SimpleI18n._translateKey(key);
     }
 
     // Need to do a string replacement
@@ -47,7 +55,9 @@ const SimpleI18n = {
         );
       }
     }
-    const parts = key.split(PLACEHOLDER);
+    const translated_key = SimpleI18n._translateKey(key);
+
+    const parts = translated_key.split(PLACEHOLDER);
     return parts[0] + input + parts[1];
   },
 };
