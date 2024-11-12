@@ -348,7 +348,9 @@ export function AddToHomeScreen(
       !!_matchesUserAgent(/Chrome/) &&
       !isBrowserAndroidFacebook() &&
       !isBrowserAndroidSamsung() &&
-      !isBrowserAndroidFirefox()
+      !isBrowserAndroidFirefox() &&
+      !isBrowserAndroidEdge() &&
+      !isBrowserAndroidOpera()
     );
   }
 
@@ -368,6 +370,14 @@ export function AddToHomeScreen(
   /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
   function isBrowserAndroidFirefox() {
     return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
+  }
+
+  function isBrowserAndroidOpera() {
+    return isDeviceAndroid() && _matchesUserAgent(/OPR/);
+  }
+
+  function isBrowserAndroidEdge() {
+    return isDeviceAndroid() && _matchesUserAgent(/Edg/);
   }
 
   function isDesktopWindows() {

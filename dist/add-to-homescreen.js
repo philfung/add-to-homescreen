@@ -268,7 +268,9 @@ function AddToHomeScreen(options) {
             !!_matchesUserAgent(/Chrome/) &&
             !isBrowserAndroidFacebook() &&
             !isBrowserAndroidSamsung() &&
-            !isBrowserAndroidFirefox());
+            !isBrowserAndroidFirefox() &&
+            !isBrowserAndroidEdge() &&
+            !isBrowserAndroidOpera());
     }
     /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv)
       AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88
@@ -284,6 +286,12 @@ function AddToHomeScreen(options) {
     /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
     function isBrowserAndroidFirefox() {
         return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
+    }
+    function isBrowserAndroidOpera() {
+        return isDeviceAndroid() && _matchesUserAgent(/OPR/);
+    }
+    function isBrowserAndroidEdge() {
+        return isDeviceAndroid() && _matchesUserAgent(/Edg/);
     }
     function isDesktopWindows() {
         return userAgent.includes("Windows");
