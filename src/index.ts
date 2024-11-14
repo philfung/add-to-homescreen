@@ -967,6 +967,9 @@ export function AddToHomeScreen(
 
   let _desktopInstallPromptEvent: ADHSBeforeInstallPromptEvent | null = null;
   let _desktopInstallPromptWasShown: boolean = false;
+  let _desktopInstallPromptStartTimeMS: number | null = null;
+  let DESKTOP_INSTALL_POLL_MS = 500;
+  let DESKTOP_INSTALL_MAX_WAIT_TIME_MS = 2000;
 
   function _desktopInstallPromptEventListener(e: ADHSBeforeInstallPromptEvent) {
     debugMessage("DESKTOP CHROME LISTENER");
@@ -1003,12 +1006,22 @@ export function AddToHomeScreen(
       return;
     }
 
-    // if the prompt has not fired, wait for it the be fired, then show the promotion
-    if (!_desktopInstallPromptEventHasFired()) {
+    // - if the prompt has not fired, wait for it the be fired, then show the promotion
+    // - Don't bother showing promotion if wait time > DESKTOP_INSTALL_MAX_WAIT_TIME_MS,
+    //   this means the event will never fire, like in Incognito mode
+    if (_desktopInstallPromptEvent === null && 
+        !(_desktopInstallPromptStartTimeMS && 
+          ((Date.now() - _desktopInstallPromptStartTimeMS) > DESKTOP_INSTALL_MAX_WAIT_TIME_MS)
+         ) 
+       ) {
       // debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT NOT FIRED");
+      if (_desktopInstallPromptStartTimeMS === null) {
+        _desktopInstallPromptStartTimeMS = Date.now();
+      }
+
       setTimeout(() => {
         showDesktopInstallPrompt();
-      }, 500);
+      }, DESKTOP_INSTALL_POLL_MS);
       return;
     }
 
