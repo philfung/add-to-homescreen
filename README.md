@@ -122,7 +122,7 @@ This should be a quick drop-in library into your website.
                                                             // Required.
      assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.9/dist/assets/img/',  // Link to directory of library image assets.
 
-     maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
+     maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
      displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
 
