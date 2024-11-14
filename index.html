@@ -727,6 +727,7 @@
           appIconUrl: "./dist/assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
           assetUrl: "./dist/assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+          displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         });
         window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen

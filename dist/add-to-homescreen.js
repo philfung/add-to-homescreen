@@ -37,7 +37,7 @@ simpleI18n_1.default.configure({
     directory: ".",
 });
 function AddToHomeScreen(options) {
-    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } = options;
+    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions } = options;
     let closeEventListener = null;
     const userAgent = window.navigator.userAgent;
     _assertArg("appName", typeof appName === "string" && appName.length > 0);
@@ -48,6 +48,9 @@ function AddToHomeScreen(options) {
     maxModalDisplayCount =
         maxModalDisplayCount === undefined ? -1 : maxModalDisplayCount;
     _assertArg("maxModalDisplayCount", Number.isInteger(maxModalDisplayCount));
+    displayOptions =
+        displayOptions === undefined ? types_1.DISPLAY_OPTIONS_DEFAULT : displayOptions;
+    _assertArg("displayOptions", (0, types_1.isDisplayOptions)(displayOptions));
     closeEventListener = null;
     // handles the case where the chrome prompt is not immediately shown on page load,
     // such as an onclick handler
@@ -102,7 +105,8 @@ function AddToHomeScreen(options) {
         else if (_hasReachedMaxModalDisplayCount()) {
             ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
         }
-        else if (isDeviceIOS() || isDeviceAndroid()) {
+        else if (displayOptions.showMobile &&
+            (isDeviceIOS() || isDeviceAndroid())) {
             debugMessage("NOT STANDALONE - IOS OR ANDROID");
             var shouldShowModal = true;
             _incrModalDisplayCount();
@@ -155,15 +159,17 @@ function AddToHomeScreen(options) {
         else {
             debugMessage("DESKTOP");
             ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
-            if (isDesktopChrome() || isDesktopEdge()) {
-                debugMessage("DESKTOP CHROME");
-                _incrModalDisplayCount();
-                showDesktopInstallPrompt();
-            }
-            else if (isDesktopSafari()) {
-                debugMessage("DESKTOP SAFARI");
-                _incrModalDisplayCount();
-                _showDesktopSafariPrompt();
+            if (displayOptions.showDesktop) {
+                if (isDesktopChrome() || isDesktopEdge()) {
+                    debugMessage("DESKTOP CHROME");
+                    _incrModalDisplayCount();
+                    showDesktopInstallPrompt();
+                }
+                else if (isDesktopSafari()) {
+                    debugMessage("DESKTOP SAFARI");
+                    _incrModalDisplayCount();
+                    _showDesktopSafariPrompt();
+                }
             }
         }
         return ret;
@@ -746,6 +752,7 @@ function AddToHomeScreen(options) {
         appIconUrl,
         assetUrl,
         maxModalDisplayCount,
+        displayOptions,
         clearModalDisplayCount,
         isStandAlone,
         show,
@@ -843,7 +850,8 @@ exports["default"] = SimpleI18n;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.DeviceInfo = exports.DeviceType = void 0;
+exports.DISPLAY_OPTIONS_DEFAULT = exports.DeviceInfo = exports.DeviceType = void 0;
+exports.isDisplayOptions = isDisplayOptions;
 var DeviceType;
 (function (DeviceType) {
     DeviceType["IOS"] = "IOS";
@@ -858,6 +866,15 @@ class DeviceInfo {
     }
 }
 exports.DeviceInfo = DeviceInfo;
+exports.DISPLAY_OPTIONS_DEFAULT = {
+    showMobile: true,
+    showDesktop: true
+};
+function isDisplayOptions(obj) {
+    return obj
+        && typeof obj.showMobile === 'boolean'
+        && typeof obj.showDesktop === 'boolean';
+}
 
 
 /***/ }),
