@@ -124,6 +124,8 @@ This should be a quick drop-in library into your website.
 
      maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
+     displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
+
    });
 
     ret = window.AddToHomeScreenInstance.show('en');        // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen

@@ -5,6 +5,9 @@ import {
   ADHSBeforeInstallPromptEvent,
   DeviceInfo,
   DeviceType,
+  DisplayOptions,
+  isDisplayOptions,
+  DISPLAY_OPTIONS_DEFAULT
 } from "./types";
 
 const config = require("./config");
@@ -28,7 +31,7 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
-  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } =
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions } =
     options;
   let closeEventListener: EventListener | null = null;
 
@@ -48,6 +51,10 @@ export function AddToHomeScreen(
   maxModalDisplayCount =
     maxModalDisplayCount === undefined ? -1 : maxModalDisplayCount;
   _assertArg("maxModalDisplayCount", Number.isInteger(maxModalDisplayCount));
+
+  displayOptions = 
+    displayOptions === undefined ? DISPLAY_OPTIONS_DEFAULT : displayOptions;
+  _assertArg("displayOptions", isDisplayOptions(displayOptions))
 
   closeEventListener = null;
 
@@ -116,7 +123,10 @@ export function AddToHomeScreen(
         (_canBeStandAlone = false),
         (_device = _device)
       );
-    } else if (isDeviceIOS() || isDeviceAndroid()) {
+    } else if (
+      displayOptions.showMobile && 
+      (isDeviceIOS() || isDeviceAndroid())
+    ) {
       debugMessage("NOT STANDALONE - IOS OR ANDROID");
       var shouldShowModal = true;
       _incrModalDisplayCount();
@@ -208,14 +218,17 @@ export function AddToHomeScreen(
         (_device = _device)
       );
 
-      if (isDesktopChrome() || isDesktopEdge()) {
-        debugMessage("DESKTOP CHROME");
-        _incrModalDisplayCount();
-        showDesktopInstallPrompt();
-      } else if (isDesktopSafari()) {
-        debugMessage("DESKTOP SAFARI");
-        _incrModalDisplayCount();
-        _showDesktopSafariPrompt();
+
+      if (displayOptions.showDesktop) {
+        if (isDesktopChrome() || isDesktopEdge()) {
+          debugMessage("DESKTOP CHROME");
+          _incrModalDisplayCount();
+          showDesktopInstallPrompt();
+        } else if (isDesktopSafari()) {
+          debugMessage("DESKTOP SAFARI");
+          _incrModalDisplayCount();
+          _showDesktopSafariPrompt();
+        }
       }
     }
 
@@ -1055,6 +1068,7 @@ export function AddToHomeScreen(
     appIconUrl,
     assetUrl,
     maxModalDisplayCount,
+    displayOptions,
     clearModalDisplayCount,
     isStandAlone,
     show,
