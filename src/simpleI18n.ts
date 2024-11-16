@@ -24,7 +24,7 @@ const SimpleI18n = {
     if (process.env.NODE_ENV === "development") {
       if (!config) {
         throw new Error(
-          "SimpleI18n error: The configure function must be called before the setLocale funciton"
+          "SimpleI18n error: The configure function must be called before the setLocale function"
         );
       }
     }
@@ -32,8 +32,11 @@ const SimpleI18n = {
   },
 
   __: (key: string, input?: string): string => {
-    if (key.indexOf(PLACEHOLDER) < 0) {
-      return directory[key] || key;
+    // First get the localized string
+    const localizedStr = directory[key] || key;
+    
+    if (localizedStr.indexOf(PLACEHOLDER) < 0) {
+      return localizedStr;
     }
 
     // Need to do a string replacement
@@ -47,7 +50,8 @@ const SimpleI18n = {
         );
       }
     }
-    const parts = key.split(PLACEHOLDER);
+    
+    const parts = localizedStr.split(PLACEHOLDER);
     return parts[0] + input + parts[1];
   },
 };

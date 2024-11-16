@@ -44,7 +44,7 @@ export interface AddToHomeScreenType {
 
   clearModalDisplayCount: () => void;
   isStandAlone: () => boolean;
-  show: (locale: string) => DeviceInfo;
+  show: (locale: string, rtl: boolean) => DeviceInfo;
   closeModal: () => void;
 
   isBrowserIOSSafari: () => boolean;

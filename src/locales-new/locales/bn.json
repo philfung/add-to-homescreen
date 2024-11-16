@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "হোম স্ক্রিনে যোগ করুন",
+  "Add To Dock": "ডকে যোগ করুন",
+  "An icon will be added to your Dock so you can quickly access this website.": "আপনার ডকে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+  "An icon will be added to your home screen so you can quickly access this website.": "আপনার হোম স্ক্রিনে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "আপনার টাস্কবারে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+  "Install": "ইনস্টল করুন",
+  "Install %s": "%s ইনস্টল করুন",
+  "Install app": "অ্যাপ ইনস্টল করুন",
+  "Later": "পরে",
+  "Open in browser": "ব্রাউজারে খুলুন",
+  "Select %s from the menu that pops up.": "পপ-আপ মেনু থেকে %s নির্বাচন করুন।",
+  "Tap %s": "%s-এ ট্যাপ করুন",
+  "Tap %s in the browser bar.": "ব্রাউজার বারে %s-এ ট্যাপ করুন।",
+  "Tap %s in the toolbar.": "টুলবারে %s-এ ট্যাপ করুন।",
+  "Tap the %s button above.": "উপরের %s বোতামে ট্যাপ করুন।",
+  "Tap the %s button below to open your system browser.": "আপনার সিস্টেম ব্রাউজার খোলার জন্য নীচের %s বোতামে ট্যাপ করুন।",
+  "Tap the %s button in the toolbar.": "টুলবারে %s বোতামে ট্যাপ করুন।",
+  "Tap the %s button in the upper right corner.": "উপরের ডান কোণের %s বোতামে ট্যাপ করুন।",
+  "You may need to scroll down to find this menu item.": "এই মেনু আইটেমটি খুঁজে পেতে আপনাকে নীচে স্ক্রল করতে হতে পারে।"
+}

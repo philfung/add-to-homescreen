@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "მთავარ ეკრანზე დამატება",
+  "Add To Dock": "Dock-ში დამატება",
+  "An icon will be added to your Dock so you can quickly access this website.": "თქვენს Dock-ში დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+  "An icon will be added to your home screen so you can quickly access this website.": "თქვენს მთავარ ეკრანზე დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "თქვენს დავალებათა ზოლში დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+  "Install": "დაინსტალირება",
+  "Install %s": "%s-ის დაინსტალირება",
+  "Install app": "აპლიკაციის დაინსტალირება",
+  "Later": "მოგვიანებით",
+  "Open in browser": "ბრაუზერში გახსნა",
+  "Select %s from the menu that pops up.": "ამომხტარი მენიუდან აირჩიეთ %s.",
+  "Tap %s": "შეეხეთ %s-ს",
+  "Tap %s in the browser bar.": "ბრაუზერის ზოლში შეეხეთ %s-ს.",
+  "Tap %s in the toolbar.": "ხელსაწყოთა ზოლში შეეხეთ %s-ს.",
+  "Tap the %s button above.": "შეეხეთ %s ღილაკს ზემოთ.",
+  "Tap the %s button below to open your system browser.": "სისტემური ბრაუზერის გასახსნელად შეეხეთ %s ღილაკს ქვემოთ.",
+  "Tap the %s button in the toolbar.": "ხელსაწყოთა ზოლში შეეხეთ %s ღილაკს.",
+  "Tap the %s button in the upper right corner.": "ზედა მარჯვენა კუთხეში შეეხეთ %s ღილაკს.",
+  "You may need to scroll down to find this menu item.": "ამ მენიუს ელემენტის საპოვნელად შეიძლება ქვემოთ ჩამოგორება დაგჭირდეთ."
+}

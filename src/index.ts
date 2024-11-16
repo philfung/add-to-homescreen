@@ -10,6 +10,9 @@ import {
 const config = require("./config");
 const LOCALES = config.LOCALES as Array<string>;
 
+// Add list of RTL languages
+const RTL_LOCALES = ['ar', 'fa', 'he', 'ur'];
+
 // Configure I18n
 import i18n from "./simpleI18n";
 
@@ -28,47 +31,37 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
-  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } =
-    options;
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } = options;
   let closeEventListener: EventListener | null = null;
+  let currentLocale: string = 'en';
+  let browserRTL: boolean = false;
 
   const userAgent = window.navigator.userAgent;
 
   _assertArg("appName", typeof appName === "string" && appName.length > 0);
-
-  appIconUrl = appIconUrl;
-  _assertArg(
-    "appIconUrl",
-    typeof appIconUrl === "string" && appIconUrl.length > 0
-  );
-
-  assetUrl = assetUrl;
+  _assertArg("appIconUrl", typeof appIconUrl === "string" && appIconUrl.length > 0);
   _assertArg("assetUrl", typeof assetUrl === "string" && assetUrl.length > 0);
-
-  maxModalDisplayCount =
-    maxModalDisplayCount === undefined ? -1 : maxModalDisplayCount;
+  
+  maxModalDisplayCount = maxModalDisplayCount === undefined ? -1 : maxModalDisplayCount;
   _assertArg("maxModalDisplayCount", Number.isInteger(maxModalDisplayCount));
 
   closeEventListener = null;
 
-  // handles the case where the chrome prompt is not immediately shown on page load,
-  // such as an onclick handler
-  if (shouldShowDesktopInstallPromptBasedOnDevice()) {
-    _registerDesktopInstallPromptEvent();
+  // Check if current locale is RTL
+  function isRTL(): boolean {
+    return RTL_LOCALES.includes(currentLocale);
   }
 
-  function isStandAlone() {
-    // test if web app is already installed to home screen
-    return (
-      !!("standalone" in window.navigator && window.navigator.standalone) || // IOS (TODO: detect iPad 13)
-      !!window.matchMedia("(display-mode: standalone)").matches
-    ); // Android and Desktop Chrome/Safari/Edge
+  function isBrowserRTL(): boolean {
+    // return RTL_LOCALES.includes(currentLocale);
+    return browserRTL;
   }
 
-  function show(locale: string): DeviceInfo {
+  function show(locale: string, rtl: boolean): DeviceInfo {
+    currentLocale = locale;
+    browserRTL = rtl;
+
     if (!locale) {
-      // If we have 'en', then use it. If just a single non 'en' locale
-      // is included in the localeCatalog, default to that one.
       if (localeCatalog["en"]) {
         locale = "en";
       } else {
@@ -77,11 +70,9 @@ export function AddToHomeScreen(
     }
 
     i18n.setLocale(locale);
-    var ret: DeviceInfo;
-
-    var _device: DeviceType;
-    let _isStandAlone: boolean;
-    let _canBeStandAlone: boolean;
+    
+    // Initialize device info
+    let _device: DeviceType;
     if (isDeviceIOS()) {
       _device = DeviceType.IOS;
     } else if (isDeviceAndroid()) {
@@ -90,97 +81,55 @@ export function AddToHomeScreen(
       _device = DeviceType.DESKTOP;
     }
 
+    // Handle standalone check
     if (isStandAlone()) {
-      debugMessage("ALREADY STANDALONE");
+      return new DeviceInfo(true, true, _device);
+    }
 
-      ret = new DeviceInfo(
-        (_isStandAlone = true),
-        (_canBeStandAlone = true),
-        (_device = _device)
-      );
-    } else if (_hasReachedMaxModalDisplayCount()) {
-      ret = new DeviceInfo(
-        (_isStandAlone = false),
-        (_canBeStandAlone = false),
-        (_device = _device)
-      );
-    } else if (isDeviceIOS() || isDeviceAndroid()) {
-      debugMessage("NOT STANDALONE - IOS OR ANDROID");
-      var shouldShowModal = true;
+    // Handle max modal display count
+    if (_hasReachedMaxModalDisplayCount()) {
+      return new DeviceInfo(false, false, _device);
+    }
+
+    // Create container with RTL support
+    const container = _createContainer(false);
+    if (isRTL()) {
+      container.classList.add('adhs-rtl');
+    }
+
+    // Generate appropriate content based on device/browser
+    let ret: DeviceInfo;
+    let shouldShowModal = true;
+
+    if (isDeviceIOS() || isDeviceAndroid()) {
       _incrModalDisplayCount();
-      var container = _createContainer(
-        false // include_modal
-      );
-
+      
       if (isDeviceIOS()) {
-        // ios
         if (isBrowserIOSSafari()) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = true),
-            (_device = _device)
-          );
-
+          ret = new DeviceInfo(false, true, _device);
           _genIOSSafari(container);
         } else if (isBrowserIOSChrome()) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = true),
-            (_device = _device)
-          );
-
+          ret = new DeviceInfo(false, true, _device);
           _genIOSChrome(container);
         } else if (isBrowserIOSInAppFacebook() || isBrowserIOSInAppLinkedin()) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = false),
-            (_device = _device)
-          );
-
+          ret = new DeviceInfo(false, false, _device);
           _genIOSInAppBrowserOpenInSystemBrowser(container);
-        } else if (
-          isBrowserIOSInAppInstagram() ||
-          isBrowserIOSInAppThreads() ||
-          isBrowserIOSInAppTwitter()
-        ) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = false),
-            (_device = _device)
-          );
-
+        } else if (isBrowserIOSInAppInstagram() || isBrowserIOSInAppThreads() || isBrowserIOSInAppTwitter()) {
+          ret = new DeviceInfo(false, false, _device);
           _genIOSInAppBrowserOpenInSafariBrowser(container);
         } else {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = false),
-            (_device = _device)
-          );
+          ret = new DeviceInfo(false, false, _device);
           shouldShowModal = false;
         }
       } else {
-        // android
         if (isBrowserAndroidChrome()) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = true),
-            (_device = _device)
-          );
+          ret = new DeviceInfo(false, true, _device);
           _genAndroidChrome(container);
         } else if (isBrowserAndroidFacebook()) {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = false),
-            (_device = _device)
-          );
+          ret = new DeviceInfo(false, false, _device);
           _genIOSInAppBrowserOpenInSystemBrowser(container);
         } else {
-          ret = new DeviceInfo(
-            (_isStandAlone = false),
-            (_canBeStandAlone = false),
-            (_device = _device)
-          );
-
+          ret = new DeviceInfo(false, false, _device);
           shouldShowModal = false;
         }
       }
@@ -189,19 +138,12 @@ export function AddToHomeScreen(
         _addContainerToBody(container);
       }
     } else {
-      debugMessage("DESKTOP");
-      ret = new DeviceInfo(
-        (_isStandAlone = false),
-        (_canBeStandAlone = false),
-        (_device = _device)
-      );
+      ret = new DeviceInfo(false, false, _device);
 
       if (isDesktopChrome() || isDesktopEdge()) {
-        debugMessage("DESKTOP CHROME");
         _incrModalDisplayCount();
         showDesktopInstallPrompt();
       } else if (isDesktopSafari()) {
-        debugMessage("DESKTOP SAFARI");
         _incrModalDisplayCount();
         _showDesktopSafariPrompt();
       }
@@ -210,425 +152,206 @@ export function AddToHomeScreen(
     return ret;
   }
 
-  function closeModal() {
-    // close the modal if the user clicks outside of the modal contents
-    const container = document.querySelector(".adhs-container");
-    if (container) {
-      container.classList.remove("visible");
-      setTimeout(
-        () => {
-          container.remove();
-          if (closeEventListener) {
-            window.removeEventListener("touchstart", closeEventListener);
-            window.removeEventListener("click", closeEventListener);
-            closeEventListener = null;
-          }
-        },
-        // If the dialog is hidden in 300ms in Safari, the browser reports a second
-        // click event on an underlying DOM node. If you wait a bit longer this
-        // does not happen
-        isDeviceIOS() ? 500 : 300
-      );
-    }
-  }
+  function showDesktopInstallPrompt() {
+    debugMessage("SHOW DESKTOP CHROME / EDGE PROMOTION");
 
-  /**** Device Detection Functions ****/
-
-  function _matchesUserAgent(regex: RegExp): boolean {
-    return !!userAgent.match(regex);
-  }
-
-  function isDeviceAndroid() {
-    return !!_matchesUserAgent(/Android/);
-  }
-
-  function isDeviceIOS() {
-    return _matchesUserAgent(/iPhone|iPad|iPod/) || isBrowserIOSIPadSafari();
-  }
-
-  function isBrowserIOSIPadSafari() {
-    return !!(
-      userAgent.match(/Macintosh/) &&
-      navigator.maxTouchPoints &&
-      navigator.maxTouchPoints > 1
-    );
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
-   AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
-   Mobile/14E5239e Safari/602.1 */
-  function isBrowserIOSSafari() {
-    return (
-      isDeviceIOS() &&
-      _matchesUserAgent(/Safari/) &&
-      !isBrowserIOSChrome() &&
-      !isBrowserIOSFirefox() &&
-      !isBrowserIOSInAppFacebook() &&
-      !isBrowserIOSInAppLinkedin() &&
-      !isBrowserIOSInAppInstagram() &&
-      !isBrowserIOSInAppThreads() &&
-      !isBrowserIOSInAppTwitter()
-    );
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
-     AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75
-     Mobile/14E5239e Safari/602.1 */
-  function isBrowserIOSChrome() {
-    return isDeviceIOS() && _matchesUserAgent(/CriOS/);
-  }
-
-  /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
-  AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
-  function isBrowserIOSFirefox() {
-    return isDeviceIOS() && _matchesUserAgent(/FxiOS/);
-  }
-
-  function isBrowserIOSInAppFacebook() {
-    if (!isDeviceIOS()) {
-      return false;
+    if (_desktopInstallPromptWasShown) {
+      return;
     }
 
-    return _matchesUserAgent(/FBAN|FBAV/);
-  }
-
-  function isBrowserIOSInAppLinkedin() {
-    if (!isDeviceIOS()) {
-      return false;
+    // if the prompt has not fired, wait for it to be fired, then show the promotion
+    if (!_desktopInstallPromptEventHasFired()) {
+      setTimeout(() => {
+        showDesktopInstallPrompt();
+      }, 500);
+      return;
     }
 
-    return _matchesUserAgent(/LinkedInApp/);
+    _desktopInstallPromptWasShown = true;
+
+    var container = _createContainer(true); // include_modal
+
+    _genDesktopChrome(container);
+    _addContainerToBody(container);
   }
 
-  function isBrowserIOSInAppInstagram() {
-    if (!isDeviceIOS()) {
-      return false;
-    }
-
-    // TODO: this is incompatible with Instagram/Threads mobile website links.
-    // TODO: this solution only works with first-level links
-    if (!!window.document.referrer.match("//l.instagram.com/")) {
-      return true;
-    }
-
-    return false;
+  function _showDesktopSafariPrompt() {
+    debugMessage("SHOW SAFARI DESKTOP PROMPT");
+    var container = _createContainer(true); // include_modal
+    _genDesktopSafari(container);
+    _addContainerToBody(container);
   }
 
-  function isBrowserIOSInAppThreads() {
-    return isBrowserIOSInAppInstagram();
-  }
-
-  function isBrowserIOSInAppTwitter() {
-    if (!isDeviceIOS()) {
-      return false;
-    }
-
-    // TODO: this solution is incompatible with Twitter mobile website links
-    // TODO: this solution only works with first-level links
-    return !!window.document.referrer.match("//t.co/");
-  }
-
-  /* Mozilla/5.0 (Linux; Android 10) 
-     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
-  function isBrowserAndroidChrome() {
-    return (
-      isDeviceAndroid() &&
-      !!_matchesUserAgent(/Chrome/) &&
-      !isBrowserAndroidFacebook() &&
-      !isBrowserAndroidSamsung() &&
-      !isBrowserAndroidFirefox()
-    );
-  }
-
-  /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
-    AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
-    Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
-  function isBrowserAndroidFacebook() {
-    return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
-  }
-
-  /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
-  (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
-  function isBrowserAndroidSamsung() {
-    return isDeviceAndroid() && _matchesUserAgent(/SamsungBrowser/);
-  }
-
-  /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
-  function isBrowserAndroidFirefox() {
-    return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
-  }
-
-  function isDesktopWindows() {
-    return userAgent.includes("Windows");
-  }
-
-  function isDesktopMac() {
-    return userAgent.includes("Macintosh");
-  }
-
-  function isDesktopChrome() {
-    const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
-    const isDesktop =
-      userAgent.includes("Windows") ||
-      userAgent.includes("Macintosh") ||
-      userAgent.includes("Linux");
-
-    return isChrome && isDesktop;
-  }
-
-  function isDesktopSafari() {
-    const isSafari =
-      userAgent.includes("Safari") &&
-      !userAgent.includes("Chrome") &&
-      !userAgent.includes("Edg");
-    const isDesktop =
-      userAgent.includes("Macintosh") || userAgent.includes("Windows");
-
-    return isSafari && isDesktop;
-  }
-
-  function isDesktopEdge() {
-    return userAgent.includes("Edg/");
-  }
-
-  /**** Internal Functions ****/
-
-  function _getAppDisplayUrl(): string {
-    // return 'https://aardvark.app';
-    const currentUrl = new URL(window.location.href);
-    return currentUrl.href.replace(/\/$/, "");
-  }
-
-  function _assertArg(variableName: string, booleanExp: boolean) {
-    if (!booleanExp) {
-      throw new Error(
-        "AddToHomeScreen: variable '" + variableName + "' has an invalid value."
-      );
-    }
-  }
-
-  function _createContainer(include_modal = false) {
-    const container = document.createElement("div");
-    container.classList.add("adhs-container");
-
-    if (include_modal) {
-      var containerInnerHTML = _genModalStart() + _genModalEnd();
-      container.innerHTML = containerInnerHTML;
-    }
-
-    return container;
-  }
-
-  function _addContainerToBody(container: HTMLElement) {
-    document.body.appendChild(container);
-    _registerCloseListener();
-    setTimeout(() => {
-      container.classList.add("visible");
-    }, 50);
-  }
-
-  function _genLogo() {
-    return (
-      `
-      ${div("logo")}
-        <img src="` +
-      appIconUrl +
-      `" alt="logo" />
-      </div>
-      `
-    );
-  }
-
-  function _genTitleWithMessage(message: string) {
-    return `
-      ${div("title")}
-      ${message}
-      </div>`;
-  }
-
-  function _genModalStart() {
-    return div("modal") + _genLogo();
-  }
-
-  function _genModalEnd() {
-    return `</div>`;
-  }
-
-  function _genListStart() {
-    return div("list");
-  }
-
-  function _genListEnd() {
-    return `</div>`;
-  }
-
-  function _genListItem(numberString: string, instructionHTML: string) {
-    return `
-      ${div("list-item")}
-      ${div("number-container")}
-      ${div("circle")}
-       ${div("number")}
-       ${numberString}
-       </div>
-        </div>
-      </div>
-      ${div("instruction")}
-      ${instructionHTML}
-      </div>
-    </div>`;
-  }
-
+  // Fixed _genListButtonWithImage with proper RTL support
   function _genListButtonWithImage(
     imageUrl: string,
     text: string = "",
     image_side: string = "none"
-  ) {
+  ): string {
     if (!text) {
-      return (
-        `
+      return `
         ${div("list-button")}
-          <img class="adhs-list-button-image-only" src="` +
-        imageUrl +
-        `" />
-      </div>`
-      );
-    } else if (image_side === "right") {
-      return (
-        `
-        ${div("list-button")}
-        ${div("list-button-text")}
-        ${text}
-        </div>
-        <img class="adhs-list-button-image-right" src="` +
-        imageUrl +
-        `" />
-      </div>`
-      );
-    } else if (image_side === "left") {
-      return (
-        `
-        ${div("list-button")}
-        <img class="adhs-list-button-image-left" src="` +
-        imageUrl +
-        `" />
-        ${div("list-button-text")}
-        ${text}
-        </div>
-      </div>`
-      );
-    } else {
-      throw new Error("_genListButtonWithImage: invalid arguments");
+          <img class="adhs-list-button-image-only${isRTL() ? " rtl" : ""}" src="${imageUrl}" />
+        </div>`;
     }
+
+    const effectiveImageSide = isRTL() ? 
+      (image_side === "left" ? "right" : "left") : 
+      image_side;
+
+    const imageClass = `adhs-list-button-image-${effectiveImageSide}${isRTL() ? " rtl" : ""}`;
+    
+    const buttonContent = effectiveImageSide === "right" 
+      ? `${div("list-button-text")}${text}</div><img class="${imageClass}" src="${imageUrl}" />`
+      : `<img class="${imageClass}" src="${imageUrl}" />${div("list-button-text")}${text}</div>`;
+
+    return `${div("list-button")}${buttonContent}</div>`;
   }
 
-  function _genAssetUrl(fileName: string) {
-    return assetUrl + fileName;
-  }
-
+// Fixed browser-specific generators with RTL support
   function _genIOSSafari(container: HTMLElement) {
-    var containerInnerHTML =
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const sharingButton = _genListButtonWithImage(
+      _genAssetUrl("ios-safari-sharing-api-button-2.svg")
+    );
+    
+    const addToHomeButton = _genListButtonWithImage(
+      _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
+      i18n.__("Add to Home Screen"),
+      isRTL() ? "left" : "right"
+    );
+
+    const containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
-      // _genAppUrlHeader() +
       _genListStart() +
       _genListItem(
         `1`,
-        i18n.__(
-          "Tap the %s button in the toolbar.",
-          _genListButtonWithImage(
-            _genAssetUrl("ios-safari-sharing-api-button-2.svg")
-          )
-        )
+        i18n.__("Tap the %s button in the toolbar.", sharingButton)  // Confirmed correct format
       ) +
       _genListItem(
         `2`,
-        i18n.__(
-          "Select %s from the menu that pops up.",
-          _genListButtonWithImage(
-            _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
-            i18n.__("Add to Home Screen"),
-            "right"
-          )
-        ) +
-          ` <span class="adhs-emphasis">${i18n.__(
-            "You may need to scroll down to find this menu item."
-          )}</span>`
+        i18n.__("Select %s from the menu that pops up.", addToHomeButton) +
+        ` <span class="adhs-emphasis">${i18n.__(
+          "You may need to scroll down to find this menu item."
+        )}</span>`
       ) +
-      // _genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${appIconUrl}"/>`)) +
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
       div(
-        isBrowserIOSIPadSafari()
-          ? "ios-ipad-safari-bouncing-arrow-container"
-          : "ios-safari-bouncing-arrow-container"
+        `${
+          isBrowserIOSIPadSafari()
+            ? "ios-ipad-safari-bouncing-arrow-container"
+            : "ios-safari-bouncing-arrow-container"
+        } ${rtlArrowClass}`
       ) +
-      `<img src="` +
-      _genAssetUrl("ios-safari-bouncing-arrow.svg") +
-      `" alt="arrow" />
+      `<img src="${_genAssetUrl(
+        "ios-safari-bouncing-arrow.svg"
+      )}" alt="arrow" />
     </div>`;
+
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari");
   }
 
   function _genIOSChrome(container: HTMLElement) {
-    var containerInnerHTML =
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const moreButton = _genListButtonWithImage(
+      _genAssetUrl("ios-chrome-more-button-2.svg")
+    );
+    
+    const addToHomeButton = _genListButtonWithImage(
+      _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
+      i18n.__("Add to Home Screen"),
+      isRTL() ? "left" : "right"
+    );
+
+    const containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
-      // _genAppUrlHeader() +
       _genListStart() +
       _genListItem(
         `1`,
-        i18n.__(
-          "Tap the %s button in the upper right corner.",
-          _genListButtonWithImage(_genAssetUrl("ios-chrome-more-button-2.svg"))
-        )
+        i18n.__("Tap the %s button in the upper right corner.", moreButton)
       ) +
       _genListItem(
         `2`,
-        i18n.__(
-          "Select %s from the menu that pops up.",
-          _genListButtonWithImage(
-            _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
-            i18n.__("Add to Home Screen"),
-            "right"
-          )
-        ) +
-          ` ` +
-          `<span class="adhs-emphasis">${i18n.__(
-            "You may need to scroll down to find this menu item."
-          )}</span>`
+        i18n.__("Select %s from the menu that pops up.", addToHomeButton) +
+        ` <span class="adhs-emphasis">${i18n.__(
+          "You may need to scroll down to find this menu item."
+        )}</span>`
       ) +
-      // _genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${appIconUrl}"/>`)) +
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      div("ios-chrome-bouncing-arrow-container") +
-      `<img src="` +
-      _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
-      `" alt="arrow" />
+      div(`ios-chrome-bouncing-arrow-container ${rtlArrowClass}`) +
+      `<img src="${_genAssetUrl(
+        "ios-chrome-bouncing-arrow.svg"
+      )}" alt="arrow" />
     </div>`;
+
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
   }
 
-  function _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
-    var containerInnerHTML =
+  function _genAndroidChrome(container: HTMLElement) {
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const moreButton = _genListButtonWithImage(
+      _genAssetUrl("android-chrome-more-button-2.svg")
+    );
+    
+    const addToHomeButton = _genListButtonWithImage(
+      _genAssetUrl("android-chrome-add-to-home-screen-button-2.svg"),
+      i18n.__("Add to Home Screen"),
+      isRTL() ? "right" : "left"
+    );
+
+    const translatedText = i18n.__("Tap %s in the browser bar.", moreButton)
+    const instructionHTML = translatedText.replace("%s", moreButton);
+
+    const containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
-      // _genAppUrlHeader() +
       _genListStart() +
       _genListItem(
         `1`,
-        i18n.__(
-          "Tap the %s button above.",
-          `<img class="adhs-more-button" src="${_genAssetUrl(
-            "generic-more-button.svg"
-          )}"/>`
-        )
+        i18n.__("Tap %s in the browser bar.", instructionHTML)
+      ) +
+      _genListItem(
+        `2`,
+        i18n.__("Tap %s", addToHomeButton)
+      ) +
+      _genListEnd() +
+      _genBlurbMobile() +
+      _genModalEnd() +
+      div(`android-chrome-bouncing-arrow-container ${rtlArrowClass}`) +
+      `<img src="${_genAssetUrl(
+        "android-chrome-bouncing-arrow.svg"
+      )}" alt="arrow" />
+    </div>`;
+
+    container.innerHTML = containerInnerHTML;
+    container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
+  }
+
+  function _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const moreButtonImg = `<img class="adhs-more-button${isRTL() ? " rtl" : ""}" src="${_genAssetUrl(
+      "generic-more-button.svg"
+    )}"/>`;
+
+    const containerInnerHTML =
+      _genModalStart() +
+      _genInstallAppHeader() +
+      _genAppNameHeader() +
+      _genListStart() +
+      _genListItem(
+        `1`,
+        i18n.__("Tap the %s button above.", moreButtonImg)
       ) +
       _genListItem(
         `2`,
@@ -638,11 +361,12 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
-      `<img src="` +
-      _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
-      `" alt="arrow" />
+      div(`inappbrowser-openinsystembrowser-bouncing-arrow-container ${rtlArrowClass}`) +
+      `<img src="${_genAssetUrl(
+        "generic-vertical-up-bouncing-arrow.svg"
+      )}" alt="arrow" />
     </div>`;
+
     container.innerHTML = containerInnerHTML;
     container.classList.add(
       "adhs-mobile",
@@ -652,28 +376,28 @@ export function AddToHomeScreen(
   }
 
   function _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
-    var containerInnerHTML =
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const moreButtonImg = `<img class="adhs-more-button${isRTL() ? " rtl" : ""}" src="${_genAssetUrl(
+      "openinsafari-button.png"
+    )}"/>`;
+
+    const containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
-      // _genAppUrlHeader() +
       _genListStart() +
       _genListItem(
         `1`,
-        i18n.__(
-          "Tap the %s button below to open your system browser.",
-          `<img class="adhs-more-button" src="${_genAssetUrl(
-            "openinsafari-button.png"
-          )}"/>`
-        )
+        i18n.__("Tap the %s button below to open your system browser.", moreButtonImg)
       ) +
       _genListEnd() +
       _genModalEnd() +
-      div("inappbrowser-openinsafari-bouncing-arrow-container") +
-      `<img src="` +
-      _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
-      `" alt="arrow" />
+      div(`inappbrowser-openinsafari-bouncing-arrow-container ${rtlArrowClass}`) +
+      `<img src="${_genAssetUrl(
+        "generic-vertical-down-bouncing-arrow.svg"
+      )}" alt="arrow" />
     </div>`;
+
     container.innerHTML = containerInnerHTML;
     container.classList.add(
       "adhs-mobile",
@@ -682,52 +406,116 @@ export function AddToHomeScreen(
     );
   }
 
-  function _genAndroidChrome(container: HTMLElement) {
-    var containerInnerHTML =
+
+function _genDesktopChrome(container: HTMLElement) {
+    const rtlClass = isRTL() ? 'rtl' : '';
+    const blurb: string = isDesktopMac()
+      ? _genBlurbDesktopMac()
+      : _genBlurbDesktopWindows();
+
+    const containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
       _genAppNameHeader() +
-      // _genAppUrlHeader() +
+      _genAppUrlHeader() +
+      blurb +
+      div(`button-container ${rtlClass}`) +
+      `<button class="adhs-button adhs-button-cancel">
+        ${i18n.__("Later")}
+      </button>
+      <button class="adhs-button adhs-button-install">
+        ${i18n.__("Install")}
+      </button>
+    </div>` +
+      _genModalEnd();
+
+    container.innerHTML = containerInnerHTML;
+    container.classList.add("adhs-desktop", "adhs-desktop-chrome");
+
+    // Button event listeners
+    const cancelButton = container.getElementsByClassName("adhs-button-cancel")[0];
+    const installButton = container.getElementsByClassName("adhs-button-install")[0];
+    
+    cancelButton.addEventListener("click", () => {
+      closeModal();
+    });
+
+    installButton.addEventListener("click", () => {
+      if (!_desktopInstallPromptEvent) {
+        return;
+      }
+      _desktopInstallPromptEvent.prompt();
+      closeModal();
+
+      _desktopInstallPromptEvent.userChoice.then(
+        (choiceResult: { outcome: string }) => {
+          if (choiceResult.outcome === "accepted") {
+            debugMessage("User accepted the install prompt");
+          } else {
+            debugMessage("User dismissed the install prompt");
+          }
+          _desktopInstallPromptEvent = null;
+        }
+      );
+    });
+  }
+
+  function _genDesktopSafari(container: HTMLElement) {
+    const rtlArrowClass = isBrowserRTL() ? 'rtl-arrow' : '';
+    const blurb: string = isDesktopMac()
+      ? _genBlurbDesktopMac()
+      : _genBlurbDesktopWindows();
+
+    const menuButton = _genListButtonWithImage(
+      _genAssetUrl("desktop-safari-menu.svg")
+    );
+
+    const dockButton = _genListButtonWithImage(
+      _genAssetUrl("desktop-safari-dock.svg"),
+      i18n.__("Add To Dock"),
+      isRTL() ? "right" : "left"
+    );
+
+    const containerInnerHTML =
+      _genModalStart() +
+      _genInstallAppHeader() +
+      _genAppNameHeader() +
+      _genAppUrlHeader() +
       _genListStart() +
       _genListItem(
         `1`,
-        i18n.__(
-          "Tap %s in the browser bar.",
-          _genListButtonWithImage(
-            _genAssetUrl("android-chrome-more-button-2.svg")
-          )
-        )
+        i18n.__("Tap %s in the toolbar.", menuButton) 
       ) +
       _genListItem(
         `2`,
-        i18n.__(
-          "Tap %s",
-          _genListButtonWithImage(
-            _genAssetUrl("android-chrome-add-to-home-screen-button-2.svg"),
-            i18n.__("Add to Home Screen"),
-            "left"
-          )
-        )
+        i18n.__("Tap %s", dockButton)
       ) +
-      // _genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${appIconUrl}"/>`)) +
       _genListEnd() +
-      _genBlurbMobile() +
+      blurb +
       _genModalEnd() +
-      div("android-chrome-bouncing-arrow-container") +
-      `<img src="` +
-      _genAssetUrl("android-chrome-bouncing-arrow.svg") +
-      `" alt="arrow" />
+      div(`desktop-safari-bouncing-arrow-container ${rtlArrowClass}`) +
+      `<img src="${_genAssetUrl(
+        "desktop-safari-bouncing-arrow.svg"
+      )}" alt="arrow" />
     </div>`;
+
     container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
+    container.classList.add("adhs-desktop", "adhs-desktop-safari");
   }
 
+  function _genAssetUrl(fileName: string): string {
+    if (!assetUrl.endsWith('/') && !fileName.startsWith('/')) {
+      return `${assetUrl}/${fileName}`;
+    }
+    return assetUrl + fileName;
+  }
+
+  // Helper functions
   function _genInstallAppHeader() {
-    const text =
-      appNameDisplay === "inline"
-        ? i18n.__("Install %s", appName)
-        : i18n.__("Install app");
-    return `<h1 class="adhs-install-app">` + text + `</h1>`;
+    const text = appNameDisplay === "inline"
+      ? i18n.__("Install %s", appName)
+      : i18n.__("Install app");
+    return `<h1 class="adhs-install-app">${text}</h1>`;
   }
 
   function _genAppNameHeader() {
@@ -769,126 +557,223 @@ export function AddToHomeScreen(
     );
   }
 
-  function _genDesktopChrome(container: HTMLElement) {
-    var blurb: string = isDesktopMac()
-      ? _genBlurbDesktopMac()
-      : _genBlurbDesktopWindows();
+  function _createContainer(include_modal = false) {
+    const container = document.createElement("div");
+    container.classList.add("adhs-container");
+    
+    if (isRTL()) {
+      container.classList.add("adhs-rtl");
+    }
 
-    var containerInnerHTML =
-      _genModalStart() +
-      _genInstallAppHeader() +
-      _genAppNameHeader() +
-      _genAppUrlHeader() +
-      blurb +
-      div("button-container") +
-      `<button class="adhs-button adhs-button-cancel">
-        ` +
-      i18n.__("Later") +
-      `
-      </button>
-      <button class="adhs-button adhs-button-install">
-        ` +
-      i18n.__("Install") +
-      `
-      </button>
-    </div>` +
-      _genModalEnd();
+    if (include_modal) {
+      var containerInnerHTML = _genModalStart() + _genModalEnd();
+      container.innerHTML = containerInnerHTML;
+    }
 
-    container.innerHTML = containerInnerHTML;
-    container.classList.add("adhs-desktop", "adhs-desktop-chrome");
-
-    var cancelButton =
-      container.getElementsByClassName("adhs-button-cancel")[0];
-    cancelButton.addEventListener("click", () => {
-      closeModal();
-    });
-
-    var installButton = container.getElementsByClassName(
-      "adhs-button-install"
-    )[0];
-    installButton.addEventListener("click", () => {
-      if (!_desktopInstallPromptEvent) {
-        return;
-      }
-      _desktopInstallPromptEvent.prompt();
-      closeModal();
-
-      _desktopInstallPromptEvent.userChoice.then(
-        (choiceResult: { outcome: string }) => {
-          if (choiceResult.outcome === "accepted") {
-            debugMessage("User accepted the install prompt");
-          } else {
-            debugMessage("User dismissed the install prompt");
-          }
-          _desktopInstallPromptEvent = null;
-        }
-      );
-    });
+    return container;
   }
 
-  function _genDesktopSafari(container: HTMLElement) {
-    var blurb: string = isDesktopMac()
-      ? _genBlurbDesktopMac()
-      : _genBlurbDesktopWindows();
-
-    var containerInnerHTML =
-      _genModalStart() +
-      _genInstallAppHeader() +
-      _genAppNameHeader() +
-      _genAppUrlHeader() +
-      _genListStart() +
-      _genListItem(
-        `1`,
-        i18n.__(
-          "Tap %s in the toolbar.",
-          _genListButtonWithImage(_genAssetUrl("desktop-safari-menu.svg"))
-        )
-      ) +
-      _genListItem(
-        `2`,
-        i18n.__(
-          "Tap %s",
-          _genListButtonWithImage(
-            _genAssetUrl("desktop-safari-dock.svg"),
-            i18n.__("Add To Dock"),
-            "left"
-          )
-        )
-      ) +
-      _genListEnd() +
-      blurb +
-      _genModalEnd() +
-      div("desktop-safari-bouncing-arrow-container") +
-      `<img src="` +
-      _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
-      `" alt="arrow" />
-    </div>`;
-    container.innerHTML = containerInnerHTML;
-
-    container.classList.add("adhs-desktop", "adhs-desktop-safari");
-  }
-
-  function _registerCloseListener() {
-    closeEventListener = (e: Event) => {
-      var modal = document
-        .getElementsByClassName("adhs-container")[0]
-        .getElementsByClassName("adhs-modal")[0];
-      if (!modal.contains(e.target as Node)) {
-        closeModal();
-      }
-    };
-
-    // enclose in setTimeout to prevent firing when this class used with an onclick
+  function _addContainerToBody(container: HTMLElement) {
+    document.body.appendChild(container);
+    _registerCloseListener();
     setTimeout(() => {
-      window.addEventListener("touchstart", closeEventListener!);
-      window.addEventListener("click", closeEventListener!);
+      container.classList.add("visible");
     }, 50);
   }
 
-  function clearModalDisplayCount() {
-    if (_isEnabledModalDisplayCount()) {
-      window.localStorage.removeItem(_getModalDisplayCountKey());
+  function _genListStart() {
+    return div("list");
+  }
+
+  function _genListEnd() {
+    return `</div>`;
+  }
+
+  function _genListItem(numberString: string, instructionHTML: string) {
+    const rtlClass = isRTL() ? 'rtl' : '';
+    return `
+      ${div(`list-item ${rtlClass}`)}
+        ${isRTL() ? '' : `
+        ${div("number-container")}
+          ${div("circle")}
+            ${div("number")}
+              ${numberString}
+            </div>
+          </div>
+        </div>`}
+        ${div("instruction")}
+          ${instructionHTML}
+        </div>
+        ${isRTL() ? `
+        ${div("number-container")}
+          ${div("circle")}
+            ${div("number")}
+              ${numberString}
+            </div>
+          </div>
+        </div>` : ''}
+      </div>`;
+  }
+
+  function _genModalStart() {
+    return div("modal") + _genLogo();
+  }
+
+  function _genModalEnd() {
+    return `</div>`;
+  }
+
+  function _genLogo() {
+    return `
+      ${div("logo")}
+        <img src="${appIconUrl}" alt="logo" />
+      </div>
+    `;
+  }
+
+  function div(className: string) {
+    return `<div class="adhs-${className}">`;
+  }
+
+// Device Detection Functions
+  function _matchesUserAgent(regex: RegExp): boolean {
+    return !!userAgent.match(regex);
+  }
+
+  function isDeviceAndroid() {
+    return !!_matchesUserAgent(/Android/);
+  }
+
+  function isDeviceIOS() {
+    return _matchesUserAgent(/iPhone|iPad|iPod/) || isBrowserIOSIPadSafari();
+  }
+
+  function isBrowserIOSIPadSafari() {
+    return !!(
+      userAgent.match(/Macintosh/) &&
+      navigator.maxTouchPoints &&
+      navigator.maxTouchPoints > 1
+    );
+  }
+
+  function isBrowserIOSSafari() {
+    return (
+      isDeviceIOS() &&
+      _matchesUserAgent(/Safari/) &&
+      !isBrowserIOSChrome() &&
+      !isBrowserIOSFirefox() &&
+      !isBrowserIOSInAppFacebook() &&
+      !isBrowserIOSInAppLinkedin() &&
+      !isBrowserIOSInAppInstagram() &&
+      !isBrowserIOSInAppThreads() &&
+      !isBrowserIOSInAppTwitter()
+    );
+  }
+
+  function isBrowserIOSChrome() {
+    return isDeviceIOS() && _matchesUserAgent(/CriOS/);
+  }
+
+  function isBrowserIOSFirefox() {
+    return isDeviceIOS() && _matchesUserAgent(/FxiOS/);
+  }
+
+  function isBrowserIOSInAppFacebook() {
+    return isDeviceIOS() && _matchesUserAgent(/FBAN|FBAV/);
+  }
+
+  function isBrowserIOSInAppLinkedin() {
+    return isDeviceIOS() && _matchesUserAgent(/LinkedInApp/);
+  }
+
+  function isBrowserIOSInAppInstagram() {
+    if (!isDeviceIOS()) {
+      return false;
     }
+    return !!window.document.referrer.match("//l.instagram.com/");
+  }
+
+  function isBrowserIOSInAppThreads() {
+    return isBrowserIOSInAppInstagram();
+  }
+
+  function isBrowserIOSInAppTwitter() {
+    if (!isDeviceIOS()) {
+      return false;
+    }
+    return !!window.document.referrer.match("//t.co/");
+  }
+
+  function isBrowserAndroidChrome() {
+    return (
+      isDeviceAndroid() &&
+      !!_matchesUserAgent(/Chrome/) &&
+      !isBrowserAndroidFacebook() &&
+      !isBrowserAndroidSamsung() &&
+      !isBrowserAndroidFirefox()
+    );
+  }
+
+  function isBrowserAndroidFacebook() {
+    return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
+  }
+
+  function isBrowserAndroidSamsung() {
+    return isDeviceAndroid() && _matchesUserAgent(/SamsungBrowser/);
+  }
+
+  function isBrowserAndroidFirefox() {
+    return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
+  }
+
+  function isDesktopWindows() {
+    return userAgent.includes("Windows");
+  }
+
+  function isDesktopMac() {
+    return userAgent.includes("Macintosh");
+  }
+
+  function isDesktopChrome() {
+    const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg");
+    const isDesktop = userAgent.includes("Windows") ||
+      userAgent.includes("Macintosh") ||
+      userAgent.includes("Linux");
+    return isChrome && isDesktop;
+  }
+
+  function isDesktopSafari() {
+    const isSafari = userAgent.includes("Safari") &&
+      !userAgent.includes("Chrome") &&
+      !userAgent.includes("Edg");
+    const isDesktop = userAgent.includes("Macintosh") || userAgent.includes("Windows");
+    return isSafari && isDesktop;
+  }
+
+  function isDesktopEdge() {
+    return userAgent.includes("Edg/");
+  }
+
+  function isStandAlone() {
+    return (
+      !!("standalone" in window.navigator && window.navigator.standalone) ||
+      !!window.matchMedia("(display-mode: standalone)").matches
+    );
+  }
+
+  // Modal Display Count Handling
+  function _getModalDisplayCountKey(): string {
+    return "adhs-modal-display-count";
+  }
+
+  function _getModalDisplayCount(): number {
+    const countStr = window.localStorage.getItem(_getModalDisplayCountKey());
+    if (countStr === null) {
+      const count = 0;
+      window.localStorage.setItem(_getModalDisplayCountKey(), count.toString());
+      return count;
+    }
+    return parseInt(countStr);
   }
 
   function _isEnabledModalDisplayCount(): boolean {
@@ -910,54 +795,63 @@ export function AddToHomeScreen(
     if (!_isEnabledModalDisplayCount()) {
       return false;
     }
-
-    var count: number = _getModalDisplayCount();
-    count++;
+    const count = _getModalDisplayCount() + 1;
     window.localStorage.setItem(_getModalDisplayCountKey(), count.toString());
     return true;
   }
 
-  function _getModalDisplayCountKey(): string {
-    return "adhs-modal-display-count";
-  }
-
-  function _getModalDisplayCount(): number {
-    var countStr: string | null = window.localStorage.getItem(
-      _getModalDisplayCountKey()
-    );
-    var count: number;
-    if (countStr === null) {
-      count = 0;
-      window.localStorage.setItem(_getModalDisplayCountKey(), count.toString());
-    } else {
-      count = parseInt(countStr);
+  function clearModalDisplayCount() {
+    if (_isEnabledModalDisplayCount()) {
+      window.localStorage.removeItem(_getModalDisplayCountKey());
     }
-    return count;
   }
 
-  function debugMessage(message: string) {
-    // alert(message);
-    // console.log(message);
+  // Modal Closing
+  function closeModal() {
+    const container = document.querySelector(".adhs-container");
+    if (container) {
+      container.classList.remove("visible");
+      setTimeout(
+        () => {
+          container.remove();
+          if (closeEventListener) {
+            window.removeEventListener("touchstart", closeEventListener);
+            window.removeEventListener("click", closeEventListener);
+            closeEventListener = null;
+          }
+        },
+        isDeviceIOS() ? 500 : 300
+      );
+    }
   }
 
+  function _registerCloseListener() {
+    closeEventListener = (e: Event) => {
+      const modal = document
+        .getElementsByClassName("adhs-container")[0]
+        .getElementsByClassName("adhs-modal")[0];
+      if (!modal.contains(e.target as Node)) {
+        closeModal();
+      }
+    };
+
+    setTimeout(() => {
+      window.addEventListener("touchstart", closeEventListener!);
+      window.addEventListener("click", closeEventListener!);
+    }, 50);
+  }
+
+  // Desktop Install Prompt Handling
   let _desktopInstallPromptEvent: ADHSBeforeInstallPromptEvent | null = null;
   let _desktopInstallPromptWasShown: boolean = false;
 
   function _desktopInstallPromptEventListener(e: ADHSBeforeInstallPromptEvent) {
-    debugMessage("DESKTOP CHROME LISTENER");
     e.preventDefault();
     _desktopInstallPromptEvent = e;
   }
 
   function _registerDesktopInstallPromptEvent() {
-    window.addEventListener(
-      "beforeinstallprompt",
-      _desktopInstallPromptEventListener
-    );
-  }
-
-  function _desktopInstallPromptEventHasFired(): boolean {
-    return _desktopInstallPromptEvent !== null;
+    window.addEventListener("beforeinstallprompt", _desktopInstallPromptEventListener);
   }
 
   function shouldShowDesktopInstallPromptBasedOnDevice(): boolean {
@@ -970,48 +864,29 @@ export function AddToHomeScreen(
     );
   }
 
-  // show the desktop chrome promotion
-  function showDesktopInstallPrompt() {
-    debugMessage("SHOW DESKTOP CHROME / EDGE PROMOTION");
+  function _desktopInstallPromptEventHasFired(): boolean {
+    return _desktopInstallPromptEvent !== null;
+  }
 
-    if (_desktopInstallPromptWasShown) {
-      return;
+  // Utility Functions
+  function _getAppDisplayUrl(): string {
+    const currentUrl = new URL(window.location.href);
+    return currentUrl.href.replace(/\/$/, "");
+  }
+
+  function _assertArg(variableName: string, booleanExp: boolean) {
+    if (!booleanExp) {
+      throw new Error(
+        "AddToHomeScreen: variable '" + variableName + "' has an invalid value."
+      );
     }
-
-    // if the prompt has not fired, wait for it the be fired, then show the promotion
-    if (!_desktopInstallPromptEventHasFired()) {
-      // debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT NOT FIRED");
-      setTimeout(() => {
-        showDesktopInstallPrompt();
-      }, 500);
-      return;
-    }
-
-    // debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT FIRED");
-
-    _desktopInstallPromptWasShown = true;
-
-    var container = _createContainer(
-      true // include_modal
-    );
-
-    _genDesktopChrome(container);
-    _addContainerToBody(container);
   }
 
-  function _showDesktopSafariPrompt() {
-    debugMessage("SHOW SAFARI DESKTOP PROMPT");
-    var container = _createContainer(
-      true // include_modal
-    );
-    _genDesktopSafari(container);
-    _addContainerToBody(container);
+  function debugMessage(message: string) {
+    // console.log(message);
   }
 
-  function div(className: string) {
-    return `<div class="adhs-${className}">`;
-  }
-
+  // Return public interface
   return {
     appName,
     appIconUrl,

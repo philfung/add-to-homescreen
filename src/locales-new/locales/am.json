@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "ወደ መነሻ ማያ ገጽ አክል",
+  "Add To Dock": "ወደ ዶክ አክል",
+  "An icon will be added to your Dock so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በዶክዎ ላይ አዶ ይጨመራል።",
+  "An icon will be added to your home screen so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በመነሻ ማያ ገጽዎ ላይ አዶ ይጨመራል።",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በሥራ መደርደሪያዎ ላይ አዶ ይጨመራል።",
+  "Install": "ጫን",
+  "Install %s": "%s ጫን",
+  "Install app": "መተግበሪያ ጫን",
+  "Later": "በኋላ",
+  "Open in browser": "በአሳሽ ውስጥ ክፈት",
+  "Select %s from the menu that pops up.": "ከሚታየው ምናሌ %s ይምረጡ።",
+  "Tap %s": "%s ይንኩ",
+  "Tap %s in the browser bar.": "በአሳሹ አሞሌ ውስጥ %s ይንኩ።",
+  "Tap %s in the toolbar.": "በመሣሪያ አሞሌ ውስጥ %s ይንኩ።",
+  "Tap the %s button above.": "ከላይ ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button below to open your system browser.": "የስርዓትዎን አሳሽ ለመክፈት ከታች ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button in the toolbar.": "በመሣሪያ አሞሌ ውስጥ ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button in the upper right corner.": "በላይኛው የቀኝ ጎን ማዕዘን ያለውን %s አዝራር ይንኩ።",
+  "You may need to scroll down to find this menu item.": "ይህን የምናሌ ንጥል ለማግኘት ወደ ታች ማንሸራተት ሊያስፈልግዎት ይችላል።"
+}

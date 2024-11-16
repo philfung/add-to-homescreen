@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);
+/* Base Container */
 .adhs-container {
   display: block;
   position: fixed;
@@ -16,11 +17,19 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
+/* RTL Base Container */
+.adhs-container.adhs-rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Container Visibility */
 .adhs-container.visible {
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 1;
 }
 
+/* Modal Base */
 .adhs-container .adhs-modal {
   background-color: #f5f5f5;
   border-radius: 7px;
@@ -39,19 +48,19 @@
   width: 90%;
 }
 
+/* RTL Modal */
+.adhs-container.adhs-rtl .adhs-modal {
+  text-align: right;
+}
+
+/* Modal Animation */
 @keyframes adhs-bounce-modal {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(-50%) translateX(-50%);
   }
-
   40% {
     transform: translateY(-40%) translateX(-50%);
   }
-
   60% {
     transform: translateY(-55%) translateX(-50%);
   }
@@ -62,6 +71,7 @@
   animation: adhs-bounce-modal 0.5s;
 }
 
+/* Logo */
 .adhs-container .adhs-logo {
   position: absolute;
   left: 0;
@@ -79,6 +89,7 @@
   border-radius: 12px;
 }
 
+/* Text Elements */
 .adhs-container .adhs-modal .adhs-title {
   font-size: 27px;
   font-weight: 700;
@@ -100,30 +111,24 @@
   text-align: justify;
 }
 
-.adhs-container .adhs-modal .adhs-error-copy-link-button {
-  background-color: white;
-  border: 1px solid;
-  border-radius: 4px;
-  font-size: 19px;
-  padding: 5px;
+/* RTL Text Elements */
+.adhs-container.adhs-rtl .adhs-modal .adhs-title,
+.adhs-container.adhs-rtl .adhs-modal .adhs-error-title,
+.adhs-container.adhs-rtl .adhs-modal .adhs-error-body,
+.adhs-container.adhs-rtl .adhs-modal .adhs-install-app,
+.adhs-container.adhs-rtl .adhs-modal .adhs-app-name,
+.adhs-container.adhs-rtl .adhs-modal .adhs-app-url,
+.adhs-container.adhs-rtl .adhs-modal .adhs-blurb {
+  text-align: right;
 }
 
+/* List Container */
 .adhs-container .adhs-modal .adhs-list {
   display: flex;
   flex-direction: column;
 }
 
-.adhs-container .adhs-modal .adhs-list .adhs-emphasis {
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.adhs-container .adhs-modal .adhs-list .adhs-your-app-icon {
-  height: 40px;
-  margin: 0px 5px -13px 5px;
-  border-radius: 6px;
-}
-
+/* List Items */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item {
   display: flex;
   flex-direction: row;
@@ -132,28 +137,32 @@
   margin: 0px 0px 10px 0px;
 }
 
+/* RTL List Items */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Number Container */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   flex-direction: column;
   display: flex;
-  /* margin: 0px 5px 0px 0px; */
 }
 
-.adhs-container.adhs-desktop
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-number-container {
+.adhs-container.adhs-desktop .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   margin: 0px 5px 0px 0px;
 }
 
-.adhs-container.adhs-mobile
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-number-container {
+.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
   margin: 5px 5px 0px 0px;
 }
 
+/* RTL Number Container */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-number-container {
+  margin: 5px 0 0 5px;
+}
+
+/* Circle and Number */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-circle {
   font-size: 30px;
   height: 32px;
@@ -169,33 +178,31 @@
   font-weight: 100;
 }
 
-[dir="rtl"]
-  .adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-number {
-  padding: 6px 11px 0px 11px;
+/* RTL Number */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-number {
+  padding: 6px 11px 0px 0px;
 }
 
+/* Instructions */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   font-size: 19px;
   line-height: 27px;
   padding: 0px 5px 0px 5px;
-  /* text-align: justify; */
 }
 
-.adhs-container.adhs-mobile
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-instruction:has(.adhs-list-button) {
+/* RTL Instructions */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+  text-align: right;
+  padding: 0px 5px 0px 5px;
+}
+
+.adhs-container.adhs-mobile .adhs-modal .adhs-list .adhs-list-item .adhs-instruction:has(.adhs-list-button) {
   padding-top: 5px;
 }
 
+/* List Button */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
   display: inline;
-  /* border: 0.5px solid lightgrey; */
   border-radius: 4px;
   box-shadow: 1px 1px 2px gray;
   margin-right: 3px;
@@ -203,65 +210,55 @@
   white-space: nowrap;
 }
 
-.adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-list-button:has(.adhs-list-button-image-only) {
+/* RTL List Button */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
+  margin-left: 3px;
+  margin-right: 0;
+}
+
+/* List Button with Image */
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button:has(.adhs-list-button-image-only) {
   display: inline-block;
   padding: 1px 8px;
 }
 
-.adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-list-button
-  .adhs-list-button-text {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-text {
   display: inline;
   font-size: 16px;
   position: relative;
   top: -1px;
 }
 
-.adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-list-button
-  .adhs-list-button-image-only {
+/* List Button Images */
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
   position: relative;
   top: 3px;
   left: 0px;
 }
 
-.adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-list-button
-  .adhs-list-button-image-left {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
   position: relative;
   margin: 0 5px 0 0;
   top: 2px;
 }
 
-.adhs-container
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-list-button
-  .adhs-list-button-image-right {
+.adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-right {
   position: relative;
   margin: 0 0 0 5px;
   top: 2px;
 }
 
+/* RTL List Button Images */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
+  margin: 0 0 0 5px;
+}
+
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-right {
+  margin: 0 5px 0 0;
+}
+
 /* IOS Safari */
-.adhs-container.adhs-ios.adhs-safari
-  .adhs-modal
-  .adhs-list
-  .adhs-ios-safari-sharing-api-button {
+.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-sharing-api-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -269,10 +266,7 @@
   background-color: #ffffff;
 }
 
-.adhs-container.adhs-ios.adhs-safari
-  .adhs-modal
-  .adhs-list
-  .adhs-ios-safari-add-to-home-screen-button {
+.adhs-container.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-add-to-home-screen-button {
   height: 33px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -280,45 +274,39 @@
   background-color: #ffffff;
 }
 
+/* RTL IOS Safari */
+.adhs-container.adhs-rtl.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-sharing-api-button,
+.adhs-container.adhs-rtl.adhs-ios.adhs-safari .adhs-modal .adhs-list .adhs-ios-safari-add-to-home-screen-button {
+  transform: scaleX(-1);
+}
+
+/* IOS Safari Arrow Animations */
 @keyframes adhs-ios-safari-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(-30px);
   }
-
   60% {
     transform: translateY(-15px);
   }
 }
 
-@keyframes adhs-ios-ipad-safari-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0) rotate(180deg);
+@keyframes adhs-ios-safari-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scaleX(-1);
   }
-
   40% {
-    transform: translateY(30px) rotate(180deg);
+    transform: translateY(-30px) scaleX(-1);
   }
-
   60% {
-    transform: translateY(15px) rotate(180deg);
+    transform: translateY(-15px) scaleX(-1);
   }
 }
 
-.adhs-container.adhs-ios.adhs-safari
-  .adhs-ios-safari-bouncing-arrow-container
-  img {
+/* IOS Safari Arrow */
+.adhs-container.adhs-ios.adhs-safari .adhs-ios-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
   top: calc(100dvh - 60px);
@@ -328,9 +316,41 @@
   animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
 }
 
-.adhs-container.adhs-ios.adhs-safari
-  .adhs-ios-ipad-safari-bouncing-arrow-container
-  img {
+/* RTL IOS Safari Arrow */
+.adhs-container.adhs-rtl.adhs-ios.adhs-safari .adhs-ios-safari-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+  animation: adhs-ios-safari-bouncing-arrow-animation-rtl 2s infinite;
+}
+
+/* IOS iPad Safari Animation */
+@keyframes adhs-ios-ipad-safari-bouncing-arrow-animation {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(180deg);
+  }
+  40% {
+    transform: translateY(30px) rotate(180deg);
+  }
+  60% {
+    transform: translateY(15px) rotate(180deg);
+  }
+}
+
+@keyframes adhs-ios-ipad-safari-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(180deg) scaleX(-1);
+  }
+  40% {
+    transform: translateY(30px) rotate(180deg) scaleX(-1);
+  }
+  60% {
+    transform: translateY(15px) rotate(180deg) scaleX(-1);
+  }
+}
+
+/* IOS iPad Safari Arrow */
+.adhs-container.adhs-ios.adhs-safari .adhs-ios-ipad-safari-bouncing-arrow-container img {
   height: 60px;
   position: absolute;
   top: 0;
@@ -338,29 +358,16 @@
   animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
 }
 
-/* IOS Chrome */
-@keyframes adhs-ios-chrome-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(20px);
-  }
-
-  60% {
-    transform: translateY(5px);
-  }
+/* RTL IOS iPad Safari Arrow */
+.adhs-container.adhs-rtl.adhs-ios.adhs-safari .adhs-ios-ipad-safari-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 120px;
+  transform: scaleX(-1) rotate(180deg);
+  animation: adhs-ios-ipad-safari-bouncing-arrow-animation-rtl 2s infinite;
 }
 
-.adhs-container.adhs-ios.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-ios-chrome-more-button {
+/* IOS Chrome */
+.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-more-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -368,9 +375,38 @@
   background-color: #ffffff;
 }
 
-.adhs-container.adhs-ios.adhs-chrome
-  .adhs-ios-chrome-bouncing-arrow-container
-  img {
+/* RTL IOS Chrome */
+.adhs-container.adhs-rtl.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-more-button {
+  transform: scaleX(-1);
+}
+
+/* IOS Chrome Arrow Animation */
+@keyframes adhs-ios-chrome-bouncing-arrow-animation {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes adhs-ios-chrome-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  40% {
+    transform: translateY(20px) scaleX(-1);
+  }
+  60% {
+    transform: translateY(5px) scaleX(-1);
+  }
+}
+
+/* IOS Chrome Arrow */
+.adhs-container.adhs-ios.adhs-chrome .adhs-ios-chrome-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
@@ -378,10 +414,16 @@
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-ios.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-ios-chrome-add-to-home-screen-button {
+/* RTL IOS Chrome Arrow */
+.adhs-container.adhs-rtl.adhs-ios.adhs-chrome .adhs-ios-chrome-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 18px;
+  transform: scaleX(-1);
+  animation: adhs-ios-chrome-bouncing-arrow-animation-rtl 1.5s infinite;
+}
+
+/* IOS Chrome Add to Home Screen Button */
+.adhs-container.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-add-to-home-screen-button {
   height: 35px;
   margin: 0px 5px -7px 5px;
   box-shadow: 1px 1px 2px gray;
@@ -389,28 +431,38 @@
   background-color: #ffffff;
 }
 
-/* Android Chrome */
+/* RTL IOS Chrome Add to Home Screen Button */
+.adhs-container.adhs-rtl.adhs-ios.adhs-chrome .adhs-modal .adhs-list .adhs-ios-chrome-add-to-home-screen-button {
+  transform: scaleX(-1);
+}
+
+/* Android Chrome Arrow Animation */
 @keyframes adhs-android-chrome-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(20px);
   }
-
   60% {
     transform: translateY(5px);
   }
 }
 
-.adhs-container.adhs-android.adhs-chrome
-  .adhs-android-chrome-bouncing-arrow-container
-  img {
+@keyframes adhs-android-chrome-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  40% {
+    transform: translateY(20px) scaleX(-1);
+  }
+  60% {
+    transform: translateY(5px) scaleX(-1);
+  }
+}
+
+/* Android Chrome Arrow */
+.adhs-container.adhs-android.adhs-chrome .adhs-android-chrome-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
@@ -418,10 +470,16 @@
   animation: adhs-android-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-android.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-android-chrome-more-button {
+/* RTL Android Chrome Arrow */
+.adhs-container.adhs-rtl.adhs-android.adhs-chrome .adhs-android-chrome-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 15px;
+  transform: scaleX(-1);
+  animation: adhs-android-chrome-bouncing-arrow-animation-rtl 1.5s infinite;
+}
+
+/* Android Chrome Buttons */
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-more-button {
   height: 30px;
   background: white;
   margin: 0px 5px -7px 5px;
@@ -429,10 +487,7 @@
   border-radius: 4px;
 }
 
-.adhs-container.adhs-android.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-android-chrome-add-to-homescreen-button {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-add-to-homescreen-button {
   height: 30px;
   background: white;
   margin: 0px 5px -9px 5px;
@@ -441,10 +496,15 @@
   padding: 0px 7px 0px 4px;
 }
 
-.adhs-container.adhs-android.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-android-chrome-install-app {
+/* RTL Android Chrome Buttons */
+.adhs-container.adhs-rtl.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-more-button,
+.adhs-container.adhs-rtl.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-add-to-homescreen-button {
+  transform: scaleX(-1);
+  padding: 0px 4px 0px 7px;
+}
+
+/* Android Chrome Install App */
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-android-chrome-install-app {
   height: 30px;
   background: white;
   margin: 10px 5px -10px 5px;
@@ -453,11 +513,7 @@
   padding: 0px;
 }
 
-.adhs-container.adhs-android.adhs-chrome
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-instruction {
+.adhs-container.adhs-android.adhs-chrome .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   line-height: 34px;
 }
 
@@ -466,10 +522,7 @@
   padding: 0px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser
-  .adhs-modal
-  .adhs-list
-  .adhs-emphasis {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -479,60 +532,79 @@
   font-weight: 500;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item {
+/* RTL In-App System Browser */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-emphasis {
+  margin: 0px 5px 0px 0px;
+}
+
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-instruction {
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   padding: 0px 0px 2px 9px;
   line-height: 42px;
 }
 
+/* RTL In-App System Browser Instruction */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+  padding: 0px 9px 2px 0px;
+}
+
+/* In-App System Browser Arrow Animation */
 @keyframes adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(20px);
   }
-
   60% {
     transform: translateY(5px);
   }
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser
-  .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container
-  img {
+@keyframes adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  40% {
+    transform: translateY(20px) scaleX(-1);
+  }
+  60% {
+    transform: translateY(5px) scaleX(-1);
+  }
+}
+
+/* In-App System Browser Arrow */
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
   right: 6px;
-  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s
-    infinite;
+  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-inappbrowser-openinsystembrowser
-  .adhs-modal
-  .adhs-list
-  .adhs-more-button {
+/* RTL In-App System Browser Arrow */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsystembrowser .adhs-inappbrowser-openinsystembrowser-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 6px;
+  transform: scaleX(-1);
+  animation: adhs-inappbrowser-openinsystembrowser-bouncing-arrow-animation-rtl 1.5s infinite;
+}
+
+/* In-App System Browser More Button */
+.adhs-container.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-more-button {
   height: 35px;
   background: white;
   margin: 0px 5px -11px 5px;
   box-shadow: 1px 1px 2px gray;
   border-radius: 4px;
+}
+
+/* RTL In-App System Browser More Button */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsystembrowser .adhs-modal .adhs-list .adhs-more-button {
+  transform: scaleX(-1);
 }
 
 /* In-App Safari Browser */
@@ -540,10 +612,7 @@
   padding: 0px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari
-  .adhs-modal
-  .adhs-list
-  .adhs-emphasis {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-emphasis {
   padding: 6px 8px;
   border-radius: 5px;
   margin: 0px 0px 0px 5px;
@@ -553,63 +622,69 @@
   font-weight: 500;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item {
+/* RTL In-App Safari Browser */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-emphasis {
+  margin: 0px 5px 0px 0px;
+}
+
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item {
   margin: 6px 0px 9px 0px;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari
-  .adhs-modal
-  .adhs-list
-  .adhs-list-item
-  .adhs-instruction {
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
   padding: 0px 0px 0px 9px;
   line-height: 34px;
   margin: 4px 0px 0px 0px;
 }
 
+/* RTL In-App Safari Browser Instruction */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsafari .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+  padding: 0px 9px 0px 0px;
+}
+
+/* In-App Safari Browser Arrow Animation */
 @keyframes adhs-inappbrowser-openinsafari-bouncing-arrow-animation {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(-20px);
   }
-
   60% {
     transform: translateY(-5px);
   }
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari
-  .adhs-inappbrowser-openinsafari-bouncing-arrow-container
-  img {
+@keyframes adhs-inappbrowser-openinsafari-bouncing-arrow-animation-rtl {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  40% {
+    transform: translateY(-20px) scaleX(-1);
+  }
+  60% {
+    transform: translateY(-5px) scaleX(-1);
+  }
+}
+
+/* In-App Safari Browser Arrow */
+.adhs-container.adhs-inappbrowser-openinsafari .adhs-inappbrowser-openinsafari-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: calc(100dvh - 40px);
   right: 15px;
-  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s
-    infinite;
+  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation 1.5s infinite;
 }
 
-.adhs-container.adhs-inappbrowser-openinsafari
-  .adhs-modal
-  .adhs-list
-  .adhs-more-button {
-  height: 35px;
-  background: white;
-  margin: 0px 5px -11px 5px;
-  box-shadow: 1px 1px 2px gray;
-  border-radius: 4px;
+/* RTL In-App Safari Browser Arrow */
+.adhs-container.adhs-rtl.adhs-inappbrowser-openinsafari .adhs-inappbrowser-openinsafari-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 15px;
+  transform: scaleX(-1);
+  animation: adhs-inappbrowser-openinsafari-bouncing-arrow-animation-rtl 1.5s infinite;
 }
 
+/* Desktop Specific */
 .adhs-container.adhs-desktop .adhs-modal {
   background-color: #f5f5f5;
   border-radius: 7px;
@@ -619,11 +694,15 @@
   max-width: 400px;
 }
 
+/* RTL Desktop */
+.adhs-container.adhs-rtl.adhs-desktop .adhs-modal {
+  padding: 45px 40px 28px 45px;
+}
+
+/* Install App Header */
 .adhs-container .adhs-modal .adhs-install-app {
-  /* font-size: 22px; */
   font-weight: 600;
   text-align: center;
-  /* margin: 0px 0px 0px 0px; */
   padding: 0px;
 }
 
@@ -637,8 +716,8 @@
   margin: -2px 0px 0px 0px;
 }
 
+/* App Name */
 .adhs-container .adhs-modal .adhs-app-name {
-  /* font-size: 22px; */
   font-weight: 600;
   margin: 5px auto 1px auto;
   max-width: 100%;
@@ -657,6 +736,7 @@
   margin: 0px auto 18px auto;
 }
 
+/* App URL */
 .adhs-container .adhs-modal .adhs-app-url {
   font-size: 13px;
   font-weight: 300;
@@ -678,6 +758,8 @@
 .adhs-container.adhs-mobile .adhs-modal .adhs-app-url {
   margin: 0 auto 20px auto;
 }
+
+/* Blurb */
 .adhs-container .adhs-modal .adhs-blurb {
   font-size: 13px;
   font-weight: 400;
@@ -697,12 +779,20 @@
   margin-top: 12px;
 }
 
+/* Button Container */
 .adhs-container .adhs-modal .adhs-button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 11px;
 }
+
+/* RTL Button Container */
+.adhs-container.adhs-rtl .adhs-modal .adhs-button-container {
+  flex-direction: row-reverse;
+}
+
+/* Buttons */
 .adhs-container .adhs-modal .adhs-button {
   background-color: #1d64f0;
   color: white;
@@ -714,9 +804,8 @@
   border-radius: 9px;
 }
 
-.adhs-container.adhs-desktop-safari
-  .adhs-desktop-safari-bouncing-arrow-container
-  img {
+/* Desktop Safari Arrow */
+.adhs-container.adhs-desktop-safari .adhs-desktop-safari-bouncing-arrow-container img {
   height: 40px;
   position: absolute;
   top: 0;
@@ -724,3 +813,90 @@
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
 
+/* RTL Desktop Safari Arrow */
+.adhs-container.adhs-rtl.adhs-desktop-safari .adhs-desktop-safari-bouncing-arrow-container rtl-arrow img {
+  right: auto;
+  left: 88px;
+  transform: scaleX(-1);
+  animation: adhs-ios-chrome-bouncing-arrow-animation-rtl 1.5s infinite;
+}
+
+/* Emphasis */
+.adhs-container .adhs-modal .adhs-list .adhs-emphasis {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* RTL Emphasis */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-emphasis {
+  margin: 0 5px 0 0;
+}
+
+/* App Icon */
+.adhs-container .adhs-modal .adhs-list .adhs-your-app-icon {
+  height: 40px;
+  margin: 0px 5px -13px 5px;
+  border-radius: 6px;
+}
+
+/* RTL App Icon */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-your-app-icon {
+  margin: 0px 5px -13px 5px;
+}
+
+/* Error Button */
+.adhs-container .adhs-modal .adhs-error-copy-link-button {
+  background-color: white;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 19px;
+  padding: 5px;
+}
+
+/* RTL Global Image Flipping */
+/* .adhs-container.adhs-rtl .adhs-modal .adhs-list img[src*="add-to-home-screen"]  */
+/* .adhs-container.adhs-rtl .adhs-modal .adhs-list img[src*="button"], */
+.adhs-container.adhs-rtl .adhs-modal .adhs-list img[src*="sharing"],
+.adhs-container.adhs-rtl .adhs-modal .adhs-list img[src*="menu"],
+.adhs-container.adhs-rtl .adhs-modal .adhs-list img[src*="more"]
+{
+  transform: scaleX(-1);
+}
+
+/* RTL Text Direction */
+.adhs-container.adhs-rtl .adhs-modal,
+.adhs-container.adhs-rtl .adhs-modal .adhs-title,
+.adhs-container.adhs-rtl .adhs-modal .adhs-app-name,
+.adhs-container.adhs-rtl .adhs-modal .adhs-app-url,
+.adhs-container.adhs-rtl .adhs-modal .adhs-blurb,
+.adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-instruction,
+.adhs-container.adhs-rtl .adhs-modal .adhs-error-title,
+.adhs-container.adhs-rtl .adhs-modal .adhs-error-body {
+  text-align: right;
+  direction: rtl;
+}
+
+/* RTL Button Text */
+.adhs-container.adhs-rtl .adhs-modal .adhs-button {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Mobile Specific RTL Adjustments */
+@media (max-width: 768px) {
+  .adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-list-item .adhs-instruction {
+    padding-right: 9px;
+    padding-left: 0;
+  }
+  
+  .adhs-container.adhs-rtl .adhs-modal .adhs-list .adhs-number-container {
+    margin: 5px 0 0 5px;
+  }
+}
+
+/* High DPI Screen Adjustments */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .adhs-container.adhs-rtl .adhs-modal .adhs-list img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}

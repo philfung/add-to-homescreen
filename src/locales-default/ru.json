@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Добавить на главный экран",
+  "Add To Dock": "Добавить в док",
+  "An icon will be added to your Dock so you can quickly access this website.": "Значок будет добавлен в ваш док для быстрого доступа к этому веб-сайту.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Значок будет добавлен на ваш главный экран для быстрого доступа к этому веб-сайту.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Значок будет добавлен на вашу панель задач для быстрого доступа к этому веб-сайту.",
+  "Install": "Установить",
+  "Install %s": "Установить %s",
+  "Install app": "Установить приложение",
+  "Later": "Позже",
+  "Open in browser": "Открыть в браузере",
+  "Select %s from the menu that pops up.": "Выберите %s из появившегося меню.",
+  "Tap %s": "Нажмите %s",
+  "Tap %s in the browser bar.": "Нажмите %s в строке браузера.",
+  "Tap %s in the toolbar.": "Нажмите %s на панели инструментов.",
+  "Tap the %s button above.": "Нажмите кнопку %s выше.",
+  "Tap the %s button below to open your system browser.": "Нажмите кнопку %s ниже, чтобы открыть системный браузер.",
+  "Tap the %s button in the toolbar.": "Нажмите кнопку %s на панели инструментов.",
+  "Tap the %s button in the upper right corner.": "Нажмите кнопку %s в правом верхнем углу.",
+  "You may need to scroll down to find this menu item.": "Возможно, вам потребуется прокрутить вниз, чтобы найти этот пункт меню."
+}

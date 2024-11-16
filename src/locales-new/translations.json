@@ -1,0 +1,1372 @@
+//en
+{
+  "Add to Home Screen": "Add to Home Screen",
+  "Add To Dock": "Add To Dock",
+  "An icon will be added to your Dock so you can quickly access this website.": "An icon will be added to your Dock so you can quickly access this app.",
+  "An icon will be added to your home screen so you can quickly access this website.": "An icon will be added to your home screen so you can quickly access this app.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "An icon will be added to your Taskbar so you can quickly access this app.",
+  "Install": "Install",
+  "Install %s": "Install %s",
+  "Install app": "Install app",
+  "Later": "Later",
+  "Open in browser": "Open in browser",
+  "Select %s from the menu that pops up.": "Select %s from the menu that pops up.",
+  "Tap %s": "Tap %s",
+  "Tap %s in the browser bar.": "Tap %s in the browser bar.",
+  "Tap %s in the toolbar.": "Tap %s in the toolbar.",
+  "Tap the %s button above.": "Tap the %s button above.",
+  "Tap the %s button below to open your system browser.": "Tap the %s button below to open your system browser.",
+  "Tap the %s button in the toolbar.": "Tap the %s button in the toolbar.",
+  "Tap the %s button in the upper right corner.": "Tap the %s button in the upper right corner.",
+  "You may need to scroll down to find this menu item.": "You may need to scroll down to find this menu item."
+}
+
+//af
+{
+  "Add to Home Screen": "Voeg by tuisskerm",
+  "Add To Dock": "Voeg by dok",
+  "An icon will be added to your Dock so you can quickly access this website.": "'n Ikoon sal by jou dok gevoeg word sodat jy vinnig toegang tot hierdie program kan kry.",
+  "An icon will be added to your home screen so you can quickly access this website.": "'n Ikoon sal by jou tuisskerm gevoeg word sodat jy vinnig toegang tot hierdie program kan kry.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "'n Ikoon sal by jou taakbalk gevoeg word sodat jy vinnig toegang tot hierdie program kan kry.",
+  "Install": "Installeer",
+  "Install %s": "Installeer %s",
+  "Install app": "Installeer program",
+  "Later": "Later",
+  "Open in browser": "Maak oop in blaaier",
+  "Select %s from the menu that pops up.": "Kies %s uit die spyskaart wat verskyn.",
+  "Tap %s": "Tik %s",
+  "Tap %s in the browser bar.": "Tik %s in die blaaier-balk.",
+  "Tap %s in the toolbar.": "Tik %s in die nutsbalk.",
+  "Tap the %s button above.": "Tik die %s knoppie hierbo.",
+  "Tap the %s button below to open your system browser.": "Tik die %s knoppie hieronder om jou stelselblaaier oop te maak.",
+  "Tap the %s button in the toolbar.": "Tik die %s knoppie in die nutsbalk.",
+  "Tap the %s button in the upper right corner.": "Tik die %s knoppie in die boonste regterkantste hoek.",
+  "You may need to scroll down to find this menu item.": "Jy mag moet afrol om hierdie spyskaart-item te vind."
+}
+
+//am
+{
+  "Add to Home Screen": "ወደ መነሻ ማያ ገጽ አክል",
+  "Add To Dock": "ወደ ዶክ አክል",
+  "An icon will be added to your Dock so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በዶክዎ ላይ አዶ ይጨመራል።",
+  "An icon will be added to your home screen so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በመነሻ ማያ ገጽዎ ላይ አዶ ይጨመራል።",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "ይህን መተግበሪያ በፍጥነት ለመድረስ እንዲችሉ በሥራ መደርደሪያዎ ላይ አዶ ይጨመራል።",
+  "Install": "ጫን",
+  "Install %s": "%s ጫን",
+  "Install app": "መተግበሪያ ጫን",
+  "Later": "በኋላ",
+  "Open in browser": "በአሳሽ ውስጥ ክፈት",
+  "Select %s from the menu that pops up.": "ከሚታየው ምናሌ %s ይምረጡ።",
+  "Tap %s": "%s ይንኩ",
+  "Tap %s in the browser bar.": "በአሳሹ አሞሌ ውስጥ %s ይንኩ።",
+  "Tap %s in the toolbar.": "በመሣሪያ አሞሌ ውስጥ %s ይንኩ።",
+  "Tap the %s button above.": "ከላይ ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button below to open your system browser.": "የስርዓትዎን አሳሽ ለመክፈት ከታች ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button in the toolbar.": "በመሣሪያ አሞሌ ውስጥ ያለውን %s አዝራር ይንኩ።",
+  "Tap the %s button in the upper right corner.": "በላይኛው የቀኝ ጎን ማዕዘን ያለውን %s አዝራር ይንኩ።",
+  "You may need to scroll down to find this menu item.": "ይህን የምናሌ ንጥል ለማግኘት ወደ ታች ማንሸራተት ሊያስፈልግዎት ይችላል።"
+}
+
+//ar
+{
+  "Add to Home Screen": "إضافة إلى الشاشة الرئيسية",
+  "Add To Dock": "إضافة إلى المرسى",
+  "An icon will be added to your Dock so you can quickly access this website.": "سيتم إضافة أيقونة إلى المرسى للوصول السريع إلى هذا التطبيق.",
+  "An icon will be added to your home screen so you can quickly access this website.": "سيتم إضافة أيقونة إلى شاشتك الرئيسية للوصول السريع إلى هذا التطبيق.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "سيتم إضافة أيقونة إلى شريط المهام للوصول السريع إلى هذا التطبيق.",
+  "Install": "تثبيت",
+  "Install %s": "تثبيت %s",
+  "Install app": "تثبيت التطبيق",
+  "Later": "لاحقاً",
+  "Open in browser": "فتح في المتصفح",
+  "Select %s from the menu that pops up.": "اختر %s من القائمة المنبثقة.",
+  "Tap %s": "انقر على %s",
+  "Tap %s in the browser bar.": "انقر على %s في شريط المتصفح.",
+  "Tap %s in the toolbar.": "انقر على %s في شريط الأدوات.",
+  "Tap the %s button above.": "انقر على زر %s أعلاه.",
+  "Tap the %s button below to open your system browser.": "انقر على زر %s أدناه لفتح متصفح النظام.",
+  "Tap the %s button in the toolbar.": "انقر على زر %s في شريط الأدوات.",
+  "Tap the %s button in the upper right corner.": "انقر على زر %s في الزاوية العلوية اليمنى.",
+  "You may need to scroll down to find this menu item.": "قد تحتاج إلى التمرير لأسفل للعثور على عنصر القائمة هذا."
+}
+
+//az
+{
+  "Add to Home Screen": "Ana ekrana əlavə et",
+  "Add To Dock": "Doka əlavə et", 
+  "An icon will be added to your Dock so you can quickly access this website.": "Bu tətbiqə tez daxil olmaq üçün Dokunuza nişan əlavə ediləcək.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Bu tətbiqə tez daxil olmaq üçün ana ekranınıza nişan əlavə ediləcək.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Bu tətbiqə tez daxil olmaq üçün tapşırıq panelinizə nişan əlavə ediləcək.",
+  "Install": "Quraşdır",
+  "Install %s": "%s quraşdır",
+  "Install app": "Tətbiqi quraşdır",
+  "Later": "Sonra",
+  "Open in browser": "Brauzerdə aç",
+  "Select %s from the menu that pops up.": "Açılan menyudan %s seçin.",
+  "Tap %s": "%s toxunun",
+  "Tap %s in the browser bar.": "Brauzer panelində %s toxunun.",
+  "Tap %s in the toolbar.": "Alət panelində %s toxunun.",
+  "Tap the %s button above.": "Yuxarıdakı %s düyməsinə toxunun.",
+  "Tap the %s button below to open your system browser.": "Sistem brauzerinizi açmaq üçün aşağıdakı %s düyməsinə toxunun.",
+  "Tap the %s button in the toolbar.": "Alət panelindəki %s düyməsinə toxunun.",
+  "Tap the %s button in the upper right corner.": "Yuxarı sağ küncdəki %s düyməsinə toxunun.",
+  "You may need to scroll down to find this menu item.": "Bu menyu elementini tapmaq üçün aşağı sürüşdürmə lazım ola bilər."
+}
+
+//bg
+{
+    "Add to Home Screen": "Добави към началния екран",
+    "Add To Dock": "Добави към док",
+    "An icon will be added to your Dock so you can quickly access this website.": "Икона ще бъде добавена към вашия док за бърз достъп до това приложение.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Икона ще бъде добавена към началния ви екран за бърз достъп до това приложение.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Икона ще бъде добавена към лентата със задачи за бърз достъп до това приложение.",
+    "Install": "Инсталирай",
+    "Install %s": "Инсталирай %s",
+    "Install app": "Инсталирай приложението",
+    "Later": "По-късно",
+    "Open in browser": "Отвори в браузър",
+    "Select %s from the menu that pops up.": "Изберете %s от изскачащото меню.",
+    "Tap %s": "Докоснете %s",
+    "Tap %s in the browser bar.": "Докоснете %s в лентата на браузъра.",
+    "Tap %s in the toolbar.": "Докоснете %s в лентата с инструменти.",
+    "Tap the %s button above.": "Докоснете бутона %s по-горе.",
+    "Tap the %s button below to open your system browser.": "Докоснете бутона %s по-долу, за да отворите системния браузър.",
+    "Tap the %s button in the toolbar.": "Докоснете бутона %s в лентата с инструменти.",
+    "Tap the %s button in the upper right corner.": "Докоснете бутона %s в горния десен ъгъл.",
+    "You may need to scroll down to find this menu item.": "Може да се наложи да превъртите надолу, за да намерите този елемент от менюто."
+  }
+  
+  //bn
+  {
+    "Add to Home Screen": "হোম স্ক্রিনে যোগ করুন",
+    "Add To Dock": "ডকে যোগ করুন",
+    "An icon will be added to your Dock so you can quickly access this website.": "আপনার ডকে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+    "An icon will be added to your home screen so you can quickly access this website.": "আপনার হোম স্ক্রিনে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "আপনার টাস্কবারে একটি আইকন যোগ করা হবে যাতে আপনি দ্রুত এই অ্যাপটি অ্যাক্সেস করতে পারেন।",
+    "Install": "ইনস্টল করুন",
+    "Install %s": "%s ইনস্টল করুন",
+    "Install app": "অ্যাপ ইনস্টল করুন",
+    "Later": "পরে",
+    "Open in browser": "ব্রাউজারে খুলুন",
+    "Select %s from the menu that pops up.": "পপ-আপ মেনু থেকে %s নির্বাচন করুন।",
+    "Tap %s": "%s-এ ট্যাপ করুন",
+    "Tap %s in the browser bar.": "ব্রাউজার বারে %s-এ ট্যাপ করুন।",
+    "Tap %s in the toolbar.": "টুলবারে %s-এ ট্যাপ করুন।",
+    "Tap the %s button above.": "উপরের %s বোতামে ট্যাপ করুন।",
+    "Tap the %s button below to open your system browser.": "আপনার সিস্টেম ব্রাউজার খোলার জন্য নীচের %s বোতামে ট্যাপ করুন।",
+    "Tap the %s button in the toolbar.": "টুলবারে %s বোতামে ট্যাপ করুন।",
+    "Tap the %s button in the upper right corner.": "উপরের ডান কোণের %s বোতামে ট্যাপ করুন।",
+    "You may need to scroll down to find this menu item.": "এই মেনু আইটেমটি খুঁজে পেতে আপনাকে নীচে স্ক্রল করতে হতে পারে।"
+  }
+  
+  //bs
+  {
+    "Add to Home Screen": "Dodaj na početni ekran",
+    "Add To Dock": "Dodaj na dok",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikona će biti dodana na vaš dok za brzi pristup ovoj aplikaciji.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikona će biti dodana na vaš početni ekran za brzi pristup ovoj aplikaciji.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikona će biti dodana na vašu traku zadataka za brzi pristup ovoj aplikaciji.",
+    "Install": "Instaliraj",
+    "Install %s": "Instaliraj %s",
+    "Install app": "Instaliraj aplikaciju",
+    "Later": "Kasnije",
+    "Open in browser": "Otvori u pregledniku",
+    "Select %s from the menu that pops up.": "Odaberite %s iz iskačućeg menija.",
+    "Tap %s": "Dodirnite %s",
+    "Tap %s in the browser bar.": "Dodirnite %s u traci preglednika.",
+    "Tap %s in the toolbar.": "Dodirnite %s u traci s alatima.",
+    "Tap the %s button above.": "Dodirnite dugme %s iznad.",
+    "Tap the %s button below to open your system browser.": "Dodirnite dugme %s ispod da otvorite sistemski preglednik.",
+    "Tap the %s button in the toolbar.": "Dodirnite dugme %s u traci s alatima.",
+    "Tap the %s button in the upper right corner.": "Dodirnite dugme %s u gornjem desnom uglu.",
+    "You may need to scroll down to find this menu item.": "Možda ćete trebati da se pomjerite prema dolje da pronađete ovu stavku menija."
+  }
+  
+  //cs
+  {
+    "Add to Home Screen": "Přidat na domovskou obrazovku",
+    "Add To Dock": "Přidat do doku",
+    "An icon will be added to your Dock so you can quickly access this website.": "Do vašeho doku bude přidána ikona pro rychlý přístup k této aplikaci.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Na vaši domovskou obrazovku bude přidána ikona pro rychlý přístup k této aplikaci.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Na panel úloh bude přidána ikona pro rychlý přístup k této aplikaci.",
+    "Install": "Instalovat",
+    "Install %s": "Instalovat %s",
+    "Install app": "Instalovat aplikaci",
+    "Later": "Později",
+    "Open in browser": "Otevřít v prohlížeči",
+    "Select %s from the menu that pops up.": "Vyberte %s z vyskakovací nabídky.",
+    "Tap %s": "Klepněte na %s",
+    "Tap %s in the browser bar.": "Klepněte na %s v liště prohlížeče.",
+    "Tap %s in the toolbar.": "Klepněte na %s v panelu nástrojů.",
+    "Tap the %s button above.": "Klepněte na tlačítko %s výše.",
+    "Tap the %s button below to open your system browser.": "Klepnutím na tlačítko %s níže otevřete systémový prohlížeč.",
+    "Tap the %s button in the toolbar.": "Klepněte na tlačítko %s v panelu nástrojů.",
+    "Tap the %s button in the upper right corner.": "Klepněte na tlačítko %s v pravém horním rohu.",
+    "You may need to scroll down to find this menu item.": "Možná budete muset posunout dolů, abyste našli tuto položku nabídky."
+  }
+  
+  //cy
+  {
+    "Add to Home Screen": "Ychwanegu at Sgrin Cartref",
+    "Add To Dock": "Ychwanegu at y Doc",
+    "An icon will be added to your Dock so you can quickly access this website.": "Bydd eicon yn cael ei ychwanegu at eich Doc fel y gallwch gael mynediad cyflym at yr ap hwn.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Bydd eicon yn cael ei ychwanegu at eich sgrin cartref fel y gallwch gael mynediad cyflym at yr ap hwn.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Bydd eicon yn cael ei ychwanegu at eich Bar Tasgau fel y gallwch gael mynediad cyflym at yr ap hwn.",
+    "Install": "Gosod",
+    "Install %s": "Gosod %s",
+    "Install app": "Gosod ap",
+    "Later": "Yn ddiweddarach",
+    "Open in browser": "Agor yn y porwr",
+    "Select %s from the menu that pops up.": "Dewiswch %s o'r ddewislen sy'n ymddangos.",
+    "Tap %s": "Tapiwch %s",
+    "Tap %s in the browser bar.": "Tapiwch %s yn y bar porwr.",
+    "Tap %s in the toolbar.": "Tapiwch %s yn y bar offer.",
+    "Tap the %s button above.": "Tapiwch y botwm %s uchod.",
+    "Tap the %s button below to open your system browser.": "Tapiwch y botwm %s isod i agor eich porwr system.",
+    "Tap the %s button in the toolbar.": "Tapiwch y botwm %s yn y bar offer.",
+    "Tap the %s button in the upper right corner.": "Tapiwch y botwm %s yn y gornel dde uchaf.",
+    "You may need to scroll down to find this menu item.": "Efallai y bydd angen i chi sgrolio i lawr i ddod o hyd i'r eitem ddewislen hon."
+  }
+  
+  //da
+  {
+    "Add to Home Screen": "Føj til startskærm",
+    "Add To Dock": "Føj til dok",
+    "An icon will be added to your Dock so you can quickly access this website.": "Et ikon vil blive tilføjet til din dok, så du hurtigt kan få adgang til denne app.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Et ikon vil blive tilføjet til din startskærm, så du hurtigt kan få adgang til denne app.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Et ikon vil blive tilføjet til din proceslinje, så du hurtigt kan få adgang til denne app.",
+    "Install": "Installer",
+    "Install %s": "Installer %s",
+    "Install app": "Installer app",
+    "Later": "Senere",
+    "Open in browser": "Åbn i browser",
+    "Select %s from the menu that pops up.": "Vælg %s fra menuen, der popper op.",
+    "Tap %s": "Tryk på %s",
+    "Tap %s in the browser bar.": "Tryk på %s i browserlinjen.",
+    "Tap %s in the toolbar.": "Tryk på %s i værktøjslinjen.",
+    "Tap the %s button above.": "Tryk på %s-knappen ovenfor.",
+    "Tap the %s button below to open your system browser.": "Tryk på %s-knappen nedenfor for at åbne din systembrowser.",
+    "Tap the %s button in the toolbar.": "Tryk på %s-knappen i værktøjslinjen.",
+    "Tap the %s button in the upper right corner.": "Tryk på %s-knappen i øverste højre hjørne.",
+    "You may need to scroll down to find this menu item.": "Du skal muligvis rulle ned for at finde dette menupunkt."
+  }
+  
+
+
+  //de
+{
+    "Add to Home Screen": "Zum Startbildschirm hinzufügen",
+    "Add To Dock": "Zum Dock hinzufügen",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ein Symbol wird zu Ihrem Dock hinzugefügt, damit Sie schnell auf diese App zugreifen können.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ein Symbol wird zu Ihrem Startbildschirm hinzugefügt, damit Sie schnell auf diese App zugreifen können.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ein Symbol wird zu Ihrer Taskleiste hinzugefügt, damit Sie schnell auf diese App zugreifen können.",
+    "Install": "Installieren",
+    "Install %s": "%s installieren",
+    "Install app": "App installieren",
+    "Later": "Später",
+    "Open in browser": "Im Browser öffnen",
+    "Select %s from the menu that pops up.": "Wählen Sie %s aus dem Popup-Menü.",
+    "Tap %s": "Tippen Sie auf %s",
+    "Tap %s in the browser bar.": "Tippen Sie auf %s in der Browserleiste.",
+    "Tap %s in the toolbar.": "Tippen Sie auf %s in der Werkzeugleiste.",
+    "Tap the %s button above.": "Tippen Sie auf die %s-Schaltfläche oben.",
+    "Tap the %s button below to open your system browser.": "Tippen Sie auf die %s-Schaltfläche unten, um Ihren Systembrowser zu öffnen.",
+    "Tap the %s button in the toolbar.": "Tippen Sie auf die %s-Schaltfläche in der Werkzeugleiste.",
+    "Tap the %s button in the upper right corner.": "Tippen Sie auf die %s-Schaltfläche in der oberen rechten Ecke.",
+    "You may need to scroll down to find this menu item.": "Sie müssen möglicherweise nach unten scrollen, um diesen Menüpunkt zu finden."
+  }
+  
+  //el
+  {
+    "Add to Home Screen": "Προσθήκη στην αρχική οθόνη",
+    "Add To Dock": "Προσθήκη στο Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Θα προστεθεί ένα εικονίδιο στο Dock σας για γρήγορη πρόσβαση σε αυτή την εφαρμογή.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Θα προστεθεί ένα εικονίδιο στην αρχική σας οθόνη για γρήγορη πρόσβαση σε αυτή την εφαρμογή.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Θα προστεθεί ένα εικονίδιο στη γραμμή εργασιών σας για γρήγορη πρόσβαση σε αυτή την εφαρμογή.",
+    "Install": "Εγκατάσταση",
+    "Install %s": "Εγκατάσταση %s",
+    "Install app": "Εγκατάσταση εφαρμογής",
+    "Later": "Αργότερα",
+    "Open in browser": "Άνοιγμα στον περιηγητή",
+    "Select %s from the menu that pops up.": "Επιλέξτε %s από το αναδυόμενο μενού.",
+    "Tap %s": "Πατήστε %s",
+    "Tap %s in the browser bar.": "Πατήστε %s στη γραμμή του περιηγητή.",
+    "Tap %s in the toolbar.": "Πατήστε %s στη γραμμή εργαλείων.",
+    "Tap the %s button above.": "Πατήστε το κουμπί %s παραπάνω.",
+    "Tap the %s button below to open your system browser.": "Πατήστε το κουμπί %s παρακάτω για να ανοίξετε τον περιηγητή του συστήματός σας.",
+    "Tap the %s button in the toolbar.": "Πατήστε το κουμπί %s στη γραμμή εργαλείων.",
+    "Tap the %s button in the upper right corner.": "Πατήστε το κουμπί %s στην πάνω δεξιά γωνία.",
+    "You may need to scroll down to find this menu item.": "Ίσως χρειαστεί να κάνετε κύλιση προς τα κάτω για να βρείτε αυτό το στοιχείο μενού."
+  }
+  
+  //es
+  {
+    "Add to Home Screen": "Añadir a pantalla de inicio",
+    "Add To Dock": "Añadir al Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Se añadirá un icono a tu Dock para que puedas acceder rápidamente a esta aplicación.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Se añadirá un icono a tu pantalla de inicio para que puedas acceder rápidamente a esta aplicación.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Se añadirá un icono a tu barra de tareas para que puedas acceder rápidamente a esta aplicación.",
+    "Install": "Instalar",
+    "Install %s": "Instalar %s",
+    "Install app": "Instalar aplicación",
+    "Later": "Más tarde",
+    "Open in browser": "Abrir en navegador",
+    "Select %s from the menu that pops up.": "Selecciona %s del menú emergente.",
+    "Tap %s": "Toca %s",
+    "Tap %s in the browser bar.": "Toca %s en la barra del navegador.",
+    "Tap %s in the toolbar.": "Toca %s en la barra de herramientas.",
+    "Tap the %s button above.": "Toca el botón %s arriba.",
+    "Tap the %s button below to open your system browser.": "Toca el botón %s abajo para abrir tu navegador del sistema.",
+    "Tap the %s button in the toolbar.": "Toca el botón %s en la barra de herramientas.",
+    "Tap the %s button in the upper right corner.": "Toca el botón %s en la esquina superior derecha.",
+    "You may need to scroll down to find this menu item.": "Es posible que necesites desplazarte hacia abajo para encontrar este elemento del menú."
+  }
+  
+  //et
+  {
+    "Add to Home Screen": "Lisa avakuvale",
+    "Add To Dock": "Lisa dokki",
+    "An icon will be added to your Dock so you can quickly access this website.": "Teie dokki lisatakse ikoon, et saaksite kiiresti sellele rakendusele ligi pääseda.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Teie avakuvale lisatakse ikoon, et saaksite kiiresti sellele rakendusele ligi pääseda.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Teie tegumiribale lisatakse ikoon, et saaksite kiiresti sellele rakendusele ligi pääseda.",
+    "Install": "Installi",
+    "Install %s": "Installi %s",
+    "Install app": "Installi rakendus",
+    "Later": "Hiljem",
+    "Open in browser": "Ava brauseris",
+    "Select %s from the menu that pops up.": "Vali hüpikmenüüst %s.",
+    "Tap %s": "Puuduta %s",
+    "Tap %s in the browser bar.": "Puuduta brauseriribalt %s.",
+    "Tap %s in the toolbar.": "Puuduta tööriistaribalt %s.",
+    "Tap the %s button above.": "Puuduta ülal olevat %s nuppu.",
+    "Tap the %s button below to open your system browser.": "Puuduta all olevat %s nuppu, et avada süsteemi brauser.",
+    "Tap the %s button in the toolbar.": "Puuduta tööriistaribalt %s nuppu.",
+    "Tap the %s button in the upper right corner.": "Puuduta paremas ülanurgas olevat %s nuppu.",
+    "You may need to scroll down to find this menu item.": "Selle menüükirje leidmiseks võib olla vaja alla kerida."
+  }
+  
+  //fa
+  {
+    "Add to Home Screen": "افزودن به صفحه اصلی",
+    "Add To Dock": "افزودن به داک",
+    "An icon will be added to your Dock so you can quickly access this website.": "یک نماد به داک شما اضافه می‌شود تا بتوانید به سرعت به این برنامه دسترسی پیدا کنید.",
+    "An icon will be added to your home screen so you can quickly access this website.": "یک نماد به صفحه اصلی شما اضافه می‌شود تا بتوانید به سرعت به این برنامه دسترسی پیدا کنید.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "یک نماد به نوار وظیفه شما اضافه می‌شود تا بتوانید به سرعت به این برنامه دسترسی پیدا کنید.",
+    "Install": "نصب",
+    "Install %s": "نصب %s",
+    "Install app": "نصب برنامه",
+    "Later": "بعداً",
+    "Open in browser": "باز کردن در مرورگر",
+    "Select %s from the menu that pops up.": "%s را از منوی بازشو انتخاب کنید.",
+    "Tap %s": "روی %s ضربه بزنید",
+    "Tap %s in the browser bar.": "در نوار مرورگر روی %s ضربه بزنید.",
+    "Tap %s in the toolbar.": "در نوار ابزار روی %s ضربه بزنید.",
+    "Tap the %s button above.": "روی دکمه %s در بالا ضربه بزنید.",
+    "Tap the %s button below to open your system browser.": "برای باز کردن مرورگر سیستم خود، روی دکمه %s در پایین ضربه بزنید.",
+    "Tap the %s button in the toolbar.": "روی دکمه %s در نوار ابزار ضربه بزنید.",
+    "Tap the %s button in the upper right corner.": "روی دکمه %s در گوشه بالا سمت راست ضربه بزنید.",
+    "You may need to scroll down to find this menu item.": "ممکن است برای پیدا کردن این گزینه منو نیاز به پیمایش به پایین داشته باشید."
+  }
+  
+
+
+  //fi
+{
+    "Add to Home Screen": "Lisää kotinäyttöön",
+    "Add To Dock": "Lisää telakkaan",
+    "An icon will be added to your Dock so you can quickly access this website.": "Kuvake lisätään telakkaasi, jotta voit käyttää tätä sovellusta nopeasti.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Kuvake lisätään kotinäytöllesi, jotta voit käyttää tätä sovellusta nopeasti.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Kuvake lisätään tehtäväpalkkiisi, jotta voit käyttää tätä sovellusta nopeasti.",
+    "Install": "Asenna",
+    "Install %s": "Asenna %s",
+    "Install app": "Asenna sovellus",
+    "Later": "Myöhemmin",
+    "Open in browser": "Avaa selaimessa",
+    "Select %s from the menu that pops up.": "Valitse %s esiin tulevasta valikosta.",
+    "Tap %s": "Napauta %s",
+    "Tap %s in the browser bar.": "Napauta %s selaimen palkissa.",
+    "Tap %s in the toolbar.": "Napauta %s työkalupalkissa.",
+    "Tap the %s button above.": "Napauta yllä olevaa %s-painiketta.",
+    "Tap the %s button below to open your system browser.": "Napauta alla olevaa %s-painiketta avataksesi järjestelmäselaimen.",
+    "Tap the %s button in the toolbar.": "Napauta %s-painiketta työkalupalkissa.",
+    "Tap the %s button in the upper right corner.": "Napauta %s-painiketta oikeassa yläkulmassa.",
+    "You may need to scroll down to find this menu item.": "Saatat joutua vierittämään alas löytääksesi tämän valikkokohdan."
+  }
+  
+  //fr
+  {
+    "Add to Home Screen": "Ajouter à l'écran d'accueil",
+    "Add To Dock": "Ajouter au Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Une icône sera ajoutée à votre Dock pour accéder rapidement à cette application.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Une icône sera ajoutée à votre écran d'accueil pour accéder rapidement à cette application.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Une icône sera ajoutée à votre barre des tâches pour accéder rapidement à cette application.",
+    "Install": "Installer",
+    "Install %s": "Installer %s",
+    "Install app": "Installer l'application",
+    "Later": "Plus tard",
+    "Open in browser": "Ouvrir dans le navigateur",
+    "Select %s from the menu that pops up.": "Sélectionnez %s dans le menu qui apparaît.",
+    "Tap %s": "Appuyez sur %s",
+    "Tap %s in the browser bar.": "Appuyez sur %s dans la barre du navigateur.",
+    "Tap %s in the toolbar.": "Appuyez sur %s dans la barre d'outils.",
+    "Tap the %s button above.": "Appuyez sur le bouton %s ci-dessus.",
+    "Tap the %s button below to open your system browser.": "Appuyez sur le bouton %s ci-dessous pour ouvrir votre navigateur système.",
+    "Tap the %s button in the toolbar.": "Appuyez sur le bouton %s dans la barre d'outils.",
+    "Tap the %s button in the upper right corner.": "Appuyez sur le bouton %s dans le coin supérieur droit.",
+    "You may need to scroll down to find this menu item.": "Vous devrez peut-être faire défiler vers le bas pour trouver cet élément du menu."
+  }
+  
+  //ga
+  {
+    "Add to Home Screen": "Cuir leis an Scáileán Baile",
+    "Add To Dock": "Cuir leis an Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Cuirfear deilbhín le do Dock ionas gur féidir leat teacht ar an aip seo go tapa.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Cuirfear deilbhín le do scáileán baile ionas gur féidir leat teacht ar an aip seo go tapa.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Cuirfear deilbhín le do bharra tascanna ionas gur féidir leat teacht ar an aip seo go tapa.",
+    "Install": "Suiteáil",
+    "Install %s": "Suiteáil %s",
+    "Install app": "Suiteáil an aip",
+    "Later": "Níos déanaí",
+    "Open in browser": "Oscail sa bhrabhsálaí",
+    "Select %s from the menu that pops up.": "Roghnaigh %s ón roghchlár aníos.",
+    "Tap %s": "Tapáil %s",
+    "Tap %s in the browser bar.": "Tapáil %s sa bharra brabhsálaí.",
+    "Tap %s in the toolbar.": "Tapáil %s sa bharra uirlisí.",
+    "Tap the %s button above.": "Tapáil an cnaipe %s thuas.",
+    "Tap the %s button below to open your system browser.": "Tapáil an cnaipe %s thíos chun do bhrabhsálaí córais a oscailt.",
+    "Tap the %s button in the toolbar.": "Tapáil an cnaipe %s sa bharra uirlisí.",
+    "Tap the %s button in the upper right corner.": "Tapáil an cnaipe %s sa chúinne uachtarach ar dheis.",
+    "You may need to scroll down to find this menu item.": "B'fhéidir go mbeidh ort scrollú síos chun an mhír roghchláir seo a aimsiú."
+  }
+  
+  //he
+  {
+    "Add to Home Screen": "הוסף למסך הבית",
+    "Add To Dock": "הוסף לדוק",
+    "An icon will be added to your Dock so you can quickly access this website.": "סמל יתווסף לדוק שלך כדי שתוכל לגשת במהירות לאפליקציה זו.",
+    "An icon will be added to your home screen so you can quickly access this website.": "סמל יתווסף למסך הבית שלך כדי שתוכל לגשת במהירות לאפליקציה זו.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "סמל יתווסף לשורת המשימות שלך כדי שתוכל לגשת במהירות לאפליקציה זו.",
+    "Install": "התקן",
+    "Install %s": "התקן את %s",
+    "Install app": "התקן אפליקציה",
+    "Later": "מאוחר יותר",
+    "Open in browser": "פתח בדפדפן",
+    "Select %s from the menu that pops up.": "בחר %s מהתפריט הקופץ.",
+    "Tap %s": "הקש על %s",
+    "Tap %s in the browser bar.": "הקש על %s בשורת הדפדפן.",
+    "Tap %s in the toolbar.": "הקש על %s בסרגל הכלים.",
+    "Tap the %s button above.": "הקש על הכפתור %s למעלה.",
+    "Tap the %s button below to open your system browser.": "הקש על הכפתור %s למטה כדי לפתוח את דפדפן המערכת שלך.",
+    "Tap the %s button in the toolbar.": "הקש על הכפתור %s בסרגל הכלים.",
+    "Tap the %s button in the upper right corner.": "הקש על הכפתור %s בפינה השמאלית העליונה.",
+    "You may need to scroll down to find this menu item.": "ייתכן שתצטרך לגלול למטה כדי למצוא את פריט התפריט הזה."
+  }
+  
+  //hi
+  {
+    "Add to Home Screen": "होम स्क्रीन में जोड़ें",
+    "Add To Dock": "डॉक में जोड़ें",
+    "An icon will be added to your Dock so you can quickly access this website.": "आपके डॉक में एक आइकन जोड़ा जाएगा ताकि आप इस ऐप को जल्दी से एक्सेस कर सकें।",
+    "An icon will be added to your home screen so you can quickly access this website.": "आपकी होम स्क्रीन में एक आइकन जोड़ा जाएगा ताकि आप इस ऐप को जल्दी से एक्सेस कर सकें।",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "आपके टास्कबार में एक आइकन जोड़ा जाएगा ताकि आप इस ऐप को जल्दी से एक्सेस कर सकें।",
+    "Install": "इंस्टॉल करें",
+    "Install %s": "%s इंस्टॉल करें",
+    "Install app": "ऐप इंस्टॉल करें",
+    "Later": "बाद में",
+    "Open in browser": "ब्राउज़र में खोलें",
+    "Select %s from the menu that pops up.": "पॉप अप मेनू से %s चुनें।",
+    "Tap %s": "%s पर टैप करें",
+    "Tap %s in the browser bar.": "ब्राउज़र बार में %s पर टैप करें।",
+    "Tap %s in the toolbar.": "टूलबार में %s पर टैप करें।",
+    "Tap the %s button above.": "ऊपर दिए गए %s बटन पर टैप करें।",
+    "Tap the %s button below to open your system browser.": "अपना सिस्टम ब्राउज़र खोलने के लिए नीचे दिए गए %s बटन पर टैप करें।",
+    "Tap the %s button in the toolbar.": "टूलबार में %s बटन पर टैप करें।",
+    "Tap the %s button in the upper right corner.": "ऊपरी दाएं कोने में %s बटन पर टैप करें।",
+    "You may need to scroll down to find this menu item.": "इस मेनू आइटम को खोजने के लिए आपको नीचे स्क्रॉल करना पड़ सकता है।"
+  }
+  
+
+
+  //hr
+{
+    "Add to Home Screen": "Dodaj na početni zaslon",
+    "Add To Dock": "Dodaj u Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikona će biti dodana u vaš Dock za brzi pristup ovoj aplikaciji.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikona će biti dodana na vaš početni zaslon za brzi pristup ovoj aplikaciji.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikona će biti dodana na vašu programsku traku za brzi pristup ovoj aplikaciji.",
+    "Install": "Instaliraj",
+    "Install %s": "Instaliraj %s",
+    "Install app": "Instaliraj aplikaciju",
+    "Later": "Kasnije",
+    "Open in browser": "Otvori u pregledniku",
+    "Select %s from the menu that pops up.": "Odaberite %s iz skočnog izbornika.",
+    "Tap %s": "Dodirnite %s",
+    "Tap %s in the browser bar.": "Dodirnite %s u traci preglednika.",
+    "Tap %s in the toolbar.": "Dodirnite %s u alatnoj traci.",
+    "Tap the %s button above.": "Dodirnite gumb %s iznad.",
+    "Tap the %s button below to open your system browser.": "Dodirnite gumb %s ispod za otvaranje sistemskog preglednika.",
+    "Tap the %s button in the toolbar.": "Dodirnite gumb %s u alatnoj traci.",
+    "Tap the %s button in the upper right corner.": "Dodirnite gumb %s u gornjem desnom kutu.",
+    "You may need to scroll down to find this menu item.": "Možda ćete se trebati pomaknuti prema dolje da biste pronašli ovu stavku izbornika."
+  }
+  
+  //hu
+  {
+    "Add to Home Screen": "Hozzáadás a kezdőképernyőhöz",
+    "Add To Dock": "Hozzáadás a Dockhoz",
+    "An icon will be added to your Dock so you can quickly access this website.": "Egy ikon kerül a Dockba, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Egy ikon kerül a kezdőképernyőre, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Egy ikon kerül a tálcára, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+    "Install": "Telepítés",
+    "Install %s": "%s telepítése",
+    "Install app": "Alkalmazás telepítése",
+    "Later": "Később",
+    "Open in browser": "Megnyitás böngészőben",
+    "Select %s from the menu that pops up.": "Válassza ki a %s elemet az előugró menüből.",
+    "Tap %s": "Koppintson a(z) %s elemre",
+    "Tap %s in the browser bar.": "Koppintson a(z) %s elemre a böngésző sávjában.",
+    "Tap %s in the toolbar.": "Koppintson a(z) %s elemre az eszköztárban.",
+    "Tap the %s button above.": "Koppintson a fenti %s gombra.",
+    "Tap the %s button below to open your system browser.": "Koppintson az alábbi %s gombra a rendszerböngésző megnyitásához.",
+    "Tap the %s button in the toolbar.": "Koppintson a(z) %s gombra az eszköztárban.",
+    "Tap the %s button in the upper right corner.": "Koppintson a(z) %s gombra a jobb felső sarokban.",
+    "You may need to scroll down to find this menu item.": "Lehet, hogy le kell görgetnie, hogy megtalálja ezt a menüelemet."
+  }
+  
+  //hy
+  {
+    "Add to Home Screen": "Ավելացնել հիմնական էկրանին",
+    "Add To Dock": "Ավելացնել Dock-ում",
+    "An icon will be added to your Dock so you can quickly access this website.": "Պատկերակ կավելացվի ձեր Dock-ում, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+    "An icon will be added to your home screen so you can quickly access this website.": "Պատկերակ կավելացվի ձեր հիմնական էկրանին, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Պատկերակ կավելացվի ձեր առաջադրանքների գոտում, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+    "Install": "Տեղադրել",
+    "Install %s": "Տեղադրել %s",
+    "Install app": "Տեղադրել հավելվածը",
+    "Later": "Ավելի ուշ",
+    "Open in browser": "Բացել դիտարկիչում",
+    "Select %s from the menu that pops up.": "Ընտրեք %s հայտնվող ընտրացանկից:",
+    "Tap %s": "Հպեք %s",
+    "Tap %s in the browser bar.": "Հպեք %s դիտարկիչի գոտում:",
+    "Tap %s in the toolbar.": "Հպեք %s գործիքագոտում:",
+    "Tap the %s button above.": "Հպեք %s կոճակին վերևում:",
+    "Tap the %s button below to open your system browser.": "Հպեք %s կոճակին ներքևում՝ համակարգային դիտարկիչը բացելու համար:",
+    "Tap the %s button in the toolbar.": "Հպեք %s կոճակին գործիքագոտում:",
+    "Tap the %s button in the upper right corner.": "Հպեք %s կոճակին վերին աջ անկյունում:",
+    "You may need to scroll down to find this menu item.": "Հնարավոր է՝ պետք լինի ներքև գլորել՝ այս ընտրացանկի տարրը գտնելու համար:"
+  }
+  
+  //id
+  {
+    "Add to Home Screen": "Tambahkan ke Layar Utama",
+    "Add To Dock": "Tambahkan ke Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikon akan ditambahkan ke Dock Anda agar Anda dapat mengakses aplikasi ini dengan cepat.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikon akan ditambahkan ke layar utama Anda agar Anda dapat mengakses aplikasi ini dengan cepat.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikon akan ditambahkan ke Taskbar Anda agar Anda dapat mengakses aplikasi ini dengan cepat.",
+    "Install": "Pasang",
+    "Install %s": "Pasang %s",
+    "Install app": "Pasang aplikasi",
+    "Later": "Nanti",
+    "Open in browser": "Buka di peramban",
+    "Select %s from the menu that pops up.": "Pilih %s dari menu yang muncul.",
+    "Tap %s": "Ketuk %s",
+    "Tap %s in the browser bar.": "Ketuk %s di bilah peramban.",
+    "Tap %s in the toolbar.": "Ketuk %s di bilah alat.",
+    "Tap the %s button above.": "Ketuk tombol %s di atas.",
+    "Tap the %s button below to open your system browser.": "Ketuk tombol %s di bawah untuk membuka peramban sistem Anda.",
+    "Tap the %s button in the toolbar.": "Ketuk tombol %s di bilah alat.",
+    "Tap the %s button in the upper right corner.": "Ketuk tombol %s di pojok kanan atas.",
+    "You may need to scroll down to find this menu item.": "Anda mungkin perlu menggulir ke bawah untuk menemukan item menu ini."
+  }
+  
+  //is
+  {
+    "Add to Home Screen": "Bæta við upphafsskjá",
+    "Add To Dock": "Bæta við dokku",
+    "An icon will be added to your Dock so you can quickly access this website.": "Táknmynd verður bætt við dokkuna þína svo þú getir fljótt nálgast þetta forrit.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Táknmynd verður bætt við upphafsskjáinn þinn svo þú getir fljótt nálgast þetta forrit.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Táknmynd verður bætt við verkefnastikuna þína svo þú getir fljótt nálgast þetta forrit.",
+    "Install": "Setja upp",
+    "Install %s": "Setja upp %s",
+    "Install app": "Setja upp forrit",
+    "Later": "Seinna",
+    "Open in browser": "Opna í vafra",
+    "Select %s from the menu that pops up.": "Veldu %s úr valmyndinni sem birtist.",
+    "Tap %s": "Ýttu á %s",
+    "Tap %s in the browser bar.": "Ýttu á %s í vafrastikunni.",
+    "Tap %s in the toolbar.": "Ýttu á %s í tólastikunni.",
+    "Tap the %s button above.": "Ýttu á %s hnappinn hér fyrir ofan.",
+    "Tap the %s button below to open your system browser.": "Ýttu á %s hnappinn hér fyrir neðan til að opna kerfisvafrann þinn.",
+    "Tap the %s button in the toolbar.": "Ýttu á %s hnappinn í tólastikunni.",
+    "Tap the %s button in the upper right corner.": "Ýttu á %s hnappinn efst í hægra horni.",
+    "You may need to scroll down to find this menu item.": "Þú gætir þurft að skruna niður til að finna þennan valmyndarhlut."
+  }
+  
+
+
+  //it
+{
+    "Add to Home Screen": "Aggiungi alla schermata Home",
+    "Add To Dock": "Aggiungi al Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Un'icona verrà aggiunta al Dock per accedere rapidamente a questa applicazione.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Un'icona verrà aggiunta alla schermata Home per accedere rapidamente a questa applicazione.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Un'icona verrà aggiunta alla barra delle applicazioni per accedere rapidamente a questa applicazione.",
+    "Install": "Installa",
+    "Install %s": "Installa %s",
+    "Install app": "Installa applicazione",
+    "Later": "Più tardi",
+    "Open in browser": "Apri nel browser",
+    "Select %s from the menu that pops up.": "Seleziona %s dal menu a comparsa.",
+    "Tap %s": "Tocca %s",
+    "Tap %s in the browser bar.": "Tocca %s nella barra del browser.",
+    "Tap %s in the toolbar.": "Tocca %s nella barra degli strumenti.",
+    "Tap the %s button above.": "Tocca il pulsante %s sopra.",
+    "Tap the %s button below to open your system browser.": "Tocca il pulsante %s sotto per aprire il browser di sistema.",
+    "Tap the %s button in the toolbar.": "Tocca il pulsante %s nella barra degli strumenti.",
+    "Tap the %s button in the upper right corner.": "Tocca il pulsante %s nell'angolo in alto a destra.",
+    "You may need to scroll down to find this menu item.": "Potrebbe essere necessario scorrere verso il basso per trovare questa voce del menu."
+  }
+  
+  //ja
+  {
+    "Add to Home Screen": "ホーム画面に追加",
+    "Add To Dock": "Dockに追加",
+    "An icon will be added to your Dock so you can quickly access this website.": "このアプリにすばやくアクセスできるように、Dockにアイコンが追加されます。",
+    "An icon will be added to your home screen so you can quickly access this website.": "このアプリにすばやくアクセスできるように、ホーム画面にアイコンが追加されます。",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "このアプリにすばやくアクセスできるように、タスクバーにアイコンが追加されます。",
+    "Install": "インストール",
+    "Install %s": "%sをインストール",
+    "Install app": "アプリをインストール",
+    "Later": "後で",
+    "Open in browser": "ブラウザで開く",
+    "Select %s from the menu that pops up.": "ポップアップメニューから%sを選択します。",
+    "Tap %s": "%sをタップ",
+    "Tap %s in the browser bar.": "ブラウザバーの%sをタップします。",
+    "Tap %s in the toolbar.": "ツールバーの%sをタップします。",
+    "Tap the %s button above.": "上の%sボタンをタップします。",
+    "Tap the %s button below to open your system browser.": "下の%sボタンをタップしてシステムブラウザを開きます。",
+    "Tap the %s button in the toolbar.": "ツールバーの%sボタンをタップします。",
+    "Tap the %s button in the upper right corner.": "右上隅の%sボタンをタップします。",
+    "You may need to scroll down to find this menu item.": "このメニュー項目を見つけるには、下にスクロールする必要があるかもしれません。"
+  }
+  
+  //ka
+  {
+    "Add to Home Screen": "მთავარ ეკრანზე დამატება",
+    "Add To Dock": "Dock-ში დამატება",
+    "An icon will be added to your Dock so you can quickly access this website.": "თქვენს Dock-ში დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+    "An icon will be added to your home screen so you can quickly access this website.": "თქვენს მთავარ ეკრანზე დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "თქვენს დავალებათა ზოლში დაემატება ხატულა, რათა ამ აპლიკაციაზე სწრაფად გქონდეთ წვდომა.",
+    "Install": "დაინსტალირება",
+    "Install %s": "%s-ის დაინსტალირება",
+    "Install app": "აპლიკაციის დაინსტალირება",
+    "Later": "მოგვიანებით",
+    "Open in browser": "ბრაუზერში გახსნა",
+    "Select %s from the menu that pops up.": "ამომხტარი მენიუდან აირჩიეთ %s.",
+    "Tap %s": "შეეხეთ %s-ს",
+    "Tap %s in the browser bar.": "ბრაუზერის ზოლში შეეხეთ %s-ს.",
+    "Tap %s in the toolbar.": "ხელსაწყოთა ზოლში შეეხეთ %s-ს.",
+    "Tap the %s button above.": "შეეხეთ %s ღილაკს ზემოთ.",
+    "Tap the %s button below to open your system browser.": "სისტემური ბრაუზერის გასახსნელად შეეხეთ %s ღილაკს ქვემოთ.",
+    "Tap the %s button in the toolbar.": "ხელსაწყოთა ზოლში შეეხეთ %s ღილაკს.",
+    "Tap the %s button in the upper right corner.": "ზედა მარჯვენა კუთხეში შეეხეთ %s ღილაკს.",
+    "You may need to scroll down to find this menu item.": "ამ მენიუს ელემენტის საპოვნელად შეიძლება ქვემოთ ჩამოგორება დაგჭირდეთ."
+  }
+  
+  //kk
+  {
+    "Add to Home Screen": "Негізгі экранға қосу",
+    "Add To Dock": "Dock-қа қосу",
+    "An icon will be added to your Dock so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін Dock-қа белгіше қосылады.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін негізгі экранға белгіше қосылады.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін тапсырмалар тақтасына белгіше қосылады.",
+    "Install": "Орнату",
+    "Install %s": "%s орнату",
+    "Install app": "Қолданбаны орнату",
+    "Later": "Кейінірек",
+    "Open in browser": "Браузерде ашу",
+    "Select %s from the menu that pops up.": "Қалқымалы мәзірден %s таңдаңыз.",
+    "Tap %s": "%s түртіңіз",
+    "Tap %s in the browser bar.": "Браузер жолағында %s түртіңіз.",
+    "Tap %s in the toolbar.": "Құралдар тақтасында %s түртіңіз.",
+    "Tap the %s button above.": "Жоғарыдағы %s түймесін түртіңіз.",
+    "Tap the %s button below to open your system browser.": "Жүйелік браузерді ашу үшін төмендегі %s түймесін түртіңіз.",
+    "Tap the %s button in the toolbar.": "Құралдар тақтасында %s түймесін түртіңіз.",
+    "Tap the %s button in the upper right corner.": "Жоғарғы оң жақ бұрыштағы %s түймесін түртіңіз.",
+    "You may need to scroll down to find this menu item.": "Бұл мәзір элементін табу үшін төмен жылжыту қажет болуы мүмкін."
+  }
+  
+  //ko
+  {
+    "Add to Home Screen": "홈 화면에 추가",
+    "Add To Dock": "Dock에 추가",
+    "An icon will be added to your Dock so you can quickly access this website.": "이 앱에 빠르게 접근할 수 있도록 Dock에 아이콘이 추가됩니다.",
+    "An icon will be added to your home screen so you can quickly access this website.": "이 앱에 빠르게 접근할 수 있도록 홈 화면에 아이콘이 추가됩니다.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "이 앱에 빠르게 접근할 수 있도록 작업 표시줄에 아이콘이 추가됩니다.",
+    "Install": "설치",
+    "Install %s": "%s 설치",
+    "Install app": "앱 설치",
+    "Later": "나중에",
+    "Open in browser": "브라우저에서 열기",
+    "Select %s from the menu that pops up.": "팝업 메뉴에서 %s을(를) 선택하세요.",
+    "Tap %s": "%s 탭하기",
+    "Tap %s in the browser bar.": "브라우저 바에서 %s을(를) 탭하세요.",
+    "Tap %s in the toolbar.": "도구 모음에서 %s을(를) 탭하세요.",
+    "Tap the %s button above.": "위의 %s 버튼을 탭하세요.",
+    "Tap the %s button below to open your system browser.": "시스템 브라우저를 열려면 아래의 %s 버튼을 탭하세요.",
+    "Tap the %s button in the toolbar.": "도구 모음의 %s 버튼을 탭하세요.",
+    "Tap the %s button in the upper right corner.": "오른쪽 상단 모서리의 %s 버튼을 탭하세요.",
+    "You may need to scroll down to find this menu item.": "이 메뉴 항목을 찾으려면 아래로 스크롤해야 할 수 있습니다."
+  }
+  
+
+
+  //ky
+{
+    "Add to Home Screen": "Башкы экранга кошуу",
+    "Add To Dock": "Докко кошуу",
+    "An icon will be added to your Dock so you can quickly access this website.": "Бул колдонмого тез жетүү үчүн докко сүрөтчө кошулат.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Бул колдонмого тез жетүү үчүн башкы экранга сүрөтчө кошулат.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Бул колдонмого тез жетүү үчүн тапшырмалар тилкесине сүрөтчө кошулат.",
+    "Install": "Орнотуу",
+    "Install %s": "%s орнотуу",
+    "Install app": "Колдонмону орнотуу",
+    "Later": "Кийинчерээк",
+    "Open in browser": "Браузерде ачуу",
+    "Select %s from the menu that pops up.": "Чыккан менюдан %s тандаңыз.",
+    "Tap %s": "%s басыңыз",
+    "Tap %s in the browser bar.": "Браузер тилкесиндеги %s басыңыз.",
+    "Tap %s in the toolbar.": "Аспаптар тилкесиндеги %s басыңыз.",
+    "Tap the %s button above.": "Жогорудагы %s баскычын басыңыз.",
+    "Tap the %s button below to open your system browser.": "Тутум браузерин ачуу үчүн төмөндөгү %s баскычын басыңыз.",
+    "Tap the %s button in the toolbar.": "Аспаптар тилкесиндеги %s баскычын басыңыз.",
+    "Tap the %s button in the upper right corner.": "Жогорку оң бурчтагы %s баскычын басыңыз.",
+    "You may need to scroll down to find this menu item.": "Бул меню элементин табуу үчүн төмөн сыдыруу керек болушу мүмкүн."
+  }
+  
+  //lb
+  {
+    "Add to Home Screen": "Op Startschierm dobäisetzen",
+    "Add To Dock": "Bei Dock dobäisetzen",
+    "An icon will be added to your Dock so you can quickly access this website.": "En Icon gëtt bei Ärem Dock dobäigesat fir séier op dës App zougräifen ze kënnen.",
+    "An icon will be added to your home screen so you can quickly access this website.": "En Icon gëtt bei Ärem Startschierm dobäigesat fir séier op dës App zougräifen ze kënnen.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "En Icon gëtt bei Ärer Taskleescht dobäigesat fir séier op dës App zougräifen ze kënnen.",
+    "Install": "Installéieren",
+    "Install %s": "%s installéieren",
+    "Install app": "App installéieren",
+    "Later": "Méi spéit",
+    "Open in browser": "Am Browser opmaachen",
+    "Select %s from the menu that pops up.": "Wielt %s aus dem Popup-Menü aus.",
+    "Tap %s": "Tippt op %s",
+    "Tap %s in the browser bar.": "Tippt op %s an der Browser-Bar.",
+    "Tap %s in the toolbar.": "Tippt op %s an der Toolbar.",
+    "Tap the %s button above.": "Tippt uewen op de %s Knäppchen.",
+    "Tap the %s button below to open your system browser.": "Tippt ënnen op de %s Knäppchen fir Äre System-Browser opzemaachen.",
+    "Tap the %s button in the toolbar.": "Tippt op de %s Knäppchen an der Toolbar.",
+    "Tap the %s button in the upper right corner.": "Tippt op de %s Knäppchen uewe riets.",
+    "You may need to scroll down to find this menu item.": "Dir musst eventuell no ënne scrollen fir dëse Menüpunkt ze fannen."
+  }
+  
+  //lt
+  {
+    "Add to Home Screen": "Pridėti prie pradžios ekrano",
+    "Add To Dock": "Pridėti prie doko",
+    "An icon will be added to your Dock so you can quickly access this website.": "Piktograma bus pridėta prie jūsų doko, kad galėtumėte greitai pasiekti šią programą.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Piktograma bus pridėta prie jūsų pradžios ekrano, kad galėtumėte greitai pasiekti šią programą.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Piktograma bus pridėta prie jūsų užduočių juostos, kad galėtumėte greitai pasiekti šią programą.",
+    "Install": "Įdiegti",
+    "Install %s": "Įdiegti %s",
+    "Install app": "Įdiegti programą",
+    "Later": "Vėliau",
+    "Open in browser": "Atidaryti naršyklėje",
+    "Select %s from the menu that pops up.": "Pasirinkite %s iš iššokančio meniu.",
+    "Tap %s": "Bakstelėkite %s",
+    "Tap %s in the browser bar.": "Bakstelėkite %s naršyklės juostoje.",
+    "Tap %s in the toolbar.": "Bakstelėkite %s įrankių juostoje.",
+    "Tap the %s button above.": "Bakstelėkite %s mygtuką viršuje.",
+    "Tap the %s button below to open your system browser.": "Bakstelėkite %s mygtuką žemiau, kad atidarytumėte sistemos naršyklę.",
+    "Tap the %s button in the toolbar.": "Bakstelėkite %s mygtuką įrankių juostoje.",
+    "Tap the %s button in the upper right corner.": "Bakstelėkite %s mygtuką viršutiniame dešiniajame kampe.",
+    "You may need to scroll down to find this menu item.": "Gali tekti slinkti žemyn, kad rastumėte šį meniu elementą."
+  }
+  
+  //lv
+  {
+    "Add to Home Screen": "Pievienot sākuma ekrānam",
+    "Add To Dock": "Pievienot dokam",
+    "An icon will be added to your Dock so you can quickly access this website.": "Jūsu dokam tiks pievienota ikona, lai ātri piekļūtu šai lietotnei.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Jūsu sākuma ekrānam tiks pievienota ikona, lai ātri piekļūtu šai lietotnei.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Jūsu uzdevumjoslai tiks pievienota ikona, lai ātri piekļūtu šai lietotnei.",
+    "Install": "Instalēt",
+    "Install %s": "Instalēt %s",
+    "Install app": "Instalēt lietotni",
+    "Later": "Vēlāk",
+    "Open in browser": "Atvērt pārlūkprogrammā",
+    "Select %s from the menu that pops up.": "Izvēlieties %s no uznirstošās izvēlnes.",
+    "Tap %s": "Pieskarieties %s",
+    "Tap %s in the browser bar.": "Pieskarieties %s pārlūkprogrammas joslā.",
+    "Tap %s in the toolbar.": "Pieskarieties %s rīkjoslā.",
+    "Tap the %s button above.": "Pieskarieties %s pogai augšā.",
+    "Tap the %s button below to open your system browser.": "Pieskarieties %s pogai zemāk, lai atvērtu sistēmas pārlūkprogrammu.",
+    "Tap the %s button in the toolbar.": "Pieskarieties %s pogai rīkjoslā.",
+    "Tap the %s button in the upper right corner.": "Pieskarieties %s pogai augšējā labajā stūrī.",
+    "You may need to scroll down to find this menu item.": "Iespējams, jums būs jāritina uz leju, lai atrastu šo izvēlnes vienumu."
+  }
+  
+  //mk
+  {
+    "Add to Home Screen": "Додади на почетен екран",
+    "Add To Dock": "Додади во док",
+    "An icon will be added to your Dock so you can quickly access this website.": "Икона ќе биде додадена во вашиот док за брз пристап до оваа апликација.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Икона ќе биде додадена на вашиот почетен екран за брз пристап до оваа апликација.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Икона ќе биде додадена на вашата лента со задачи за брз пристап до оваа апликација.",
+    "Install": "Инсталирај",
+    "Install %s": "Инсталирај %s",
+    "Install app": "Инсталирај апликација",
+    "Later": "Подоцна",
+    "Open in browser": "Отвори во прелистувач",
+    "Select %s from the menu that pops up.": "Изберете %s од менито што се појавува.",
+    "Tap %s": "Допрете %s",
+    "Tap %s in the browser bar.": "Допрете %s во лентата на прелистувачот.",
+    "Tap %s in the toolbar.": "Допрете %s во лентата со алатки.",
+    "Tap the %s button above.": "Допрете го копчето %s погоре.",
+    "Tap the %s button below to open your system browser.": "Допрете го копчето %s подолу за да го отворите системскиот прелистувач.",
+    "Tap the %s button in the toolbar.": "Допрете го копчето %s во лентата со алатки.",
+    "Tap the %s button in the upper right corner.": "Допрете го копчето %s во горниот десен агол.",
+    "You may need to scroll down to find this menu item.": "Можеби ќе треба да лизгате надолу за да ја најдете оваа ставка од менито."
+  }
+  
+
+
+  //mn
+{
+    "Add to Home Screen": "Нүүр дэлгэцэнд нэмэх",
+    "Add To Dock": "Dock-д нэмэх",
+    "An icon will be added to your Dock so you can quickly access this website.": "Энэ програмд хурдан хандахын тулд таны Dock-д дүрс нэмэгдэх болно.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Энэ програмд хурдан хандахын тулд таны нүүр дэлгэцэнд дүрс нэмэгдэх болно.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Энэ програмд хурдан хандахын тулд таны даалгаврын мөрөнд дүрс нэмэгдэх болно.",
+    "Install": "Суулгах",
+    "Install %s": "%s суулгах",
+    "Install app": "Програм суулгах",
+    "Later": "Дараа",
+    "Open in browser": "Хөтчөөр нээх",
+    "Select %s from the menu that pops up.": "Гарч ирэх цэснээс %s сонгоно уу.",
+    "Tap %s": "%s дарна уу",
+    "Tap %s in the browser bar.": "Хөтчийн мөрөн дэх %s дарна уу.",
+    "Tap %s in the toolbar.": "Хэрэгслийн мөрөн дэх %s дарна уу.",
+    "Tap the %s button above.": "Дээрх %s товчийг дарна уу.",
+    "Tap the %s button below to open your system browser.": "Системийн хөтчийг нээхийн тулд доорх %s товчийг дарна уу.",
+    "Tap the %s button in the toolbar.": "Хэрэгслийн мөрөн дэх %s товчийг дарна уу.",
+    "Tap the %s button in the upper right corner.": "Дээд баруун буланд байрлах %s товчийг дарна уу.",
+    "You may need to scroll down to find this menu item.": "Энэ цэсний зүйлийг олохын тулд доош гүйлгэх хэрэгтэй байж магадгүй."
+  }
+  
+  //ms
+  {
+    "Add to Home Screen": "Tambah ke Skrin Utama",
+    "Add To Dock": "Tambah ke Dok",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikon akan ditambahkan ke Dok anda supaya anda boleh mengakses aplikasi ini dengan cepat.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikon akan ditambahkan ke skrin utama anda supaya anda boleh mengakses aplikasi ini dengan cepat.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikon akan ditambahkan ke bar tugas anda supaya anda boleh mengakses aplikasi ini dengan cepat.",
+    "Install": "Pasang",
+    "Install %s": "Pasang %s",
+    "Install app": "Pasang aplikasi",
+    "Later": "Kemudian",
+    "Open in browser": "Buka dalam pelayar",
+    "Select %s from the menu that pops up.": "Pilih %s daripada menu yang muncul.",
+    "Tap %s": "Ketik %s",
+    "Tap %s in the browser bar.": "Ketik %s dalam bar pelayar.",
+    "Tap %s in the toolbar.": "Ketik %s dalam bar alat.",
+    "Tap the %s button above.": "Ketik butang %s di atas.",
+    "Tap the %s button below to open your system browser.": "Ketik butang %s di bawah untuk membuka pelayar sistem anda.",
+    "Tap the %s button in the toolbar.": "Ketik butang %s dalam bar alat.",
+    "Tap the %s button in the upper right corner.": "Ketik butang %s di sudut kanan atas.",
+    "You may need to scroll down to find this menu item.": "Anda mungkin perlu menatal ke bawah untuk mencari item menu ini."
+  }
+  
+  //mt
+  {
+    "Add to Home Screen": "Żid mal-Iskrin Ewlieni",
+    "Add To Dock": "Żid mad-Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikona se tiżdied mad-Dock tiegħek biex tkun tista' taċċessa din l-app malajr.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikona se tiżdied mal-iskrin ewlieni tiegħek biex tkun tista' taċċessa din l-app malajr.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikona se tiżdied mat-taskbar tiegħek biex tkun tista' taċċessa din l-app malajr.",
+    "Install": "Installa",
+    "Install %s": "Installa %s",
+    "Install app": "Installa l-app",
+    "Later": "Aktar tard",
+    "Open in browser": "Iftaħ fil-browser",
+    "Select %s from the menu that pops up.": "Agħżel %s mill-menu li jitfaċċa.",
+    "Tap %s": "Taptap fuq %s",
+    "Tap %s in the browser bar.": "Taptap fuq %s fil-bar tal-browser.",
+    "Tap %s in the toolbar.": "Taptap fuq %s fil-bar tal-għodda.",
+    "Tap the %s button above.": "Taptap fuq il-buttuna %s hawn fuq.",
+    "Tap the %s button below to open your system browser.": "Taptap fuq il-buttuna %s hawn taħt biex tiftaħ il-browser tas-sistema tiegħek.",
+    "Tap the %s button in the toolbar.": "Taptap fuq il-buttuna %s fil-bar tal-għodda.",
+    "Tap the %s button in the upper right corner.": "Taptap fuq il-buttuna %s fil-kantuniera ta' fuq lemini.",
+    "You may need to scroll down to find this menu item.": "Jista' jkollok bżonn tiskrollja 'l isfel biex issib dan l-element tal-menu."
+  }
+  
+  //nl
+  {
+    "Add to Home Screen": "Toevoegen aan startscherm",
+    "Add To Dock": "Toevoegen aan Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Er wordt een pictogram toegevoegd aan je Dock zodat je snel toegang hebt tot deze app.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Er wordt een pictogram toegevoegd aan je startscherm zodat je snel toegang hebt tot deze app.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Er wordt een pictogram toegevoegd aan je taakbalk zodat je snel toegang hebt tot deze app.",
+    "Install": "Installeren",
+    "Install %s": "%s installeren",
+    "Install app": "App installeren",
+    "Later": "Later",
+    "Open in browser": "Openen in browser",
+    "Select %s from the menu that pops up.": "Selecteer %s uit het menu dat verschijnt.",
+    "Tap %s": "Tik op %s",
+    "Tap %s in the browser bar.": "Tik op %s in de browserbalk.",
+    "Tap %s in the toolbar.": "Tik op %s in de werkbalk.",
+    "Tap the %s button above.": "Tik op de %s-knop hierboven.",
+    "Tap the %s button below to open your system browser.": "Tik op de %s-knop hieronder om je systeembrowser te openen.",
+    "Tap the %s button in the toolbar.": "Tik op de %s-knop in de werkbalk.",
+    "Tap the %s button in the upper right corner.": "Tik op de %s-knop in de rechterbovenhoek.",
+    "You may need to scroll down to find this menu item.": "Je moet mogelijk naar beneden scrollen om dit menu-item te vinden."
+  }
+  
+  //no
+  {
+    "Add to Home Screen": "Legg til på startskjerm",
+    "Add To Dock": "Legg til i Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Et ikon vil bli lagt til i Dock slik at du raskt kan få tilgang til denne appen.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Et ikon vil bli lagt til på startskjermen din slik at du raskt kan få tilgang til denne appen.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Et ikon vil bli lagt til i oppgavelinjen slik at du raskt kan få tilgang til denne appen.",
+    "Install": "Installer",
+    "Install %s": "Installer %s",
+    "Install app": "Installer app",
+    "Later": "Senere",
+    "Open in browser": "Åpne i nettleser",
+    "Select %s from the menu that pops up.": "Velg %s fra menyen som dukker opp.",
+    "Tap %s": "Trykk på %s",
+    "Tap %s in the browser bar.": "Trykk på %s i nettleserlinjen.",
+    "Tap %s in the toolbar.": "Trykk på %s i verktøylinjen.",
+    "Tap the %s button above.": "Trykk på %s-knappen ovenfor.",
+    "Tap the %s button below to open your system browser.": "Trykk på %s-knappen nedenfor for å åpne systemnettleseren.",
+    "Tap the %s button in the toolbar.": "Trykk på %s-knappen i verktøylinjen.",
+    "Tap the %s button in the upper right corner.": "Trykk på %s-knappen i øvre høyre hjørne.",
+    "You may need to scroll down to find this menu item.": "Du må kanskje rulle ned for å finne dette menyelementet."
+  }
+  
+
+
+  //pl
+{
+    "Add to Home Screen": "Dodaj do ekranu głównego",
+    "Add To Dock": "Dodaj do Docka",
+    "An icon will be added to your Dock so you can quickly access this website.": "Ikona zostanie dodana do Twojego Docka, aby zapewnić szybki dostęp do tej aplikacji.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Ikona zostanie dodana do Twojego ekranu głównego, aby zapewnić szybki dostęp do tej aplikacji.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Ikona zostanie dodana do Twojego paska zadań, aby zapewnić szybki dostęp do tej aplikacji.",
+    "Install": "Zainstaluj",
+    "Install %s": "Zainstaluj %s",
+    "Install app": "Zainstaluj aplikację",
+    "Later": "Później",
+    "Open in browser": "Otwórz w przeglądarce",
+    "Select %s from the menu that pops up.": "Wybierz %s z menu kontekstowego.",
+    "Tap %s": "Dotknij %s",
+    "Tap %s in the browser bar.": "Dotknij %s na pasku przeglądarki.",
+    "Tap %s in the toolbar.": "Dotknij %s na pasku narzędzi.",
+    "Tap the %s button above.": "Dotknij przycisku %s powyżej.",
+    "Tap the %s button below to open your system browser.": "Dotknij przycisku %s poniżej, aby otworzyć przeglądarkę systemową.",
+    "Tap the %s button in the toolbar.": "Dotknij przycisku %s na pasku narzędzi.",
+    "Tap the %s button in the upper right corner.": "Dotknij przycisku %s w prawym górnym rogu.",
+    "You may need to scroll down to find this menu item.": "Może być konieczne przewinięcie w dół, aby znaleźć ten element menu."
+  }
+  
+  //pt
+  {
+    "Add to Home Screen": "Adicionar à tela inicial",
+    "Add To Dock": "Adicionar ao Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Um ícone será adicionado ao seu Dock para que você possa acessar rapidamente este aplicativo.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Um ícone será adicionado à sua tela inicial para que você possa acessar rapidamente este aplicativo.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Um ícone será adicionado à sua barra de tarefas para que você possa acessar rapidamente este aplicativo.",
+    "Install": "Instalar",
+    "Install %s": "Instalar %s",
+    "Install app": "Instalar aplicativo",
+    "Later": "Depois",
+    "Open in browser": "Abrir no navegador",
+    "Select %s from the menu that pops up.": "Selecione %s no menu que aparece.",
+    "Tap %s": "Toque em %s",
+    "Tap %s in the browser bar.": "Toque em %s na barra do navegador.",
+    "Tap %s in the toolbar.": "Toque em %s na barra de ferramentas.",
+    "Tap the %s button above.": "Toque no botão %s acima.",
+    "Tap the %s button below to open your system browser.": "Toque no botão %s abaixo para abrir seu navegador do sistema.",
+    "Tap the %s button in the toolbar.": "Toque no botão %s na barra de ferramentas.",
+    "Tap the %s button in the upper right corner.": "Toque no botão %s no canto superior direito.",
+    "You may need to scroll down to find this menu item.": "Você pode precisar rolar para baixo para encontrar este item do menu."
+  }
+  
+  //ro
+  {
+    "Add to Home Screen": "Adăugați la ecranul de pornire",
+    "Add To Dock": "Adăugați la Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "O pictogramă va fi adăugată la Dock-ul dvs. pentru a accesa rapid această aplicație.",
+    "An icon will be added to your home screen so you can quickly access this website.": "O pictogramă va fi adăugată la ecranul dvs. de pornire pentru a accesa rapid această aplicație.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "O pictogramă va fi adăugată la bara de activități pentru a accesa rapid această aplicație.",
+    "Install": "Instalați",
+    "Install %s": "Instalați %s",
+    "Install app": "Instalați aplicația",
+    "Later": "Mai târziu",
+    "Open in browser": "Deschideți în browser",
+    "Select %s from the menu that pops up.": "Selectați %s din meniul care apare.",
+    "Tap %s": "Atingeți %s",
+    "Tap %s in the browser bar.": "Atingeți %s în bara browserului.",
+    "Tap %s in the toolbar.": "Atingeți %s în bara de instrumente.",
+    "Tap the %s button above.": "Atingeți butonul %s de mai sus.",
+    "Tap the %s button below to open your system browser.": "Atingeți butonul %s de mai jos pentru a deschide browserul sistemului.",
+    "Tap the %s button in the toolbar.": "Atingeți butonul %s din bara de instrumente.",
+    "Tap the %s button in the upper right corner.": "Atingeți butonul %s din colțul din dreapta sus.",
+    "You may need to scroll down to find this menu item.": "Ar putea fi necesară derularea în jos pentru a găsi acest element de meniu."
+  }
+  
+  //ru
+  {
+    "Add to Home Screen": "Добавить на главный экран",
+    "Add To Dock": "Добавить в Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Значок будет добавлен в ваш Dock для быстрого доступа к этому приложению.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Значок будет добавлен на ваш главный экран для быстрого доступа к этому приложению.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Значок будет добавлен на вашу панель задач для быстрого доступа к этому приложению.",
+    "Install": "Установить",
+    "Install %s": "Установить %s",
+    "Install app": "Установить приложение",
+    "Later": "Позже",
+    "Open in browser": "Открыть в браузере",
+    "Select %s from the menu that pops up.": "Выберите %s из всплывающего меню.",
+    "Tap %s": "Нажмите %s",
+    "Tap %s in the browser bar.": "Нажмите %s в строке браузера.",
+    "Tap %s in the toolbar.": "Нажмите %s на панели инструментов.",
+    "Tap the %s button above.": "Нажмите кнопку %s выше.",
+    "Tap the %s button below to open your system browser.": "Нажмите кнопку %s ниже, чтобы открыть системный браузер.",
+    "Tap the %s button in the toolbar.": "Нажмите кнопку %s на панели инструментов.",
+    "Tap the %s button in the upper right corner.": "Нажмите кнопку %s в правом верхнем углу.",
+    "You may need to scroll down to find this menu item.": "Возможно, вам потребуется прокрутить вниз, чтобы найти этот пункт меню."
+  }
+  
+  //sk
+  {
+    "Add to Home Screen": "Pridať na domovskú obrazovku",
+    "Add To Dock": "Pridať do Docku",
+    "An icon will be added to your Dock so you can quickly access this website.": "Do vášho Docku bude pridaná ikona pre rýchly prístup k tejto aplikácii.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Na vašu domovskú obrazovku bude pridaná ikona pre rýchly prístup k tejto aplikácii.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Na panel úloh bude pridaná ikona pre rýchly prístup k tejto aplikácii.",
+    "Install": "Inštalovať",
+    "Install %s": "Inštalovať %s",
+    "Install app": "Inštalovať aplikáciu",
+    "Later": "Neskôr",
+    "Open in browser": "Otvoriť v prehliadači",
+    "Select %s from the menu that pops up.": "Vyberte %s z kontextového menu.",
+    "Tap %s": "Ťuknite na %s",
+    "Tap %s in the browser bar.": "Ťuknite na %s v lište prehliadača.",
+    "Tap %s in the toolbar.": "Ťuknite na %s v paneli nástrojov.",
+    "Tap the %s button above.": "Ťuknite na tlačidlo %s vyššie.",
+    "Tap the %s button below to open your system browser.": "Ťuknite na tlačidlo %s nižšie pre otvorenie systémového prehliadača.",
+    "Tap the %s button in the toolbar.": "Ťuknite na tlačidlo %s v paneli nástrojov.",
+    "Tap the %s button in the upper right corner.": "Ťuknite na tlačidlo %s v pravom hornom rohu.",
+    "You may need to scroll down to find this menu item.": "Možno budete musieť posunúť nadol, aby ste našli túto položku menu."
+  }
+  
+
+
+  //sl
+{
+    "Add to Home Screen": "Dodaj na začetni zaslon",
+    "Add To Dock": "Dodaj v sidrišče",
+    "An icon will be added to your Dock so you can quickly access this website.": "V vaše sidrišče bo dodana ikona za hiter dostop do te aplikacije.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Na vaš začetni zaslon bo dodana ikona za hiter dostop do te aplikacije.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "V vašo opravilno vrstico bo dodana ikona za hiter dostop do te aplikacije.",
+    "Install": "Namesti",
+    "Install %s": "Namesti %s",
+    "Install app": "Namesti aplikacijo",
+    "Later": "Kasneje",
+    "Open in browser": "Odpri v brskalniku",
+    "Select %s from the menu that pops up.": "Izberite %s iz pojavnega menija.",
+    "Tap %s": "Tapnite %s",
+    "Tap %s in the browser bar.": "Tapnite %s v vrstici brskalnika.",
+    "Tap %s in the toolbar.": "Tapnite %s v orodni vrstici.",
+    "Tap the %s button above.": "Tapnite gumb %s zgoraj.",
+    "Tap the %s button below to open your system browser.": "Tapnite gumb %s spodaj za odpiranje sistemskega brskalnika.",
+    "Tap the %s button in the toolbar.": "Tapnite gumb %s v orodni vrstici.",
+    "Tap the %s button in the upper right corner.": "Tapnite gumb %s v zgornjem desnem kotu.",
+    "You may need to scroll down to find this menu item.": "Morda se boste morali pomakniti navzdol, da najdete ta element menija."
+  }
+  
+  //sr
+  {
+    "Add to Home Screen": "Додај на почетни екран",
+    "Add To Dock": "Додај у док",
+    "An icon will be added to your Dock so you can quickly access this website.": "Икона ће бити додата у ваш док за брзи приступ овој апликацији.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Икона ће бити додата на ваш почетни екран за брзи приступ овој апликацији.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Икона ће бити додата на вашу траку задатака за брзи приступ овој апликацији.",
+    "Install": "Инсталирај",
+    "Install %s": "Инсталирај %s",
+    "Install app": "Инсталирај апликацију",
+    "Later": "Касније",
+    "Open in browser": "Отвори у прегледачу",
+    "Select %s from the menu that pops up.": "Изаберите %s из искачућег менија.",
+    "Tap %s": "Додирните %s",
+    "Tap %s in the browser bar.": "Додирните %s у траци прегледача.",
+    "Tap %s in the toolbar.": "Додирните %s у траци са алатима.",
+    "Tap the %s button above.": "Додирните дугме %s изнад.",
+    "Tap the %s button below to open your system browser.": "Додирните дугме %s испод да отворите системски прегледач.",
+    "Tap the %s button in the toolbar.": "Додирните дугме %s у траци са алатима.",
+    "Tap the %s button in the upper right corner.": "Додирните дугме %s у горњем десном углу.",
+    "You may need to scroll down to find this menu item.": "Можда ћете морати да се померите надоле да бисте пронашли ову ставку менија."
+  }
+  
+  //sv
+  {
+    "Add to Home Screen": "Lägg till på startskärmen",
+    "Add To Dock": "Lägg till i Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "En ikon läggs till i din Dock så att du snabbt kan komma åt den här appen.",
+    "An icon will be added to your home screen so you can quickly access this website.": "En ikon läggs till på din startskärm så att du snabbt kan komma åt den här appen.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "En ikon läggs till i din aktivitetsfält så att du snabbt kan komma åt den här appen.",
+    "Install": "Installera",
+    "Install %s": "Installera %s",
+    "Install app": "Installera app",
+    "Later": "Senare",
+    "Open in browser": "Öppna i webbläsare",
+    "Select %s from the menu that pops up.": "Välj %s från menyn som visas.",
+    "Tap %s": "Tryck på %s",
+    "Tap %s in the browser bar.": "Tryck på %s i webbläsarfältet.",
+    "Tap %s in the toolbar.": "Tryck på %s i verktygsfältet.",
+    "Tap the %s button above.": "Tryck på %s-knappen ovan.",
+    "Tap the %s button below to open your system browser.": "Tryck på %s-knappen nedan för att öppna din systemwebbläsare.",
+    "Tap the %s button in the toolbar.": "Tryck på %s-knappen i verktygsfältet.",
+    "Tap the %s button in the upper right corner.": "Tryck på %s-knappen i det övre högra hörnet.",
+    "You may need to scroll down to find this menu item.": "Du kan behöva scrolla ner för att hitta det här menyalternativet."
+  }
+  
+  //th
+  {
+    "Add to Home Screen": "เพิ่มไปยังหน้าจอหลัก",
+    "Add To Dock": "เพิ่มไปยัง Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "ไอคอนจะถูกเพิ่มไปยัง Dock ของคุณเพื่อให้สามารถเข้าถึงแอพนี้ได้อย่างรวดเร็ว",
+    "An icon will be added to your home screen so you can quickly access this website.": "ไอคอนจะถูกเพิ่มไปยังหน้าจอหลักของคุณเพื่อให้สามารถเข้าถึงแอพนี้ได้อย่างรวดเร็ว",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "ไอคอนจะถูกเพิ่มไปยังแถบงานของคุณเพื่อให้สามารถเข้าถึงแอพนี้ได้อย่างรวดเร็ว",
+    "Install": "ติดตั้ง",
+    "Install %s": "ติดตั้ง %s",
+    "Install app": "ติดตั้งแอพ",
+    "Later": "ภายหลัง",
+    "Open in browser": "เปิดในเบราว์เซอร์",
+    "Select %s from the menu that pops up.": "เลือก %s จากเมนูที่ปรากฏขึ้น",
+    "Tap %s": "แตะ %s",
+    "Tap %s in the browser bar.": "แตะ %s ในแถบเบราว์เซอร์",
+    "Tap %s in the toolbar.": "แตะ %s ในแถบเครื่องมือ",
+    "Tap the %s button above.": "แตะปุ่ม %s ด้านบน",
+    "Tap the %s button below to open your system browser.": "แตะปุ่ม %s ด้านล่างเพื่อเปิดเบราว์เซอร์ระบบของคุณ",
+    "Tap the %s button in the toolbar.": "แตะปุ่ม %s ในแถบเครื่องมือ",
+    "Tap the %s button in the upper right corner.": "แตะปุ่ม %s ที่มุมขวาบน",
+    "You may need to scroll down to find this menu item.": "คุณอาจต้องเลื่อนลงเพื่อหารายการเมนูนี้"
+  }
+  
+  //tl
+  {
+    "Add to Home Screen": "Idagdag sa Home Screen",
+    "Add To Dock": "Idagdag sa Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Magdadagdag ng icon sa iyong Dock upang mabilis mong ma-access ang app na ito.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Magdadagdag ng icon sa iyong home screen upang mabilis mong ma-access ang app na ito.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Magdadagdag ng icon sa iyong taskbar upang mabilis mong ma-access ang app na ito.",
+    "Install": "I-install",
+    "Install %s": "I-install ang %s",
+    "Install app": "I-install ang app",
+    "Later": "Mamaya na",
+    "Open in browser": "Buksan sa browser",
+    "Select %s from the menu that pops up.": "Piliin ang %s mula sa menu na lalabas.",
+    "Tap %s": "I-tap ang %s",
+    "Tap %s in the browser bar.": "I-tap ang %s sa bar ng browser.",
+    "Tap %s in the toolbar.": "I-tap ang %s sa toolbar.",
+    "Tap the %s button above.": "I-tap ang button na %s sa itaas.",
+    "Tap the %s button below to open your system browser.": "I-tap ang button na %s sa ibaba para buksan ang iyong system browser.",
+    "Tap the %s button in the toolbar.": "I-tap ang button na %s sa toolbar.",
+    "Tap the %s button in the upper right corner.": "I-tap ang button na %s sa kanang sulok sa itaas.",
+    "You may need to scroll down to find this menu item.": "Maaaring kailanganin mong mag-scroll pababa para mahanap ang item na ito sa menu."
+  }
+  
+  //tr
+{
+    "Add to Home Screen": "Ana Ekrana Ekle",
+    "Add To Dock": "Dock'a Ekle",
+    "An icon will be added to your Dock so you can quickly access this website.": "Bu uygulamaya hızlıca erişebilmeniz için Dock'unuza bir simge eklenecek.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Bu uygulamaya hızlıca erişebilmeniz için ana ekranınıza bir simge eklenecek.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Bu uygulamaya hızlıca erişebilmeniz için görev çubuğunuza bir simge eklenecek.",
+    "Install": "Yükle",
+    "Install %s": "%s'i Yükle",
+    "Install app": "Uygulamayı yükle",
+    "Later": "Daha sonra",
+    "Open in browser": "Tarayıcıda aç",
+    "Select %s from the menu that pops up.": "Açılan menüden %s'i seçin.",
+    "Tap %s": "%s'e dokunun",
+    "Tap %s in the browser bar.": "Tarayıcı çubuğunda %s'e dokunun.",
+    "Tap %s in the toolbar.": "Araç çubuğunda %s'e dokunun.",
+    "Tap the %s button above.": "Yukarıdaki %s düğmesine dokunun.",
+    "Tap the %s button below to open your system browser.": "Sistem tarayıcınızı açmak için aşağıdaki %s düğmesine dokunun.",
+    "Tap the %s button in the toolbar.": "Araç çubuğundaki %s düğmesine dokunun.",
+    "Tap the %s button in the upper right corner.": "Sağ üst köşedeki %s düğmesine dokunun.",
+    "You may need to scroll down to find this menu item.": "Bu menü öğesini bulmak için aşağı kaydırmanız gerekebilir."
+  }
+  
+  //uk
+  {
+    "Add to Home Screen": "Додати на головний екран",
+    "Add To Dock": "Додати до Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Значок буде додано до вашого Dock для швидкого доступу до цього додатка.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Значок буде додано на ваш головний екран для швидкого доступу до цього додатка.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Значок буде додано на вашу панель завдань для швидкого доступу до цього додатка.",
+    "Install": "Встановити",
+    "Install %s": "Встановити %s",
+    "Install app": "Встановити додаток",
+    "Later": "Пізніше",
+    "Open in browser": "Відкрити в браузері",
+    "Select %s from the menu that pops up.": "Виберіть %s із спливаючого меню.",
+    "Tap %s": "Торкніться %s",
+    "Tap %s in the browser bar.": "Торкніться %s у рядку браузера.",
+    "Tap %s in the toolbar.": "Торкніться %s на панелі інструментів.",
+    "Tap the %s button above.": "Торкніться кнопки %s вище.",
+    "Tap the %s button below to open your system browser.": "Торкніться кнопки %s нижче, щоб відкрити системний браузер.",
+    "Tap the %s button in the toolbar.": "Торкніться кнопки %s на панелі інструментів.",
+    "Tap the %s button in the upper right corner.": "Торкніться кнопки %s у верхньому правому куті.",
+    "You may need to scroll down to find this menu item.": "Можливо, вам доведеться прокрутити вниз, щоб знайти цей пункт меню."
+  }
+  
+  //ur
+  {
+    "Add to Home Screen": "ہوم اسکرین میں شامل کریں",
+    "Add To Dock": "ڈاک میں شامل کریں",
+    "An icon will be added to your Dock so you can quickly access this website.": "آپ کی ڈاک میں ایک آئیکن شامل کیا جائے گا تاکہ آپ اس ایپ تک فوری رسائی حاصل کر سکیں۔",
+    "An icon will be added to your home screen so you can quickly access this website.": "آپ کی ہوم اسکرین میں ایک آئیکن شامل کیا جائے گا تاکہ آپ اس ایپ تک فوری رسائی حاصل کر سکیں۔",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "آپ کی ٹاسک بار میں ایک آئیکن شامل کیا جائے گا تاکہ آپ اس ایپ تک فوری رسائی حاصل کر سکیں۔",
+    "Install": "انسٹال کریں",
+    "Install %s": "%s انسٹال کریں",
+    "Install app": "ایپ انسٹال کریں",
+    "Later": "بعد میں",
+    "Open in browser": "براؤزر میں کھولیں",
+    "Select %s from the menu that pops up.": "پاپ اپ مینو سے %s منتخب کریں۔",
+    "Tap %s": "%s پر تھپتھپائیں",
+    "Tap %s in the browser bar.": "براؤزر بار میں %s پر تھپتھپائیں۔",
+    "Tap %s in the toolbar.": "ٹول بار میں %s پر تھپتھپائیں۔",
+    "Tap the %s button above.": "اوپر دیے گئے %s بٹن پر تھپتھپائیں۔",
+    "Tap the %s button below to open your system browser.": "اپنا سسٹم براؤزر کھولنے کے لیے نیچے دیے گئے %s بٹن پر تھپتھپائیں۔",
+    "Tap the %s button in the toolbar.": "ٹول بار میں %s بٹن پر تھپتھپائیں۔",
+    "Tap the %s button in the upper right corner.": "اوپری دائیں کونے میں %s بٹن پر تھپتھپائیں۔",
+    "You may need to scroll down to find this menu item.": "اس مینو آئٹم کو تلاش کرنے کے لیے آپ کو نیچے سکرول کرنا پڑ سکتا ہے۔"
+  }
+  
+  //vi
+  {
+    "Add to Home Screen": "Thêm vào Màn hình chính",
+    "Add To Dock": "Thêm vào Dock",
+    "An icon will be added to your Dock so you can quickly access this website.": "Một biểu tượng sẽ được thêm vào Dock để bạn có thể truy cập nhanh ứng dụng này.",
+    "An icon will be added to your home screen so you can quickly access this website.": "Một biểu tượng sẽ được thêm vào màn hình chính để bạn có thể truy cập nhanh ứng dụng này.",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "Một biểu tượng sẽ được thêm vào thanh tác vụ để bạn có thể truy cập nhanh ứng dụng này.",
+    "Install": "Cài đặt",
+    "Install %s": "Cài đặt %s",
+    "Install app": "Cài đặt ứng dụng",
+    "Later": "Để sau",
+    "Open in browser": "Mở trong trình duyệt",
+    "Select %s from the menu that pops up.": "Chọn %s từ menu bật lên.",
+    "Tap %s": "Chạm vào %s",
+    "Tap %s in the browser bar.": "Chạm vào %s trong thanh trình duyệt.",
+    "Tap %s in the toolbar.": "Chạm vào %s trong thanh công cụ.",
+    "Tap the %s button above.": "Chạm vào nút %s ở trên.",
+    "Tap the %s button below to open your system browser.": "Chạm vào nút %s bên dưới để mở trình duyệt hệ thống.",
+    "Tap the %s button in the toolbar.": "Chạm vào nút %s trong thanh công cụ.",
+    "Tap the %s button in the upper right corner.": "Chạm vào nút %s ở góc trên bên phải.",
+    "You may need to scroll down to find this menu item.": "Bạn có thể cần cuộn xuống để tìm mục menu này."
+  }
+  
+  //zh
+  {
+    "Add to Home Screen": "添加到主屏幕",
+    "Add To Dock": "添加到程序坞",
+    "An icon will be added to your Dock so you can quickly access this website.": "一个图标将添加到您的程序坞，以便您快速访问此应用。",
+    "An icon will be added to your home screen so you can quickly access this website.": "一个图标将添加到您的主屏幕，以便您快速访问此应用。",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "一个图标将添加到您的任务栏，以便您快速访问此应用。",
+    "Install": "安装",
+    "Install %s": "安装 %s",
+    "Install app": "安装应用",
+    "Later": "稍后",
+    "Open in browser": "在浏览器中打开",
+    "Select %s from the menu that pops up.": "从弹出菜单中选择 %s。",
+    "Tap %s": "点击 %s",
+    "Tap %s in the browser bar.": "点击浏览器栏中的 %s。",
+    "Tap %s in the toolbar.": "点击工具栏中的 %s。",
+    "Tap the %s button above.": "点击上方的 %s 按钮。",
+    "Tap the %s button below to open your system browser.": "点击下方的 %s 按钮以打开系统浏览器。",
+    "Tap the %s button in the toolbar.": "点击工具栏中的 %s 按钮。",
+    "Tap the %s button in the upper right corner.": "点击右上角的 %s 按钮。",
+    "You may need to scroll down to find this menu item.": "您可能需要向下滚动以找到此菜单项。"
+  }
+
+  //zh_CN
+{
+  "Add to Home Screen": "添加到主屏幕",
+  "Add To Dock": "添加到程序坞",
+  "An icon will be added to your Dock so you can quickly access this website.": "一个图标将添加到您的程序坞，以便您快速访问此应用。",
+  "An icon will be added to your home screen so you can quickly access this website.": "一个图标将添加到您的主屏幕，以便您快速访问此应用。",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "一个图标将添加到您的任务栏，以便您快速访问此应用。",
+  "Install": "安装",
+  "Install %s": "安装 %s",
+  "Install app": "安装应用",
+  "Later": "稍后",
+  "Open in browser": "在浏览器中打开",
+  "Select %s from the menu that pops up.": "从弹出菜单中选择 %s。",
+  "Tap %s": "点击 %s",
+  "Tap %s in the browser bar.": "点击浏览器栏中的 %s。",
+  "Tap %s in the toolbar.": "点击工具栏中的 %s。",
+  "Tap the %s button above.": "点击上方的 %s 按钮。",
+  "Tap the %s button below to open your system browser.": "点击下方的 %s 按钮以打开系统浏览器。",
+  "Tap the %s button in the toolbar.": "点击工具栏中的 %s 按钮。",
+  "Tap the %s button in the upper right corner.": "点击右上角的 %s 按钮。",
+  "You may need to scroll down to find this menu item.": "您可能需要向下滚动以找到此菜单项。"
+}
+
+//zh_HK
+{
+  "Add to Home Screen": "加至主畫面",
+  "Add To Dock": "加至程式集",
+  "An icon will be added to your Dock so you can quickly access this website.": "一個圖示將加至您的程式集，以便您快速存取此應用程式。",
+  "An icon will be added to your home screen so you can quickly access this website.": "一個圖示將加至您的主畫面，以便您快速存取此應用程式。",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "一個圖示將加至您的工具列，以便您快速存取此應用程式。",
+  "Install": "安裝",
+  "Install %s": "安裝 %s",
+  "Install app": "安裝應用程式",
+  "Later": "稍後",
+  "Open in browser": "在瀏覽器中開啟",
+  "Select %s from the menu that pops up.": "從彈出式選單中選擇 %s。",
+  "Tap %s": "點擊 %s",
+  "Tap %s in the browser bar.": "點擊瀏覽器列中的 %s。",
+  "Tap %s in the toolbar.": "點擊工具列中的 %s。",
+  "Tap the %s button above.": "點擊上方的 %s 按鈕。",
+  "Tap the %s button below to open your system browser.": "點擊下方的 %s 按鈕以開啟系統瀏覽器。",
+  "Tap the %s button in the toolbar.": "點擊工具列中的 %s 按鈕。",
+  "Tap the %s button in the upper right corner.": "點擊右上角的 %s 按鈕。",
+  "You may need to scroll down to find this menu item.": "您可能需要向下捲動以找到此選單項目。"
+}
+
+//zh_TW
+{
+  "Add to Home Screen": "新增至主畫面",
+  "Add To Dock": "新增至 Dock",
+  "An icon will be added to your Dock so you can quickly access this website.": "將在您的 Dock 新增一個圖示，方便您快速存取此應用程式。",
+  "An icon will be added to your home screen so you can quickly access this website.": "將在您的主畫面新增一個圖示，方便您快速存取此應用程式。",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "將在您的工作列新增一個圖示，方便您快速存取此應用程式。",
+  "Install": "安裝",
+  "Install %s": "安裝 %s",
+  "Install app": "安裝應用程式",
+  "Later": "稍後",
+  "Open in browser": "在瀏覽器中開啟",
+  "Select %s from the menu that pops up.": "從跳出的選單中選擇 %s。",
+  "Tap %s": "點選 %s",
+  "Tap %s in the browser bar.": "點選瀏覽器列中的 %s。",
+  "Tap %s in the toolbar.": "點選工具列中的 %s。",
+  "Tap the %s button above.": "點選上方的 %s 按鈕。",
+  "Tap the %s button below to open your system browser.": "點選下方的 %s 按鈕以開啟系統瀏覽器。",
+  "Tap the %s button in the toolbar.": "點選工具列中的 %s 按鈕。",
+  "Tap the %s button in the upper right corner.": "點選右上角的 %s 按鈕。",
+  "You may need to scroll down to find this menu item.": "您可能需要向下捲動以找到此選單項目。"
+}
