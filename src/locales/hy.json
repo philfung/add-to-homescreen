@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Ավելացնել հիմնական էկրանին",
+  "Add To Dock": "Ավելացնել Dock-ում",
+  "An icon will be added to your Dock so you can quickly access this website.": "Պատկերակ կավելացվի ձեր Dock-ում, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+  "An icon will be added to your home screen so you can quickly access this website.": "Պատկերակ կավելացվի ձեր հիմնական էկրանին, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Պատկերակ կավելացվի ձեր առաջադրանքների գոտում, որպեսզի կարողանաք արագ մուտք գործել այս հավելված:",
+  "Install": "Տեղադրել",
+  "Install %s": "Տեղադրել %s",
+  "Install app": "Տեղադրել հավելվածը",
+  "Later": "Ավելի ուշ",
+  "Open in browser": "Բացել դիտարկիչում",
+  "Select %s from the menu that pops up.": "Ընտրեք %s հայտնվող ընտրացանկից:",
+  "Tap %s": "Հպեք %s",
+  "Tap %s in the browser bar.": "Հպեք %s դիտարկիչի գոտում:",
+  "Tap %s in the toolbar.": "Հպեք %s գործիքագոտում:",
+  "Tap the %s button above.": "Հպեք %s կոճակին վերևում:",
+  "Tap the %s button below to open your system browser.": "Հպեք %s կոճակին ներքևում՝ համակարգային դիտարկիչը բացելու համար:",
+  "Tap the %s button in the toolbar.": "Հպեք %s կոճակին գործիքագոտում:",
+  "Tap the %s button in the upper right corner.": "Հպեք %s կոճակին վերին աջ անկյունում:",
+  "You may need to scroll down to find this menu item.": "Հնարավոր է՝ պետք լինի ներքև գլորել՝ այս ընտրացանկի տարրը գտնելու համար:"
+}

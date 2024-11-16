@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Негізгі экранға қосу",
+  "Add To Dock": "Dock-қа қосу",
+  "An icon will be added to your Dock so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін Dock-қа белгіше қосылады.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін негізгі экранға белгіше қосылады.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Бұл қолданбаға жылдам қол жеткізу үшін тапсырмалар тақтасына белгіше қосылады.",
+  "Install": "Орнату",
+  "Install %s": "%s орнату",
+  "Install app": "Қолданбаны орнату",
+  "Later": "Кейінірек",
+  "Open in browser": "Браузерде ашу",
+  "Select %s from the menu that pops up.": "Қалқымалы мәзірден %s таңдаңыз.",
+  "Tap %s": "%s түртіңіз",
+  "Tap %s in the browser bar.": "Браузер жолағында %s түртіңіз.",
+  "Tap %s in the toolbar.": "Құралдар тақтасында %s түртіңіз.",
+  "Tap the %s button above.": "Жоғарыдағы %s түймесін түртіңіз.",
+  "Tap the %s button below to open your system browser.": "Жүйелік браузерді ашу үшін төмендегі %s түймесін түртіңіз.",
+  "Tap the %s button in the toolbar.": "Құралдар тақтасында %s түймесін түртіңіз.",
+  "Tap the %s button in the upper right corner.": "Жоғарғы оң жақ бұрыштағы %s түймесін түртіңіз.",
+  "You may need to scroll down to find this menu item.": "Бұл мәзір элементін табу үшін төмен жылжыту қажет болуы мүмкін."
+}

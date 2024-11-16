@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+  "Add to Home Screen": "添加到主屏幕",
+  "Add To Dock": "添加到程序坞",
+  "An icon will be added to your Dock so you can quickly access this website.": "一个图标将添加到您的程序坞，以便您快速访问此应用。",
+  "An icon will be added to your home screen so you can quickly access this website.": "一个图标将添加到您的主屏幕，以便您快速访问此应用。",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "一个图标将添加到您的任务栏，以便您快速访问此应用。",
+  "Install": "安装",
+  "Install %s": "安装 %s",
+  "Install app": "安装应用",
+  "Later": "稍后",
+  "Open in browser": "在浏览器中打开",
+  "Select %s from the menu that pops up.": "从弹出菜单中选择 %s。",
+  "Tap %s": "点击 %s",
+  "Tap %s in the browser bar.": "点击浏览器栏中的 %s。",
+  "Tap %s in the toolbar.": "点击工具栏中的 %s。",
+  "Tap the %s button above.": "点击上方的 %s 按钮。",
+  "Tap the %s button below to open your system browser.": "点击下方的 %s 按钮以打开系统浏览器。",
+  "Tap the %s button in the toolbar.": "点击工具栏中的 %s 按钮。",
+  "Tap the %s button in the upper right corner.": "点击右上角的 %s 按钮。",
+  "You may need to scroll down to find this menu item.": "您可能需要向下滚动以找到此菜单项。"
+=======
     "Add to Home Screen": "添加到主屏幕",
     "Add To Dock": "添加到程序坞",
     "An icon will be added to your Dock so you can quickly access this website.": "一个图标将被添加到你的程序坞，以便你可以快速访问这个网站。",
@@ -18,4 +39,5 @@
     "Tap the %s button in the toolbar.": "点击工具栏中的 %s 按钮。",
     "Tap the %s button in the upper right corner.": "点击右上角的 %s 按钮。",
     "You may need to scroll down to find this menu item.": "你可能需要向下滚动才能找到这个菜单项。"
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
 }

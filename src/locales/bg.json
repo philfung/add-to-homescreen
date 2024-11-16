@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Добави към началния екран",
+  "Add To Dock": "Добави към док",
+  "An icon will be added to your Dock so you can quickly access this website.": "Икона ще бъде добавена към вашия док за бърз достъп до това приложение.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Икона ще бъде добавена към началния ви екран за бърз достъп до това приложение.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Икона ще бъде добавена към лентата със задачи за бърз достъп до това приложение.",
+  "Install": "Инсталирай",
+  "Install %s": "Инсталирай %s",
+  "Install app": "Инсталирай приложението",
+  "Later": "По-късно",
+  "Open in browser": "Отвори в браузър",
+  "Select %s from the menu that pops up.": "Изберете %s от изскачащото меню.",
+  "Tap %s": "Докоснете %s",
+  "Tap %s in the browser bar.": "Докоснете %s в лентата на браузъра.",
+  "Tap %s in the toolbar.": "Докоснете %s в лентата с инструменти.",
+  "Tap the %s button above.": "Докоснете бутона %s по-горе.",
+  "Tap the %s button below to open your system browser.": "Докоснете бутона %s по-долу, за да отворите системния браузър.",
+  "Tap the %s button in the toolbar.": "Докоснете бутона %s в лентата с инструменти.",
+  "Tap the %s button in the upper right corner.": "Докоснете бутона %s в горния десен ъгъл.",
+  "You may need to scroll down to find this menu item.": "Може да се наложи да превъртите надолу, за да намерите този елемент от менюто."
+}

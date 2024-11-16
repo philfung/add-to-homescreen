@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Lisää kotinäyttöön",
+  "Add To Dock": "Lisää telakkaan",
+  "An icon will be added to your Dock so you can quickly access this website.": "Kuvake lisätään telakkaasi, jotta voit käyttää tätä sovellusta nopeasti.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Kuvake lisätään kotinäytöllesi, jotta voit käyttää tätä sovellusta nopeasti.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Kuvake lisätään tehtäväpalkkiisi, jotta voit käyttää tätä sovellusta nopeasti.",
+  "Install": "Asenna",
+  "Install %s": "Asenna %s",
+  "Install app": "Asenna sovellus",
+  "Later": "Myöhemmin",
+  "Open in browser": "Avaa selaimessa",
+  "Select %s from the menu that pops up.": "Valitse %s esiin tulevasta valikosta.",
+  "Tap %s": "Napauta %s",
+  "Tap %s in the browser bar.": "Napauta %s selaimen palkissa.",
+  "Tap %s in the toolbar.": "Napauta %s työkalupalkissa.",
+  "Tap the %s button above.": "Napauta yllä olevaa %s-painiketta.",
+  "Tap the %s button below to open your system browser.": "Napauta alla olevaa %s-painiketta avataksesi järjestelmäselaimen.",
+  "Tap the %s button in the toolbar.": "Napauta %s-painiketta työkalupalkissa.",
+  "Tap the %s button in the upper right corner.": "Napauta %s-painiketta oikeassa yläkulmassa.",
+  "You may need to scroll down to find this menu item.": "Saatat joutua vierittämään alas löytääksesi tämän valikkokohdan."
+}

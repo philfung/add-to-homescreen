@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "Hozzáadás a kezdőképernyőhöz",
+  "Add To Dock": "Hozzáadás a Dockhoz",
+  "An icon will be added to your Dock so you can quickly access this website.": "Egy ikon kerül a Dockba, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+  "An icon will be added to your home screen so you can quickly access this website.": "Egy ikon kerül a kezdőképernyőre, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "Egy ikon kerül a tálcára, hogy gyorsan hozzáférhessen ehhez az alkalmazáshoz.",
+  "Install": "Telepítés",
+  "Install %s": "%s telepítése",
+  "Install app": "Alkalmazás telepítése",
+  "Later": "Később",
+  "Open in browser": "Megnyitás böngészőben",
+  "Select %s from the menu that pops up.": "Válassza ki a %s elemet az előugró menüből.",
+  "Tap %s": "Koppintson a(z) %s elemre",
+  "Tap %s in the browser bar.": "Koppintson a(z) %s elemre a böngésző sávjában.",
+  "Tap %s in the toolbar.": "Koppintson a(z) %s elemre az eszköztárban.",
+  "Tap the %s button above.": "Koppintson a fenti %s gombra.",
+  "Tap the %s button below to open your system browser.": "Koppintson az alábbi %s gombra a rendszerböngésző megnyitásához.",
+  "Tap the %s button in the toolbar.": "Koppintson a(z) %s gombra az eszköztárban.",
+  "Tap the %s button in the upper right corner.": "Koppintson a(z) %s gombra a jobb felső sarokban.",
+  "You may need to scroll down to find this menu item.": "Lehet, hogy le kell görgetnie, hogy megtalálja ezt a menüelemet."
+}

@@ -1,0 +1,21 @@
+{
+    "Add to Home Screen": "加入主畫面",
+    "Add To Dock": "加入程序塢",
+    "An icon will be added to your Dock so you can quickly access this website.": "一個圖示將被加入你的程序塢，以便你可以快速存取這個網站。",
+    "An icon will be added to your home screen so you can quickly access this website.": "一個圖示將被加入你的主畫面，以便你可以快速存取這個網站。",
+    "An icon will be added to your Taskbar so you can quickly access this website.": "一個圖示將被加入你的工作列，以便你可以快速存取這個網站。",
+    "Install": "安裝",
+    "Install %s": "安裝 %s",
+    "Install app": "安裝應用程式",
+    "Later": "稍後",
+    "Open in browser": "在瀏覽器中打開",
+    "Select %s from the menu that pops up.": "從彈出的選單中選擇 %s。",
+    "Tap %s": "點擊 %s",
+    "Tap %s in the browser bar.": "在瀏覽器欄中點擊 %s。",
+    "Tap %s in the toolbar.": "在工具列中點擊 %s。",
+    "Tap the %s button above.": "點擊上面的 %s 按鈕。",
+    "Tap the %s button below to open your system browser.": "點擊下面的 %s 按鈕以打開你的系統瀏覽器。",
+    "Tap the %s button in the toolbar.": "點擊工具列中的 %s 按鈕。",
+    "Tap the %s button in the upper right corner.": "點擊右上角的 %s 按鈕。",
+    "You may need to scroll down to find this menu item.": "你可能需要向下捲動才能找到這個菜單項目。"
+}

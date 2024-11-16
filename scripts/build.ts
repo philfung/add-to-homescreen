@@ -1,9 +1,7 @@
+// scripts/build.ts
 import fs from "fs";
 import path from "path";
 import { LOCALES } from "../src/config";
-
-// This script creates the src/build folder which contains
-// locale specific main.ts and index.ts files
 
 const buildDir = `${__dirname}/../src/build/`;
 const sourceMainFilePath = `${__dirname}/../src/main.ts`;
@@ -27,7 +25,6 @@ function deleteFolder(folderPath) {
 
 // Clean out the build dir
 deleteFolder(buildDir);
-
 ensureDirectoryExistence(buildDir);
 
 const mainContent = fs.readFileSync(sourceMainFilePath).toString();
@@ -35,8 +32,6 @@ const indexContent = fs.readFileSync(sourceIndexFilePath).toString();
 
 // Create a main file for each locale
 LOCALES.forEach((locale) => {
-  // Create a new main file
-
   const lines = mainContent
     .replace(`"./types"`, `"../types"`)
     .replace(`"./index"`, `"./index_${locale}"`)
@@ -49,10 +44,19 @@ LOCALES.forEach((locale) => {
 function createLocaleIndexFile(locale: string) {
   let localeIndexContent = indexContent;
 
+  // Fix the path to locales directory
+  localeIndexContent = localeIndexContent.replace(
+    /from ["']\.\/locales["']/g,
+    'from "../locales"'
+  );
+  localeIndexContent = localeIndexContent.replace(
+    /require\(["']\.\/locales\//g,
+    'require("../locales/'
+  );
+
   const localeConfig = { ...require(`${localesFilePath}/${locale}.json`) };
 
-  // Normalize how the i18n.__() calls are formatted so it makes it easier to
-  // in-place replace the config values with the localized language
+  // Normalize i18n calls
   localeIndexContent = replaceFunctionCalls(localeIndexContent);
 
   Object.keys(localeConfig).forEach((localeKey) => {
@@ -85,7 +89,8 @@ function createLocaleIndexFile(locale: string) {
 
   lines.splice(1, 0, `const LOCALES = ["${locale}"]`);
 
-  const relativeRequires = ["./styles.css", "./simpleI18n", "./types"];
+  // Fix all relative paths
+  const relativeRequires = ["./styles.css", "./simpleI18n", "./types", "./config"];
 
   let localeConfigFound = false;
   for (let i = 0; i < lines.length; i++) {
@@ -94,14 +99,13 @@ function createLocaleIndexFile(locale: string) {
     for (let j = 0; j < relativeRequires.length; j++) {
       const requirePath = relativeRequires[j];
       if (line.indexOf(`"${requirePath}`) > -1) {
-        lines[i] = line.replace(requirePath, "." + requirePath);
+        lines[i] = line.replace(requirePath, "../" + requirePath.substring(2));
         relativeRequires.splice(j, 1);
-
         break;
       }
     }
 
-    const localeRequireIdx = line.indexOf('require("./locales/"');
+    const localeRequireIdx = line.indexOf('require("../locales/');
     if (localeRequireIdx > -1) {
       lines[i] =
         lines[i].substring(0, localeRequireIdx) +
@@ -116,7 +120,6 @@ function createLocaleIndexFile(locale: string) {
   }
 
   localeIndexContent = lines.join("\n");
-
   localeIndexContent = removeNewlineSpaceLessThan(localeIndexContent);
 
   const indexFilePath = path.join(buildDir, `index_${locale}.ts`);
@@ -124,21 +127,14 @@ function createLocaleIndexFile(locale: string) {
 }
 
 function removeNewlineSpaceLessThan(input: string): string {
-  // Regular expression to match newline, followed by any number of spaces, followed by "<"
   const regex = /\n[\s\t]*</g;
-
-  // Replace all matches with just "<"
   return input.replace(regex, "<");
 }
 
 function replaceFunctionCalls(input: string): string {
-  // Regular expression to match '.__(' followed by any number of spaces or new lines
   const regex = /\.__\(\s*/g;
-
-  // Replace with '.__('
   return input.replace(regex, ".__(");
 }
 
-// Create the "src/build/index_{locale}.ts" file for each locale
-// This is targeted by webpack for the build
+// Create the localized index files
 LOCALES.forEach(createLocaleIndexFile);

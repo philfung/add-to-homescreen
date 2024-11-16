@@ -1,0 +1,21 @@
+{
+  "Add to Home Screen": "ホーム画面に追加",
+  "Add To Dock": "Dockに追加",
+  "An icon will be added to your Dock so you can quickly access this website.": "アイコンがDockに追加され、このウェブサイトをすばやくアクセスできます。",
+  "An icon will be added to your home screen so you can quickly access this website.": "アイコンがホーム画面に追加され、このウェブサイトをすばやくアクセスできます。",
+  "An icon will be added to your Taskbar so you can quickly access this website.": "アイコンがタスクバーに追加され、このウェブサイトをすばやくアクセスできます。",
+  "Install": "インストール",
+  "Install %s": "%sをインストール",
+  "Install app": "アプリをインストール",
+  "Later": "後で",
+  "Open in browser": "ブラウザで開く",
+  "Select %s from the menu that pops up.": "表示されるメニューから%sを選択してください。",
+  "Tap %s": "%sをタップ",
+  "Tap %s in the browser bar.": "ブラウザバーで表示される%sをタップ",
+  "Tap %s in the toolbar.": "ツールバーで表示される%sをタップ",
+  "Tap the %s button above.": "上の%sボタンをタップ",
+  "Tap the %s button below to open your system browser.": "下の%sボタンをタップしてシステムのブラウザを開きます。",
+  "Tap the %s button in the toolbar.": "ツールバーの%sボタンをタップ",
+  "Tap the %s button in the upper right corner.": "右上の%sボタンをタップ",
+  "You may need to scroll down to find this menu item.": "このメニュー項目を見つけるには、下にスクロールする必要があります。"
+}

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build-dev": "NODE_ENV=development npm run build",
-    "build": "bun ./scripts/build.ts && webpack && bun ./scripts/postBuild.ts",
+    "build": "bun ./scripts/build.ts && bun ./scripts/sequentialBuild.ts",
     "pack": "webpack",
     "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
@@ -35,6 +35,7 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.4.8",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
     "typescript": "^5.0.0",
     "webpack": "^5.89.0",
