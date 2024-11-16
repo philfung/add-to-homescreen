@@ -15,6 +15,10 @@ Here is a [demo (please open on your phone)](https://philfung.github.io) of libr
 </br>
 <img src="https://github.com/user-attachments/assets/3e751e86-f438-4a33-b9bb-fc81495fa67c" width="300"/>
 
+## Language Support
+
+Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree/main/src/locales).
+
 ## Browser Support
 
 All major browsers on IOS/Android/Desktop are supported.
@@ -76,9 +80,9 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.3/dist/add-to-homescreen.min.css"
+       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.3/dist/add-to-homescreen.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/add-to-homescreen.min.js"></script>
      ...
    </head>
    ```
@@ -93,9 +97,9 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.3/dist/add-to-homescreen.min.css"
+       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.3/dist/add-to-homescreen_es.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/add-to-homescreen_es.min.js"></script>
      ...
    </head>
    ```
@@ -116,14 +120,16 @@ This should be a quick drop-in library into your website.
                                                             // Optional. Default 'standalone'
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
-     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.3/dist/assets/img/',  // Link to directory of library image assets.
+     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/assets/img/',  // Link to directory of library image assets.
 
-     maxModalDisplayCount: -1                               // If set, the modal will only show this many times.
-                                                            // Optional. Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
+     maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
+                                                            // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
+     displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
+
    });
 
     ret = window.AddToHomeScreenInstance.show('en');        // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
-                                                            // The only argument is the language to show the messages in (currently only 'da', 'de', 'en', 'es', 'fr', 'he', 'it', 'pt', 'ru', 'cs', 'ko', 'lv', 'pl', 'vn', 'zh_CN', 'zh_HK' and 'zh_TW' are available).
+                                                            // [optional] language.  If left blank, then language is auto-decided from (1) URL param locale='..' (e.g. /?locale=es) (2) Browser language settings
    });
    </script>
    </body>

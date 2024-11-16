@@ -1,5 +1,6 @@
 module.exports = {
   LOCALES: [
+<<<<<<< HEAD
     "af",  // Afrikaans
     "am",  // Amharic
     "ar",  // Arabic
@@ -59,6 +60,28 @@ module.exports = {
     "zh_CN",  // Chinese (Simplified)
     "zh_HK",  // Chinese (Hong Kong)
     "zh_TW"   // Chinese (Taiwan)
+=======
+    "da",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "he",
+    "it",
+    "ja",
+    "pt",
+    "ru",
+    "cs",
+    "ko",
+    "lv",
+    "pl",
+    "th",
+    "vn",
+    "zh",
+    "zh_CN",
+    "zh_HK",
+    "zh_TW"
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   ],
   DEFAULT_LOCALE: "en"
 };

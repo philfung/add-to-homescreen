@@ -5,6 +5,9 @@ import {
   ADHSBeforeInstallPromptEvent,
   DeviceInfo,
   DeviceType,
+  DisplayOptions,
+  isDisplayOptions,
+  DISPLAY_OPTIONS_DEFAULT
 } from "./types";
 
 const config = require("./config");
@@ -31,7 +34,12 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
+<<<<<<< HEAD
   let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount } = options;
+=======
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions } =
+    options;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   let closeEventListener: EventListener | null = null;
   let currentLocale: string = 'en';
   let browserRTL: boolean = false;
@@ -45,6 +53,10 @@ export function AddToHomeScreen(
   maxModalDisplayCount = maxModalDisplayCount === undefined ? -1 : maxModalDisplayCount;
   _assertArg("maxModalDisplayCount", Number.isInteger(maxModalDisplayCount));
 
+  displayOptions = 
+    displayOptions === undefined ? DISPLAY_OPTIONS_DEFAULT : displayOptions;
+  _assertArg("displayOptions", isDisplayOptions(displayOptions))
+
   closeEventListener = null;
 
   // Check if current locale is RTL
@@ -57,17 +69,37 @@ export function AddToHomeScreen(
     return browserRTL;
   }
 
+<<<<<<< HEAD
   function show(locale: string, rtl: boolean): DeviceInfo {
     currentLocale = locale;
     browserRTL = rtl;
 
     if (!locale) {
       if (localeCatalog["en"]) {
+=======
+  function show(locale: string): DeviceInfo {
+
+    if (locale && !localeCatalog[locale]) {
+      console.log("add-to-homescreen: WARNING: locale selected not available:", locale);
+      locale = "";
+    }
+
+    if (!locale) {
+      const language_from_browser_settings = i18n._getLanguageFromBrowserSettings();
+      // if no locale indicated
+      // check url param "locale" and browser settings
+      if (language_from_browser_settings && localeCatalog[language_from_browser_settings]) {
+        locale = language_from_browser_settings;
+      // if "en" intl file is available, default to "en"
+      } else if (localeCatalog["en"]) {
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
         locale = "en";
+      // else default to first language available
       } else {
         locale = Object.keys(localeCatalog)[0];
       }
     }
+    debugMessage("LOCALE: " + locale);
 
     i18n.setLocale(locale);
     
@@ -86,6 +118,7 @@ export function AddToHomeScreen(
       return new DeviceInfo(true, true, _device);
     }
 
+<<<<<<< HEAD
     // Handle max modal display count
     if (_hasReachedMaxModalDisplayCount()) {
       return new DeviceInfo(false, false, _device);
@@ -102,6 +135,25 @@ export function AddToHomeScreen(
     let shouldShowModal = true;
 
     if (isDeviceIOS() || isDeviceAndroid()) {
+=======
+      ret = new DeviceInfo(
+        (_isStandAlone = true),
+        (_canBeStandAlone = true),
+        (_device = _device)
+      );
+    } else if (_hasReachedMaxModalDisplayCount()) {
+      ret = new DeviceInfo(
+        (_isStandAlone = false),
+        (_canBeStandAlone = false),
+        (_device = _device)
+      );
+    } else if (
+      displayOptions.showMobile && 
+      (isDeviceIOS() || isDeviceAndroid())
+    ) {
+      debugMessage("NOT STANDALONE - IOS OR ANDROID");
+      var shouldShowModal = true;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
       _incrModalDisplayCount();
       
       if (isDeviceIOS()) {
@@ -140,12 +192,26 @@ export function AddToHomeScreen(
     } else {
       ret = new DeviceInfo(false, false, _device);
 
+<<<<<<< HEAD
       if (isDesktopChrome() || isDesktopEdge()) {
         _incrModalDisplayCount();
         showDesktopInstallPrompt();
       } else if (isDesktopSafari()) {
         _incrModalDisplayCount();
         _showDesktopSafariPrompt();
+=======
+
+      if (displayOptions.showDesktop) {
+        if (isDesktopChrome() || isDesktopEdge()) {
+          debugMessage("DESKTOP CHROME");
+          _incrModalDisplayCount();
+          showDesktopInstallPrompt();
+        } else if (isDesktopSafari()) {
+          debugMessage("DESKTOP SAFARI");
+          _incrModalDisplayCount();
+          _showDesktopSafariPrompt();
+        }
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
       }
     }
 
@@ -175,11 +241,200 @@ export function AddToHomeScreen(
     _addContainerToBody(container);
   }
 
+<<<<<<< HEAD
   function _showDesktopSafariPrompt() {
     debugMessage("SHOW SAFARI DESKTOP PROMPT");
     var container = _createContainer(true); // include_modal
     _genDesktopSafari(container);
     _addContainerToBody(container);
+=======
+  function isBrowserIOSInAppInstagram() {
+    if (!isDeviceIOS()) {
+      return false;
+    }
+
+    // TODO: this is incompatible with Instagram/Threads mobile website links.
+    // TODO: this solution only works with first-level links
+    if (!!window.document.referrer.match("//l.instagram.com/")) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function isBrowserIOSInAppThreads() {
+    return isBrowserIOSInAppInstagram();
+  }
+
+  function isBrowserIOSInAppTwitter() {
+    if (!isDeviceIOS()) {
+      return false;
+    }
+
+    // TODO: this solution is incompatible with Twitter mobile website links
+    // TODO: this solution only works with first-level links
+    return !!window.document.referrer.match("//t.co/");
+  }
+
+  /* Mozilla/5.0 (Linux; Android 10) 
+     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
+  function isBrowserAndroidChrome() {
+    return (
+      isDeviceAndroid() &&
+      !!_matchesUserAgent(/Chrome/) &&
+      !isBrowserAndroidFacebook() &&
+      !isBrowserAndroidSamsung() &&
+      !isBrowserAndroidFirefox() &&
+      !isBrowserAndroidEdge() &&
+      !isBrowserAndroidOpera()
+    );
+  }
+
+  /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
+    AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
+    Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
+  function isBrowserAndroidFacebook() {
+    return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
+  }
+
+  /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
+  (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
+  function isBrowserAndroidSamsung() {
+    return isDeviceAndroid() && _matchesUserAgent(/SamsungBrowser/);
+  }
+
+  /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
+  function isBrowserAndroidFirefox() {
+    return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
+  }
+
+  function isBrowserAndroidOpera() {
+    return isDeviceAndroid() && _matchesUserAgent(/OPR/);
+  }
+
+  function isBrowserAndroidEdge() {
+    return isDeviceAndroid() && _matchesUserAgent(/Edg/);
+  }
+
+  function isDesktopWindows() {
+    return userAgent.includes("Windows");
+  }
+
+  function isDesktopMac() {
+    return userAgent.includes("Macintosh");
+  }
+
+  function isDesktopChrome() {
+    const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
+    const isDesktop =
+      userAgent.includes("Windows") ||
+      userAgent.includes("Macintosh") ||
+      userAgent.includes("Linux");
+
+    return isChrome && isDesktop;
+  }
+
+  function isDesktopSafari() {
+    const isSafari =
+      userAgent.includes("Safari") &&
+      !userAgent.includes("Chrome") &&
+      !userAgent.includes("Edg");
+    const isDesktop =
+      userAgent.includes("Macintosh") || userAgent.includes("Windows");
+
+    return isSafari && isDesktop;
+  }
+
+  function isDesktopEdge() {
+    return userAgent.includes("Edg/");
+  }
+
+  /**** Internal Functions ****/
+
+  function _getAppDisplayUrl(): string {
+    // return 'https://aardvark.app';
+    const currentUrl = new URL(window.location.href);
+    return currentUrl.href.replace(/\/$/, "");
+  }
+
+  function _assertArg(variableName: string, booleanExp: boolean) {
+    if (!booleanExp) {
+      throw new Error(
+        "AddToHomeScreen: variable '" + variableName + "' has an invalid value."
+      );
+    }
+  }
+
+  function _createContainer(include_modal = false) {
+    const container = document.createElement("div");
+    container.classList.add("adhs-container");
+
+    if (include_modal) {
+      var containerInnerHTML = _genModalStart() + _genModalEnd();
+      container.innerHTML = containerInnerHTML;
+    }
+
+    return container;
+  }
+
+  function _addContainerToBody(container: HTMLElement) {
+    document.body.appendChild(container);
+    _registerCloseListener();
+    setTimeout(() => {
+      container.classList.add("visible");
+    }, 50);
+  }
+
+  function _genLogo() {
+    return (
+      `
+      ${div("logo")}
+        <img src="` +
+      appIconUrl +
+      `" alt="logo" />
+      </div>
+      `
+    );
+  }
+
+  function _genTitleWithMessage(message: string) {
+    return `
+      ${div("title")}
+      ${message}
+      </div>`;
+  }
+
+  function _genModalStart() {
+    return div("modal") + _genLogo();
+  }
+
+  function _genModalEnd() {
+    return `</div>`;
+  }
+
+  function _genListStart() {
+    return div("list");
+  }
+
+  function _genListEnd() {
+    return `</div>`;
+  }
+
+  function _genListItem(numberString: string, instructionHTML: string) {
+    return `
+      ${div("list-item")}
+      ${div("number-container")}
+      ${div("circle")}
+       ${div("number")}
+       ${numberString}
+       </div>
+        </div>
+      </div>
+      ${div("instruction")}
+      ${instructionHTML}
+      </div>
+    </div>`;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   }
 
   // Fixed _genListButtonWithImage with proper RTL support
@@ -189,10 +444,50 @@ export function AddToHomeScreen(
     image_side: string = "none"
   ): string {
     if (!text) {
+<<<<<<< HEAD
       return `
         ${div("list-button")}
           <img class="adhs-list-button-image-only${isRTL() ? " rtl" : ""}" src="${imageUrl}" />
         </div>`;
+=======
+      // -translate-y-1 for tailwindcss compensation
+      return (
+        `
+        ${div("list-button")}
+          <img class="adhs-list-button-image-only -translate-y-1" src="` +
+        imageUrl +
+        `" />
+      </div>`
+      );
+    } else if (image_side === "right") {
+      // -translate-y-1 for tailwindcss compensation
+      return (
+        `
+        ${div("list-button")}
+        ${div("list-button-text")}
+        ${text}
+        </div>
+        <img class="adhs-list-button-image-right -translate-y-1" src="` +
+        imageUrl +
+        `" />
+      </div>`
+      );
+    } else if (image_side === "left") {
+      // -translate-y-1 for tailwindcss compensation
+      return (
+        `
+        ${div("list-button")}
+        <img class="adhs-list-button-image-left -translate-y-1" src="` +
+        imageUrl +
+        `" />
+        ${div("list-button-text")}
+        ${text}
+        </div>
+      </div>`
+      );
+    } else {
+      throw new Error("_genListButtonWithImage: invalid arguments");
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
     }
 
     const effectiveImageSide = isRTL() ? 
@@ -844,6 +1139,9 @@ function _genDesktopChrome(container: HTMLElement) {
   // Desktop Install Prompt Handling
   let _desktopInstallPromptEvent: ADHSBeforeInstallPromptEvent | null = null;
   let _desktopInstallPromptWasShown: boolean = false;
+  let _desktopInstallPromptStartTimeMS: number | null = null;
+  let DESKTOP_INSTALL_POLL_MS = 500;
+  let DESKTOP_INSTALL_MAX_WAIT_TIME_MS = 2000;
 
   function _desktopInstallPromptEventListener(e: ADHSBeforeInstallPromptEvent) {
     e.preventDefault();
@@ -880,6 +1178,39 @@ function _genDesktopChrome(container: HTMLElement) {
         "AddToHomeScreen: variable '" + variableName + "' has an invalid value."
       );
     }
+<<<<<<< HEAD
+=======
+
+    // - if the prompt has not fired, wait for it the be fired, then show the promotion
+    // - Don't bother showing promotion if wait time > DESKTOP_INSTALL_MAX_WAIT_TIME_MS,
+    //   this means the event will never fire, like in Incognito mode
+    if (_desktopInstallPromptEvent === null && 
+        !(_desktopInstallPromptStartTimeMS && 
+          ((Date.now() - _desktopInstallPromptStartTimeMS) > DESKTOP_INSTALL_MAX_WAIT_TIME_MS)
+         ) 
+       ) {
+      // debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT NOT FIRED");
+      if (_desktopInstallPromptStartTimeMS === null) {
+        _desktopInstallPromptStartTimeMS = Date.now();
+      }
+
+      setTimeout(() => {
+        showDesktopInstallPrompt();
+      }, DESKTOP_INSTALL_POLL_MS);
+      return;
+    }
+
+    // debugMessage("SHOW DESKTOP CHROME PROMOTION: PROMPT FIRED");
+
+    _desktopInstallPromptWasShown = true;
+
+    var container = _createContainer(
+      true // include_modal
+    );
+
+    _genDesktopChrome(container);
+    _addContainerToBody(container);
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   }
 
   function debugMessage(message: string) {
@@ -892,6 +1223,7 @@ function _genDesktopChrome(container: HTMLElement) {
     appIconUrl,
     assetUrl,
     maxModalDisplayCount,
+    displayOptions,
     clearModalDisplayCount,
     isStandAlone,
     show,

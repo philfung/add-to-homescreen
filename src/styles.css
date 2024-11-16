@@ -203,7 +203,12 @@
 
 /* List Button */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button {
+<<<<<<< HEAD
   display: inline;
+=======
+  display: inline-block;
+  /* border: 0.5px solid lightgrey; */
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   border-radius: 4px;
   box-shadow: 1px 1px 2px gray;
   margin-right: 3px;
@@ -230,20 +235,50 @@
   top: -1px;
 }
 
+<<<<<<< HEAD
 /* List Button Images */
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-only {
+=======
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-only {
+  display: inline;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   position: relative;
-  top: 3px;
   left: 0px;
+  top: 2px;
 }
 
+<<<<<<< HEAD
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-left {
+=======
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-left {
+  display: inline;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   position: relative;
   margin: 0 5px 0 0;
   top: 2px;
 }
 
+<<<<<<< HEAD
 .adhs-container .adhs-modal .adhs-list .adhs-list-item .adhs-list-button .adhs-list-button-image-right {
+=======
+.adhs-container
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  .adhs-list-button-image-right {
+  display: inline;
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
   position: relative;
   margin: 0 0 0 5px;
   top: 2px;

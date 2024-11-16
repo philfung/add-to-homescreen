@@ -72,6 +72,7 @@ function removeEmptySpace() {
   });
 }
 
+<<<<<<< HEAD
 function replaceRepetitiveI18nKeys() {
   // Get the reference translation keys from en.json with normalized format
   const enJSON = JSON.parse(
@@ -195,3 +196,31 @@ async function runPostBuild() {
 
 // Execute post-build process
 runPostBuild().catch(console.error);
+=======
+// function replaceRepetitiveI18nKeys() {
+//   const filePaths = ["add-to-homescreen.min.js", "add-to-homescreen.js"].map(
+//     (filePath) => path.join(distDir, filePath)
+//   );
+
+//   filePaths.forEach((filePath) => {
+//     let mainFileContent = fs.readFileSync(filePath).toString();
+//     const localeJSON = JSON.parse(
+//       fs.readFileSync(`${__dirname}/../src/locales/en.json`).toString()
+//     );
+
+//     Object.keys(localeJSON).forEach((key, idx) => {
+//       const len = mainFileContent.length;
+//       mainFileContent = mainFileContent
+//         .split(`"${key}":`)
+//         .join(`"k${idx + 1}":`);
+//     });
+
+//     fs.writeFileSync(filePath, mainFileContent);
+//   });
+// }
+
+updateHtmlFiles();
+removeEmptySpace();
+// replaceRepetitiveI18nKeys();
+copyRootFiles();
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324

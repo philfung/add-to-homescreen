@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
     />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <title>Aardvark</title>
     <!-- replace with your web app title-->
     <link rel="manifest" crossorigin="use-credentials" href="manifest.json" />
@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="./dist/add-to-homescreen.min.css" />
   </head>
   <!-- ====================  END: Include add-to-homescreen resources  ==================== -->
+  <!-- ====================  BEGIN: Testing Tailwind CSS side effects ================ -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- ====================  END: Testing Tailwind CSS side effects ================ -->
 
   <!-- ====================  BEGIN: EXAMPLE WEBSITE CONTENT ==================== -->
   <style>
@@ -724,9 +727,10 @@
           appIconUrl: "./dist/assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
           assetUrl: "./dist/assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+          displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         });
-        window.AddToHomeScreenInstance.show("en"); // popup is only shown if web app is not already added to homescreen
+        window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen
       });
     </script>
     <!-- ====================  END: initialize add-to-homescreen library  ==================== -->

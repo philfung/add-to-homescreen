@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
     />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <title>Aardvark</title>
     <!-- replace with your web app title-->
     <link rel="manifest" crossorigin="use-credentials" href="manifest.json" />
@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="./add-to-homescreen.min.css" />
   <script defer src="add-to-homescreen_zh_CN.min.js"></script><link href="add-to-homescreen.min.css" rel="stylesheet"></head>
   <!-- ====================  END: Include add-to-homescreen resources  ==================== -->
+  <!-- ====================  BEGIN: Testing Tailwind CSS side effects ================ -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- ====================  END: Testing Tailwind CSS side effects ================ -->
 
   <!-- ====================  BEGIN: EXAMPLE WEBSITE CONTENT ==================== -->
   <style>
@@ -569,6 +572,7 @@
 <li><a href="index_nl.html">NL</a></li>
 <li><a href="index_no.html">NO</a></li>
 <li><a href="index_pl.html">PL</a></li>
+<<<<<<< HEAD
 <li><a href="index_pt.html">PT</a></li>
 <li><a href="index_ro.html">RO</a></li>
 <li><a href="index_ru.html">RU</a></li>
@@ -582,6 +586,10 @@
 <li><a href="index_uk.html">UK</a></li>
 <li><a href="index_ur.html">UR</a></li>
 <li><a href="index_vi.html">VI</a></li>
+=======
+<li><a href="index_th.html">TH</a></li>
+<li><a href="index_vn.html">VN</a></li>
+>>>>>>> 63ed53d55441018c4378d0d83cce661f86bdc324
 <li><a href="index_zh.html">ZH</a></li>
 <li><a href="index_zh_CN.html">ZH_CN</a></li>
 <li><a href="index_zh_HK.html">ZH_HK</a></li>
@@ -782,6 +790,7 @@
           appIconUrl: "./assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
           assetUrl: "./assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+          displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
         });
         window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen

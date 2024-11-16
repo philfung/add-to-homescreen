@@ -19,6 +19,22 @@ export class DeviceInfo {
   }
 }
 
+export interface DisplayOptions {
+  showMobile: boolean;
+  showDesktop: boolean;
+}
+
+export const DISPLAY_OPTIONS_DEFAULT: DisplayOptions = {
+  showMobile: true,
+  showDesktop: true
+}
+
+export function isDisplayOptions(obj: any): obj is DisplayOptions {
+  return obj
+    && typeof obj.showMobile === 'boolean'
+    && typeof obj.showDesktop === 'boolean';
+}
+
 export interface ADHSBeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
   readonly userChoice: Promise<{
@@ -34,6 +50,7 @@ export interface AddToHomeScreenOptions {
   assetUrl: string;
   maxModalDisplayCount: number;
   appNameDisplay?: "standalone" | "inline";
+  displayOptions: DisplayOptions;
 }
 
 export interface AddToHomeScreenType {
@@ -41,6 +58,7 @@ export interface AddToHomeScreenType {
   appIconUrl: string;
   assetUrl: string;
   maxModalDisplayCount: number;
+  displayOptions: DisplayOptions;
 
   clearModalDisplayCount: () => void;
   isStandAlone: () => boolean;
