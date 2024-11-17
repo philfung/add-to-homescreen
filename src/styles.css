@@ -727,3 +727,86 @@
   right: 88px;
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
+
+@media (prefers-color-scheme: dark) {
+  .adhs-container {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    color: #ffffff !important;
+  }
+
+  .adhs-container.visible {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    opacity: 1 !important;
+  }
+
+  .adhs-container .adhs-modal {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border-radius: 7px !important;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-title,
+  .adhs-container .adhs-modal .adhs-error-title {
+    color: #ffffff !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-error-body {
+    color: #e0e0e0 !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-error-copy-link-button {
+    background-color: #444444 !important;
+    color: #ffffff !important;
+    border: 1px solid #888888 !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-list .adhs-emphasis {
+    color: #ffffff !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-list .adhs-circle {
+    background-color: #ffffff !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-list .adhs-number {
+    color: #000000 !important;
+  }
+
+  .adhs-container .adhs-modal .adhs-list .adhs-list-button {
+    background-color: #555555 !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    box-shadow: 1px 1px 2px gray !important;
+  }
+
+  .adhs-container .adhs-ios.adhs-safari .adhs-ios-safari-sharing-api-button,
+  .adhs-container .adhs-ios.adhs-safari .adhs-ios-safari-add-to-home-screen-button,
+  .adhs-container .adhs-ios.adhs-chrome .adhs-ios-chrome-more-button,
+  .adhs-container .adhs-ios.adhs-chrome .adhs-ios-chrome-add-to-home-screen-button {
+    background-color: #444444 !important;
+    color: #ffffff !important;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .adhs-container .adhs-android.adhs-chrome .adhs-android-chrome-more-button,
+  .adhs-container .adhs-android.adhs-chrome .adhs-android-chrome-add-to-homescreen-button,
+  .adhs-container .adhs-android.adhs-chrome .adhs-android-chrome-install-app {
+    background-color: #444444 !important;
+    color: #ffffff !important;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .adhs-container .adhs-inappbrowser-openinsystembrowser .adhs-modal,
+  .adhs-container .adhs-inappbrowser-openinsafari .adhs-modal {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+  }
+
+  .adhs-container .adhs-inappbrowser-openinsystembrowser .adhs-more-button,
+  .adhs-container .adhs-inappbrowser-openinsafari .adhs-more-button {
+    background-color: #444444 !important;
+    color: #ffffff !important;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2) !important;
+  }
+}
