@@ -901,6 +901,7 @@ module.exports = {
     "ko",
     "lv",
     "pl",
+    "sv",
     "th",
     "vn",
     "zh",
@@ -932,6 +933,7 @@ var map = {
 	"./pl.json": 143,
 	"./pt.json": 898,
 	"./ru.json": 672,
+	"./sv.json": 244,
 	"./th.json": 9,
 	"./vn.json": 827,
 	"./zh.json": 538,
@@ -1071,6 +1073,14 @@ module.exports = JSON.parse('{"Add to Home Screen":"Adicionar à Tela de Inicio"
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"Добавить на главный экран","Add To Dock":"Добавить в док","An icon will be added to your Dock so you can quickly access this website.":"Значок будет добавлен в ваш док для быстрого доступа к этому веб-сайту.","An icon will be added to your home screen so you can quickly access this website.":"Значок будет добавлен на ваш главный экран для быстрого доступа к этому веб-сайту.","An icon will be added to your Taskbar so you can quickly access this website.":"Значок будет добавлен на вашу панель задач для быстрого доступа к этому веб-сайту.","Install":"Установить","Install %s":"Установить %s","Install app":"Установить приложение","Later":"Позже","Open in browser":"Открыть в браузере","Select %s from the menu that pops up.":"Выберите %s из появившегося меню.","Tap %s":"Нажмите %s","Tap %s in the browser bar.":"Нажмите %s в строке браузера.","Tap %s in the toolbar.":"Нажмите %s на панели инструментов.","Tap the %s button above.":"Нажмите кнопку %s выше.","Tap the %s button below to open your system browser.":"Нажмите кнопку %s ниже, чтобы открыть системный браузер.","Tap the %s button in the toolbar.":"Нажмите кнопку %s на панели инструментов.","Tap the %s button in the upper right corner.":"Нажмите кнопку %s в правом верхнем углу.","You may need to scroll down to find this menu item.":"Возможно, вам потребуется прокрутить вниз, чтобы найти этот пункт меню."}');
+
+/***/ }),
+
+/***/ 244:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Lägg till på hemskärmen","Add To Dock":"Lägg till i Dock","An icon will be added to your Dock so you can quickly access this website.":"En ikon kommer att läggas till i din Dock så att du snabbt kan komma åt denna webbplats.","An icon will be added to your home screen so you can quickly access this website.":"En ikon kommer att läggas till på din hemskärm så att du snabbt kan komma åt denna webbplats.","An icon will be added to your Taskbar so you can quickly access this website.":"En ikon kommer att läggas till i din aktivitetsfält så att du snabbt kan komma åt denna webbplats.","Install":"Installera","Install %s":"Installera %s","Install app":"Installera app","Later":"Senare","Open in browser":"Öppna i webbläsare","Select %s from the menu that pops up.":"Välj %s från menyn som visas.","Tap %s":"Tryck på %s","Tap %s in the browser bar.":"Tryck på %s i webbläsarens fält.","Tap %s in the toolbar.":"Tryck på %s i verktygsfältet.","Tap the %s button above.":"Tryck på knappen %s ovan.","Tap the %s button below to open your system browser.":"Tryck på knappen %s nedan för att öppna din systemwebbläsare.","Tap the %s button in the toolbar.":"Tryck på knappen %s i verktygsfältet.","Tap the %s button in the upper right corner.":"Tryck på knappen %s i det övre högra hörnet.","You may need to scroll down to find this menu item.":"Du kan behöva rulla nedåt för att hitta det här menyobjektet."}');
 
 /***/ }),
 
