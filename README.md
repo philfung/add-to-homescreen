@@ -124,7 +124,9 @@ This should be a quick drop-in library into your website.
 
      maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
-     displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
+     displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+     allowClose: true, // allow the user to close the modal by tapping outside of it [Optional. Default: true]
+
 
    });
 
