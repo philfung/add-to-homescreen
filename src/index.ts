@@ -31,7 +31,7 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
-  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions } =
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose } =
     options;
   let closeEventListener: EventListener | null = null;
 
@@ -55,6 +55,9 @@ export function AddToHomeScreen(
   displayOptions = 
     displayOptions === undefined ? DISPLAY_OPTIONS_DEFAULT : displayOptions;
   _assertArg("displayOptions", isDisplayOptions(displayOptions))
+
+  allowClose = allowClose === undefined ? true : allowClose;
+  _assertArg("allowClose", typeof allowClose === "boolean");
 
   closeEventListener = null;
 
@@ -838,7 +841,7 @@ export function AddToHomeScreen(
     var cancelButton =
       container.getElementsByClassName("adhs-button-cancel")[0];
     cancelButton.addEventListener("click", () => {
-      closeModal();
+        closeModal();
     });
 
     var installButton = container.getElementsByClassName(
@@ -911,7 +914,7 @@ export function AddToHomeScreen(
       var modal = document
         .getElementsByClassName("adhs-container")[0]
         .getElementsByClassName("adhs-modal")[0];
-      if (!modal.contains(e.target as Node)) {
+      if (!modal.contains(e.target as Node) && allowClose) {
         closeModal();
       }
     };
@@ -1069,6 +1072,7 @@ export function AddToHomeScreen(
     assetUrl,
     maxModalDisplayCount,
     displayOptions,
+    allowClose,
     clearModalDisplayCount,
     isStandAlone,
     show,

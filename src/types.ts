@@ -51,6 +51,7 @@ export interface AddToHomeScreenOptions {
   maxModalDisplayCount: number;
   appNameDisplay?: "standalone" | "inline";
   displayOptions: DisplayOptions;
+  allowClose?: boolean;
 }
 
 export interface AddToHomeScreenType {
@@ -59,6 +60,7 @@ export interface AddToHomeScreenType {
   assetUrl: string;
   maxModalDisplayCount: number;
   displayOptions: DisplayOptions;
+  allowClose: boolean;
 
   clearModalDisplayCount: () => void;
   isStandAlone: () => boolean;

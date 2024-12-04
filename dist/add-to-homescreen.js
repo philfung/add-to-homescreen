@@ -37,7 +37,7 @@ simpleI18n_1.default.configure({
     directory: ".",
 });
 function AddToHomeScreen(options) {
-    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions } = options;
+    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose } = options;
     let closeEventListener = null;
     const userAgent = window.navigator.userAgent;
     _assertArg("appName", typeof appName === "string" && appName.length > 0);
@@ -51,6 +51,8 @@ function AddToHomeScreen(options) {
     displayOptions =
         displayOptions === undefined ? types_1.DISPLAY_OPTIONS_DEFAULT : displayOptions;
     _assertArg("displayOptions", (0, types_1.isDisplayOptions)(displayOptions));
+    allowClose = allowClose === undefined ? true : allowClose;
+    _assertArg("allowClose", typeof allowClose === "boolean");
     closeEventListener = null;
     // handles the case where the chrome prompt is not immediately shown on page load,
     // such as an onclick handler
@@ -632,7 +634,7 @@ function AddToHomeScreen(options) {
             var modal = document
                 .getElementsByClassName("adhs-container")[0]
                 .getElementsByClassName("adhs-modal")[0];
-            if (!modal.contains(e.target)) {
+            if (!modal.contains(e.target) && allowClose) {
                 closeModal();
             }
         };
@@ -753,6 +755,7 @@ function AddToHomeScreen(options) {
         assetUrl,
         maxModalDisplayCount,
         displayOptions,
+        allowClose,
         clearModalDisplayCount,
         isStandAlone,
         show,
