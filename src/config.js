@@ -14,6 +14,7 @@ module.exports = {
     "ko",
     "lv",
     "pl",
+    "sl",
     "sv",
     "th",
     "vn",
