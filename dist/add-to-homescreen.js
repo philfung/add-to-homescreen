@@ -206,9 +206,11 @@ function AddToHomeScreen(options) {
         return _matchesUserAgent(/iPhone|iPad|iPod/) || isBrowserIOSIPadSafari();
     }
     function isBrowserIOSIPadSafari() {
-        return !!(userAgent.match(/Macintosh/) &&
-            navigator.maxTouchPoints &&
-            navigator.maxTouchPoints > 1);
+        return !!(_matchesUserAgent(/iPad/) || // iPad Mini
+            // iPad Air, iPad Pro
+            (_matchesUserAgent(/Macintosh/) &&
+                navigator.maxTouchPoints &&
+                navigator.maxTouchPoints > 1));
     }
     /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
      AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0

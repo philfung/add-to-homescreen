@@ -266,26 +266,30 @@ export function AddToHomeScreen(
     return !!userAgent.match(regex);
   }
 
-  function isDeviceAndroid() {
+  function isDeviceAndroid(): boolean {
     return !!_matchesUserAgent(/Android/);
   }
 
-  function isDeviceIOS() {
+  function isDeviceIOS(): boolean {
     return _matchesUserAgent(/iPhone|iPad|iPod/) || isBrowserIOSIPadSafari();
   }
 
-  function isBrowserIOSIPadSafari() {
+  function isBrowserIOSIPadSafari(): boolean {
     return !!(
-      userAgent.match(/Macintosh/) &&
-      navigator.maxTouchPoints &&
-      navigator.maxTouchPoints > 1
-    );
+      _matchesUserAgent(/iPad/) || // iPad Mini
+      // iPad Air, iPad Pro
+      (
+        _matchesUserAgent(/Macintosh/) &&
+        navigator.maxTouchPoints &&
+        navigator.maxTouchPoints > 1
+      )
+    )
   }
 
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
    AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0
    Mobile/14E5239e Safari/602.1 */
-  function isBrowserIOSSafari() {
+  function isBrowserIOSSafari(): boolean {
     return (
       isDeviceIOS() &&
       _matchesUserAgent(/Safari/) &&
@@ -302,17 +306,17 @@ export function AddToHomeScreen(
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
      AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75
      Mobile/14E5239e Safari/602.1 */
-  function isBrowserIOSChrome() {
+  function isBrowserIOSChrome(): boolean {
     return isDeviceIOS() && _matchesUserAgent(/CriOS/);
   }
 
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) 
   AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/114.1 Mobile/15E148 Safari/605.1.15 */
-  function isBrowserIOSFirefox() {
+  function isBrowserIOSFirefox(): boolean {
     return isDeviceIOS() && _matchesUserAgent(/FxiOS/);
   }
 
-  function isBrowserIOSInAppFacebook() {
+  function isBrowserIOSInAppFacebook(): boolean {
     if (!isDeviceIOS()) {
       return false;
     }
@@ -320,7 +324,7 @@ export function AddToHomeScreen(
     return _matchesUserAgent(/FBAN|FBAV/);
   }
 
-  function isBrowserIOSInAppLinkedin() {
+  function isBrowserIOSInAppLinkedin(): boolean {
     if (!isDeviceIOS()) {
       return false;
     }
@@ -328,7 +332,7 @@ export function AddToHomeScreen(
     return _matchesUserAgent(/LinkedInApp/);
   }
 
-  function isBrowserIOSInAppInstagram() {
+  function isBrowserIOSInAppInstagram(): boolean {
     if (!isDeviceIOS()) {
       return false;
     }
@@ -342,11 +346,11 @@ export function AddToHomeScreen(
     return false;
   }
 
-  function isBrowserIOSInAppThreads() {
+  function isBrowserIOSInAppThreads(): boolean {
     return isBrowserIOSInAppInstagram();
   }
 
-  function isBrowserIOSInAppTwitter() {
+  function isBrowserIOSInAppTwitter(): boolean {
     if (!isDeviceIOS()) {
       return false;
     }
@@ -358,7 +362,7 @@ export function AddToHomeScreen(
 
   /* Mozilla/5.0 (Linux; Android 10) 
      AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.92 Mobile Safari/537.36 */
-  function isBrowserAndroidChrome() {
+  function isBrowserAndroidChrome(): boolean {
     return (
       isDeviceAndroid() &&
       !!_matchesUserAgent(/Chrome/) &&
@@ -373,38 +377,38 @@ export function AddToHomeScreen(
   /*Mozilla/5.0 (Linux; Android 12; SM-S908U1 Build/SP1A.210812.016; wv) 
     AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.88 
     Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
-  function isBrowserAndroidFacebook() {
+  function isBrowserAndroidFacebook(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
   }
 
   /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
   (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
-  function isBrowserAndroidSamsung() {
+  function isBrowserAndroidSamsung(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/SamsungBrowser/);
   }
 
   /* Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/114.0 Firefox/114.0 */
-  function isBrowserAndroidFirefox() {
+  function isBrowserAndroidFirefox(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/Firefox/);
   }
 
-  function isBrowserAndroidOpera() {
+  function isBrowserAndroidOpera(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/OPR/);
   }
 
-  function isBrowserAndroidEdge() {
+  function isBrowserAndroidEdge(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/Edg/);
   }
 
-  function isDesktopWindows() {
+  function isDesktopWindows(): boolean {
     return userAgent.includes("Windows");
   }
 
-  function isDesktopMac() {
+  function isDesktopMac(): boolean {
     return userAgent.includes("Macintosh");
   }
 
-  function isDesktopChrome() {
+  function isDesktopChrome(): boolean {
     const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
     const isDesktop =
       userAgent.includes("Windows") ||
@@ -414,7 +418,7 @@ export function AddToHomeScreen(
     return isChrome && isDesktop;
   }
 
-  function isDesktopSafari() {
+  function isDesktopSafari(): boolean {
     const isSafari =
       userAgent.includes("Safari") &&
       !userAgent.includes("Chrome") &&
@@ -425,7 +429,7 @@ export function AddToHomeScreen(
     return isSafari && isDesktop;
   }
 
-  function isDesktopEdge() {
+  function isDesktopEdge(): boolean {
     return userAgent.includes("Edg/");
   }
 
