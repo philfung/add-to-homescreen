@@ -183,6 +183,7 @@ function AddToHomeScreen(options) {
             container.classList.remove("visible");
             setTimeout(() => {
                 container.remove();
+                _modalIsShowing = false;
                 if (closeEventListener) {
                     window.removeEventListener("touchstart", closeEventListener);
                     window.removeEventListener("click", closeEventListener);
@@ -194,6 +195,9 @@ function AddToHomeScreen(options) {
             // does not happen
             isDeviceIOS() ? 500 : 300);
         }
+    }
+    function modalIsShowing() {
+        return _modalIsShowing;
     }
     /**** Device Detection Functions ****/
     function _matchesUserAgent(regex) {
@@ -347,6 +351,7 @@ function AddToHomeScreen(options) {
         return container;
     }
     function _addContainerToBody(container) {
+        _modalIsShowing = true;
         document.body.appendChild(container);
         _registerCloseListener();
         setTimeout(() => {
@@ -690,6 +695,7 @@ function AddToHomeScreen(options) {
         // alert(message);
         // console.log(message);
     }
+    let _modalIsShowing = false;
     let _desktopInstallPromptEvent = null;
     let _desktopInstallPromptWasShown = false;
     let _desktopInstallPromptStartTimeMS = null;
@@ -762,6 +768,7 @@ function AddToHomeScreen(options) {
         isStandAlone,
         show,
         closeModal,
+        modalIsShowing,
         isBrowserAndroidChrome,
         isBrowserAndroidFacebook,
         isBrowserAndroidFirefox,

@@ -66,7 +66,7 @@ export interface AddToHomeScreenType {
   isStandAlone: () => boolean;
   show: (locale: string) => DeviceInfo;
   closeModal: () => void;
-
+  modalIsShowing: () => boolean;
   isBrowserIOSSafari: () => boolean;
   isBrowserIOSChrome: () => boolean;
   isBrowserIOSFirefox: () => boolean;
