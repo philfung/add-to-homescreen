@@ -380,6 +380,7 @@ export function AddToHomeScreen(
       isDeviceAndroid() &&
       !!_matchesUserAgent(/Chrome/) &&
       !isBrowserAndroidFacebook() &&
+      !isBrowserAndroidInstagram() &&
       !isBrowserAndroidSamsung() &&
       !isBrowserAndroidFirefox() &&
       !isBrowserAndroidEdge() &&

@@ -287,6 +287,7 @@ function AddToHomeScreen(options) {
         return (isDeviceAndroid() &&
             !!_matchesUserAgent(/Chrome/) &&
             !isBrowserAndroidFacebook() &&
+            !isBrowserAndroidInstagram() &&
             !isBrowserAndroidSamsung() &&
             !isBrowserAndroidFirefox() &&
             !isBrowserAndroidEdge() &&
