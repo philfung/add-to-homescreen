@@ -80,9 +80,9 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.96/dist/add-to-homescreen.min.css"
+       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.97/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.96/dist/add-to-homescreen.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.97/dist/add-to-homescreen.min.js"></script>
      ...
    </head>
    ```
@@ -97,9 +97,9 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.96/dist/add-to-homescreen.min.css"
+       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.97/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.96/dist/add-to-homescreen_es.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.97/dist/add-to-homescreen_es.min.js"></script>
      ...
    </head>
    ```
@@ -120,7 +120,7 @@ This should be a quick drop-in library into your website.
                                                             // Optional. Default 'standalone'
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
-     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.96/dist/assets/img/',  // Link to directory of library image assets.
+     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.97/dist/assets/img/',  // Link to directory of library image assets.
 
      maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
