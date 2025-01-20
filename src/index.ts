@@ -155,26 +155,31 @@ export function AddToHomeScreen(
           );
 
           _genIOSChrome(container);
-        } else if (isBrowserIOSInAppFacebook() || isBrowserIOSInAppLinkedin()) {
+        } else if (
+          isBrowserIOSInAppFacebook() 
+          || isBrowserIOSInAppLinkedin()
+          || isBrowserIOSInAppInstagram()
+        ) {
+          // IOS INSTAGRAM: https://github.com/user-attachments/assets/0d3ab224-1ac7-454e-b75d-21f6c52ffa87
+          // IOS FACEBOOK: https://github.com/user-attachments/assets/4c8121a2-3c62-402f-be05-0c54bf108ddc
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = false),
             (_device = _device)
           );
 
-          _genIOSInAppBrowserOpenInSystemBrowser(container);
+          _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container);
         } else if (
-          isBrowserIOSInAppInstagram() ||
-          isBrowserIOSInAppThreads() ||
           isBrowserIOSInAppTwitter()
         ) {
+          // IOS TWITTER/X: https://github.com/user-attachments/assets/ed01b58e-5aab-48b9-8c42-d21d24cd2c03
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = false),
             (_device = _device)
           );
 
-          _genIOSInAppBrowserOpenInSafariBrowser(container);
+          _genIOSInAppBrowserLowerRightButtonOpenInSafariBrowser(container);
         } else {
           ret = new DeviceInfo(
             (_isStandAlone = false),
@@ -192,14 +197,17 @@ export function AddToHomeScreen(
             (_device = _device)
           );
           _genAndroidChrome(container);
-        } else if (isBrowserAndroidFacebook()) {
+        } else if (isBrowserAndroidFacebook() || isBrowserAndroidInstagram()) {
+          // ANDROID FACEBOOK: https://github.com/user-attachments/assets/45701ac3-d337-4fc4-8e82-3d03236bf3a5
+          // ANDROID INSTAGRAM: https://github.com/user-attachments/assets/7e1d11fd-31ba-4b27-a13d-6beb079b4204
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = false),
             (_device = _device)
           );
-          _genIOSInAppBrowserOpenInSystemBrowser(container);
+          _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container);
         } else {
+          // ANDROID X/TWITTER JUST OPENS SYSTEM BROWSER
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = false),
@@ -384,6 +392,10 @@ export function AddToHomeScreen(
     Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
   function isBrowserAndroidFacebook(): boolean {
     return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
+  }
+
+  function isBrowserAndroidInstagram(): boolean {
+    return isDeviceAndroid() && _matchesUserAgent(/Instagram/);
   }
 
   /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36 
@@ -665,7 +677,7 @@ export function AddToHomeScreen(
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
   }
 
-  function _genIOSInAppBrowserOpenInSystemBrowser(container: HTMLElement) {
+  function _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container: HTMLElement) {
     var containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
@@ -702,7 +714,7 @@ export function AddToHomeScreen(
     );
   }
 
-  function _genIOSInAppBrowserOpenInSafariBrowser(container: HTMLElement) {
+  function _genIOSInAppBrowserLowerRightButtonOpenInSafariBrowser(container: HTMLElement) {
     var containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +

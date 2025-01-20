@@ -124,15 +124,18 @@ function AddToHomeScreen(options) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genIOSChrome(container);
                 }
-                else if (isBrowserIOSInAppFacebook() || isBrowserIOSInAppLinkedin()) {
+                else if (isBrowserIOSInAppFacebook()
+                    || isBrowserIOSInAppLinkedin()
+                    || isBrowserIOSInAppInstagram()) {
+                    // IOS INSTAGRAM: https://github.com/user-attachments/assets/0d3ab224-1ac7-454e-b75d-21f6c52ffa87
+                    // IOS FACEBOOK: https://github.com/user-attachments/assets/4c8121a2-3c62-402f-be05-0c54bf108ddc
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
-                    _genIOSInAppBrowserOpenInSystemBrowser(container);
+                    _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container);
                 }
-                else if (isBrowserIOSInAppInstagram() ||
-                    isBrowserIOSInAppThreads() ||
-                    isBrowserIOSInAppTwitter()) {
+                else if (isBrowserIOSInAppTwitter()) {
+                    // IOS TWITTER/X: https://github.com/user-attachments/assets/ed01b58e-5aab-48b9-8c42-d21d24cd2c03
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
-                    _genIOSInAppBrowserOpenInSafariBrowser(container);
+                    _genIOSInAppBrowserLowerRightButtonOpenInSafariBrowser(container);
                 }
                 else {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
@@ -145,11 +148,14 @@ function AddToHomeScreen(options) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genAndroidChrome(container);
                 }
-                else if (isBrowserAndroidFacebook()) {
+                else if (isBrowserAndroidFacebook() || isBrowserAndroidInstagram()) {
+                    // ANDROID FACEBOOK: https://github.com/user-attachments/assets/45701ac3-d337-4fc4-8e82-3d03236bf3a5
+                    // ANDROID INSTAGRAM: https://github.com/user-attachments/assets/7e1d11fd-31ba-4b27-a13d-6beb079b4204
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
-                    _genIOSInAppBrowserOpenInSystemBrowser(container);
+                    _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container);
                 }
                 else {
+                    // ANDROID X/TWITTER JUST OPENS SYSTEM BROWSER
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = false), (_device = _device));
                     shouldShowModal = false;
                 }
@@ -291,6 +297,9 @@ function AddToHomeScreen(options) {
       Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/377.0.0.22.107;]*/
     function isBrowserAndroidFacebook() {
         return isDeviceAndroid() && _matchesUserAgent(/FBAN|FBAV/);
+    }
+    function isBrowserAndroidInstagram() {
+        return isDeviceAndroid() && _matchesUserAgent(/Instagram/);
     }
     /* Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-S918B) AppleWebKit/537.36
     (KHTML, like Gecko) SamsungBrowser/21.0 Chrome/110.0.5481.154 Mobile Safari/537.36 */
@@ -486,7 +495,7 @@ function AddToHomeScreen(options) {
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
     }
-    function _genIOSInAppBrowserOpenInSystemBrowser(container) {
+    function _genIOSInAppBrowserUpperRightButtonOpenInSystemBrowser(container) {
         var containerInnerHTML = _genModalStart() +
             _genInstallAppHeader() +
             _genAppNameHeader() +
@@ -504,7 +513,7 @@ function AddToHomeScreen(options) {
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-inappbrowser-openinsystembrowser");
     }
-    function _genIOSInAppBrowserOpenInSafariBrowser(container) {
+    function _genIOSInAppBrowserLowerRightButtonOpenInSafariBrowser(container) {
         var containerInnerHTML = _genModalStart() +
             _genInstallAppHeader() +
             _genAppNameHeader() +
