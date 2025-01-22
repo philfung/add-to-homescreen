@@ -1,5 +1,6 @@
 module.exports = {
   LOCALES: [
+    "ar",
     "da",
     "de",
     "en",

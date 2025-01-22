@@ -906,6 +906,7 @@ function isDisplayOptions(obj) {
 
 module.exports = {
   LOCALES: [
+    "ar",
     "da",
     "de",
     "en",
@@ -939,6 +940,7 @@ module.exports = {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./ar.json": 726,
 	"./cs.json": 789,
 	"./da.json": 638,
 	"./de.json": 929,
@@ -982,6 +984,14 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 259;
+
+/***/ }),
+
+/***/ 726:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"حفظ الى الرئيسية","Add To Dock":"اضافة الى مستندات","An icon will be added to your Dock so you can quickly access this website.":"سيتم وضع ايقونة كي تستطيع استخدام التطبيق فيما بعد","An icon will be added to your home screen so you can quickly access this website.":"سيتم وضع ايقونة كي تستطيع استخدام التطبيق فيما بعد","An icon will be added to your Taskbar so you can quickly access this website.":"سيتم وضع ايقونة كي تستطيع استخدام التطبيق فيما بعد","Install":"تنصيب","Install %s":"تنصيب %s","Install app":"تنصيب التطبيق","Later":"فيما بعد","Open in browser":"فتح في المتصفح","Select %s from the menu that pops up.":"اختر %s من القائمة المنبثقة","Tap %s":"اضغط %s","Tap %s in the browser bar.":"اضغط %s في شريط المتصفح","Tap %s in the toolbar.":"اضغط %s في الادوات","Tap the %s button above.":"اضغط على %s الزر بالاعلى","Tap the %s button below to open your system browser.":"اضغط على %s زر بالاسفل لفتح المتصفح","Tap the %s button in the toolbar.":"اضغط على %s زر في قائمة الادوات","Tap the %s button in the upper right corner.":"اضغط على %s زر لرؤية القائمة العلوية","You may need to scroll down to find this menu item.":"لربما انت بحاجة الى النزول للأسفل لرؤية القائمة"}');
 
 /***/ }),
 
