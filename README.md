@@ -21,7 +21,7 @@ Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree
 
 ## Browser Support
 
-All major browsers on IOS/Android/Desktop are supported.
+All major browsers with > 10% market share on IOS/Android/Desktop are supported.
 Here are the guides shown for each platform/browser:
 
 #### IOS - Safari browser
@@ -36,11 +36,11 @@ Here are the guides shown for each platform/browser:
 
 <img width="175" alt="sc-android-chrome" src="https://github.com/user-attachments/assets/edbbf840-b33b-4cb9-98da-22db8764cbc2">
 
-#### Desktop - Chrome/Edge browsers
+#### Desktop Windows & Mac - Chrome & Edge browsers
 
 <img width="475" alt="sc-desktop-chromeedge" src="https://github.com/user-attachments/assets/86727d6f-ade9-4e7a-b1bf-b0e2b2dcd1ed">
 
-#### Desktop - Safari browser
+#### Desktop Mac - Safari browser
 
 <img width="475" alt="sc-desktop-safari" src="https://github.com/user-attachments/assets/384b7ed8-7acf-4bee-805c-36ca820c19ee">
 
