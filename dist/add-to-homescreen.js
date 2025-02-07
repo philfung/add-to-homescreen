@@ -194,6 +194,9 @@ function AddToHomeScreen(options) {
                     window.removeEventListener("touchstart", closeEventListener);
                     window.removeEventListener("click", closeEventListener);
                     closeEventListener = null;
+                    if (_desktopInstallPromptWasShown) {
+                        _desktopInstallPromptWasShown = false;
+                    }
                 }
             }, 
             // If the dialog is hidden in 300ms in Safari, the browser reports a second
@@ -779,6 +782,8 @@ function AddToHomeScreen(options) {
         show,
         closeModal,
         modalIsShowing,
+        isDeviceIOS,
+        isDeviceAndroid,
         isBrowserAndroidChrome,
         isBrowserAndroidFacebook,
         isBrowserAndroidFirefox,
