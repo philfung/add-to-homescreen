@@ -782,6 +782,8 @@ function AddToHomeScreen(options) {
         show,
         closeModal,
         modalIsShowing,
+        isDeviceIOS,
+        isDeviceAndroid,
         isBrowserAndroidChrome,
         isBrowserAndroidFacebook,
         isBrowserAndroidFirefox,

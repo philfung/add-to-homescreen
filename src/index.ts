@@ -1105,6 +1105,8 @@ export function AddToHomeScreen(
     show,
     closeModal,
     modalIsShowing,
+    isDeviceIOS,
+    isDeviceAndroid,
     isBrowserAndroidChrome,
     isBrowserAndroidFacebook,
     isBrowserAndroidFirefox,
