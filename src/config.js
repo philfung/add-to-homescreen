@@ -14,6 +14,7 @@ module.exports = {
     "cs",
     "ko",
     "lv",
+    "nl",
     "pl",
     "sl",
     "sv",
