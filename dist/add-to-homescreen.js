@@ -925,6 +925,7 @@ module.exports = {
     "cs",
     "ko",
     "lv",
+    "nl",
     "pl",
     "sl",
     "sv",
@@ -957,6 +958,7 @@ var map = {
 	"./ja.json": 566,
 	"./ko.json": 697,
 	"./lv.json": 71,
+	"./nl.json": 55,
 	"./pl.json": 143,
 	"./pt.json": 898,
 	"./ru.json": 672,
@@ -1085,6 +1087,14 @@ module.exports = JSON.parse('{"Add to Home Screen":"홈 화면에 추가","Add T
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"Pievienot sākuma ekrānam","Add To Dock":"Pievienot Dock","An icon will be added to your Dock so you can quickly access this website.":"Ikona tiks pievienota jūsu Dock, lai jūs varētu ātri piekļūt šai vietnei.","An icon will be added to your home screen so you can quickly access this website.":"Ikona tiks pievienota jūsu sākuma ekrānam, lai jūs varētu ātri piekļūt šai vietnei.","An icon will be added to your Taskbar so you can quickly access this website.":"Ikona tiks pievienota jūsu uzdevumjoslai, lai jūs varētu ātri piekļūt šai vietnei.","Install":"Instalēt","Install %s":"Instalēt %s","Install app":"Instalēt lietotni","Later":"Vēlāk","Open in browser":"Atvērt pārlūkā","Select %s from the menu that pops up.":"Izvēlieties %s no uzlecošās izvēlnes.","Tap %s":"Pieskarieties %s","Tap %s in the browser bar.":"Pieskarieties %s pārlūka joslā.","Tap %s in the toolbar.":"Pieskarieties %s rīkjoslā.","Tap the %s button above.":"Pieskarieties pogai %s augstāk.","Tap the %s button below to open your system browser.":"Pieskarieties pogai %s zemāk, lai atvērtu sistēmas pārlūku.","Tap the %s button in the toolbar.":"Pieskarieties pogai %s rīkjoslā.","Tap the %s button in the upper right corner.":"Pieskarieties pogai %s augšējā labajā stūrī.","You may need to scroll down to find this menu item.":"Jums, iespējams, būs jāpārskrollē uz leju, lai atrastu šo izvēlnes vienumu."}');
+
+/***/ }),
+
+/***/ 55:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Toevoegen aan beginscherm","Add To Dock":"Toevoegen aan Dock","An icon will be added to your Dock so you can quickly access this website.":"Er wordt een pictogram toegevoegd aan je Dock, zodat je snel toegang hebt tot deze website.","An icon will be added to your home screen so you can quickly access this website.":"Er wordt een pictogram toegevoegd aan je beginscherm, zodat je snel toegang hebt tot deze website.","An icon will be added to your Taskbar so you can quickly access this website.":"Er wordt een pictogram toegevoegd aan je taakbalk, zodat je snel toegang hebt tot deze website.","Install":"Installeren","Install %s":"%s installeren","Install app":"App installeren","Later":"Later","Open in browser":"Openen in browser","Select %s from the menu that pops up.":"Selecteer %s in het menu dat verschijnt.","Tap %s":"Tik op %s","Tap %s in the browser bar.":"Tik op %s in de browserbalk.","Tap %s in the toolbar.":"Tik op %s in de werkbalk.","Tap the %s button above.":"Tik bovenaan op de knop %s.","Tap the %s button below to open your system browser.":"Tik onderaan op de knop %s om je systeembrowser te openen.","Tap the %s button in the toolbar.":"Tik op de knop %s in de werkbalk.","Tap the %s button in the upper right corner.":"Tik op de knop %s in de rechterbovenhoek.","You may need to scroll down to find this menu item.":"Je moet mogelijk naar beneden scrollen om dit menu-item te vinden."}');
 
 /***/ }),
 
