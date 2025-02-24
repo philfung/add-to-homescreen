@@ -928,6 +928,8 @@ module.exports = {
     "nl",
     "pl",
     "sl",
+    "sq",
+    "sr",
     "sv",
     "th",
     "vn",
@@ -963,6 +965,8 @@ var map = {
 	"./pt.json": 898,
 	"./ru.json": 672,
 	"./sl.json": 329,
+	"./sq.json": 263,
+	"./sr.json": 931,
 	"./sv.json": 244,
 	"./th.json": 9,
 	"./vn.json": 827,
@@ -1127,6 +1131,22 @@ module.exports = JSON.parse('{"Add to Home Screen":"Добавить на гла
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"Dodaj na začetni zaslon","Add To Dock":"Dodaj v Dock","An icon will be added to your Dock so you can quickly access this website.":"Da boste lahko hitro dostopali do te spletne strani, bo ikona dodana v Dock.","An icon will be added to your home screen so you can quickly access this website.":"Da boste lahko hitro dostopali do te spletne strani, bo ikona dodana na začetni zaslon.","An icon will be added to your Taskbar so you can quickly access this website.":"Da boste lahko hitro dostopali do te spletne strani, bo ikona dodana v opravilno vrstico.","Install":"Namesti","Install %s":"Namesti %s","Install app":"Namesti aplikacijo","Later":"Kasneje","Open in browser":"Odpri v brskalniku","Select %s from the menu that pops up.":"V pojavnem meniju izberite %s.","Tap %s":"Izberite %s","Tap %s in the browser bar.":"V vrstici brskalnika izberite %s.","Tap %s in the toolbar.":"V orodni vrstici izberite %s.","Tap the %s button above.":"Izberite zgornji gumb %s.","Tap the %s button below to open your system browser.":"Za odpiranje brskalnika izberite spodnji gumb %s.","Tap the %s button in the toolbar.":"V orodni vrstici izberite gumb %s.","Tap the %s button in the upper right corner.":"V zgornjem desnem kotu izberite gumb %s.","You may need to scroll down to find this menu item.":"Da boste našli ta element, se bo morda potrebno pomakniti navzdol."}');
+
+/***/ }),
+
+/***/ 263:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Shto ne faqen Kryesore","Add To Dock":"Shto në shiritin e aplikacioneve","An icon will be added to your Dock so you can quickly access this website.":"Një ikonë do të shtohet në shiritin e aplikacioneve, që të mund ta hapësh këtë faqe shpejt.","An icon will be added to your home screen so you can quickly access this website.":"Një ikonë do të shtohet në faqen kryesore, që të mund ta hapësh këtë faqe shpejt.","An icon will be added to your Taskbar so you can quickly access this website.":"Një ikonë do të shtohet në panelin e shpejtë, që të mund ta hapësh këtë faqe shpejt.","Install":"Instalo","Install %s":"Instalo %s","Install app":"Instalo aplikacionin","Later":"Më vonë","Open in browser":"Hape në internet","Select %s from the menu that pops up.":"Zgjidh %s nga menuja që shfaqet.","Tap %s":"Kliko %s","Tap %s in the browser bar.":"Kliko %s në shiritin e shfletuesit","Tap %s in the toolbar.":"Kliko %s në shiritin e veglave","Tap the %s button above.":"Kliko butonin %s që ndodhet sipër.","Tap the %s button below to open your system browser.":"Prek butonin %s më poshtë për të hapur shfletuesin e pajisjes.","Tap the %s button in the toolbar.":"Kliko butonin %s në shiritin e mjeteve.","Tap the %s button in the upper right corner.":"Kliko butonin %s në këndin e sipërm djathtas.","You may need to scroll down to find this menu item.":"Mund të duhet të lëvizësh poshtë për ta gjetur këtë artikull të menysë."}');
+
+/***/ }),
+
+/***/ 931:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Dodaj na početni ekran","Add To Dock":"Dodaj u Dok","An icon will be added to your Dock so you can quickly access this website.":"Ikonica će biti dodata u vaš Dok kako biste brzo pristupili ovoj veb stranici.","An icon will be added to your home screen so you can quickly access this website.":"Ikonica će biti dodata na vaš početni ekran kako biste brzo pristupili ovoj veb stranici.","An icon will be added to your Taskbar so you can quickly access this website.":"Ikonica će biti dodata na vašu listu zadataka kako biste brzo pristupili ovoj veb stranici.","Install":"Instaliraj","Install %s":"Instaliraj %s","Install app":"Instaliraj aplikaciju","Later":"Kasnije","Open in browser":"Otvori u pregledaču","Select %s from the menu that pops up.":"Izaberite %s iz menija koji se pojavi.","Tap %s":"Pritisnite %s","Tap %s in the browser bar.":"Pritisnite %s u traci pregledača.","Tap %s in the toolbar.":"Pritisnite %s u traci sa alatkama.","Tap the %s button above.":"Pritisnite dugme %s iznad.","Tap the %s button below to open your system browser.":"Pritisnite dugme %s ispod da biste otvorili sistemski pregledač.","Tap the %s button in the toolbar.":"Pritisnite dugme %s u traci sa alatkama.","Tap the %s button in the upper right corner.":"Pritisnite dugme %s u gornjem desnom uglu.","You may need to scroll down to find this menu item.":"Možda ćete morati da se pomerite nadole da biste pronašli ovu stavku menija."}');
 
 /***/ }),
 
