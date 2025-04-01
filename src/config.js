@@ -21,6 +21,7 @@ module.exports = {
     "sr",
     "sv",
     "th",
+    "tr",
     "vn",
     "zh",
     "zh_CN",

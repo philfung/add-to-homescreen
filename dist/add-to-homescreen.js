@@ -932,6 +932,7 @@ module.exports = {
     "sr",
     "sv",
     "th",
+    "tr",
     "vn",
     "zh",
     "zh_CN",
@@ -969,6 +970,7 @@ var map = {
 	"./sr.json": 931,
 	"./sv.json": 244,
 	"./th.json": 9,
+	"./tr.json": 21,
 	"./vn.json": 827,
 	"./zh.json": 538,
 	"./zh_CN.json": 662,
@@ -1163,6 +1165,14 @@ module.exports = JSON.parse('{"Add to Home Screen":"Lägg till på hemskärmen",
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"เพิ่มลงในหน้าจอโฮม","Add To Dock":"เพิ่มลงใน Dock","An icon will be added to your Dock so you can quickly access this website.":"ไอคอนจะถูกเพิ่มลงใน Dock เพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว","An icon will be added to your home screen so you can quickly access this website.":"ไอคอนจะถูกเพิ่มลงในหน้าจอโฮมเพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว","An icon will be added to your Taskbar so you can quickly access this website.":"ไอคอนจะถูกเพิ่มลงในทาสก์บาร์เพื่อให้คุณสามารถเข้าถึงเว็บไซต์นี้ได้อย่างรวดเร็ว","Install":"ติดตั้ง","Install %s":"ติดตั้ง %s","Install app":"ติดตั้งแอป","Later":"ภายหลัง","Open in browser":"เปิดในเบราว์เซอร์","Select %s from the menu that pops up.":"เลือก %s จากเมนูที่แสดงขึ้น","Tap %s":"แตะ %s","Tap %s in the browser bar.":"แตะ %s ในแถบเบราว์เซอร์","Tap %s in the toolbar.":"แตะ %s ในแถบเครื่องมือ","Tap the %s button above.":"แตะปุ่ม %s ด้านบน","Tap the %s button below to open your system browser.":"แตะปุ่ม %s ด้านล่างเพื่อเปิดเบราว์เซอร์ของระบบ","Tap the %s button in the toolbar.":"แตะปุ่ม %s ในแถบเครื่องมือ","Tap the %s button in the upper right corner.":"แตะปุ่ม %s ที่มุมบนขวา","You may need to scroll down to find this menu item.":"คุณอาจจะต้องเลื่อนลงเพื่อค้นหารายการเมนูนี้"}');
+
+/***/ }),
+
+/***/ 21:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Ana Ekrana Ekle","Add To Dock":"Dock\'a Ekle","An icon will be added to your Dock so you can quickly access this website.":"Bu web sitesine hızlıca erişebilmeniz için Dock\'unuza bir simge eklenecektir.","An icon will be added to your home screen so you can quickly access this website.":"Bu web sitesine hızlıca erişebilmeniz için ana ekranınıza bir simge eklenecektir.","An icon will be added to your Taskbar so you can quickly access this website.":"Bu web sitesine hızlıca erişebilmeniz için Görev Çubuğunuza bir simge eklenecektir.","Install":"Yükle","Install %s":"%s Yükle","Install app":"Uygulamayı Yükle","Later":"Daha Sonra","Open in browser":"Tarayıcıda aç","Select %s from the menu that pops up.":"Açılan menüden %s öğesini seçin.","Tap %s":"%s öğesine dokunun","Tap %s in the browser bar.":"Tarayıcı çubuğunda %s öğesine dokunun.","Tap %s in the toolbar.":"Araç çubuğunda %s öğesine dokunun.","Tap the %s button above.":"Yukarıdaki %s düğmesine dokunun.","Tap the %s button below to open your system browser.":"Sistem tarayıcınızı açmak için aşağıdaki %s düğmesine dokunun.","Tap the %s button in the toolbar.":"Araç çubuğundaki %s düğmesine dokunun.","Tap the %s button in the upper right corner.":"Sağ üst köşedeki %s düğmesine dokunun.","You may need to scroll down to find this menu item.":"Bu menü öğesini bulmak için aşağı kaydırmanız gerekebilir."}');
 
 /***/ }),
 
