@@ -380,12 +380,6 @@ function AddToHomeScreen(options) {
       </div>
       `);
     }
-    function _genTitleWithMessage(message) {
-        return `
-      ${div("title")}
-      ${message}
-      </div>`;
-    }
     function _genModalStart() {
         return div("modal") + _genLogo();
     }
@@ -721,9 +715,6 @@ function AddToHomeScreen(options) {
     }
     function _registerDesktopInstallPromptEvent() {
         window.addEventListener("beforeinstallprompt", _desktopInstallPromptEventListener);
-    }
-    function _desktopInstallPromptEventHasFired() {
-        return _desktopInstallPromptEvent !== null;
     }
     function shouldShowDesktopInstallPromptBasedOnDevice() {
         return (!isStandAlone() &&

@@ -503,13 +503,6 @@ export function AddToHomeScreen(
     );
   }
 
-  function _genTitleWithMessage(message: string) {
-    return `
-      ${div("title")}
-      ${message}
-      </div>`;
-  }
-
   function _genModalStart() {
     return div("modal") + _genLogo();
   }
@@ -1026,11 +1019,7 @@ export function AddToHomeScreen(
       _desktopInstallPromptEventListener
     );
   }
-
-  function _desktopInstallPromptEventHasFired(): boolean {
-    return _desktopInstallPromptEvent !== null;
-  }
-
+  
   function shouldShowDesktopInstallPromptBasedOnDevice(): boolean {
     return (
       !isStandAlone() &&
