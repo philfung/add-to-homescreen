@@ -37,7 +37,7 @@ simpleI18n_1.default.configure({
     directory: ".",
 });
 function AddToHomeScreen(options) {
-    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose } = options;
+    let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose, showArrow } = options;
     let closeEventListener = null;
     const userAgent = window.navigator.userAgent;
     _assertArg("appName", typeof appName === "string" && appName.length > 0);
@@ -53,6 +53,8 @@ function AddToHomeScreen(options) {
     _assertArg("displayOptions", (0, types_1.isDisplayOptions)(displayOptions));
     allowClose = allowClose === undefined ? true : allowClose;
     _assertArg("allowClose", typeof allowClose === "boolean");
+    showArrow = showArrow === undefined ? true : showArrow;
+    _assertArg("showArrow", typeof showArrow === "boolean");
     closeEventListener = null;
     // handles the case where the chrome prompt is not immediately shown on page load,
     // such as an onclick handler
@@ -461,13 +463,13 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            div(isBrowserIOSIPadSafari()
+            (showArrow ? div(isBrowserIOSIPadSafari()
                 ? "ios-ipad-safari-bouncing-arrow-container"
                 : "ios-safari-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("ios-safari-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+                `<img src="` +
+                _genAssetUrl("ios-safari-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari");
     }
@@ -485,11 +487,11 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            div("ios-chrome-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+            (showArrow ? div("ios-chrome-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
     }
@@ -503,11 +505,11 @@ function AddToHomeScreen(options) {
             _genListItem(`2`, `${simpleI18n_1.default.__("Tap")} <span class="adhs-emphasis">${simpleI18n_1.default.__("Open in browser")}</span>`) +
             _genListEnd() +
             _genModalEnd() +
-            div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+            (showArrow ? div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-inappbrowser-openinsystembrowser");
     }
@@ -520,11 +522,11 @@ function AddToHomeScreen(options) {
             _genListItem(`1`, simpleI18n_1.default.__("Tap the %s button below to open your system browser.", `<img class="adhs-more-button" src="${_genAssetUrl("openinsafari-button.png")}"/>`)) +
             _genListEnd() +
             _genModalEnd() +
-            div("inappbrowser-openinsafari-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+            (showArrow ? div("inappbrowser-openinsafari-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-inappbrowser-openinsafari");
     }
@@ -540,11 +542,11 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            div("android-chrome-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("android-chrome-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+            (showArrow ? div("android-chrome-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("android-chrome-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
     }
@@ -635,11 +637,11 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             blurb +
             _genModalEnd() +
-            div("desktop-safari-bouncing-arrow-container") +
-            `<img src="` +
-            _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
-            `" alt="arrow" />
-    </div>`;
+            (showArrow ? div("desktop-safari-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-desktop", "adhs-desktop-safari");
     }
@@ -768,6 +770,7 @@ function AddToHomeScreen(options) {
         maxModalDisplayCount,
         displayOptions,
         allowClose,
+        showArrow,
         clearModalDisplayCount,
         isStandAlone,
         show,

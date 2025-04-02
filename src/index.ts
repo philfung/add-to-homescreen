@@ -31,7 +31,7 @@ i18n.configure({
 export function AddToHomeScreen(
   options: AddToHomeScreenOptions
 ): AddToHomeScreenType {
-  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose } =
+  let { appIconUrl, appName, appNameDisplay, assetUrl, maxModalDisplayCount, displayOptions, allowClose, showArrow } =
     options;
   let closeEventListener: EventListener | null = null;
 
@@ -58,6 +58,9 @@ export function AddToHomeScreen(
 
   allowClose = allowClose === undefined ? true : allowClose;
   _assertArg("allowClose", typeof allowClose === "boolean");
+
+  showArrow = showArrow === undefined ? true : showArrow;
+  _assertArg("showArrow", typeof showArrow === "boolean");
 
   closeEventListener = null;
 
@@ -619,7 +622,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      div(
+      (showArrow ? div(
         isBrowserIOSIPadSafari()
           ? "ios-ipad-safari-bouncing-arrow-container"
           : "ios-safari-bouncing-arrow-container"
@@ -627,7 +630,7 @@ export function AddToHomeScreen(
       `<img src="` +
       _genAssetUrl("ios-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari");
   }
@@ -665,11 +668,11 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      div("ios-chrome-bouncing-arrow-container") +
+      (showArrow ? div("ios-chrome-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-chrome");
   }
@@ -698,11 +701,11 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
+      (showArrow ? div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add(
       "adhs-mobile",
@@ -729,11 +732,11 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      div("inappbrowser-openinsafari-bouncing-arrow-container") +
+      (showArrow ? div("inappbrowser-openinsafari-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add(
       "adhs-mobile",
@@ -773,11 +776,11 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      div("android-chrome-bouncing-arrow-container") +
+      (showArrow ? div("android-chrome-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("android-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
   }
@@ -918,11 +921,11 @@ export function AddToHomeScreen(
       _genListEnd() +
       blurb +
       _genModalEnd() +
-      div("desktop-safari-bouncing-arrow-container") +
+      (showArrow ? div("desktop-safari-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
-    </div>`;
+    </div>` : '');
     container.innerHTML = containerInnerHTML;
 
     container.classList.add("adhs-desktop", "adhs-desktop-safari");
@@ -1089,6 +1092,7 @@ export function AddToHomeScreen(
     maxModalDisplayCount,
     displayOptions,
     allowClose,
+    showArrow,
     clearModalDisplayCount,
     isStandAlone,
     show,
