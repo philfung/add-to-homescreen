@@ -150,6 +150,10 @@ function AddToHomeScreen(options) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genAndroidChrome(container);
                 }
+                else if (isBrowserAndroidEdge()) {
+                    ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
+                    _genAndroidEdge(container);
+                }
                 else if (isBrowserAndroidFacebook() || isBrowserAndroidInstagram()) {
                     // ANDROID FACEBOOK: https://github.com/user-attachments/assets/45701ac3-d337-4fc4-8e82-3d03236bf3a5
                     // ANDROID INSTAGRAM: https://github.com/user-attachments/assets/7e1d11fd-31ba-4b27-a13d-6beb079b4204
@@ -549,6 +553,30 @@ function AddToHomeScreen(options) {
     </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
+    }
+    function _genAndroidEdge(container) {
+        var containerInnerHTML = _genModalStart() +
+            _genInstallAppHeader() +
+            _genAppNameHeader() +
+            // _genAppUrlHeader() +
+            _genListStart() +
+            _genListItem(`1`, simpleI18n_1.default.__("Tap %s in the browser bar.", _genListButtonWithImage(_genAssetUrl("android-edge-more-button.svg")))) +
+            _genListItem(`2`, simpleI18n_1.default.__("Tap %s", _genListButtonWithImage(_genAssetUrl("android-edge-add-to-home-screen-button.svg"), simpleI18n_1.default.__("Add to Home Screen"), "left"))) +
+            // _genListItem(`3`, i18n.__('Open the %s app.', `<img class="adhs-your-app-icon" src="${appIconUrl}"/>`)) +
+            _genListEnd() +
+            _genBlurbMobile() +
+            _genModalEnd() +
+            (showArrow ? div("android-edge-bouncing-arrow-container") +
+                `<picture>
+        <!-- Landscape image -->
+        <source srcset="${_genAssetUrl("generic-vertical-up-bouncing-arrow.svg")}" media="(orientation: landscape)">
+        <!-- Portrait image -->
+        <source srcset="${_genAssetUrl("generic-vertical-down-bouncing-arrow.svg")}" media="(orientation: portrait)">
+        <!-- Fallback image -->
+        <img src="${_genAssetUrl("generic-vertical-down-bouncing-arrow.svg")}" alt="arrow">
+      </picture></div>` : '');
+        container.innerHTML = containerInnerHTML;
+        container.classList.add("adhs-mobile", "adhs-android", "adhs-edge");
     }
     function _genInstallAppHeader() {
         const text = appNameDisplay === "inline"
