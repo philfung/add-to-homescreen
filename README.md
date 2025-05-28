@@ -41,7 +41,7 @@ Here are the guides shown for each platform/browser:
 
 #### Android - Edge browser
 
-<img width="175" alt=?sc-android-edge" src="https://github.com/user-attachments/assets/799e0097-7c26-4cf5-960b-5695dc254828">
+<img width="175" alt="?sc-android-edge" src="https://github.com/user-attachments/assets/799e0097-7c26-4cf5-960b-5695dc254828">
 
 #### Desktop Windows & Mac - Chrome & Edge browsers
 
