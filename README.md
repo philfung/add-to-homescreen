@@ -39,6 +39,10 @@ Here are the guides shown for each platform/browser:
 
 <img width="175" alt="sc-android-chrome" src="https://github.com/user-attachments/assets/edbbf840-b33b-4cb9-98da-22db8764cbc2">
 
+#### Android - Edge browser
+
+<img width="175" alt=?sc-android-edge" src="https://github.com/user-attachments/assets/799e0097-7c26-4cf5-960b-5695dc254828">
+
 #### Desktop Windows & Mac - Chrome & Edge browsers
 
 <img width="475" alt="sc-desktop-chromeedge" src="https://github.com/user-attachments/assets/86727d6f-ade9-4e7a-b1bf-b0e2b2dcd1ed">
