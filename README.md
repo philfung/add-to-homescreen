@@ -135,7 +135,11 @@ This should be a quick drop-in library into your website.
 
      maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
-     displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+     displayOptions:{                                       // show on mobile/desktop [Optional] Default: show everywhere
+      showMobile: true,
+      showDesktop: true,
+      showAndroidEdge: false,                                // [Optional] Default: false. Android edge saves to home screen as a link to the site on the edge browser. This is not the most desirable experience for some so this is off by default but can be enabled with this option.
+     },
      allowClose: true, // allow the user to close the modal by tapping outside of it [Optional. Default: true]
      showArrow: true, // show the bouncing arrow on the modal [Optional. Default: true] (highly recommend leaving at true as drastically affects install rates)
    });

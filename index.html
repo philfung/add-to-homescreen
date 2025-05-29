@@ -727,7 +727,11 @@
           appIconUrl: "./dist/assets/sample/img/aardvark-logo.png", // App icon link (square, at least 40 x 40 pixels) [Required]
           assetUrl: "./dist/assets/img/", // Link to directory of library image assets [Required]
           maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
-          displayOptions:{ showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+          displayOptions: { // show on mobile/desktop [Optional] Default: show everywhere
+            showMobile: true,
+            showDesktop: true,
+            showAndroidEdge: true, // [Optional] Default: false. Android edge saves to home screen as a link to the site on the edge browser. This is not the most desirable experience for some so this is off by default but can be enabled with this option.
+          },
           allowClose: true, // allow the user to close the modal by tapping outside of it. [Optional. Default: true]
           showArrow: true, // show the arrow on the modal [Optional. Default: true]
           // (Debugging: Use this.clearModalDisplayCount() to reset the count)
