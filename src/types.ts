@@ -22,11 +22,13 @@ export class DeviceInfo {
 export interface DisplayOptions {
   showMobile: boolean;
   showDesktop: boolean;
+  showAndroidEdge?: boolean;
 }
 
 export const DISPLAY_OPTIONS_DEFAULT: DisplayOptions = {
   showMobile: true,
-  showDesktop: true
+  showDesktop: true,
+  showAndroidEdge: false,
 }
 
 export function isDisplayOptions(obj: any): obj is DisplayOptions {
