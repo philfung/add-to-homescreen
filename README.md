@@ -1,4 +1,5 @@
 # Add-to-Homescreen 📱💻
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://philfung.github.io/adhs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-blue)](https://github.com/philfung/add-to-homescreen/graphs/contributors)
 [![Contributors](https://img.shields.io/github/contributors/philfung/add-to-homescreen)](https://github.com/philfung/add-to-homescreen/graphs/contributors)
