@@ -150,7 +150,7 @@ function AddToHomeScreen(options) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genAndroidChrome(container);
                 }
-                else if (isBrowserAndroidEdge()) {
+                else if (isBrowserAndroidEdge() && displayOptions.showAndroidEdge) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genAndroidEdge(container);
                 }
@@ -917,7 +917,8 @@ class DeviceInfo {
 exports.DeviceInfo = DeviceInfo;
 exports.DISPLAY_OPTIONS_DEFAULT = {
     showMobile: true,
-    showDesktop: true
+    showDesktop: true,
+    showAndroidEdge: false,
 };
 function isDisplayOptions(obj) {
     return obj

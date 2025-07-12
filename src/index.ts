@@ -200,7 +200,7 @@ export function AddToHomeScreen(
             (_device = _device)
           );
           _genAndroidChrome(container);
-        } else if (isBrowserAndroidEdge()) {
+        } else if (isBrowserAndroidEdge() && displayOptions.showAndroidEdge) {
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = true),
