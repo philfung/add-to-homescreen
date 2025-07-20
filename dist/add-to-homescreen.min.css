@@ -343,7 +343,7 @@
   height: 60px;
   position: absolute;
   top: 0;
-  right: 120px;
+  right: 11%; /* apparently on all iPads, the Safari share button is always 11% over from the right*/
   animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
 }
 
