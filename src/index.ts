@@ -629,7 +629,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      (showArrow ? div(
+      (showArrow ? divBouncingArrow(
         isBrowserIOSIPadSafari()
           ? "ios-ipad-safari-bouncing-arrow-container"
           : "ios-safari-bouncing-arrow-container"
@@ -675,7 +675,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      (showArrow ? div("ios-chrome-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("ios-chrome-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
@@ -708,7 +708,7 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      (showArrow ? div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
       `" alt="arrow" />
@@ -739,7 +739,7 @@ export function AddToHomeScreen(
       ) +
       _genListEnd() +
       _genModalEnd() +
-      (showArrow ? div("inappbrowser-openinsafari-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("inappbrowser-openinsafari-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
       `" alt="arrow" />
@@ -783,7 +783,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      (showArrow ? div("android-chrome-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("android-chrome-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("android-chrome-bouncing-arrow.svg") +
       `" alt="arrow" />
@@ -823,7 +823,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      (showArrow ? div("android-edge-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("android-edge-bouncing-arrow-container") +
       `<picture>
         <!-- Landscape image -->
         <source srcset="${_genAssetUrl("generic-vertical-up-bouncing-arrow.svg")}" media="(orientation: landscape)">
@@ -972,7 +972,7 @@ export function AddToHomeScreen(
       _genListEnd() +
       blurb +
       _genModalEnd() +
-      (showArrow ? div("desktop-safari-bouncing-arrow-container") +
+      (showArrow ? divBouncingArrow("desktop-safari-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
@@ -1134,6 +1134,10 @@ export function AddToHomeScreen(
 
   function div(className: string) {
     return `<div class="adhs-${className}">`;
+  }
+
+  function divBouncingArrow(className: string) {
+    return `<div class="adhs-bouncing-arrow adhs-${className}">`;
   }
 
   return {
