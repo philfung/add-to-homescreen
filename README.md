@@ -61,9 +61,10 @@ Here are the guides shown for each platform/browser:
 
 In-App browsers on popular social apps are supported.  Users are guided to open the link in the system browser, then the standard add-to-homescreen flow appears.
 
-  * Instagram ([IOS](https://github.com/user-attachments/assets/0d3ab224-1ac7-454e-b75d-21f6c52ffa87), [Android](https://github.com/user-attachments/assets/7e1d11fd-31ba-4b27-a13d-6beb079b4204))
-  * Facebook ([IOS](https://github.com/user-attachments/assets/4c8121a2-3c62-402f-be05-0c54bf108ddc), [Android](https://github.com/user-attachments/assets/45701ac3-d337-4fc4-8e82-3d03236bf3a5))
-  * X / Twitter ([IOS](https://github.com/user-attachments/assets/ed01b58e-5aab-48b9-8c42-d21d24cd2c03), Android - opens in system browser)
+Apps Supported:
+  * Instagram (IOS, Android)
+  * Facebook (IOS, Android)
+  * X / Twitter (IOS, Android - opens in system browser)
 
 ## Installation
 
