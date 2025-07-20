@@ -467,7 +467,7 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            (showArrow ? div(isBrowserIOSIPadSafari()
+            (showArrow ? divBouncingArrow(isBrowserIOSIPadSafari()
                 ? "ios-ipad-safari-bouncing-arrow-container"
                 : "ios-safari-bouncing-arrow-container") +
                 `<img src="` +
@@ -491,7 +491,7 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            (showArrow ? div("ios-chrome-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("ios-chrome-bouncing-arrow-container") +
                 `<img src="` +
                 _genAssetUrl("ios-chrome-bouncing-arrow.svg") +
                 `" alt="arrow" />
@@ -509,7 +509,7 @@ function AddToHomeScreen(options) {
             _genListItem(`2`, `${simpleI18n_1.default.__("Tap")} <span class="adhs-emphasis">${simpleI18n_1.default.__("Open in browser")}</span>`) +
             _genListEnd() +
             _genModalEnd() +
-            (showArrow ? div("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("inappbrowser-openinsystembrowser-bouncing-arrow-container") +
                 `<img src="` +
                 _genAssetUrl("generic-vertical-up-bouncing-arrow.svg") +
                 `" alt="arrow" />
@@ -526,7 +526,7 @@ function AddToHomeScreen(options) {
             _genListItem(`1`, simpleI18n_1.default.__("Tap the %s button below to open your system browser.", `<img class="adhs-more-button" src="${_genAssetUrl("openinsafari-button.png")}"/>`)) +
             _genListEnd() +
             _genModalEnd() +
-            (showArrow ? div("inappbrowser-openinsafari-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("inappbrowser-openinsafari-bouncing-arrow-container") +
                 `<img src="` +
                 _genAssetUrl("generic-vertical-down-bouncing-arrow.svg") +
                 `" alt="arrow" />
@@ -546,7 +546,7 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            (showArrow ? div("android-chrome-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("android-chrome-bouncing-arrow-container") +
                 `<img src="` +
                 _genAssetUrl("android-chrome-bouncing-arrow.svg") +
                 `" alt="arrow" />
@@ -566,7 +566,7 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             _genBlurbMobile() +
             _genModalEnd() +
-            (showArrow ? div("android-edge-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("android-edge-bouncing-arrow-container") +
                 `<picture>
         <!-- Landscape image -->
         <source srcset="${_genAssetUrl("generic-vertical-up-bouncing-arrow.svg")}" media="(orientation: landscape)">
@@ -665,7 +665,7 @@ function AddToHomeScreen(options) {
             _genListEnd() +
             blurb +
             _genModalEnd() +
-            (showArrow ? div("desktop-safari-bouncing-arrow-container") +
+            (showArrow ? divBouncingArrow("desktop-safari-bouncing-arrow-container") +
                 `<img src="` +
                 _genAssetUrl("desktop-safari-bouncing-arrow.svg") +
                 `" alt="arrow" />
@@ -790,6 +790,9 @@ function AddToHomeScreen(options) {
     }
     function div(className) {
         return `<div class="adhs-${className}">`;
+    }
+    function divBouncingArrow(className) {
+        return `<div class="adhs-bouncing-arrow adhs-${className}">`;
     }
     return {
         appName,

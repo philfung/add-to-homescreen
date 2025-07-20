@@ -319,6 +319,12 @@
   }
 }
 
+@media (orientation: landscape) {
+  .adhs-container .adhs-bouncing-arrow {
+    display: none;
+  }
+}
+
 .adhs-container.adhs-ios.adhs-safari
   .adhs-ios-safari-bouncing-arrow-container
   img {
