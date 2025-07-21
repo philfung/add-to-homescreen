@@ -207,6 +207,14 @@ export function AddToHomeScreen(
             (_device = _device)
           );
           _genAndroidEdge(container);
+          // Firefox: note only Android Firefox supports adding to homescreen, ios Firefox does not
+        } else if (isBrowserAndroidFirefox()) {
+          ret = new DeviceInfo(
+            (_isStandAlone = false),
+            (_canBeStandAlone = true),
+            (_device = _device)
+          );
+          _genAndroidFirefox(container);
         } else if (isBrowserAndroidFacebook() || isBrowserAndroidInstagram()) {
           // ANDROID FACEBOOK: https://github.com/user-attachments/assets/45701ac3-d337-4fc4-8e82-3d03236bf3a5
           // ANDROID INSTAGRAM: https://github.com/user-attachments/assets/7e1d11fd-31ba-4b27-a13d-6beb079b4204
@@ -790,6 +798,10 @@ export function AddToHomeScreen(
     </div>` : '');
     container.innerHTML = containerInnerHTML;
     container.classList.add("adhs-mobile", "adhs-android", "adhs-chrome");
+  }
+
+  function _genAndroidFirefox(container: HTMLElement) {
+    return _genAndroidChrome(container);
   }
 
   function _genAndroidEdge(container: HTMLElement) {
