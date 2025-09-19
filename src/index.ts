@@ -345,21 +345,43 @@ export function AddToHomeScreen(
     );
   }
 
-  /* iOS 26 Detection - checks for iOS version 26.0 or higher
-   Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) */
+  /* iOS 26 Detection - UPDATED for Apple's User-Agent changes
+   NOTE: iOS 26 Safari reports fixed OS version (18_6) instead of actual version
+   We use Safari version detection instead of OS version for reliability */
   function isIOSVersion26OrHigher(): boolean {
     if (!isDeviceIOS()) return false;
     
-    const match = userAgent.match(/OS (\d+)_/);
-    if (match) {
-      const majorVersion = parseInt(match[1]);
+    // CRITICAL: iOS 26 Safari reports fixed iOS version (18_6) for privacy
+    // Use Safari version detection instead
+    const safariVersionMatch = userAgent.match(/Version\/(\d+)/);
+    if (safariVersionMatch) {
+      const safariVersion = parseInt(safariVersionMatch[1]);
+      // Safari 26+ indicates iOS 26+ (even if OS version shows 18_6)
+      return safariVersion >= 26;
+    }
+    
+    // Fallback: Check for actual iOS version (works for Chrome/Firefox on iOS)
+    const osVersionMatch = userAgent.match(/OS (\d+)_/);
+    if (osVersionMatch) {
+      const majorVersion = parseInt(osVersionMatch[1]);
       return majorVersion >= 26;
     }
+    
     return false;
   }
 
+  /* iOS 26 Safari specific detection */
   function isBrowserIOSSafari26(): boolean {
-    return isBrowserIOSSafari() && isIOSVersion26OrHigher();
+    if (!isBrowserIOSSafari()) return false;
+    
+    // Use Safari version detection for iOS 26+ Safari
+    const safariVersionMatch = userAgent.match(/Version\/(\d+)/);
+    if (safariVersionMatch) {
+      const safariVersion = parseInt(safariVersionMatch[1]);
+      return safariVersion >= 26;
+    }
+    
+    return false;
   }
 
   /* Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X)
@@ -685,7 +707,7 @@ export function AddToHomeScreen(
       _genListItem(
         `1`,
         i18n.__(
-          "Tap the %s button in the upper right corner.",
+          "Tap the %s button in the lower right corner.",
           _genListButtonWithImage(
             _genAssetUrl("generic-more-button.svg")
           )
@@ -722,10 +744,7 @@ export function AddToHomeScreen(
             i18n.__("Add to Home Screen"),
             "right"
           )
-        ) +
-          ` <span class="adhs-emphasis">${i18n.__(
-            "You may need to scroll down to find this menu item."
-          )}</span>`
+        )
       ) +
       _genListItem(
         `5`,
