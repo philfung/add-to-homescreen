@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   line-height: normal;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%) translateX(-50%);
   width: 90%;
 }
@@ -332,9 +332,23 @@
   height: 60px;
   position: absolute;
   top: calc(100dvh - 60px);
+  bottom: unset;
   left: 0;
   right: 0;
   margin: auto;
+  animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
+}
+
+.adhs-container.adhs-ios.adhs-safari.adhs-ios26
+  .adhs-ios-safari-bouncing-arrow-container
+  img {
+  height: 60px;
+  position: absolute;
+  top: calc(100dvh - 60px);
+  bottom: unset;
+  left: unset;
+  right: 7%;
+  margin: 0px 0px;
   animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
 }
 
@@ -344,7 +358,23 @@
   height: 60px;
   position: absolute;
   top: 0;
-  right: 11%; /* apparently on all iPads, the Safari share button is always 11% over from the right*/
+  bottom: unset;
+  left: unset;
+  right: 11%; 
+  margin: 0px 0px;
+  animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
+}
+
+.adhs-container.adhs-ios.adhs-safari.adhs-ios26
+  .adhs-ios-ipad-safari-bouncing-arrow-container
+  img {
+  height: 60px;
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: 9%; 
+  margin: 0px 0px;
   animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
 }
 

@@ -142,14 +142,22 @@ export function AddToHomeScreen(
 
       if (isDeviceIOS()) {
         // ios
-        if (isBrowserIOSSafari26()) {
+        if (isBrowserIOSSafari26() && !isBrowserIOSIPadSafari()) {
           ret = new DeviceInfo(
             (_isStandAlone = false),
             (_canBeStandAlone = true),
             (_device = _device)
           );
 
-          _genIOSSafari26(container);
+          _genIOSSafariIOS26(container);
+        } else if (isBrowserIOSSafari26() && isBrowserIOSIPadSafari()) {
+          ret = new DeviceInfo(
+            (_isStandAlone = false),
+            (_canBeStandAlone = true),
+            (_device = _device)
+          );
+
+          _genIOSIPadSafariIOS26(container);
         } else if (isBrowserIOSSafari()) {
           ret = new DeviceInfo(
             (_isStandAlone = false),
@@ -669,7 +677,7 @@ export function AddToHomeScreen(
       _genListItem(
         `2`,
         i18n.__(
-          "Select %s from the menu that pops up.",
+          "Select %s from the menu.",
           _genListButtonWithImage(
             _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
             i18n.__("Add to Home Screen"),
@@ -697,7 +705,7 @@ export function AddToHomeScreen(
     container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari");
   }
 
-  function _genIOSSafari26(container: HTMLElement) {
+  function _genIOSSafariIOS26(container: HTMLElement) {
     var containerInnerHTML =
       _genModalStart() +
       _genInstallAppHeader() +
@@ -707,9 +715,9 @@ export function AddToHomeScreen(
       _genListItem(
         `1`,
         i18n.__(
-          "Tap the %s button in the lower right corner.",
+          "Tap %s in the toolbar.",
           _genListButtonWithImage(
-            _genAssetUrl("generic-more-button.svg")
+            _genAssetUrl("ios-safari-ios26-more-white-button.svg")
           )
         )
       ) +
@@ -718,20 +726,20 @@ export function AddToHomeScreen(
         i18n.__(
           "Tap %s in the menu.",
           _genListButtonWithImage(
-            _genAssetUrl("ios-safari-sharing-api-button-2.svg"),
+            _genAssetUrl("ios-safari-ios26-share-button.svg"),
             i18n.__("Share"),
-            "right"
+            "left"
           )
         )
       ) +
       _genListItem(
         `3`,
         i18n.__(
-          "Tap %s to see more options.",
+          "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("generic-more-button.svg"),
+            _genAssetUrl("ios-safari-ios26-more-grey-button.svg"),
             i18n.__("More"),
-            "right"
+            "left"
           )
         )
       ) +
@@ -742,24 +750,64 @@ export function AddToHomeScreen(
           _genListButtonWithImage(
             _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
             i18n.__("Add to Home Screen"),
-            "right"
+            "left"
           )
-        )
-      ) +
-      _genListItem(
-        `5`,
-        i18n.__("Confirm by tapping %s to complete the installation.", 
-          `<strong>${i18n.__("Add")}</strong>`
         )
       ) +
       _genListEnd() +
       _genBlurbMobile() +
       _genModalEnd() +
-      (showArrow ? divBouncingArrow(
-        isBrowserIOSIPadSafari()
-          ? "ios-ipad-safari-bouncing-arrow-container"
-          : "ios-safari-bouncing-arrow-container"
+      (showArrow ? divBouncingArrow("ios-safari-bouncing-arrow-container") +
+      `<img src="` +
+      _genAssetUrl("ios-safari-bouncing-arrow.svg") +
+      `" alt="arrow" />
+    </div>` : '');
+    container.innerHTML = containerInnerHTML;
+    container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari", "adhs-ios26");
+  }
+
+  function _genIOSIPadSafariIOS26(container: HTMLElement) {
+    var containerInnerHTML =
+      _genModalStart() +
+      _genInstallAppHeader() +
+      _genAppNameHeader() +
+      // _genAppUrlHeader() +
+      _genListStart() +
+      _genListItem(
+        `1`,
+        i18n.__(
+          "Tap %s in the toolbar.",
+          _genListButtonWithImage(
+            _genAssetUrl("ios-safari-ios26-share-button.svg")
+          )
+        )
       ) +
+      _genListItem(
+        `2`,
+        i18n.__(
+          "Tap %s",
+          _genListButtonWithImage(
+            _genAssetUrl("ios-safari-ios26-more-grey-button.svg"),
+            i18n.__("More"),
+            "left"
+          )
+        )
+      ) +
+      _genListItem(
+        `4`,
+        i18n.__(
+          "Select %s from the menu.",
+          _genListButtonWithImage(
+            _genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"),
+            i18n.__("Add to Home Screen"),
+            "left"
+          )
+        )
+      ) +
+      _genListEnd() +
+      _genBlurbMobile() +
+      _genModalEnd() +
+      (showArrow ? divBouncingArrow("ios-ipad-safari-bouncing-arrow-container") +
       `<img src="` +
       _genAssetUrl("ios-safari-bouncing-arrow.svg") +
       `" alt="arrow" />
