@@ -16,7 +16,7 @@
     "url": "git+https://github.com/philfung/add-to-homescreen.git"
   },
   "license": "MIT",
-  "author": "Your Name <your@email.com>",
+  "author": "Philip Fung",
   "type": "commonjs",
   "main": "dist/add-to-homescreen.min.js",
   "scripts": {
