@@ -1,11 +1,11 @@
 {
-  "name": "add-to-homescreen",
+  "name": "pwa-add-to-homescreen",
   "version": "1.0.0",
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen.",
   "main": "dist/index.js",
   "scripts": {
     "build-dev": "NODE_ENV=development npm run build",
-    "build": "bun ./scripts/build.ts && webpack && bun ./scripts/postBuild.ts",
+    "build": "npx -y tsx ./scripts/build.ts && webpack && npx -y tsx ./scripts/postBuild.ts",
     "pack": "webpack",
     "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/philfung/add-to-homescreen#readme",
   "dependencies": {
-    "add-to-homescreen": "^3.2.6",
     "bun": "^1.1.29",
     "copy-webpack-plugin": "^11.0.0"
   },
