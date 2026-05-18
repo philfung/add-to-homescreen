@@ -1,8 +1,24 @@
 {
   "name": "pwa-add-to-homescreen",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen. Optimized for IOS, Android and all major desktop browsers.",
-  "main": "dist/index.js",
+  "keywords": [
+    "homescreen",
+    "add",
+    "popup"
+  ],
+  "homepage": "https://github.com/philfung/add-to-homescreen#readme",
+  "bugs": {
+    "url": "https://github.com/philfung/add-to-homescreen/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philfung/add-to-homescreen.git"
+  },
+  "license": "MIT",
+  "author": "Your Name <your@email.com>",
+  "type": "commonjs",
+  "main": "dist/add-to-homescreen.min.js",
   "scripts": {
     "build-dev": "NODE_ENV=development npm run build",
     "build": "npx -y tsx ./scripts/build.ts && webpack && npx -y tsx ./scripts/postBuild.ts",
@@ -10,21 +26,6 @@
     "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/philfung/add-to-homescreen.git"
-  },
-  "keywords": [
-    "homescreen",
-    "add",
-    "popup"
-  ],
-  "author": "Your Name <your@email.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/philfung/add-to-homescreen/issues"
-  },
-  "homepage": "https://github.com/philfung/add-to-homescreen#readme",
   "dependencies": {
     "bun": "^1.1.29",
     "copy-webpack-plugin": "^11.0.0"
