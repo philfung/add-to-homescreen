@@ -101,7 +101,13 @@ Make sure your site has the minimum requirements for installing a web app on hom
 
 This should be a quick drop-in library into your website.
 
-1. Include the library JavaScript and CSS files in your header (You can use [JSDelivr CDN](https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@master/dist/) if you're just using the library directly and not making any changes):
+1. Install the package via npm:
+
+   ```bash
+   npm install pwa-add-to-homescreen
+   ```
+
+2. Include the library JavaScript and CSS files in your header from the local `node_modules` directory:
 
    `index.html`
 
@@ -110,9 +116,9 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.5/dist/add-to-homescreen.min.css"
+       href="node_modules/pwa-add-to-homescreen/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.5/dist/add-to-homescreen.min.js"></script>
+     <script src="node_modules/pwa-add-to-homescreen/dist/add-to-homescreen.min.js"></script>
      ...
    </head>
    ```
@@ -127,14 +133,14 @@ This should be a quick drop-in library into your website.
      ...
      <link
        rel="stylesheet"
-       href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.5/dist/add-to-homescreen.min.css"
+       href="node_modules/pwa-add-to-homescreen/dist/add-to-homescreen.min.css"
      />
-     <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.5/dist/add-to-homescreen_es.min.js"></script>
+     <script src="node_modules/pwa-add-to-homescreen/dist/add-to-homescreen_es.min.js"></script>
      ...
    </head>
    ```
 
-2. Call the library onload.
+3. Call the library onload.
 
    `index.html`
 
@@ -150,7 +156,7 @@ This should be a quick drop-in library into your website.
                                                             // Optional. Default 'standalone'
      appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
                                                             // Required.
-     assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.5/dist/assets/img/',  // Link to directory of library image assets.
+     assetUrl: 'node_modules/pwa-add-to-homescreen/dist/assets/img/',  // Link to directory of library image assets.
 
      maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
                                                             // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
@@ -170,7 +176,7 @@ Here's an [example implementation](https://github.com/philfung/add-to-homescreen
 
 #### Special Case: calling the UI later
 
-2-alternate. if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
+3-alternate. if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
 you should still create your the instance onload, but call your UI later on the instance variable with .show()):
 
 `index.html`
