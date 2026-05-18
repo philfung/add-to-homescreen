@@ -80,9 +80,9 @@ Apps Supported:
 
 ## Installation
 
-### Prerequisite
+### Prerequisite: Make your website a proper PWA (Progressive Web App)
 
-Make sure your site has the minimum requirements for installing a web app on homescreen for IOS and Android and Desktop.
+Make sure your website meets the minimum requirements for installing a web app on homescreen for IOS and Android and Desktop.
 
 1. At `https://your-website.com/apple-touch-icon.png`, include a square icon of your app that is (1) at least 40 x 40 pixels and (2) specifically named `apple-touch-icon.png`([example](https://github.com/philfung/add-to-homescreen/blob/main/apple-touch-icon.png)).
 2. At `https://your-website.com/manifest.json`, include a web manifest file `manifest.json` ([example](https://github.com/philfung/add-to-homescreen/blob/main/manifest.json)). Reference the manifest in your index HTML file.
@@ -97,7 +97,7 @@ Make sure your site has the minimum requirements for installing a web app on hom
    </head>
    ```
 
-### Usage (If you're not making changes to library)
+### Usage
 
 This should be a quick drop-in library into your website.
 
@@ -130,6 +130,7 @@ This should be a quick drop-in library into your website.
 
    ```html
    <head>
+      <!-- This is the Spanish locale-only version of the library.  -->
      ...
      <link
        rel="stylesheet"
@@ -196,42 +197,6 @@ document.getElementById('my_install_app_button').addEventListener('click', funct
 ```
 
 This is because some handlers must be created onload.
-
-### Usage (If you're making changes to library)
-
-AddToHomescreen builds multiple copies of the library, all to the `dist` folder, each with their own intended usage.
-
-The most likely JavaScript file that you'll use is `add-to-homescreen.min.js`. This is the minified production read code.
-
-If you are debugging a change you made to the library, the `add-to-homescreen.js` file is an unminified version of the code, which you can use by loading the `/debug` path in the server below.
-
-The library also builds multiple other copies of the JavaScript code that are specific to an individual locale, for
-example `add-to-homescreen_es.min.js` only contains the Spanish translations. These are intended to be used by
-applications that are highly concerned with the amount of JavaScript code that is downloaded on a mobile device, and they
-are generally less than half the size of the default file. If your server is aware of the desired locale and you have the
-ability to change what file is loaded at page load time, these files can be a good choice.
-
-1. Make changes
-2. Build the library into the `dist` directory
-
-   ```
-   npm install
-   npm run build
-   ```
-
-   This will build all variations of the JavaScript file and start a server for your testing. 3. Test locally:
-
-3. Start local server
-
-   ```
-   npm run build
-   npm run start
-   ```
-
-   Load an example page http://127.0.0.1:8081, or load an example page with unminified code at http://127.0.0.1:8081/debug
-
-4. Save the [dist](https://github.com/philfung/add-to-homescreen/tree/main/dist) directory to a CDN of your choice.
-   Follow the steps in the previous section.
 
 ## Dependencies
 
