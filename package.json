@@ -26,11 +26,9 @@
     "start": "http-server dist -c-1 -p 8081",
     "tsc": "tsc"
   },
-  "dependencies": {
-    "bun": "^1.1.29",
-    "copy-webpack-plugin": "^11.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",

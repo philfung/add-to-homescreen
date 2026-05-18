@@ -23,7 +23,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.AddToHomeScreen = AddToHomeScreen;
 __webpack_require__(279);
 const types_1 = __webpack_require__(699);
-const config = __webpack_require__(182);
+const config = __webpack_require__(106);
 const LOCALES = config.LOCALES;
 // Configure I18n
 const simpleI18n_1 = __importDefault(__webpack_require__(794));
@@ -1024,45 +1024,6 @@ function isDisplayOptions(obj) {
 
 /***/ }),
 
-/***/ 182:
-/***/ ((module) => {
-
-module.exports = {
-  LOCALES: [
-    "ar",
-    "da",
-    "de",
-    "en",
-    "es",
-    "fr",
-    "he",
-    "it",
-    "ja",
-    "pt",
-    "ru",
-    "cs",
-    "ko",
-    "lv",
-    "nl",
-    "pl",
-    "sl",
-    "sq",
-    "sr",
-    "sv",
-    "th",
-    "tr",
-    "vn",
-    "zh",
-    "zh_CN",
-    "zh_HK",
-    "zh_TW"
-  ],
-  DEFAULT_LOCALE: "en",
-};
-
-
-/***/ }),
-
 /***/ 259:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -1115,6 +1076,45 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 259;
+
+/***/ }),
+
+/***/ 106:
+/***/ ((module) => {
+
+module.exports = {
+  LOCALES: [
+    "ar",
+    "da",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "he",
+    "it",
+    "ja",
+    "pt",
+    "ru",
+    "cs",
+    "ko",
+    "lv",
+    "nl",
+    "pl",
+    "sl",
+    "sq",
+    "sr",
+    "sv",
+    "th",
+    "tr",
+    "vn",
+    "zh",
+    "zh_CN",
+    "zh_HK",
+    "zh_TW"
+  ],
+  DEFAULT_LOCALE: "en",
+};
+
 
 /***/ }),
 
