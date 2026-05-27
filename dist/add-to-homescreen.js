@@ -1043,6 +1043,7 @@ var map = {
 	"./nl.json": 55,
 	"./pl.json": 143,
 	"./pt.json": 898,
+	"./ro.json": 691,
 	"./ru.json": 672,
 	"./sl.json": 329,
 	"./sq.json": 263,
@@ -1095,6 +1096,7 @@ module.exports = {
     "ja",
     "pt",
     "ru",
+    "ro",
     "cs",
     "ko",
     "lv",
@@ -1235,6 +1237,14 @@ module.exports = JSON.parse('{"Add To Dock":"Dodaj do Docka","Add to Home Screen
 
 "use strict";
 module.exports = JSON.parse('{"Add to Home Screen":"Adicionar à Tela de Inicio","Add To Dock":"Adicionar à Dock","An icon will be added to your Dock so you can quickly access this website.":"Um ícone será adicionado à sua Dock para que você possa acessar rapidamente este site.","An icon will be added to your home screen so you can quickly access this website.":"Um ícone será adicionado à sua tela inicial para que você possa acessar rapidamente este site.","An icon will be added to your Taskbar so you can quickly access this website.":"Um ícone será adicionado à sua barra de tarefas para que você possa acessar rapidamente este site.","Install":"Instalar","Install %s":"Instalar %s","Install app":"Instalar aplicativo","Later":"Mais tarde","More":"Mais","Open in browser":"Abrir no navegador","Select %s from the menu that pops up.":"Selecione %s no menu que aparece.","Select %s from the menu.":"Selecione %s no menu.","Share":"Compartilhar","Tap %s":"Toque em %s","Tap %s in the browser bar.":"Toque em %s na barra do navegador.","Tap %s in the menu.":"Toque em %s no menu.","Tap %s in the toolbar.":"Toque em %s na barra de ferramentas.","Tap the %s button above.":"Toque no botão %s acima.","Tap the %s button below to open your system browser.":"Toque no botão %s abaixo para abrir o navegador do sistema.","Tap the %s button in the toolbar.":"Toque no botão %s na barra de ferramentas.","Tap the %s button in the upper right corner.":"Toque no botão %s no canto superior direito.","You may need to scroll down to find this menu item.":"Você pode precisar rolar para baixo para encontrar este item do menu."}');
+
+/***/ }),
+
+/***/ 691:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"Add to Home Screen":"Adaugă pe ecranul principal","Add To Dock":"Adaugă în Dock","An icon will be added to your Dock so you can quickly access this website.":"O pictogramă va fi adăugată în Dock pentru a accesa rapid acest site.","An icon will be added to your home screen so you can quickly access this website.":"O pictogramă va fi adăugată pe ecranul principal pentru a accesa rapid acest site.","An icon will be added to your Taskbar so you can quickly access this website.":"O pictogramă va fi adăugată în bara de activități pentru a accesa rapid acest site.","Install":"Instalează","Install %s":"Instalează %s","Install app":"Instalează aplicația","Later":"Mai târziu","More":"Mai mult","Open in browser":"Deschide în browser","Select %s from the menu that pops up.":"Selectează %s din meniul care apare.","Select %s from the menu.":"Selectează %s din meniu.","Share":"Distribuie","Tap %s":"Atinge %s","Tap %s in the browser bar.":"Atinge %s în bara browserului.","Tap %s in the menu.":"Atinge %s în meniu.","Tap %s in the toolbar.":"Atinge %s în bara de instrumente.","Tap the %s button above.":"Atinge butonul %s de mai sus.","Tap the %s button below to open your system browser.":"Atinge butonul %s de mai jos pentru a deschide browserul sistemului.","Tap the %s button in the toolbar.":"Atinge butonul %s din bara de instrumente.","Tap the %s button in the upper right corner.":"Atinge butonul %s din colțul din dreapta sus.","You may need to scroll down to find this menu item.":"Poate fi necesar să derulezi în jos pentru a găsi acest element din meniu."}');
 
 /***/ }),
 
