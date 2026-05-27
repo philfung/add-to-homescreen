@@ -1,6 +1,6 @@
 {
   "name": "pwa-add-to-homescreen",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "A simple JavaScript library to show a popup encouraging users to add a website to their home screen. Optimized for IOS, Android and all major desktop browsers.",
   "keywords": [
     "homescreen",
