@@ -5,7 +5,7 @@
 [![Contributors](https://img.shields.io/github/contributors/philfung/add-to-homescreen)](https://github.com/philfung/add-to-homescreen/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/philfung/add-to-homescreen)]()
 
-Easily add a website to your IOS/Android/Desktop homescreen ([Demo](https://philfung.github.io/adhs)).
+Easily add a website to your IOS/Android/Desktop homescreen ([demo](https://philfung.github.io/adhs), [npm](https://www.npmjs.com/package/pwa-add-to-homescreen)).
 
 <img src="https://github.com/user-attachments/assets/3e751e86-f438-4a33-b9bb-fc81495fa67c" width="300"/>
 
