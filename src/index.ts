@@ -503,7 +503,7 @@ export function AddToHomeScreen(
   }
 
   function isDesktopChrome(): boolean {
-    const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
+    const isChrome = ('chrome' in window) && !userAgent.includes("Edg"); // Exclude Edge browser
     const isDesktop =
       userAgent.includes("Windows") ||
       userAgent.includes("Macintosh") ||
