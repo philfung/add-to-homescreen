@@ -380,7 +380,7 @@ function AddToHomeScreen(options) {
         return userAgent.includes("Macintosh");
     }
     function isDesktopChrome() {
-        const isChrome = userAgent.includes("Chrome") && !userAgent.includes("Edg"); // Exclude Edge browser
+        const isChrome = ('chrome' in window) && !userAgent.includes("Edg"); // Exclude Edge browser
         const isDesktop = userAgent.includes("Windows") ||
             userAgent.includes("Macintosh") ||
             userAgent.includes("Linux");
