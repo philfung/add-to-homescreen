@@ -63,6 +63,13 @@ function AddToHomeScreen(options) {
     }
     function isStandAlone() {
         // test if web app is already installed to home screen
+        // also treat ?source=pwa as standalone
+        try {
+            if (new URLSearchParams(window.location.search).get("source") === "pwa") {
+                return true;
+            }
+        }
+        catch (_a) { }
         return (!!("standalone" in window.navigator && window.navigator.standalone) || // IOS (TODO: detect iPad 13)
             !!window.matchMedia("(display-mode: standalone)").matches); // Android and Desktop Chrome/Safari/Edge
     }
@@ -1196,7 +1203,7 @@ module.exports = JSON.parse('{"Add to Home Screen":"Aggiungi alla schermata Home
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"Add to Home Screen":"ホーム画面に追加","Add To Dock":"Dockに追加","An icon will be added to your Dock so you can quickly access this website.":"アイコンがDockに追加され、このウェブサイトをすばやくアクセスできます。","An icon will be added to your home screen so you can quickly access this website.":"アイコンがホーム画面に追加され、このウェブサイトをすばやくアクセスできます。","An icon will be added to your Taskbar so you can quickly access this website.":"アイコンがタスクバーに追加され、このウェブサイトをすばやくアクセスできます。","Install":"インストール","Install %s":"%sをインストール","Install app":"アプリをインストール","Later":"後で","More":"その他","Open in browser":"ブラウザで開く","Select %s from the menu that pops up.":"表示されるメニューから%sを選択してください。","Select %s from the menu.":"メニューから%sを選択してください。","Share":"共有","Tap %s":"%sをタップ","Tap %s in the menu.":"メニューの%sをタップしてください。","Tap %s in the browser bar.":"ブラウザバーで表示される%sをタップ","Tap %s in the toolbar.":"ツールバーで表示される%sをタップ","Tap the %s button above.":"上の%sボタンをタップ","Tap the %s button below to open your system browser.":"下の%sボタンをタップしてシステムのブラウザを開きます。","Tap the %s button in the toolbar.":"ツールバーの%sボタンをタップ","Tap the %s button in the upper right corner.":"右上の%sボタンをタップ","You may need to scroll down to find this menu item.":"このメニュー項目を見つけるには、下にスクロールする必要があります。"}');
+module.exports = JSON.parse('{"Add to Home Screen":"ホーム画面に追加","Add To Dock":"Dockに追加","An icon will be added to your Dock so you can quickly access this website.":"アイコンがDockに追加され、このウェブサイトへ簡単にアクセスできるようになります。","An icon will be added to your home screen so you can quickly access this website.":"アイコンがホーム画面に追加され、このウェブサイトへ簡単にアクセスできるようになります。","An icon will be added to your Taskbar so you can quickly access this website.":"アイコンがタスクバーに追加され、このウェブサイトへ簡単にアクセスできるようになります。","Install":"インストール","Install %s":"%sをインストール","Install app":"アプリをインストール","Later":"後で","More":"その他","Open in browser":"ブラウザで開く","Select %s from the menu that pops up.":"表示されるメニューから%sを選択してください。","Select %s from the menu.":"メニューから%sを選択してください。","Share":"共有","Tap %s":"%sをタップ","Tap %s in the menu.":"メニューの%sをタップしてください。","Tap %s in the browser bar.":"ブラウザバーで表示される%sをタップ","Tap %s in the toolbar.":"ツールバーで表示される%sをタップ","Tap the %s button above.":"上の%sボタンをタップ","Tap the %s button below to open your system browser.":"下の%sボタンをタップしてシステムのブラウザを開きます。","Tap the %s button in the toolbar.":"ツールバーの%sボタンをタップ","Tap the %s button in the upper right corner.":"右上の%sボタンをタップ","You may need to scroll down to find this menu item.":"このメニュー項目を見つけるには、下にスクロールする必要があります。"}');
 
 /***/ }),
 

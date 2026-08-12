@@ -72,6 +72,12 @@ export function AddToHomeScreen(
 
   function isStandAlone() {
     // test if web app is already installed to home screen
+    // also treat ?source=pwa as standalone
+    try {
+      if (new URLSearchParams(window.location.search).get("source") === "pwa") {
+        return true;
+      }
+    } catch {}
     return (
       !!("standalone" in window.navigator && window.navigator.standalone) || // IOS (TODO: detect iPad 13)
       !!window.matchMedia("(display-mode: standalone)").matches
