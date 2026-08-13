@@ -5,17 +5,17 @@
 [![Contributors](https://img.shields.io/github/contributors/philfung/add-to-homescreen)](https://github.com/philfung/add-to-homescreen/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/philfung/add-to-homescreen)]()
 
-Easily add a website to your IOS/Android/Desktop homescreen ([demo](https://philfung.github.io/adhs), [npm](https://www.npmjs.com/package/pwa-add-to-homescreen)).
+Easily add a website to your IOS/Android/Desktop homescreen ([demo](https://philfung.github.io/adhs), [npm package](https://www.npmjs.com/package/pwa-add-to-homescreen)).
 
 <img src="https://github.com/user-attachments/assets/3e751e86-f438-4a33-b9bb-fc81495fa67c" width="300"/>
 
 
 
-## Motivation
+# Motivation
 
 Add to home screen allows websites and PWA's to work like native apps without registering in the Apple or Google App Stores. Currently, it is very difficult to get users to add web apps to their home screen, limiting the utility of such websites compared to native apps. See [related Medium blog post](https://medium.com/@philipfung/add-to-homescreen-websites-an-option-for-startups-in-2023-efb92f5e03ad).
 
-## This Library
+# This Library
 
 This drop-in JS Library for websites effectively guides a user to add the website to their home screen on IOS, Android and Desktop.
 </br></br>
@@ -24,11 +24,11 @@ Instructions and UI in this library have been "battle-tested" and have yielded a
 Here is a [demo (please open on your phone)](https://philfung.github.io/adhs) of library use within a hypothetical app "Aardvark" <img width="40" alt="aardvark-icon" src="https://github.com/philfung/add-to-homescreen/assets/1054593/e933af84-9225-4079-8fd7-5af525878693">
 </br>
 
-## Language Support
+# Language Support
 
 Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree/main/src/locales).
 
-## Browser Support
+# Browser Support
 
 All major browsers with > 10% market share on IOS/Android/Desktop are supported.
 Here are the guides shown for each platform/browser:
@@ -78,9 +78,9 @@ Apps Supported:
   * Facebook (IOS, Android)
   * X / Twitter (IOS, Android - opens in system browser)
 
-## Installation
+# Installation
 
-### Prerequisite: Make your website a proper PWA (Progressive Web App)
+## Prerequisite: Make your website a proper PWA (Progressive Web App)
 
 Make sure your website meets the minimum requirements for installing a web app on homescreen for IOS and Android and Desktop.
 
@@ -97,17 +97,17 @@ Make sure your website meets the minimum requirements for installing a web app o
    </head>
    ```
 
-### Usage
+## Usage
 
 This should be a quick drop-in library into your website.
 
-1. Install the package via npm:
+### 1. Install the package via npm:
 
    ```bash
    npm install pwa-add-to-homescreen
    ```
 
-2. Include the library JavaScript and CSS files in your header from the local `node_modules` directory:
+### 2. Include the library JavaScript and CSS files in your header from the local `node_modules` directory:
 
    `index.html`
 
@@ -123,6 +123,7 @@ This should be a quick drop-in library into your website.
    </head>
    ```
 
+   #### Aside: Package Optimization
    The code above will include a JavaScript file containing all the available translations for the locales this library supports. It is highly optimized to be small and quick to deliver over mobile networks. If however you want to
    be even more highly optimized, the library also has JavaScript files built with just a single locale of translations, which is about 60% smaller.
 
@@ -141,7 +142,7 @@ This should be a quick drop-in library into your website.
    </head>
    ```
 
-3. Call the library onload.
+### 3. Call the library onload.
 
    `index.html`
 
@@ -175,9 +176,8 @@ This should be a quick drop-in library into your website.
 
 Here's an [example implementation](https://github.com/philfung/add-to-homescreen/blob/main/index.html).
 
-#### Special Case: calling the UI later
-
-3-alternate. if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
+### 3-alternate. Special Case: calling the UI later
+if you're calling the UI NOT onload, but sometime after (for example, in an onclick() handler for an "Install App" button), then
 you should still create your the instance onload, but call your UI later on the instance variable with .show()):
 
 `index.html`
@@ -198,14 +198,14 @@ document.getElementById('my_install_app_button').addEventListener('click', funct
 
 This is because some handlers must be created onload.
 
-## Dependencies
+# Dependencies
 
 No dependencies. This is written in raw ES6 javascript and all css is namespaced to minimize codebase conflict and bloat.
 
-## Contributors
+# Contributors
 
 - Thanks to [Shane O'Sullivan](https://github.com/shaneosullivan) for a a massive refactor to improve performance and i18n.
 
-## License
+# License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
