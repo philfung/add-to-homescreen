@@ -125,7 +125,15 @@ function AddToHomeScreen(options) {
             );
             if (isDeviceIOS()) {
                 // ios
-                if (isBrowserIOSSafari26() && !isBrowserIOSIPadSafari()) {
+                if (isBrowserIOSSafari27() && !isBrowserIOSIPadSafari()) {
+                    ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
+                    _genIOSSafariIOS27(container);
+                }
+                else if (isBrowserIOSSafari27() && isBrowserIOSIPadSafari()) {
+                    ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
+                    _genIOSIPadSafariIOS27(container);
+                }
+                else if (isBrowserIOSSafari26() && !isBrowserIOSIPadSafari()) {
                     ret = new types_1.DeviceInfo((_isStandAlone = false), (_canBeStandAlone = true), (_device = _device));
                     _genIOSSafariIOS26(container);
                 }
@@ -296,6 +304,32 @@ function AddToHomeScreen(options) {
         if (safariVersionMatch) {
             const safariVersion = parseInt(safariVersionMatch[1]);
             return safariVersion >= 26;
+        }
+        return false;
+    }
+    /* iOS 27 Safari specific detection */
+    function isBrowserIOSSafari27() {
+        if (!isBrowserIOSSafari())
+            return false;
+        const safariVersionMatch = userAgent.match(/Version\/(\d+)/);
+        if (safariVersionMatch) {
+            const safariVersion = parseInt(safariVersionMatch[1]);
+            return safariVersion >= 27;
+        }
+        return false;
+    }
+    function isIOSVersion27OrHigher() {
+        if (!isDeviceIOS())
+            return false;
+        const safariVersionMatch = userAgent.match(/Version\/(\d+)/);
+        if (safariVersionMatch) {
+            const safariVersion = parseInt(safariVersionMatch[1]);
+            return safariVersion >= 27;
+        }
+        const osVersionMatch = userAgent.match(/OS (\d+)_/);
+        if (osVersionMatch) {
+            const majorVersion = parseInt(osVersionMatch[1]);
+            return majorVersion >= 27;
         }
         return false;
     }
@@ -571,6 +605,45 @@ function AddToHomeScreen(options) {
     </div>` : '');
         container.innerHTML = containerInnerHTML;
         container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari", "adhs-ios26");
+    }
+    function _genIOSSafariIOS27(container) {
+        var containerInnerHTML = _genModalStart() +
+            _genInstallAppHeader() +
+            _genAppNameHeader() +
+            _genListStart() +
+            _genListItem(`1`, simpleI18n_1.default.__("Tap %s in the toolbar.", _genListButtonWithImage(_genAssetUrl("ios-safari-ios27-bar-button.svg")))) +
+            _genListItem(`2`, simpleI18n_1.default.__("Tap %s in the menu.", _genListButtonWithImage(_genAssetUrl("ios-safari-ios26-share-button.svg"), simpleI18n_1.default.__("Share"), "left"))) +
+            _genListItem(`3`, simpleI18n_1.default.__("Tap %s View More.", _genListButtonWithImage(_genAssetUrl("ios-safari-ios27-grey-more-button.svg")))) +
+            _genListItem(`4`, simpleI18n_1.default.__("Select %s from the menu.", _genListButtonWithImage(_genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"), simpleI18n_1.default.__("Add to Home Screen"), "left"))) +
+            _genListEnd() +
+            _genBlurbMobile() +
+            _genModalEnd() +
+            (showArrow ? divBouncingArrow("ios-safari-ios27-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("ios-safari-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
+        container.innerHTML = containerInnerHTML;
+        container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari", "adhs-ios27");
+    }
+    function _genIOSIPadSafariIOS27(container) {
+        var containerInnerHTML = _genModalStart() +
+            _genInstallAppHeader() +
+            _genAppNameHeader() +
+            _genListStart() +
+            _genListItem(`1`, simpleI18n_1.default.__("Tap %s in the toolbar.", _genListButtonWithImage(_genAssetUrl("ios-safari-ios27-share-button.svg")))) +
+            _genListItem(`2`, simpleI18n_1.default.__("Tap %s View More.", _genListButtonWithImage(_genAssetUrl("ios-safari-ios27-grey-more-button.svg")))) +
+            _genListItem(`3`, simpleI18n_1.default.__("Select %s from the menu.", _genListButtonWithImage(_genAssetUrl("ios-safari-add-to-home-screen-button-2.svg"), simpleI18n_1.default.__("Add to Home Screen"), "left"))) +
+            _genListEnd() +
+            _genBlurbMobile() +
+            _genModalEnd() +
+            (showArrow ? divBouncingArrow("ios-ipad-safari-ios27-bouncing-arrow-container") +
+                `<img src="` +
+                _genAssetUrl("ios-safari-bouncing-arrow.svg") +
+                `" alt="arrow" />
+    </div>` : '');
+        container.innerHTML = containerInnerHTML;
+        container.classList.add("adhs-mobile", "adhs-ios", "adhs-safari", "adhs-ios27");
     }
     function _genIOSChrome(container) {
         var containerInnerHTML = _genModalStart() +
@@ -920,7 +993,9 @@ function AddToHomeScreen(options) {
         isBrowserIOSInAppTwitter,
         isBrowserIOSSafari,
         isBrowserIOSSafari26,
+        isBrowserIOSSafari27,
         isIOSVersion26OrHigher,
+        isIOSVersion27OrHigher,
         isDesktopChrome,
         isDesktopEdge,
         isDesktopMac,

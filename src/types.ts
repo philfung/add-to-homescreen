@@ -73,7 +73,9 @@ export interface AddToHomeScreenType {
   isDeviceAndroid: () => boolean;
   isBrowserIOSSafari: () => boolean;
   isBrowserIOSSafari26: () => boolean;
+  isBrowserIOSSafari27: () => boolean;
   isIOSVersion26OrHigher: () => boolean;
+  isIOSVersion27OrHigher: () => boolean;
   isBrowserIOSChrome: () => boolean;
   isBrowserIOSFirefox: () => boolean;
   isBrowserIOSInAppFacebook: () => boolean;
