@@ -33,9 +33,13 @@ Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree
 All major browsers with > 10% market share on IOS/Android/Desktop are supported.
 Here are the guides shown for each platform/browser:
 
-#### IOS - Safari browser
+#### IOS - Safari browser (IOS 27)
 
-<img width="175" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ios26.png">
+<img width="175" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-iphone-ios27.gif">
+
+#### IOS - Safari browser (IOS 26)
+
+<img width="175" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-iphone-ios26.png">
 
 #### IOS - Safari browser (IOS < 26)
 
@@ -53,9 +57,9 @@ Here are the guides shown for each platform/browser:
 
 <img width="175" alt="?sc-android-edge" src="https://github.com/user-attachments/assets/799e0097-7c26-4cf5-960b-5695dc254828">
 
-#### IPad - Safari browser 
+#### IPad - Safari browser (IOS 26/27)
 
-<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad-ios26.png">
+<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad-ios2627.png">
 
 #### iPad - Safari browser (IOS < 26)
 
