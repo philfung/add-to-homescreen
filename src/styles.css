@@ -821,3 +821,42 @@
   right: 88px;
   animation: adhs-ios-chrome-bouncing-arrow-animation 1.5s infinite;
 }
+
+/* iOS 27 iPhone: bottom arrow pointing down, 20% from left */
+.adhs-container.adhs-ios.adhs-safari.adhs-ios27
+  .adhs-ios-safari-ios27-bouncing-arrow-container
+  img {
+  height: 60px;
+  position: absolute;
+  top: calc(100dvh - 60px);
+  bottom: unset;
+  left: 20%;
+  right: unset;
+  margin: 0px 0px;
+  animation: adhs-ios-safari-bouncing-arrow-animation 2s infinite;
+}
+
+/* iOS 27 iPad: top arrow pointing up, 9% from right */
+.adhs-container.adhs-ios.adhs-safari.adhs-ios27
+  .adhs-ios-ipad-safari-ios27-bouncing-arrow-container
+  img {
+  height: 60px;
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: 9%;
+  margin: 0px 0px;
+  animation: adhs-ios-ipad-safari-bouncing-arrow-animation 2s infinite;
+}
+
+/* iOS 27: uniform step-icon height across #1-#4 to match */
+.adhs-container.adhs-ios.adhs-safari.adhs-ios27
+  .adhs-modal
+  .adhs-list
+  .adhs-list-item
+  .adhs-list-button
+  img {
+  height: 22px;
+  width: auto;
+}

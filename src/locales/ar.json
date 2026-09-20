@@ -8,11 +8,11 @@
   "Install %s": "تنصيب %s",
   "Install app": "تنصيب التطبيق",
   "Later": "فيما بعد",
-  "More": "المزيد",
   "Open in browser": "فتح في المتصفح",
   "Select %s from the menu that pops up.": "اختر %s من القائمة المنبثقة",
   "Select %s from the menu.": "اختر %s من القائمة",
   "Share": "مشاركة",
+  "Tap": "اضغط",
   "Tap %s": "اضغط %s",
   "Tap %s in the browser bar.": "اضغط %s في شريط المتصفح",
   "Tap %s in the menu.": "اضغط على %s في القائمة",
@@ -21,5 +21,6 @@
   "Tap the %s button below to open your system browser.": "اضغط على %s زر بالاسفل لفتح المتصفح",
   "Tap the %s button in the toolbar.": "اضغط على %s زر في قائمة الادوات",
   "Tap the %s button in the upper right corner.": "اضغط على %s زر لرؤية القائمة العلوية",
+  "View More": "عرض المزيد",
   "You may need to scroll down to find this menu item.": "لربما انت بحاجة الى النزول للأسفل لرؤية القائمة"
 }

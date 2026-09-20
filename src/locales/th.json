@@ -8,11 +8,11 @@
     "Install %s": "ติดตั้ง %s",
     "Install app": "ติดตั้งแอป",
     "Later": "ภายหลัง",
-    "More": "เพิ่มเติม",
     "Open in browser": "เปิดในเบราว์เซอร์",
     "Select %s from the menu that pops up.": "เลือก %s จากเมนูที่แสดงขึ้น",
     "Select %s from the menu.": "เลือก %s จากเมนู",
     "Share": "แชร์",
+    "Tap": "แตะ",
     "Tap %s": "แตะ %s",
     "Tap %s in the browser bar.": "แตะ %s ในแถบเบราว์เซอร์",
     "Tap %s in the menu.": "แตะ %s ในเมนู",
@@ -21,5 +21,7 @@
     "Tap the %s button below to open your system browser.": "แตะปุ่ม %s ด้านล่างเพื่อเปิดเบราว์เซอร์ของระบบ",
     "Tap the %s button in the toolbar.": "แตะปุ่ม %s ในแถบเครื่องมือ",
     "Tap the %s button in the upper right corner.": "แตะปุ่ม %s ที่มุมบนขวา",
+    "View More": "ดูเพิ่มเติม",
     "You may need to scroll down to find this menu item.": "คุณอาจจะต้องเลื่อนลงเพื่อค้นหารายการเมนูนี้"
+
   }
