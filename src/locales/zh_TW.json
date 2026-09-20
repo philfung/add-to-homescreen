@@ -8,10 +8,10 @@
     "Install %s": "安裝 %s",
     "Install app": "安裝應用程式",
     "Later": "稍後",
-    "More": "更多",
     "Open in browser": "在瀏覽器中開啟",
     "Select %s from the menu.": "從選單中選擇 %s。",
     "Share": "分享",
+    "Tap": "點擊",
     "Select %s from the menu that pops up.": "從跳出的選單中選擇 %s。",
     "Tap %s": "點擊 %s",
     "Tap %s in the browser bar.": "在瀏覽器列中點擊 %s。",
@@ -21,5 +21,6 @@
     "Tap the %s button below to open your system browser.": "點擊下面的 %s 按鈕以開啟你的系統瀏覽器。",
     "Tap the %s button in the toolbar.": "點擊工具列中的 %s 按鈕。",
     "Tap the %s button in the upper right corner.": "點擊右上角的 %s 按鈕。",
+    "View More": "查看更多",
     "You may need to scroll down to find this menu item.": "你可能需要向下捲動才能找到這個選單項目。"
 }

@@ -8,11 +8,11 @@
   "Install %s": "Instalēt %s",
   "Install app": "Instalēt lietotni",
   "Later": "Vēlāk",
-  "More": "Vairāk",
   "Open in browser": "Atvērt pārlūkā",
   "Select %s from the menu that pops up.": "Izvēlieties %s no uzlecošās izvēlnes.",
   "Select %s from the menu.": "Izvēlieties %s no izvēlnes.",
   "Share": "Dalīties",
+  "Tap": "Pieskarieties",
   "Tap %s": "Pieskarieties %s",
   "Tap %s in the menu.": "Pieskarieties %s izvēlnē.",
   "Tap %s in the browser bar.": "Pieskarieties %s pārlūka joslā.",
@@ -21,5 +21,6 @@
   "Tap the %s button below to open your system browser.": "Pieskarieties pogai %s zemāk, lai atvērtu sistēmas pārlūku.",
   "Tap the %s button in the toolbar.": "Pieskarieties pogai %s rīkjoslā.",
   "Tap the %s button in the upper right corner.": "Pieskarieties pogai %s augšējā labajā stūrī.",
+  "View More": "Skatīt vairāk",
   "You may need to scroll down to find this menu item.": "Jums, iespējams, būs jāpārskrollē uz leju, lai atrastu šo izvēlnes vienumu."
 }

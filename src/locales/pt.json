@@ -8,11 +8,11 @@
   "Install %s": "Instalar %s",
   "Install app": "Instalar aplicativo",
   "Later": "Mais tarde",
-  "More": "Mais",
   "Open in browser": "Abrir no navegador",
   "Select %s from the menu that pops up.": "Selecione %s no menu que aparece.",
   "Select %s from the menu.": "Selecione %s no menu.",
   "Share": "Compartilhar",
+  "Tap": "Toque em",
   "Tap %s": "Toque em %s",
   "Tap %s in the browser bar.": "Toque em %s na barra do navegador.",
   "Tap %s in the menu.": "Toque em %s no menu.",
@@ -21,5 +21,6 @@
   "Tap the %s button below to open your system browser.": "Toque no botão %s abaixo para abrir o navegador do sistema.",
   "Tap the %s button in the toolbar.": "Toque no botão %s na barra de ferramentas.",
   "Tap the %s button in the upper right corner.": "Toque no botão %s no canto superior direito.",
+  "View More": "Ver mais",
   "You may need to scroll down to find this menu item.": "Você pode precisar rolar para baixo para encontrar este item do menu."
 }

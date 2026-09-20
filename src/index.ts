@@ -790,8 +790,8 @@ export function AddToHomeScreen(
         i18n.__(
           "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("ios-safari-ios26-more-grey-button.svg"),
-            i18n.__("More"),
+            _genAssetUrl("ios-safari-ios26-more-grey-arrow-button.svg"),
+            i18n.__("View More"),
             "left"
           )
         )
@@ -840,14 +840,14 @@ export function AddToHomeScreen(
         i18n.__(
           "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("ios-safari-ios26-more-grey-button.svg"),
-            i18n.__("More"),
+            _genAssetUrl("ios-safari-ios26-more-grey-arrow-button.svg"),
+            i18n.__("View More"),
             "left"
           )
         )
       ) +
       _genListItem(
-        `4`,
+        `3`,
         i18n.__(
           "Select %s from the menu.",
           _genListButtonWithImage(
@@ -898,11 +898,13 @@ export function AddToHomeScreen(
       _genListItem(
         `3`,
         i18n.__(
-          "Tap %s View More.",
+          "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("ios-safari-ios27-grey-more-button.svg")
+            _genAssetUrl("ios-safari-ios27-more-grey-arrow-button.svg"),
+            i18n.__("View More"),
+            "left"
           )
-        )
+        )					
       ) +
       _genListItem(
         `4`,
@@ -944,12 +946,14 @@ export function AddToHomeScreen(
       ) +
       _genListItem(
         `2`,
-        i18n.__(
-          "Tap %s View More.",
+	        i18n.__(
+          "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("ios-safari-ios27-grey-more-button.svg")
+            _genAssetUrl("ios-safari-ios26-more-grey-arrow-button.svg"),
+            i18n.__("View More"),
+            "left"
           )
-        )
+        )				
       ) +
       _genListItem(
         `3`,
