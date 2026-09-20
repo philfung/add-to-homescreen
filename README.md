@@ -33,21 +33,29 @@ Translated to 20+ [languages](https://github.com/philfung/add-to-homescreen/tree
 All major browsers with > 10% market share on IOS/Android/Desktop are supported.
 Here are the guides shown for each platform/browser:
 
-#### IOS - Safari browser (IOS 27)
+#### IOS iPhone - Safari browser (IOS 27)
 
 <img width="175" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-iphone-ios27.gif">
 
-#### IOS - Safari browser (IOS 26)
+#### IOS iPhone - Safari browser (IOS 26)
 
 <img width="175" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-iphone-ios26.png">
 
-#### IOS - Safari browser (IOS < 26)
+#### IOS iPhone - Safari browser (IOS < 26)
 
 <img width="175" alt="sc-ios-safari" src="https://github.com/user-attachments/assets/a7457b49-b9f7-4748-8571-73672dcfd7f2">
 
-#### IOS - Chrome browser
+#### IOS iPhone - Chrome browser
 
 <img width="175" alt="sc-ios-chrome" src="https://github.com/user-attachments/assets/bdfa90eb-f23a-4f81-9d65-3c473d3f181f">
+
+#### IOS IPad - Safari browser (IOS 26/27)
+
+<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad-ios2627.png">
+
+#### IOS iPad - Safari browser (IOS < 26)
+
+<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad.png">
 
 #### Android - Chrome browser
 
@@ -56,14 +64,6 @@ Here are the guides shown for each platform/browser:
 #### Android - Edge browser
 
 <img width="175" alt="?sc-android-edge" src="https://github.com/user-attachments/assets/799e0097-7c26-4cf5-960b-5695dc254828">
-
-#### IPad - Safari browser (IOS 26/27)
-
-<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad-ios2627.png">
-
-#### iPad - Safari browser (IOS < 26)
-
-<img width="300" alt="sc-ios-safari" src="src/assets/sample/img/ios-safari-ipad.png">
 
 #### Desktop Windows & Mac - Chrome & Edge browsers
 
