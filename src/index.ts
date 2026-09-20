@@ -1109,8 +1109,8 @@ export function AddToHomeScreen(
         i18n.__(
           "Tap %s",
           _genListButtonWithImage(
-            _genAssetUrl("android-chrome-add-to-home-screen-button-2.svg"),
-            i18n.__("Add to Home Screen"),
+            _genAssetUrl("android-chrome-install-and-create-shortcut.svg"),
+            i18n.__("Install and create shortcut"),
             "left"
           )
         )
